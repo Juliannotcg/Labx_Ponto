@@ -30,7 +30,7 @@ namespace LabxPonto_View.Model
         public ICollection<Horario> Horario { get; private set; }
         public void Validar()
         {
-            Validate.AssertArgumentLength(Nome, 150, ErrosMessages.PesNome);
+           
         }
     }
 }

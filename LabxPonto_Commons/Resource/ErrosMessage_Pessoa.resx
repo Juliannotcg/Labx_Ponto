@@ -117,7 +117,46 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="PesNome" xml:space="preserve">
-    <value>Nome inválido.</value>
+  <data name="PesCPFTamanho" xml:space="preserve">
+    <value>O CPF deve ter 11 caracteres.</value>
+  </data>
+  <data name="PesCPFVazio" xml:space="preserve">
+    <value>O CPF deve ser preenchido.</value>
+  </data>
+  <data name="PesDataNascimentoVazio" xml:space="preserve">
+    <value>A Data de Nascimento deve ser informada.</value>
+  </data>
+  <data name="PesEstadoCivil" xml:space="preserve">
+    <value>O Estado Civil deve ser informado.</value>
+  </data>
+  <data name="PesNomeMaeTamanho" xml:space="preserve">
+    <value>O Nome da Mãe deve ter entre 5 e 50 caracteres.</value>
+  </data>
+  <data name="PesNomeMaeVazio" xml:space="preserve">
+    <value>O Nome da Mãe deve ser preenchido.</value>
+  </data>
+  <data name="PesNomePaiTamanho" xml:space="preserve">
+    <value>O Nome do Pai deve ter entre 5 e 50 caracteres.</value>
+  </data>
+  <data name="PesNomePaiVazio" xml:space="preserve">
+    <value>O Nome do Pai deve ser preenchido.</value>
+  </data>
+  <data name="PesNomeTamanho" xml:space="preserve">
+    <value>O Nome deve ter entre 5 e 50 caracteres.</value>
+  </data>
+  <data name="PesNomeVazio" xml:space="preserve">
+    <value>O Nome deve ser preenchido.</value>
+  </data>
+  <data name="PesRGTamanho" xml:space="preserve">
+    <value>O Número da Identidade deve ter entre 2 e 50 caracteres.</value>
+  </data>
+  <data name="PesRGVazio" xml:space="preserve">
+    <value>O Número da Identidade deve ser preenchido.</value>
+  </data>
+  <data name="PesSobreNomeTamanho" xml:space="preserve">
+    <value>O Sobre Nome deve ter entre 5 e 50 caracteres.</value>
+  </data>
+  <data name="PesSobreNomeVazio" xml:space="preserve">
+    <value>O Sobre Nome deve ser preenchido.</value>
   </data>
 </root>
