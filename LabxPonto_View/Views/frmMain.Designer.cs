@@ -94,8 +94,8 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pbLogo;
-        private MetroFramework.Controls.MetroTile mtCadastro;
         private MetroFramework.Controls.MetroTile mtConfiguracoes;
         private MetroFramework.Controls.MetroTile metroTile1;
+        public MetroFramework.Controls.MetroTile mtCadastro;
     }
 }

@@ -64,11 +64,11 @@
     <Compile Include="Model\Empresa.cs" />
     <Compile Include="Model\Funcao.cs" />
     <Compile Include="Model\Horario.cs" />
-    <Compile Include="Views\frmCadastroFuncionario.cs">
+    <Compile Include="Views\frmCadastros.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\frmCadastroFuncionario.Designer.cs">
-      <DependentUpon>frmCadastroFuncionario.cs</DependentUpon>
+    <Compile Include="Views\frmCadastros.Designer.cs">
+      <DependentUpon>frmCadastros.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Endereco.cs" />
     <Compile Include="Model\Pessoa.cs" />
@@ -80,8 +80,8 @@
     <Compile Include="Views\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Views\frmCadastroFuncionario.resx">
-      <DependentUpon>frmCadastroFuncionario.cs</DependentUpon>
+    <EmbeddedResource Include="Views\frmCadastros.resx">
+      <DependentUpon>frmCadastros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

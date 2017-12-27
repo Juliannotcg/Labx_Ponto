@@ -9,7 +9,6 @@ namespace LabxPonto_View.Forms
     {
         public frmCadastroFuncionario()
         {
-            Pessoa pessoa = new Pessoa();
             InitializeComponent();
         }
 
@@ -29,6 +28,10 @@ namespace LabxPonto_View.Forms
         }
 
         public void Confirmar()
+        {
+
+        }
+        public void Validar()
         {
 
         }

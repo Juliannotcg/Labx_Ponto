@@ -9,8 +9,9 @@ namespace LabxPonto_View.Views
             InitializeComponent();
         }
 
-        private void mtCadastro_Click(object sender, System.EventArgs e)
+        public void mtCadastro_Click(object sender, System.EventArgs e)
         {
-                    }
+
+        }
     }
 }
