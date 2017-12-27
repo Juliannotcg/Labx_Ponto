@@ -7,6 +7,8 @@ namespace LabxPonto_View.Forms
 {
     public partial class frmCadastroFuncionario : MetroForm
     {
+        
+
         public frmCadastroFuncionario()
         {
             InitializeComponent();
@@ -61,6 +63,11 @@ namespace LabxPonto_View.Forms
 
                imgFoto.Image = pb.Image;
             }
+        }
+
+        private void btnPesquisar_Click(object sender, System.EventArgs e)
+        {
+          
         }
     }
 }

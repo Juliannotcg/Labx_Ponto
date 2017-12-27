@@ -30,6 +30,11 @@
         {
             this.tcCadastroFuncionario = new MetroFramework.Controls.MetroTabControl();
             this.tpDadosPessoais = new MetroFramework.Controls.MetroTabPage();
+            this.cbFuncaoFunc = new MetroFramework.Controls.MetroComboBox();
+            this.cbDepartamentoFunc = new MetroFramework.Controls.MetroComboBox();
+            this.metroLabel22 = new MetroFramework.Controls.MetroLabel();
+            this.btnCancelar = new MetroFramework.Controls.MetroButton();
+            this.btnSalvar = new MetroFramework.Controls.MetroButton();
             this.metroLabel21 = new MetroFramework.Controls.MetroLabel();
             this.cbEstado = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel20 = new MetroFramework.Controls.MetroLabel();
@@ -73,19 +78,18 @@
             this.lbNome = new MetroFramework.Controls.MetroLabel();
             this.txtNomeFuncionario = new MetroFramework.Controls.MetroTextBox();
             this.tpEndereco = new MetroFramework.Controls.MetroTabPage();
-            this.btnSalvar = new MetroFramework.Controls.MetroButton();
-            this.btnCancelar = new MetroFramework.Controls.MetroButton();
-            this.ofd1 = new System.Windows.Forms.OpenFileDialog();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
-            this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
-            this.metroLabel22 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel23 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel24 = new MetroFramework.Controls.MetroLabel();
-            this.txtNomeDepartamento = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel25 = new MetroFramework.Controls.MetroLabel();
-            this.txtDescricaoDepartamento = new MetroFramework.Controls.MetroTextBox();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
+            this.metroLabel25 = new MetroFramework.Controls.MetroLabel();
+            this.txtDescricaoDepartamento = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel24 = new MetroFramework.Controls.MetroLabel();
+            this.txtNomeDepartamento = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel23 = new MetroFramework.Controls.MetroLabel();
+            this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
+            this.metroLabel30 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel29 = new MetroFramework.Controls.MetroLabel();
+            this.cbDepartamento = new MetroFramework.Controls.MetroComboBox();
             this.btnCancelarFuncao = new MetroFramework.Controls.MetroButton();
             this.btnSalvarFuncao = new MetroFramework.Controls.MetroButton();
             this.metroLabel26 = new MetroFramework.Controls.MetroLabel();
@@ -93,11 +97,7 @@
             this.metroLabel27 = new MetroFramework.Controls.MetroLabel();
             this.txtNomeFuncao = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel28 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel29 = new MetroFramework.Controls.MetroLabel();
-            this.cbDepartamento = new MetroFramework.Controls.MetroComboBox();
-            this.metroLabel30 = new MetroFramework.Controls.MetroLabel();
-            this.cbDepartamentoFunc = new MetroFramework.Controls.MetroComboBox();
-            this.cbFuncaoFunc = new MetroFramework.Controls.MetroComboBox();
+            this.ofd1 = new System.Windows.Forms.OpenFileDialog();
             this.tcCadastroFuncionario.SuspendLayout();
             this.tpDadosPessoais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgFoto)).BeginInit();
@@ -114,7 +114,7 @@
             this.tcCadastroFuncionario.Location = new System.Drawing.Point(24, 74);
             this.tcCadastroFuncionario.Name = "tcCadastroFuncionario";
             this.tcCadastroFuncionario.SelectedIndex = 0;
-            this.tcCadastroFuncionario.Size = new System.Drawing.Size(973, 608);
+            this.tcCadastroFuncionario.Size = new System.Drawing.Size(973, 623);
             this.tcCadastroFuncionario.TabIndex = 0;
             this.tcCadastroFuncionario.UseSelectable = true;
             // 
@@ -172,12 +172,62 @@
             this.tpDadosPessoais.HorizontalScrollbarSize = 10;
             this.tpDadosPessoais.Location = new System.Drawing.Point(4, 38);
             this.tpDadosPessoais.Name = "tpDadosPessoais";
-            this.tpDadosPessoais.Size = new System.Drawing.Size(965, 566);
+            this.tpDadosPessoais.Size = new System.Drawing.Size(965, 581);
             this.tpDadosPessoais.TabIndex = 0;
             this.tpDadosPessoais.Text = "Cadastro de Funcionários";
             this.tpDadosPessoais.VerticalScrollbarBarColor = true;
             this.tpDadosPessoais.VerticalScrollbarHighlightOnWheel = false;
             this.tpDadosPessoais.VerticalScrollbarSize = 10;
+            // 
+            // cbFuncaoFunc
+            // 
+            this.cbFuncaoFunc.FormattingEnabled = true;
+            this.cbFuncaoFunc.ItemHeight = 24;
+            this.cbFuncaoFunc.Location = new System.Drawing.Point(417, 249);
+            this.cbFuncaoFunc.Name = "cbFuncaoFunc";
+            this.cbFuncaoFunc.Size = new System.Drawing.Size(328, 30);
+            this.cbFuncaoFunc.TabIndex = 48;
+            this.cbFuncaoFunc.UseSelectable = true;
+            // 
+            // cbDepartamentoFunc
+            // 
+            this.cbDepartamentoFunc.FormattingEnabled = true;
+            this.cbDepartamentoFunc.ItemHeight = 24;
+            this.cbDepartamentoFunc.Location = new System.Drawing.Point(417, 194);
+            this.cbDepartamentoFunc.Name = "cbDepartamentoFunc";
+            this.cbDepartamentoFunc.Size = new System.Drawing.Size(328, 30);
+            this.cbDepartamentoFunc.TabIndex = 47;
+            this.cbDepartamentoFunc.UseSelectable = true;
+            // 
+            // metroLabel22
+            // 
+            this.metroLabel22.AutoSize = true;
+            this.metroLabel22.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel22.Location = new System.Drawing.Point(347, 10);
+            this.metroLabel22.Name = "metroLabel22";
+            this.metroLabel22.Size = new System.Drawing.Size(155, 25);
+            this.metroLabel22.TabIndex = 46;
+            this.metroLabel22.Text = "DADOS PESSOAIS";
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(135, 530);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(125, 40);
+            this.btnCancelar.TabIndex = 2;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseSelectable = true;
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.BackColor = System.Drawing.Color.White;
+            this.btnSalvar.Location = new System.Drawing.Point(3, 530);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(125, 40);
+            this.btnSalvar.TabIndex = 1;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseSelectable = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // metroLabel21
             // 
@@ -283,8 +333,9 @@
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(92, 23);
             this.btnPesquisar.TabIndex = 3;
-            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.Text = "Buscar";
             this.btnPesquisar.UseSelectable = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // metroLabel18
             // 
@@ -406,7 +457,7 @@
             // metroLabel15
             // 
             this.metroLabel15.AutoSize = true;
-            this.metroLabel15.Location = new System.Drawing.Point(415, 277);
+            this.metroLabel15.Location = new System.Drawing.Point(415, 282);
             this.metroLabel15.Name = "metroLabel15";
             this.metroLabel15.Size = new System.Drawing.Size(119, 20);
             this.metroLabel15.TabIndex = 33;
@@ -414,7 +465,7 @@
             // 
             // dtAdmissao
             // 
-            this.dtAdmissao.Location = new System.Drawing.Point(418, 298);
+            this.dtAdmissao.Location = new System.Drawing.Point(418, 305);
             this.dtAdmissao.MinimumSize = new System.Drawing.Size(0, 30);
             this.dtAdmissao.Name = "dtAdmissao";
             this.dtAdmissao.Size = new System.Drawing.Size(328, 30);
@@ -423,7 +474,7 @@
             // metroLabel14
             // 
             this.metroLabel14.AutoSize = true;
-            this.metroLabel14.Location = new System.Drawing.Point(414, 225);
+            this.metroLabel14.Location = new System.Drawing.Point(414, 228);
             this.metroLabel14.Name = "metroLabel14";
             this.metroLabel14.Size = new System.Drawing.Size(54, 20);
             this.metroLabel14.TabIndex = 31;
@@ -498,7 +549,7 @@
             // metroLabel9
             // 
             this.metroLabel9.AutoSize = true;
-            this.metroLabel9.Location = new System.Drawing.Point(0, 273);
+            this.metroLabel9.Location = new System.Drawing.Point(0, 289);
             this.metroLabel9.Name = "metroLabel9";
             this.metroLabel9.Size = new System.Drawing.Size(98, 20);
             this.metroLabel9.TabIndex = 22;
@@ -519,7 +570,7 @@
             this.txtNomeMae.CustomButton.UseSelectable = true;
             this.txtNomeMae.CustomButton.Visible = false;
             this.txtNomeMae.Lines = new string[0];
-            this.txtNomeMae.Location = new System.Drawing.Point(4, 298);
+            this.txtNomeMae.Location = new System.Drawing.Point(3, 312);
             this.txtNomeMae.MaxLength = 32767;
             this.txtNomeMae.Name = "txtNomeMae";
             this.txtNomeMae.PasswordChar = '\0';
@@ -537,7 +588,7 @@
             // metroLabel8
             // 
             this.metroLabel8.AutoSize = true;
-            this.metroLabel8.Location = new System.Drawing.Point(0, 222);
+            this.metroLabel8.Location = new System.Drawing.Point(3, 239);
             this.metroLabel8.Name = "metroLabel8";
             this.metroLabel8.Size = new System.Drawing.Size(89, 20);
             this.metroLabel8.TabIndex = 20;
@@ -558,7 +609,7 @@
             this.txtNomePai.CustomButton.UseSelectable = true;
             this.txtNomePai.CustomButton.Visible = false;
             this.txtNomePai.Lines = new string[0];
-            this.txtNomePai.Location = new System.Drawing.Point(4, 247);
+            this.txtNomePai.Location = new System.Drawing.Point(3, 262);
             this.txtNomePai.MaxLength = 32767;
             this.txtNomePai.Name = "txtNomePai";
             this.txtNomePai.PasswordChar = '\0';
@@ -847,30 +898,6 @@
             this.tpEndereco.VerticalScrollbarHighlightOnWheel = false;
             this.tpEndereco.VerticalScrollbarSize = 10;
             // 
-            // btnSalvar
-            // 
-            this.btnSalvar.BackColor = System.Drawing.Color.White;
-            this.btnSalvar.Location = new System.Drawing.Point(3, 530);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(125, 40);
-            this.btnSalvar.TabIndex = 1;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.UseSelectable = true;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(135, 530);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(125, 40);
-            this.btnCancelar.TabIndex = 2;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseSelectable = true;
-            // 
-            // ofd1
-            // 
-            this.ofd1.FileName = "openFileDialog1";
-            // 
             // metroTabPage1
             // 
             this.metroTabPage1.Controls.Add(this.metroButton1);
@@ -892,88 +919,24 @@
             this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage1.VerticalScrollbarSize = 10;
             // 
-            // metroTabPage2
+            // metroButton1
             // 
-            this.metroTabPage2.Controls.Add(this.metroLabel30);
-            this.metroTabPage2.Controls.Add(this.metroLabel29);
-            this.metroTabPage2.Controls.Add(this.cbDepartamento);
-            this.metroTabPage2.Controls.Add(this.btnCancelarFuncao);
-            this.metroTabPage2.Controls.Add(this.btnSalvarFuncao);
-            this.metroTabPage2.Controls.Add(this.metroLabel26);
-            this.metroTabPage2.Controls.Add(this.txtDescricaoFuncao);
-            this.metroTabPage2.Controls.Add(this.metroLabel27);
-            this.metroTabPage2.Controls.Add(this.txtNomeFuncao);
-            this.metroTabPage2.Controls.Add(this.metroLabel28);
-            this.metroTabPage2.HorizontalScrollbarBarColor = true;
-            this.metroTabPage2.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage2.HorizontalScrollbarSize = 10;
-            this.metroTabPage2.Location = new System.Drawing.Point(4, 38);
-            this.metroTabPage2.Name = "metroTabPage2";
-            this.metroTabPage2.Size = new System.Drawing.Size(965, 566);
-            this.metroTabPage2.TabIndex = 3;
-            this.metroTabPage2.Text = "Cadastro de Função";
-            this.metroTabPage2.VerticalScrollbarBarColor = true;
-            this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage2.VerticalScrollbarSize = 10;
+            this.metroButton1.Location = new System.Drawing.Point(135, 523);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(125, 40);
+            this.metroButton1.TabIndex = 53;
+            this.metroButton1.Text = "Cancelar";
+            this.metroButton1.UseSelectable = true;
             // 
-            // metroLabel22
+            // metroButton2
             // 
-            this.metroLabel22.AutoSize = true;
-            this.metroLabel22.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel22.Location = new System.Drawing.Point(347, 10);
-            this.metroLabel22.Name = "metroLabel22";
-            this.metroLabel22.Size = new System.Drawing.Size(155, 25);
-            this.metroLabel22.TabIndex = 46;
-            this.metroLabel22.Text = "DADOS PESSOAIS";
-            // 
-            // metroLabel23
-            // 
-            this.metroLabel23.AutoSize = true;
-            this.metroLabel23.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel23.Location = new System.Drawing.Point(333, 13);
-            this.metroLabel23.Name = "metroLabel23";
-            this.metroLabel23.Size = new System.Drawing.Size(246, 25);
-            this.metroLabel23.TabIndex = 47;
-            this.metroLabel23.Text = "DADOS DO DEPARTAMENTO";
-            // 
-            // metroLabel24
-            // 
-            this.metroLabel24.AutoSize = true;
-            this.metroLabel24.Location = new System.Drawing.Point(-1, 48);
-            this.metroLabel24.Name = "metroLabel24";
-            this.metroLabel24.Size = new System.Drawing.Size(162, 20);
-            this.metroLabel24.TabIndex = 49;
-            this.metroLabel24.Text = "Nome do Departamento";
-            // 
-            // txtNomeDepartamento
-            // 
-            // 
-            // 
-            // 
-            this.txtNomeDepartamento.CustomButton.Image = null;
-            this.txtNomeDepartamento.CustomButton.Location = new System.Drawing.Point(554, 1);
-            this.txtNomeDepartamento.CustomButton.Name = "";
-            this.txtNomeDepartamento.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtNomeDepartamento.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtNomeDepartamento.CustomButton.TabIndex = 1;
-            this.txtNomeDepartamento.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtNomeDepartamento.CustomButton.UseSelectable = true;
-            this.txtNomeDepartamento.CustomButton.Visible = false;
-            this.txtNomeDepartamento.Lines = new string[0];
-            this.txtNomeDepartamento.Location = new System.Drawing.Point(3, 73);
-            this.txtNomeDepartamento.MaxLength = 32767;
-            this.txtNomeDepartamento.Name = "txtNomeDepartamento";
-            this.txtNomeDepartamento.PasswordChar = '\0';
-            this.txtNomeDepartamento.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtNomeDepartamento.SelectedText = "";
-            this.txtNomeDepartamento.SelectionLength = 0;
-            this.txtNomeDepartamento.SelectionStart = 0;
-            this.txtNomeDepartamento.ShortcutsEnabled = true;
-            this.txtNomeDepartamento.Size = new System.Drawing.Size(576, 23);
-            this.txtNomeDepartamento.TabIndex = 48;
-            this.txtNomeDepartamento.UseSelectable = true;
-            this.txtNomeDepartamento.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtNomeDepartamento.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.metroButton2.BackColor = System.Drawing.Color.White;
+            this.metroButton2.Location = new System.Drawing.Point(3, 523);
+            this.metroButton2.Name = "metroButton2";
+            this.metroButton2.Size = new System.Drawing.Size(125, 40);
+            this.metroButton2.TabIndex = 52;
+            this.metroButton2.Text = "Salvar";
+            this.metroButton2.UseSelectable = true;
             // 
             // metroLabel25
             // 
@@ -1014,24 +977,107 @@
             this.txtDescricaoDepartamento.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtDescricaoDepartamento.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // metroButton1
+            // metroLabel24
             // 
-            this.metroButton1.Location = new System.Drawing.Point(135, 523);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(125, 40);
-            this.metroButton1.TabIndex = 53;
-            this.metroButton1.Text = "Cancelar";
-            this.metroButton1.UseSelectable = true;
+            this.metroLabel24.AutoSize = true;
+            this.metroLabel24.Location = new System.Drawing.Point(-1, 48);
+            this.metroLabel24.Name = "metroLabel24";
+            this.metroLabel24.Size = new System.Drawing.Size(162, 20);
+            this.metroLabel24.TabIndex = 49;
+            this.metroLabel24.Text = "Nome do Departamento";
             // 
-            // metroButton2
+            // txtNomeDepartamento
             // 
-            this.metroButton2.BackColor = System.Drawing.Color.White;
-            this.metroButton2.Location = new System.Drawing.Point(3, 523);
-            this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(125, 40);
-            this.metroButton2.TabIndex = 52;
-            this.metroButton2.Text = "Salvar";
-            this.metroButton2.UseSelectable = true;
+            // 
+            // 
+            // 
+            this.txtNomeDepartamento.CustomButton.Image = null;
+            this.txtNomeDepartamento.CustomButton.Location = new System.Drawing.Point(554, 1);
+            this.txtNomeDepartamento.CustomButton.Name = "";
+            this.txtNomeDepartamento.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtNomeDepartamento.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtNomeDepartamento.CustomButton.TabIndex = 1;
+            this.txtNomeDepartamento.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtNomeDepartamento.CustomButton.UseSelectable = true;
+            this.txtNomeDepartamento.CustomButton.Visible = false;
+            this.txtNomeDepartamento.Lines = new string[0];
+            this.txtNomeDepartamento.Location = new System.Drawing.Point(3, 73);
+            this.txtNomeDepartamento.MaxLength = 32767;
+            this.txtNomeDepartamento.Name = "txtNomeDepartamento";
+            this.txtNomeDepartamento.PasswordChar = '\0';
+            this.txtNomeDepartamento.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtNomeDepartamento.SelectedText = "";
+            this.txtNomeDepartamento.SelectionLength = 0;
+            this.txtNomeDepartamento.SelectionStart = 0;
+            this.txtNomeDepartamento.ShortcutsEnabled = true;
+            this.txtNomeDepartamento.Size = new System.Drawing.Size(576, 23);
+            this.txtNomeDepartamento.TabIndex = 48;
+            this.txtNomeDepartamento.UseSelectable = true;
+            this.txtNomeDepartamento.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtNomeDepartamento.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // metroLabel23
+            // 
+            this.metroLabel23.AutoSize = true;
+            this.metroLabel23.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel23.Location = new System.Drawing.Point(333, 13);
+            this.metroLabel23.Name = "metroLabel23";
+            this.metroLabel23.Size = new System.Drawing.Size(246, 25);
+            this.metroLabel23.TabIndex = 47;
+            this.metroLabel23.Text = "DADOS DO DEPARTAMENTO";
+            // 
+            // metroTabPage2
+            // 
+            this.metroTabPage2.Controls.Add(this.metroLabel30);
+            this.metroTabPage2.Controls.Add(this.metroLabel29);
+            this.metroTabPage2.Controls.Add(this.cbDepartamento);
+            this.metroTabPage2.Controls.Add(this.btnCancelarFuncao);
+            this.metroTabPage2.Controls.Add(this.btnSalvarFuncao);
+            this.metroTabPage2.Controls.Add(this.metroLabel26);
+            this.metroTabPage2.Controls.Add(this.txtDescricaoFuncao);
+            this.metroTabPage2.Controls.Add(this.metroLabel27);
+            this.metroTabPage2.Controls.Add(this.txtNomeFuncao);
+            this.metroTabPage2.Controls.Add(this.metroLabel28);
+            this.metroTabPage2.HorizontalScrollbarBarColor = true;
+            this.metroTabPage2.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage2.HorizontalScrollbarSize = 10;
+            this.metroTabPage2.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage2.Name = "metroTabPage2";
+            this.metroTabPage2.Size = new System.Drawing.Size(965, 566);
+            this.metroTabPage2.TabIndex = 3;
+            this.metroTabPage2.Text = "Cadastro de Função";
+            this.metroTabPage2.VerticalScrollbarBarColor = true;
+            this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage2.VerticalScrollbarSize = 10;
+            // 
+            // metroLabel30
+            // 
+            this.metroLabel30.AutoSize = true;
+            this.metroLabel30.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel30.Location = new System.Drawing.Point(419, 149);
+            this.metroLabel30.Name = "metroLabel30";
+            this.metroLabel30.Size = new System.Drawing.Size(84, 25);
+            this.metroLabel30.TabIndex = 63;
+            this.metroLabel30.Text = "FUNÇÃO";
+            // 
+            // metroLabel29
+            // 
+            this.metroLabel29.AutoSize = true;
+            this.metroLabel29.Location = new System.Drawing.Point(-1, 46);
+            this.metroLabel29.Name = "metroLabel29";
+            this.metroLabel29.Size = new System.Drawing.Size(99, 20);
+            this.metroLabel29.TabIndex = 62;
+            this.metroLabel29.Text = "Departamento";
+            // 
+            // cbDepartamento
+            // 
+            this.cbDepartamento.FormattingEnabled = true;
+            this.cbDepartamento.ItemHeight = 24;
+            this.cbDepartamento.Location = new System.Drawing.Point(3, 69);
+            this.cbDepartamento.Name = "cbDepartamento";
+            this.cbDepartamento.Size = new System.Drawing.Size(328, 30);
+            this.cbDepartamento.TabIndex = 61;
+            this.cbDepartamento.UseSelectable = true;
             // 
             // btnCancelarFuncao
             // 
@@ -1140,54 +1186,9 @@
             this.metroLabel28.TabIndex = 54;
             this.metroLabel28.Text = "DEPARTAMENTO";
             // 
-            // metroLabel29
+            // ofd1
             // 
-            this.metroLabel29.AutoSize = true;
-            this.metroLabel29.Location = new System.Drawing.Point(-1, 46);
-            this.metroLabel29.Name = "metroLabel29";
-            this.metroLabel29.Size = new System.Drawing.Size(99, 20);
-            this.metroLabel29.TabIndex = 62;
-            this.metroLabel29.Text = "Departamento";
-            // 
-            // cbDepartamento
-            // 
-            this.cbDepartamento.FormattingEnabled = true;
-            this.cbDepartamento.ItemHeight = 24;
-            this.cbDepartamento.Location = new System.Drawing.Point(3, 69);
-            this.cbDepartamento.Name = "cbDepartamento";
-            this.cbDepartamento.Size = new System.Drawing.Size(328, 30);
-            this.cbDepartamento.TabIndex = 61;
-            this.cbDepartamento.UseSelectable = true;
-            // 
-            // metroLabel30
-            // 
-            this.metroLabel30.AutoSize = true;
-            this.metroLabel30.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel30.Location = new System.Drawing.Point(419, 149);
-            this.metroLabel30.Name = "metroLabel30";
-            this.metroLabel30.Size = new System.Drawing.Size(84, 25);
-            this.metroLabel30.TabIndex = 63;
-            this.metroLabel30.Text = "FUNÇÃO";
-            // 
-            // cbDepartamentoFunc
-            // 
-            this.cbDepartamentoFunc.FormattingEnabled = true;
-            this.cbDepartamentoFunc.ItemHeight = 24;
-            this.cbDepartamentoFunc.Location = new System.Drawing.Point(417, 194);
-            this.cbDepartamentoFunc.Name = "cbDepartamentoFunc";
-            this.cbDepartamentoFunc.Size = new System.Drawing.Size(328, 30);
-            this.cbDepartamentoFunc.TabIndex = 47;
-            this.cbDepartamentoFunc.UseSelectable = true;
-            // 
-            // cbFuncaoFunc
-            // 
-            this.cbFuncaoFunc.FormattingEnabled = true;
-            this.cbFuncaoFunc.ItemHeight = 24;
-            this.cbFuncaoFunc.Location = new System.Drawing.Point(417, 245);
-            this.cbFuncaoFunc.Name = "cbFuncaoFunc";
-            this.cbFuncaoFunc.Size = new System.Drawing.Size(328, 30);
-            this.cbFuncaoFunc.TabIndex = 48;
-            this.cbFuncaoFunc.UseSelectable = true;
+            this.ofd1.FileName = "openFileDialog1";
             // 
             // frmCadastroFuncionario
             // 
