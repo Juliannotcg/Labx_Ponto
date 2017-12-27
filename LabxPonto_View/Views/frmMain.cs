@@ -11,7 +11,6 @@ namespace LabxPonto_View.Views
 
         public void mtCadastro_Click(object sender, System.EventArgs e)
         {
-
         }
     }
 }
