@@ -28,22 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.mtCadastro = new MetroFramework.Controls.MetroTile();
             this.mtConfiguracoes = new MetroFramework.Controls.MetroTile();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
+            this.metroTile2 = new MetroFramework.Controls.MetroTile();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pbLogo
-            // 
-            this.pbLogo.Image = global::LabxPonto_View.Properties.Resources.LogoEmpresa;
-            this.pbLogo.Location = new System.Drawing.Point(23, 16);
-            this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(496, 174);
-            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbLogo.TabIndex = 0;
-            this.pbLogo.TabStop = false;
             // 
             // mtCadastro
             // 
@@ -76,11 +67,32 @@
             this.metroTile1.Text = "Relatórios";
             this.metroTile1.UseSelectable = true;
             // 
+            // pbLogo
+            // 
+            this.pbLogo.Image = global::LabxPonto_View.Properties.Resources.LogoEmpresa;
+            this.pbLogo.Location = new System.Drawing.Point(23, 16);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(496, 174);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbLogo.TabIndex = 0;
+            this.pbLogo.TabStop = false;
+            // 
+            // metroTile2
+            // 
+            this.metroTile2.ActiveControl = null;
+            this.metroTile2.Location = new System.Drawing.Point(525, 16);
+            this.metroTile2.Name = "metroTile2";
+            this.metroTile2.Size = new System.Drawing.Size(240, 151);
+            this.metroTile2.TabIndex = 4;
+            this.metroTile2.Text = "Gerar Arquivo";
+            this.metroTile2.UseSelectable = true;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(555, 492);
+            this.ClientSize = new System.Drawing.Size(782, 492);
+            this.Controls.Add(this.metroTile2);
             this.Controls.Add(this.metroTile1);
             this.Controls.Add(this.mtConfiguracoes);
             this.Controls.Add(this.mtCadastro);
@@ -97,5 +109,6 @@
         private MetroFramework.Controls.MetroTile mtConfiguracoes;
         private MetroFramework.Controls.MetroTile metroTile1;
         public MetroFramework.Controls.MetroTile mtCadastro;
+        public MetroFramework.Controls.MetroTile metroTile2;
     }
 }
