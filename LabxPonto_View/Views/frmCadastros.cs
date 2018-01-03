@@ -1,4 +1,4 @@
-﻿using LabxPonto_View.Model;
+﻿using LabxPonto_Dao.Model;
 using MetroFramework.Forms;
 using System.Drawing;
 using System.Windows.Forms;
@@ -36,7 +36,6 @@ namespace LabxPonto_View.Forms
 
         public void Confirmar(Funcionario funcionario)
         {
-            Service
         }
         public void Validar()
         {
@@ -73,6 +72,11 @@ namespace LabxPonto_View.Forms
         private void btnPesquisar_Click(object sender, System.EventArgs e)
         {
           
+        }
+
+        private void btnEditar_Click(object sender, System.EventArgs e)
+        {
+
         }
     }
 }

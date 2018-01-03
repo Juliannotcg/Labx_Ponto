@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LabxPonto_View.Model
+namespace LabxPonto_Dao.Model
 {
     public class HorarioExpediente
     {

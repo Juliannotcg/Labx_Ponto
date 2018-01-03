@@ -1,4 +1,4 @@
-﻿using LabxPonto_View.Model;
+﻿using LabxPonto_Dao.Model;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
 

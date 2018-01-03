@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace LabxPonto_View.Model
+namespace LabxPonto_Dao.Model
 {
     public class Funcionario
     {

@@ -1,11 +1,11 @@
 ﻿using LabxPonto_Dao.Data.Mapa;
-using LabxPonto_View.Model;
+using LabxPonto_Dao.Model;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace LabxPonto_Dao.Data.Context
 {
-    class AppDataContext: DbContext
+    public class AppDataContext: DbContext
     {
         public AppDataContext() : base("ConexaoPonto")
         {

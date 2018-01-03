@@ -61,20 +61,23 @@
       <DependentUpon>201801031150273_CriacaoBanco.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Contrato.cs" />
+    <Compile Include="Model\Departamento.cs" />
+    <Compile Include="Model\Empresa.cs" />
+    <Compile Include="Model\Endereco.cs" />
+    <Compile Include="Model\Funcao.cs" />
+    <Compile Include="Model\Funcionario.cs" />
+    <Compile Include="Model\HorarioExpediente.cs" />
+    <Compile Include="Model\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\Funcionario.cs" />
+    <Compile Include="Service\FuncionarioService.cs" />
+    <Compile Include="Teste.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <ProjectReference Include="..\LabxPonto_View\LabxPonto_View.csproj">
-      <Project>{90cd6129-5b72-4407-ace8-8b1892fefd69}</Project>
-      <Name>LabxPonto_View</Name>
-    </ProjectReference>
-  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201801031150273_CriacaoBanco.resx">
       <DependentUpon>201801031150273_CriacaoBanco.cs</DependentUpon>

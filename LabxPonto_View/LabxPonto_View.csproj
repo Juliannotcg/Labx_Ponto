@@ -32,6 +32,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
     </Reference>
@@ -60,22 +66,20 @@
     <Compile Include="Enums\EstadoCivil.cs" />
     <Compile Include="Enums\Estados.cs" />
     <Compile Include="Enums\TipoHorario.cs" />
-    <Compile Include="Model\Contrato.cs" />
-    <Compile Include="Model\Departamento.cs" />
-    <Compile Include="Model\Empresa.cs" />
-    <Compile Include="Model\Funcao.cs" />
-    <Compile Include="Model\HorarioExpediente.cs" />
-    <Compile Include="Model\Usuario.cs" />
     <Compile Include="Views\frmCadastros.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\frmCadastros.Designer.cs">
       <DependentUpon>frmCadastros.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\Endereco.cs" />
-    <Compile Include="Model\Funcionario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\frmEditarFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmEditarFuncionario.Designer.cs">
+      <DependentUpon>frmEditarFuncionario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\frmGerarArquivo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +111,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\frmEditarFuncionario.resx">
+      <DependentUpon>frmEditarFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\frmGerarArquivo.resx">
       <DependentUpon>frmGerarArquivo.cs</DependentUpon>
     </EmbeddedResource>
@@ -134,6 +141,10 @@
     <ProjectReference Include="..\LabxPonto_Commons\LabxPonto_Commons.csproj">
       <Project>{113B9ACA-FCD1-409B-83C3-9F002C5B3609}</Project>
       <Name>LabxPonto_Commons</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LabxPonto_Dal\LabxPonto_Dao.csproj">
+      <Project>{09864de5-f895-4444-9976-220e10e3bd1c}</Project>
+      <Name>LabxPonto_Dao</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
