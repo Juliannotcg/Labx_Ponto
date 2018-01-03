@@ -20,6 +20,11 @@ namespace LabxPonto_Dao.Data.Mapa
 
             Property(c => c.Descricao)
                 .HasColumnName("FncDescricao");
+
+            HasOptional(o => o.Departamento)
+               .WithMany()
+               .Map(m => m.MapKey("Fnc_DepId"));
+
         }
     }
 }

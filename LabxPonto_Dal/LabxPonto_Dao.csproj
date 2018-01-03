@@ -70,6 +70,7 @@
     <Compile Include="Model\HorarioExpediente.cs" />
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\FuncaoService.cs" />
     <Compile Include="Service\FuncionarioService.cs" />
     <Compile Include="Teste.cs" />
   </ItemGroup>

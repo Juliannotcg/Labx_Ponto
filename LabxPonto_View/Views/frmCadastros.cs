@@ -1,4 +1,5 @@
 ﻿using LabxPonto_Dao.Model;
+using LabxPonto_Dao.Service;
 using MetroFramework.Forms;
 using System.Drawing;
 using System.Windows.Forms;
@@ -78,5 +79,33 @@ namespace LabxPonto_View.Forms
         {
 
         }
+
+        private void frmCadastroFuncionario_Load(object sender, System.EventArgs e)
+        {
+            preencherComboFuncao();
+        }
+
+        public void preencherComboFuncao()
+        {
+            Funcao funcao = new Funcao();
+            FuncaoService funcaoService = new FuncaoService();
+            Departamento dep = new Departamento();
+
+            var lista  = funcaoService.GetFuncao(dep);
+            
+            foreach(var item in lista)
+                cbFuncaoFunc.Items.Add(item.NomeFuncao);
+        }
+
+        //public void preencherComboDepartament()
+        //{
+        //    Funcao funcao = new Funcao();
+        //    FuncaoService funcaoService = new FuncaoService();
+
+        //    var lista = funcaoService.GetFuncao();
+
+        //    foreach (var item in lista)
+        //        cbFuncaoFunc.Items.Add(item.NomeFuncao);
+        //}
     }
 }

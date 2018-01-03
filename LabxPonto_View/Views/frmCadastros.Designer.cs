@@ -30,6 +30,7 @@
         {
             this.tcCadastroFuncionario = new MetroFramework.Controls.MetroTabControl();
             this.tpDadosPessoais = new MetroFramework.Controls.MetroTabPage();
+            this.btnEditar = new MetroFramework.Controls.MetroButton();
             this.cbFuncaoFunc = new MetroFramework.Controls.MetroComboBox();
             this.cbDepartamentoFunc = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel22 = new MetroFramework.Controls.MetroLabel();
@@ -66,6 +67,7 @@
             this.cbEstadoCivil = new MetroFramework.Controls.MetroComboBox();
             this.btnLocalizarImg = new MetroFramework.Controls.MetroButton();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.imgFoto = new System.Windows.Forms.PictureBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.txtRG = new MetroFramework.Controls.MetroTextBox();
@@ -97,13 +99,11 @@
             this.txtNomeFuncao = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel28 = new MetroFramework.Controls.MetroLabel();
             this.ofd1 = new System.Windows.Forms.OpenFileDialog();
-            this.btnEditar = new MetroFramework.Controls.MetroButton();
-            this.imgFoto = new System.Windows.Forms.PictureBox();
             this.tcCadastroFuncionario.SuspendLayout();
             this.tpDadosPessoais.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgFoto)).BeginInit();
             this.metroTabPage1.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgFoto)).BeginInit();
             this.SuspendLayout();
             // 
             // tcCadastroFuncionario
@@ -182,6 +182,18 @@
             this.tpDadosPessoais.VerticalScrollbarBarColor = true;
             this.tpDadosPessoais.VerticalScrollbarHighlightOnWheel = false;
             this.tpDadosPessoais.VerticalScrollbarSize = 8;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.BackColor = System.Drawing.Color.White;
+            this.btnEditar.Location = new System.Drawing.Point(242, 432);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(94, 32);
+            this.btnEditar.TabIndex = 49;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseSelectable = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // cbFuncaoFunc
             // 
@@ -750,6 +762,17 @@
             this.metroLabel5.TabIndex = 13;
             this.metroLabel5.Text = "Foto";
             // 
+            // imgFoto
+            // 
+            this.imgFoto.Image = global::LabxPonto_View.Properties.Resources.add_user_icon;
+            this.imgFoto.Location = new System.Drawing.Point(586, 74);
+            this.imgFoto.Margin = new System.Windows.Forms.Padding(2);
+            this.imgFoto.Name = "imgFoto";
+            this.imgFoto.Size = new System.Drawing.Size(128, 128);
+            this.imgFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgFoto.TabIndex = 12;
+            this.imgFoto.TabStop = false;
+            // 
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
@@ -1267,29 +1290,6 @@
             // 
             this.ofd1.FileName = "openFileDialog1";
             // 
-            // btnEditar
-            // 
-            this.btnEditar.BackColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(242, 432);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(94, 32);
-            this.btnEditar.TabIndex = 49;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseSelectable = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
-            // imgFoto
-            // 
-            this.imgFoto.Image = global::LabxPonto_View.Properties.Resources.add_user_icon;
-            this.imgFoto.Location = new System.Drawing.Point(586, 74);
-            this.imgFoto.Margin = new System.Windows.Forms.Padding(2);
-            this.imgFoto.Name = "imgFoto";
-            this.imgFoto.Size = new System.Drawing.Size(128, 128);
-            this.imgFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgFoto.TabIndex = 12;
-            this.imgFoto.TabStop = false;
-            // 
             // frmCadastroFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1300,14 +1300,15 @@
             this.Name = "frmCadastroFuncionario";
             this.Padding = new System.Windows.Forms.Padding(15, 60, 15, 16);
             this.Text = "Cadastro de Funcionário";
+            this.Load += new System.EventHandler(this.frmCadastroFuncionario_Load);
             this.tcCadastroFuncionario.ResumeLayout(false);
             this.tpDadosPessoais.ResumeLayout(false);
             this.tpDadosPessoais.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgFoto)).EndInit();
             this.metroTabPage1.ResumeLayout(false);
             this.metroTabPage1.PerformLayout();
             this.metroTabPage2.ResumeLayout(false);
             this.metroTabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgFoto)).EndInit();
             this.ResumeLayout(false);
 
         }
