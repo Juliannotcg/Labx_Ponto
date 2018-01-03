@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace LabxPonto_View.Model
 {
@@ -13,6 +9,6 @@ namespace LabxPonto_View.Model
         public string RazaoSocial { get; set; }
         public string CNPJ { get; set; }
         public Endereco Endereco { get; set; }
-        public Pessoa Pessoa { get; set; }
+        public ICollection<Funcionario> Funcionarios { get; set; }
     }
 }

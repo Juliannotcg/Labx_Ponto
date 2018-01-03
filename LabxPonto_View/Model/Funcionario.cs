@@ -1,15 +1,10 @@
-﻿using LabxPonto_Commons;
-using LabxPonto_Commons.Resource;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LabxPonto_View.Model
 {
-    public class Pessoa
+    public class Funcionario
     {
         [Key]
         public int Id { get; set; }
@@ -27,7 +22,8 @@ namespace LabxPonto_View.Model
         public Contrato Contrato { get; set; }
         public Funcao Funcao { get; set; }
         public Departamento Departamento { get; set; }
-        public ICollection<Horario> Horario { get; private set; }
+        public Empresa Empresa { get; set; }
+        public ICollection<HorarioExpediente> Horario { get; private set; }
         public void Validar()
         {
            

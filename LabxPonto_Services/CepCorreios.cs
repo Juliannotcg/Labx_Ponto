@@ -13,7 +13,7 @@ namespace LabxPonto_Services
             endereco.Estado = resposta.uf.ToString();
             endereco.Cidade = resposta.cidade.ToString();
             endereco.Bairro = resposta.bairro.ToString();
-            endereco.EndEndereco = resposta.end.ToString();
+            endereco.Logradouro = resposta.end.ToString();
             endereco.Complemento = resposta.complemento.ToString();
 
             return (endereco);

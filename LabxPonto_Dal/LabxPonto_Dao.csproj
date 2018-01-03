@@ -7,8 +7,8 @@
     <ProjectGuid>{09864DE5-F895-4444-9976-220E10E3BD1C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LabxPonto_Dal</RootNamespace>
-    <AssemblyName>LabxPonto_Dal</AssemblyName>
+    <RootNamespace>LabxPonto_Dao</RootNamespace>
+    <AssemblyName>LabxPonto_Dao</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -47,6 +47,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Context\AppDataContext.cs" />
+    <Compile Include="Data\Mapa\ContratoMap.cs" />
+    <Compile Include="Data\Mapa\DepartamentoMap.cs" />
+    <Compile Include="Data\Mapa\EmpresaMap.cs" />
+    <Compile Include="Data\Mapa\EnderecoMap.cs" />
+    <Compile Include="Data\Mapa\FuncaoMap.cs" />
+    <Compile Include="Data\Mapa\FuncionarioMap.cs" />
+    <Compile Include="Data\Mapa\HorarioExpedienteMap.cs" />
+    <Compile Include="Data\Mapa\UsuarioMap.cs" />
+    <Compile Include="Migrations\201801031150273_CriacaoBanco.cs" />
+    <Compile Include="Migrations\201801031150273_CriacaoBanco.Designer.cs">
+      <DependentUpon>201801031150273_CriacaoBanco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -54,8 +68,18 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Data\Context\" />
-    <Folder Include="Data\Mapa\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LabxPonto_View\LabxPonto_View.csproj">
+      <Project>{90cd6129-5b72-4407-ace8-8b1892fefd69}</Project>
+      <Name>LabxPonto_View</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201801031150273_CriacaoBanco.resx">
+      <DependentUpon>201801031150273_CriacaoBanco.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

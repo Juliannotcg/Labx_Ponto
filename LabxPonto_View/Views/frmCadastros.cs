@@ -7,7 +7,6 @@ namespace LabxPonto_View.Forms
 {
     public partial class frmCadastroFuncionario : MetroForm
     {
-        
 
         public frmCadastroFuncionario()
         {
@@ -22,7 +21,7 @@ namespace LabxPonto_View.Forms
 
         public void PreencherObjeto()
         {
-            Pessoa pessoa = new Pessoa();
+            Funcionario pessoa = new Funcionario();
 
             pessoa.Nome = txtNomeFuncionario.Text;
             pessoa.SobreNome = txtSobreNome.Text;
