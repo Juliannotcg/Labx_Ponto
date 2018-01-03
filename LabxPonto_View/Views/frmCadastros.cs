@@ -1,6 +1,8 @@
 ﻿using LabxPonto_Dao.Model;
 using LabxPonto_Dao.Service;
+using LabxPonto_View.Views;
 using MetroFramework.Forms;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -40,7 +42,8 @@ namespace LabxPonto_View.Forms
         }
         public void Validar()
         {
-
+            if (String.IsNullOrEmpty(txtFolha.Text))
+                WithError = true;
         }
 
         private void btnLocalizarImg_Click(object sender, System.EventArgs e)
@@ -77,7 +80,8 @@ namespace LabxPonto_View.Forms
 
         private void btnEditar_Click(object sender, System.EventArgs e)
         {
-
+            frmEditarFuncionario editarFuncionario = new frmEditarFuncionario();
+            editarFuncionario.ShowDialog();
         }
 
         private void frmCadastroFuncionario_Load(object sender, System.EventArgs e)
