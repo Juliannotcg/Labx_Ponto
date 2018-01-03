@@ -21,16 +21,22 @@ namespace LabxPonto_View.Forms
 
         public void PreencherObjeto()
         {
-            Funcionario pessoa = new Funcionario();
+            Funcionario funcionario = new Funcionario();
 
-            pessoa.Nome = txtNomeFuncionario.Text;
-            pessoa.SobreNome = txtSobreNome.Text;
+            funcionario.Nome = txtNomeFuncionario.Text;
+            funcionario.SobreNome = txtSobreNome.Text;
+            funcionario.CPF = txtCPF.Text;
+            funcionario.DataNascimento = dtDataNascimento.Value;
+            funcionario.RG = txtRG.Text;
+            funcionario.NomePai = txtNomePai.Text;
+            funcionario.NomeMae = txtNomeMae.Text;
 
+            Confirmar(funcionario);
         }
 
-        public void Confirmar()
+        public void Confirmar(Funcionario funcionario)
         {
-
+            Service
         }
         public void Validar()
         {
