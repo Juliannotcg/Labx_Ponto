@@ -10,5 +10,6 @@ namespace LabxPonto_Dao.Model
         public string CNPJ { get; set; }
         public Endereco Endereco { get; set; }
         public ICollection<Funcionario> Funcionarios { get; set; }
+        public Imagem Imagem { get; set; }
     }
 }

@@ -23,6 +23,7 @@ namespace LabxPonto_Dao.Model
         public Funcao Funcao { get; set; }
         public Departamento Departamento { get; set; }
         public Empresa Empresa { get; set; }
+        public Imagem Imagem { get; set; }
         public ICollection<HorarioExpediente> Horario { get; private set; }
         public void Validar()
         {

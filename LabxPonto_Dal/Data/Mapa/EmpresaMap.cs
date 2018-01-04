@@ -27,6 +27,10 @@ namespace LabxPonto_Dao.Data.Mapa
             HasOptional(o => o.Endereco)
                .WithMany()
                .Map(m => m.MapKey("Emp_EndId"));
+
+            HasOptional(o => o.Imagem)
+               .WithMany()
+               .Map(m => m.MapKey("Emp_ImaId"));
         }
     }
 }

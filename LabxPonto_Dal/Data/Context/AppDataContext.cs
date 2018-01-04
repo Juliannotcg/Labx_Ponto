@@ -22,6 +22,8 @@ namespace LabxPonto_Dao.Data.Context
         public DbSet<HorarioExpediente> HorariosExpediente { get; set; }
         public DbSet<Usuario> Usuarios{ get; set; }
 
+        public DbSet<Imagem> Imagens{ get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
@@ -46,6 +48,7 @@ namespace LabxPonto_Dao.Data.Context
             modelBuilder.Configurations.Add(new FuncionarioMap());
             modelBuilder.Configurations.Add(new HorarioExpedienteMap());
             modelBuilder.Configurations.Add(new UsuarioMap());
+            modelBuilder.Configurations.Add(new ImagemMap());
 
         }
     }
