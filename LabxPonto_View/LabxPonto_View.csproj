@@ -66,6 +66,12 @@
     <Compile Include="Enums\EstadoCivil.cs" />
     <Compile Include="Enums\Estados.cs" />
     <Compile Include="Enums\TipoHorario.cs" />
+    <Compile Include="Views\frmCadastroEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmCadastroEmpresa.Designer.cs">
+      <DependentUpon>frmCadastroEmpresa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\frmCadastroFuncionario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     <Compile Include="Views\frmCadastros.Designer.cs">
       <DependentUpon>frmCadastros.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\frmCadastroEmpresa.resx">
+      <DependentUpon>frmCadastroEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\frmCadastroFuncionario.resx">
       <DependentUpon>frmCadastroFuncionario.cs</DependentUpon>
     </EmbeddedResource>

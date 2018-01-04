@@ -56,6 +56,7 @@
             this.metroTile2.TabIndex = 5;
             this.metroTile2.Text = "Empresa";
             this.metroTile2.UseSelectable = true;
+            this.metroTile2.Click += new System.EventHandler(this.metroTile2_Click);
             // 
             // metroTile3
             // 
@@ -79,7 +80,7 @@
             this.metroTile4.Text = "Funções";
             this.metroTile4.UseSelectable = true;
             // 
-            // fromCadastros
+            // frmCadastros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -88,7 +89,7 @@
             this.Controls.Add(this.metroTile3);
             this.Controls.Add(this.metroTile2);
             this.Controls.Add(this.metroTile1);
-            this.Name = "fromCadastros";
+            this.Name = "frmCadastros";
             this.Text = "Cadastro";
             this.ResumeLayout(false);
 

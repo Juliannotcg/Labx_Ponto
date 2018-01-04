@@ -18,7 +18,7 @@ namespace LabxPonto_View
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmCadastroFuncionario());
+            Application.Run(new frmMain());
         }
     }
 }

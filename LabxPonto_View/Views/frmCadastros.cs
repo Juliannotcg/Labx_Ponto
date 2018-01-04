@@ -24,5 +24,11 @@ namespace LabxPonto_View.Views
             frmCadastroFuncionario janela = new frmCadastroFuncionario();
             janela.ShowDialog();
         }
+
+        private void metroTile2_Click(object sender, EventArgs e)
+        {
+            frmCadastroEmpresa janela = new frmCadastroEmpresa();
+            janela.ShowDialog();
+        }
     }
 }
