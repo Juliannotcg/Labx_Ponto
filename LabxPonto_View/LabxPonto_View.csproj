@@ -66,11 +66,23 @@
     <Compile Include="Enums\EstadoCivil.cs" />
     <Compile Include="Enums\Estados.cs" />
     <Compile Include="Enums\TipoHorario.cs" />
+    <Compile Include="Views\frmCadastroDepartamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmCadastroDepartamento.Designer.cs">
+      <DependentUpon>frmCadastroDepartamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\frmCadastroEmpresa.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\frmCadastroEmpresa.Designer.cs">
       <DependentUpon>frmCadastroEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmCadastroFuncao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmCadastroFuncao.Designer.cs">
+      <DependentUpon>frmCadastroFuncao.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\frmCadastroFuncionario.cs">
       <SubType>Form</SubType>
@@ -110,8 +122,14 @@
     <Compile Include="Views\frmCadastros.Designer.cs">
       <DependentUpon>frmCadastros.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\frmCadastroDepartamento.resx">
+      <DependentUpon>frmCadastroDepartamento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\frmCadastroEmpresa.resx">
       <DependentUpon>frmCadastroEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmCadastroFuncao.resx">
+      <DependentUpon>frmCadastroFuncao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmCadastroFuncionario.resx">
       <DependentUpon>frmCadastroFuncionario.cs</DependentUpon>
@@ -171,6 +189,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\config.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo-1103596_960_720.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

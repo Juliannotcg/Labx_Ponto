@@ -30,5 +30,16 @@ namespace LabxPonto_View.Views
             frmCadastroEmpresa janela = new frmCadastroEmpresa();
             janela.ShowDialog();
         }
+
+        private void btnCadastroDep_Click(object sender, EventArgs e)
+        {
+            frmCadastroDepartamento janela = new frmCadastroDepartamento();
+            janela.ShowDialog();
+        }
+
+        private void btnCadastroFunc_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
