@@ -17,5 +17,10 @@ namespace LabxPonto_View.Views
         {
             InitializeComponent();
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
