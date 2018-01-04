@@ -20,5 +20,15 @@ namespace LabxPonto_Dao.Service
                 return (resposta);
             }
         }
+
+        public bool Insert(Departamento departamento)
+        {
+            using (AppDataContext Context = new AppDataContext())
+            {
+                Context.Departamentos.Add(departamento);
+                Context.SaveChanges();
+                return (true);
+            }
+        }
     }
 }

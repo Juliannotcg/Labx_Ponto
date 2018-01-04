@@ -95,17 +95,17 @@
             // 
             // 
             this.txtCPF.CustomButton.Image = null;
-            this.txtCPF.CustomButton.Location = new System.Drawing.Point(202, 1);
+            this.txtCPF.CustomButton.Location = new System.Drawing.Point(192, 1);
             this.txtCPF.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.txtCPF.CustomButton.Name = "";
-            this.txtCPF.CustomButton.Size = new System.Drawing.Size(17, 17);
+            this.txtCPF.CustomButton.Size = new System.Drawing.Size(27, 27);
             this.txtCPF.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtCPF.CustomButton.TabIndex = 1;
             this.txtCPF.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtCPF.CustomButton.UseSelectable = true;
             this.txtCPF.CustomButton.Visible = false;
             this.txtCPF.Lines = new string[0];
-            this.txtCPF.Location = new System.Drawing.Point(22, 90);
+            this.txtCPF.Location = new System.Drawing.Point(22, 65);
             this.txtCPF.Margin = new System.Windows.Forms.Padding(2);
             this.txtCPF.MaxLength = 32767;
             this.txtCPF.Name = "txtCPF";
@@ -115,7 +115,7 @@
             this.txtCPF.SelectionLength = 0;
             this.txtCPF.SelectionStart = 0;
             this.txtCPF.ShortcutsEnabled = true;
-            this.txtCPF.Size = new System.Drawing.Size(220, 19);
+            this.txtCPF.Size = new System.Drawing.Size(220, 29);
             this.txtCPF.TabIndex = 28;
             this.txtCPF.UseSelectable = true;
             this.txtCPF.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -124,7 +124,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(22, 69);
+            this.metroLabel1.Location = new System.Drawing.Point(22, 44);
             this.metroLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(33, 19);
@@ -142,7 +142,6 @@
             this.Controls.Add(this.metroLabel10);
             this.Controls.Add(this.metroTextBox1);
             this.Name = "frmEditarFuncionario";
-            this.Text = "frmEditarFuncionario";
             this.ResumeLayout(false);
             this.PerformLayout();
 

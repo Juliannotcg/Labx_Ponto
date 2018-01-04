@@ -30,7 +30,6 @@ namespace LabxPonto_View.Views
 
             string cpf = txtCPF.Text;
             funcionarioService.GetFuncionario(cpf);
-            
         } 
     }
 }
