@@ -30,8 +30,8 @@
         {
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.metroTile2 = new MetroFramework.Controls.MetroTile();
-            this.metroTile3 = new MetroFramework.Controls.MetroTile();
-            this.metroTile4 = new MetroFramework.Controls.MetroTile();
+            this.btnCadastroDep = new MetroFramework.Controls.MetroTile();
+            this.btnCadastroFunc = new MetroFramework.Controls.MetroTile();
             this.SuspendLayout();
             // 
             // metroTile1
@@ -56,39 +56,42 @@
             this.metroTile2.TabIndex = 5;
             this.metroTile2.Text = "Empresa";
             this.metroTile2.UseSelectable = true;
+            this.metroTile2.Click += new System.EventHandler(this.metroTile2_Click);
             // 
-            // metroTile3
+            // btnCadastroDep
             // 
-            this.metroTile3.ActiveControl = null;
-            this.metroTile3.Location = new System.Drawing.Point(5, 226);
-            this.metroTile3.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTile3.Name = "metroTile3";
-            this.metroTile3.Size = new System.Drawing.Size(344, 68);
-            this.metroTile3.TabIndex = 6;
-            this.metroTile3.Text = "Departamento";
-            this.metroTile3.UseSelectable = true;
+            this.btnCadastroDep.ActiveControl = null;
+            this.btnCadastroDep.Location = new System.Drawing.Point(5, 226);
+            this.btnCadastroDep.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCadastroDep.Name = "btnCadastroDep";
+            this.btnCadastroDep.Size = new System.Drawing.Size(344, 68);
+            this.btnCadastroDep.TabIndex = 6;
+            this.btnCadastroDep.Text = "Departamento";
+            this.btnCadastroDep.UseSelectable = true;
+            this.btnCadastroDep.Click += new System.EventHandler(this.btnCadastroDep_Click);
             // 
-            // metroTile4
+            // btnCadastroFunc
             // 
-            this.metroTile4.ActiveControl = null;
-            this.metroTile4.Location = new System.Drawing.Point(353, 82);
-            this.metroTile4.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTile4.Name = "metroTile4";
-            this.metroTile4.Size = new System.Drawing.Size(175, 68);
-            this.metroTile4.TabIndex = 7;
-            this.metroTile4.Text = "Funções";
-            this.metroTile4.UseSelectable = true;
+            this.btnCadastroFunc.ActiveControl = null;
+            this.btnCadastroFunc.Location = new System.Drawing.Point(353, 82);
+            this.btnCadastroFunc.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCadastroFunc.Name = "btnCadastroFunc";
+            this.btnCadastroFunc.Size = new System.Drawing.Size(175, 68);
+            this.btnCadastroFunc.TabIndex = 7;
+            this.btnCadastroFunc.Text = "Funções";
+            this.btnCadastroFunc.UseSelectable = true;
+            this.btnCadastroFunc.Click += new System.EventHandler(this.btnCadastroFunc_Click);
             // 
-            // fromCadastros
+            // frmCadastros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(543, 310);
-            this.Controls.Add(this.metroTile4);
-            this.Controls.Add(this.metroTile3);
+            this.Controls.Add(this.btnCadastroFunc);
+            this.Controls.Add(this.btnCadastroDep);
             this.Controls.Add(this.metroTile2);
             this.Controls.Add(this.metroTile1);
-            this.Name = "fromCadastros";
+            this.Name = "frmCadastros";
             this.Text = "Cadastro";
             this.ResumeLayout(false);
 
@@ -98,7 +101,7 @@
 
         private MetroFramework.Controls.MetroTile metroTile1;
         private MetroFramework.Controls.MetroTile metroTile2;
-        private MetroFramework.Controls.MetroTile metroTile3;
-        private MetroFramework.Controls.MetroTile metroTile4;
+        private MetroFramework.Controls.MetroTile btnCadastroDep;
+        private MetroFramework.Controls.MetroTile btnCadastroFunc;
     }
 }

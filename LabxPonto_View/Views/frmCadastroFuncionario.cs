@@ -114,7 +114,7 @@ namespace LabxPonto_View.Forms
             foreach (var item in lista)
             {
                 cbDepartamentoFunc.Items.Add(item.NomeDepartamento);
-                cbDepartamento.Items.Add(item.NomeDepartamento);
+                //cbDepartamento.Items.Add(item.NomeDepartamento);
             }
         }
 
@@ -129,8 +129,8 @@ namespace LabxPonto_View.Forms
         {
             Departamento departamento = new Departamento();
 
-            departamento.NomeDepartamento = txtNomeDepartamento.Text;
-            departamento.Descricao = txtDescricaoDepartamento.Text;
+            //departamento.NomeDepartamento = txtNomeDepartamento.Text;
+            //departamento.Descricao = txtDescricaoDepartamento.Text;
 
             ConfirmarDepartamento(departamento);
         }

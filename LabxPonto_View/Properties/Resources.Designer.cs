@@ -89,5 +89,15 @@ namespace LabxPonto_View.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap photo_1103596_960_720 {
+            get {
+                object obj = ResourceManager.GetObject("photo-1103596_960_720", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
