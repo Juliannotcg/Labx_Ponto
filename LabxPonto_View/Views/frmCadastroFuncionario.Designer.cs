@@ -931,7 +931,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmCadastroFuncionario";
             this.Padding = new System.Windows.Forms.Padding(15, 60, 15, 16);
-            this.Text = "Cadastro de Funcionário";
+            this.Text = "Funcionário";
             this.Load += new System.EventHandler(this.frmCadastroFuncionario_Load);
             this.tcCadastroFuncionario.ResumeLayout(false);
             this.tpDadosPessoais.ResumeLayout(false);
