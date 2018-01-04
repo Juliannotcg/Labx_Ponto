@@ -10,18 +10,18 @@ namespace LabxPonto_Dao.Service
 {
     public class FuncaoService
     { 
-        public List<Funcao> GetFuncao(Departamento departamento)
+        public List<Funcao> GetFuncao(string depNome)
         {
             using (AppDataContext Context = new AppDataContext())
             {
-                //var resposta = Context.Funcoes.Include(d => d.departamento).OrderByDescending(d => d.);
+                 var id = (from p in Context.Departamentos
+                                 where p.NomeDepartamento == depNome
+                            select p.Id).ToList();
 
-                 var resposta = (from p in Context.Funcoes
-                            where p.Departamento.Id ==  1
-                            select p).ToList();
-
-                // .Include(t => t.Cliente)
-                //.OrderByDescending(t => t.EP).Take(1).Where(x => x.EP == id)
+                var resposta = (from c in Context.Funcoes
+                                join b in Context.Departamentos on c.Id equals b.Id
+                                where c.Id == c.Departamento.Id
+                         select c).ToList();
 
                 return (resposta);
             }

@@ -214,6 +214,7 @@
             this.cbDepartamentoFunc.Size = new System.Drawing.Size(247, 29);
             this.cbDepartamentoFunc.TabIndex = 47;
             this.cbDepartamentoFunc.UseSelectable = true;
+            this.cbDepartamentoFunc.SelectedIndexChanged += new System.EventHandler(this.cbDepartamentoFunc_SelectedIndexChanged);
             // 
             // metroLabel22
             // 
@@ -954,7 +955,7 @@
             this.tpEndereco.Location = new System.Drawing.Point(4, 38);
             this.tpEndereco.Margin = new System.Windows.Forms.Padding(2);
             this.tpEndereco.Name = "tpEndereco";
-            this.tpEndereco.Size = new System.Drawing.Size(722, 464);
+            this.tpEndereco.Size = new System.Drawing.Size(886, 575);
             this.tpEndereco.TabIndex = 1;
             this.tpEndereco.Text = "Cadastro de Empresa";
             this.tpEndereco.VerticalScrollbarBarColor = true;
@@ -976,7 +977,7 @@
             this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(722, 464);
+            this.metroTabPage1.Size = new System.Drawing.Size(886, 575);
             this.metroTabPage1.TabIndex = 2;
             this.metroTabPage1.Text = "Cadastro de Departamento";
             this.metroTabPage1.VerticalScrollbarBarColor = true;
@@ -1117,7 +1118,7 @@
             this.metroTabPage2.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.metroTabPage2.Name = "metroTabPage2";
-            this.metroTabPage2.Size = new System.Drawing.Size(722, 464);
+            this.metroTabPage2.Size = new System.Drawing.Size(886, 575);
             this.metroTabPage2.TabIndex = 3;
             this.metroTabPage2.Text = "Cadastro de Função";
             this.metroTabPage2.VerticalScrollbarBarColor = true;

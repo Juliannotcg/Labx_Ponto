@@ -39,11 +39,12 @@ namespace LabxPonto_View.Forms
 
         public void Confirmar(Funcionario funcionario)
         {
+
         }
         public void Validar()
         {
             if (String.IsNullOrEmpty(txtFolha.Text))
-                WithError = true;
+                txtFolha.WithError = true;
         }
 
         private void btnLocalizarImg_Click(object sender, System.EventArgs e)
@@ -86,30 +87,39 @@ namespace LabxPonto_View.Forms
 
         private void frmCadastroFuncionario_Load(object sender, System.EventArgs e)
         {
-            preencherComboFuncao();
+            preencherComboDepartamento();
         }
 
-        public void preencherComboFuncao()
+        public void preencherComboFuncao(string departamento)
         {
             Funcao funcao = new Funcao();
             FuncaoService funcaoService = new FuncaoService();
             Departamento dep = new Departamento();
 
-            var lista  = funcaoService.GetFuncao(dep);
-            
-            foreach(var item in lista)
+            var lista = funcaoService.GetFuncao(departamento);
+
+            foreach (var item in lista)
                 cbFuncaoFunc.Items.Add(item.NomeFuncao);
         }
 
-        //public void preencherComboDepartament()
-        //{
-        //    Funcao funcao = new Funcao();
-        //    FuncaoService funcaoService = new FuncaoService();
+        public void preencherComboDepartamento()
+        {
+            Funcao funcao = new Funcao();
+            FuncaoService funcaoService = new FuncaoService();
+            DepartamentoService departamentoService = new DepartamentoService();
+            Departamento dep = new Departamento();
 
-        //    var lista = funcaoService.GetFuncao();
+            var lista  = departamentoService.GetDepartamento();
 
-        //    foreach (var item in lista)
-        //        cbFuncaoFunc.Items.Add(item.NomeFuncao);
-        //}
+            foreach (var item in lista)
+                cbDepartamentoFunc.Items.Add(item.NomeDepartamento);
+        }
+
+        private void cbDepartamentoFunc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string departamento = "";
+            departamento = cbDepartamentoFunc.SelectedItem.ToString();
+            preencherComboFuncao(departamento);
+        }
     }
 }

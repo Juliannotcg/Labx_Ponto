@@ -60,6 +60,10 @@
     <Compile Include="Migrations\201801031150273_CriacaoBanco.Designer.cs">
       <DependentUpon>201801031150273_CriacaoBanco.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801041017472_DepDepartamento_FncFuncao.cs" />
+    <Compile Include="Migrations\201801041017472_DepDepartamento_FncFuncao.Designer.cs">
+      <DependentUpon>201801041017472_DepDepartamento_FncFuncao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Contrato.cs" />
     <Compile Include="Model\Departamento.cs" />
@@ -70,6 +74,7 @@
     <Compile Include="Model\HorarioExpediente.cs" />
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\DepartamentoService.cs" />
     <Compile Include="Service\FuncaoService.cs" />
     <Compile Include="Service\FuncionarioService.cs" />
     <Compile Include="Teste.cs" />
@@ -82,6 +87,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201801031150273_CriacaoBanco.resx">
       <DependentUpon>201801031150273_CriacaoBanco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801041017472_DepDepartamento_FncFuncao.resx">
+      <DependentUpon>201801041017472_DepDepartamento_FncFuncao.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
