@@ -28,26 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.mtCadastro = new MetroFramework.Controls.MetroTile();
+            this.btnFuncionario = new MetroFramework.Controls.MetroTile();
             this.mtConfiguracoes = new MetroFramework.Controls.MetroTile();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.metroTile3 = new MetroFramework.Controls.MetroTile();
             this.metroTile2 = new MetroFramework.Controls.MetroTile();
             this.pbLogo = new System.Windows.Forms.PictureBox();
+            this.btnDepartamento = new MetroFramework.Controls.MetroTile();
+            this.btnEmpresa = new MetroFramework.Controls.MetroTile();
+            this.btnFuncoes = new MetroFramework.Controls.MetroTile();
+            this.btnSair = new MetroFramework.Controls.MetroTile();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
-            // mtCadastro
+            // btnFuncionario
             // 
-            this.mtCadastro.ActiveControl = null;
-            this.mtCadastro.Location = new System.Drawing.Point(209, 185);
-            this.mtCadastro.Margin = new System.Windows.Forms.Padding(2);
-            this.mtCadastro.Name = "mtCadastro";
-            this.mtCadastro.Size = new System.Drawing.Size(180, 123);
-            this.mtCadastro.TabIndex = 1;
-            this.mtCadastro.Text = "Cadastros";
-            this.mtCadastro.UseSelectable = true;
-            this.mtCadastro.Click += new System.EventHandler(this.mtCadastro_Click);
+            this.btnFuncionario.ActiveControl = null;
+            this.btnFuncionario.Location = new System.Drawing.Point(394, 185);
+            this.btnFuncionario.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFuncionario.Name = "btnFuncionario";
+            this.btnFuncionario.Size = new System.Drawing.Size(180, 123);
+            this.btnFuncionario.TabIndex = 1;
+            this.btnFuncionario.Text = "Funcionários";
+            this.btnFuncionario.UseSelectable = true;
+            this.btnFuncionario.Click += new System.EventHandler(this.mtCadastro_Click);
             // 
             // mtConfiguracoes
             // 
@@ -76,7 +80,7 @@
             // metroTile3
             // 
             this.metroTile3.ActiveControl = null;
-            this.metroTile3.Location = new System.Drawing.Point(394, 185);
+            this.metroTile3.Location = new System.Drawing.Point(209, 185);
             this.metroTile3.Margin = new System.Windows.Forms.Padding(2);
             this.metroTile3.Name = "metroTile3";
             this.metroTile3.Size = new System.Drawing.Size(180, 123);
@@ -106,16 +110,65 @@
             this.pbLogo.TabIndex = 0;
             this.pbLogo.TabStop = false;
             // 
+            // btnDepartamento
+            // 
+            this.btnDepartamento.ActiveControl = null;
+            this.btnDepartamento.Location = new System.Drawing.Point(394, 313);
+            this.btnDepartamento.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDepartamento.Name = "btnDepartamento";
+            this.btnDepartamento.Size = new System.Drawing.Size(180, 79);
+            this.btnDepartamento.TabIndex = 6;
+            this.btnDepartamento.Text = "Departamentos";
+            this.btnDepartamento.UseSelectable = true;
+            // 
+            // btnEmpresa
+            // 
+            this.btnEmpresa.ActiveControl = null;
+            this.btnEmpresa.Location = new System.Drawing.Point(578, 251);
+            this.btnEmpresa.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEmpresa.Name = "btnEmpresa";
+            this.btnEmpresa.Size = new System.Drawing.Size(180, 141);
+            this.btnEmpresa.TabIndex = 7;
+            this.btnEmpresa.Text = "Empresas";
+            this.btnEmpresa.UseSelectable = true;
+            // 
+            // btnFuncoes
+            // 
+            this.btnFuncoes.ActiveControl = null;
+            this.btnFuncoes.Location = new System.Drawing.Point(578, 96);
+            this.btnFuncoes.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFuncoes.Name = "btnFuncoes";
+            this.btnFuncoes.Size = new System.Drawing.Size(180, 151);
+            this.btnFuncoes.TabIndex = 8;
+            this.btnFuncoes.Text = "Funções";
+            this.btnFuncoes.UseSelectable = true;
+            // 
+            // btnSair
+            // 
+            this.btnSair.ActiveControl = null;
+            this.btnSair.BackColor = System.Drawing.Color.Red;
+            this.btnSair.Location = new System.Drawing.Point(578, 39);
+            this.btnSair.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(180, 53);
+            this.btnSair.TabIndex = 9;
+            this.btnSair.Text = "Sair";
+            this.btnSair.UseSelectable = true;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(912, 415);
+            this.ClientSize = new System.Drawing.Size(775, 415);
+            this.Controls.Add(this.btnSair);
+            this.Controls.Add(this.btnFuncoes);
+            this.Controls.Add(this.btnEmpresa);
+            this.Controls.Add(this.btnDepartamento);
             this.Controls.Add(this.metroTile3);
             this.Controls.Add(this.metroTile2);
             this.Controls.Add(this.metroTile1);
             this.Controls.Add(this.mtConfiguracoes);
-            this.Controls.Add(this.mtCadastro);
+            this.Controls.Add(this.btnFuncionario);
             this.Controls.Add(this.pbLogo);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmMain";
@@ -131,8 +184,12 @@
         private System.Windows.Forms.PictureBox pbLogo;
         private MetroFramework.Controls.MetroTile mtConfiguracoes;
         private MetroFramework.Controls.MetroTile metroTile1;
-        public MetroFramework.Controls.MetroTile mtCadastro;
+        public MetroFramework.Controls.MetroTile btnFuncionario;
         public MetroFramework.Controls.MetroTile metroTile2;
         public MetroFramework.Controls.MetroTile metroTile3;
+        private MetroFramework.Controls.MetroTile btnDepartamento;
+        public MetroFramework.Controls.MetroTile btnEmpresa;
+        public MetroFramework.Controls.MetroTile btnFuncoes;
+        public MetroFramework.Controls.MetroTile btnSair;
     }
 }

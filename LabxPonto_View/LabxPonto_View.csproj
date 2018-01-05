@@ -108,54 +108,30 @@
     <Compile Include="Views\Departamentos\frmDepartamentos.Designer.cs">
       <DependentUpon>frmDepartamentos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\frmCadastroEmpresa.cs">
+    <Compile Include="Views\Empresas\frmEmpresaCadastro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\frmCadastroEmpresa.Designer.cs">
-      <DependentUpon>frmCadastroEmpresa.cs</DependentUpon>
+    <Compile Include="Views\Empresas\frmEmpresaCadastro.Designer.cs">
+      <DependentUpon>frmEmpresaCadastro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\frmCadastroFuncao.cs">
+    <Compile Include="Views\Empresas\frmEmpresas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\frmCadastroFuncao.Designer.cs">
-      <DependentUpon>frmCadastroFuncao.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\frmCadastroFuncionario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\frmCadastroFuncionario.Designer.cs">
-      <DependentUpon>frmCadastroFuncionario.cs</DependentUpon>
+    <Compile Include="Views\Empresas\frmEmpresas.Designer.cs">
+      <DependentUpon>frmEmpresas.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\frmEditarEmpresa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\frmEditarEmpresa.Designer.cs">
-      <DependentUpon>frmEditarEmpresa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\frmEditarFuncao.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\frmEditarFuncao.Designer.cs">
-      <DependentUpon>frmEditarFuncao.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\frmEditarFuncionario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\frmEditarFuncionario.Designer.cs">
-      <DependentUpon>frmEditarFuncionario.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\frmGerarArquivo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\frmGerarArquivo.Designer.cs">
       <DependentUpon>frmGerarArquivo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\frmLogin.cs">
+    <Compile Include="Views\Login\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\frmLogin.Designer.cs">
+    <Compile Include="Views\Login\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\frmMain.cs">
@@ -164,17 +140,35 @@
     <Compile Include="Views\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\frmCadastros.cs">
+    <Compile Include="Views\Relatórios\frmRelatorios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\frmCadastros.Designer.cs">
-      <DependentUpon>frmCadastros.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\frmRelatorios.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\frmRelatorios.Designer.cs">
+    <Compile Include="Views\Relatórios\frmRelatorios.Designer.cs">
       <DependentUpon>frmRelatorios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Funcionarios\frmFuncionarioCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Funcionarios\frmFuncionarioCadastro.Designer.cs">
+      <DependentUpon>frmFuncionarioCadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Funcionarios\frmFuncionarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Funcionarios\frmFuncionarios.Designer.cs">
+      <DependentUpon>frmFuncionarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Funções\frmFuncaoCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Funções\frmFuncaoCadastro.Designer.cs">
+      <DependentUpon>frmFuncaoCadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Funções\frmFuncoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Funções\frmFuncoes.Designer.cs">
+      <DependentUpon>frmFuncoes.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="rltFuncionario.rdlc" />
     <EmbeddedResource Include="Views\Base\frmBaseCadastro.resx">
@@ -189,14 +183,11 @@
     <EmbeddedResource Include="Views\Departamentos\frmDepartamentos.resx">
       <DependentUpon>frmDepartamentos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\frmCadastroEmpresa.resx">
-      <DependentUpon>frmCadastroEmpresa.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Empresas\frmEmpresaCadastro.resx">
+      <DependentUpon>frmEmpresaCadastro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\frmCadastroFuncao.resx">
-      <DependentUpon>frmCadastroFuncao.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\frmCadastroFuncionario.resx">
-      <DependentUpon>frmCadastroFuncionario.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Empresas\frmEmpresas.resx">
+      <DependentUpon>frmEmpresas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -208,23 +199,29 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Views\frmEditarFuncionario.resx">
-      <DependentUpon>frmEditarFuncionario.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\frmGerarArquivo.resx">
       <DependentUpon>frmGerarArquivo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\frmLogin.resx">
+    <EmbeddedResource Include="Views\Funcionarios\frmFuncionarios.resx">
+      <DependentUpon>frmFuncionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\frmCadastros.resx">
-      <DependentUpon>frmCadastros.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\frmRelatorios.resx">
+    <EmbeddedResource Include="Views\Relatórios\frmRelatorios.resx">
       <DependentUpon>frmRelatorios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Funcionarios\frmFuncionarioCadastro.resx">
+      <DependentUpon>frmFuncionarioCadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Funções\frmFuncaoCadastro.resx">
+      <DependentUpon>frmFuncaoCadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Funções\frmFuncoes.resx">
+      <DependentUpon>frmFuncoes.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\LabxPonto_Dao.Model.Funcionario.datasource" />
@@ -261,6 +258,8 @@
   <ItemGroup>
     <None Include="Resources\photo-1103596_960_720.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\Configurações\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

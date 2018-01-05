@@ -1,6 +1,6 @@
-﻿namespace LabxPonto_View.Views
+﻿namespace LabxPonto_View.Views.Funções
 {
-    partial class frmEditarFuncao
+    partial class frmFuncoes
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // frmFuncoes
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "frmEditarFuncao";
+            this.ClientSize = new System.Drawing.Size(736, 312);
+            this.Name = "frmFuncoes";
+            this.Text = "Funções";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

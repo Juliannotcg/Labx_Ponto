@@ -1,6 +1,6 @@
-﻿namespace LabxPonto_View.Views
+﻿namespace LabxPonto_View.Views.Empresas
 {
-    partial class frmEditarEmpresa
+    partial class frmEmpresaCadastro
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // frmEmpresaCadastro
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "frmEditarEmpresa";
+            this.ClientSize = new System.Drawing.Size(736, 326);
+            this.Name = "frmEmpresaCadastro";
+            this.Text = "Empresa";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

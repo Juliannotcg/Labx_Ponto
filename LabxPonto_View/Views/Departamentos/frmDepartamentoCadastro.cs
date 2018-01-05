@@ -17,6 +17,5 @@ namespace LabxPonto_View.Views.Departamentos
         {
             InitializeComponent();
         }
-
     }
 }

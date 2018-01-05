@@ -1,4 +1,4 @@
-﻿using MetroFramework.Forms;
+﻿using LabxPonto_View.Views.Base;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,11 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LabxPonto_View.Views
+namespace LabxPonto_View.Views.Funções
 {
-    public partial class frmCadastroEmpresa : MetroForm
+    public partial class frmFuncaoCadastro : frmBaseCadastro
     {
-        public frmCadastroEmpresa()
+        public frmFuncaoCadastro()
         {
             InitializeComponent();
         }
