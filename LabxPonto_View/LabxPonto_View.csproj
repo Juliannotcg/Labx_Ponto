@@ -84,12 +84,29 @@
     <Compile Include="Enums\EstadoCivil.cs" />
     <Compile Include="Enums\Estados.cs" />
     <Compile Include="Enums\TipoHorario.cs" />
-    <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="Views\frmCadastroDepartamento.cs">
+    <Compile Include="Views\Base\frmBaseCadastro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\frmCadastroDepartamento.Designer.cs">
-      <DependentUpon>frmCadastroDepartamento.cs</DependentUpon>
+    <Compile Include="Views\Base\frmBaseCadastro.Designer.cs">
+      <DependentUpon>frmBaseCadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Base\frmBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Base\frmBase.Designer.cs">
+      <DependentUpon>frmBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Departamentos\frmDepartamentoCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Departamentos\frmDepartamentoCadastro.Designer.cs">
+      <DependentUpon>frmDepartamentoCadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Departamentos\frmDepartamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Departamentos\frmDepartamentos.Designer.cs">
+      <DependentUpon>frmDepartamentos.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\frmCadastroEmpresa.cs">
       <SubType>Form</SubType>
@@ -111,12 +128,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\frmEditarDepartamento.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\frmEditarDepartamento.Designer.cs">
-      <DependentUpon>frmEditarDepartamento.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\frmEditarEmpresa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,8 +177,17 @@
       <DependentUpon>frmRelatorios.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="rltFuncionario.rdlc" />
-    <EmbeddedResource Include="Views\frmCadastroDepartamento.resx">
-      <DependentUpon>frmCadastroDepartamento.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Base\frmBaseCadastro.resx">
+      <DependentUpon>frmBaseCadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Base\frmBase.resx">
+      <DependentUpon>frmBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Departamentos\frmDepartamentoCadastro.resx">
+      <DependentUpon>frmDepartamentoCadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Departamentos\frmDepartamentos.resx">
+      <DependentUpon>frmDepartamentos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmCadastroEmpresa.resx">
       <DependentUpon>frmCadastroEmpresa.cs</DependentUpon>
@@ -241,20 +261,6 @@
   <ItemGroup>
     <None Include="Resources\photo-1103596_960_720.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="SqlServerTypes\readme.htm" />
-    <Content Include="SqlServerTypes\x64\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
