@@ -96,6 +96,12 @@
     <Compile Include="Views\Base\frmBase.Designer.cs">
       <DependentUpon>frmBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Configurações\frmConfiguracoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Configurações\frmConfiguracoes.Designer.cs">
+      <DependentUpon>frmConfiguracoes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Departamentos\frmDepartamentoCadastro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,6 +182,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Base\frmBase.resx">
       <DependentUpon>frmBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Configurações\frmConfiguracoes.resx">
+      <DependentUpon>frmConfiguracoes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Departamentos\frmDepartamentoCadastro.resx">
       <DependentUpon>frmDepartamentoCadastro.cs</DependentUpon>
@@ -258,8 +267,6 @@
   <ItemGroup>
     <None Include="Resources\photo-1103596_960_720.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Configurações\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
