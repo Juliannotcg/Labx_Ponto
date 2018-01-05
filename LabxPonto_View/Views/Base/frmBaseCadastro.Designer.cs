@@ -35,7 +35,7 @@
             // btnCancelar
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelar.Location = new System.Drawing.Point(614, 265);
+            this.btnCancelar.Location = new System.Drawing.Point(170, 125);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(94, 32);
@@ -47,19 +47,19 @@
             // 
             this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSalvar.BackColor = System.Drawing.Color.White;
-            this.btnSalvar.Location = new System.Drawing.Point(507, 265);
+            this.btnSalvar.Location = new System.Drawing.Point(63, 125);
             this.btnSalvar.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(94, 32);
             this.btnSalvar.TabIndex = 53;
-            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.Text = "Confirmar";
             this.btnSalvar.UseSelectable = true;
             // 
             // frmBaseCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(736, 319);
+            this.ClientSize = new System.Drawing.Size(292, 179);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
             this.Name = "frmBaseCadastro";
@@ -70,7 +70,7 @@
 
         #endregion
 
-        private MetroFramework.Controls.MetroButton btnCancelar;
-        private MetroFramework.Controls.MetroButton btnSalvar;
+        public MetroFramework.Controls.MetroButton btnCancelar;
+        public MetroFramework.Controls.MetroButton btnSalvar;
     }
 }

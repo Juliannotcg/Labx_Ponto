@@ -1,5 +1,7 @@
 ﻿using LabxPonto_Dao.Data.Context;
 using LabxPonto_Dao.Model;
+using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 
 namespace LabxPonto_Dao.Service
@@ -30,7 +32,6 @@ namespace LabxPonto_Dao.Service
                     funcionario.NomeMae = a.NomeMae;
                     funcionario.Telefone = a.Telefone;
                     funcionario.Funcao.NomeFuncao = a.Funcao.NomeFuncao;
-                    funcionario.Departamento.NomeDepartamento = a.Departamento.NomeDepartamento;
                     funcionario.Endereco.Cidade = a.Endereco.Cidade;
                     funcionario.Endereco.Bairro = a.Endereco.Bairro;
                     funcionario.Endereco.Estado = a.Endereco.Estado;
@@ -40,6 +41,44 @@ namespace LabxPonto_Dao.Service
                 }
             }
             return (funcionario);
+        }
+
+        public List<Funcionario> GetFuncionario()
+        {
+            using (AppDataContext Context = new AppDataContext())
+            {
+                var resposta = Context.Funcionarios.Include("Empresa")
+                    .Include("Endereco")
+                    .Include("Contrato")
+                    .Include("Funcao")
+                    .Include("Imagem")
+                    .ToList();
+
+                return (resposta);
+            }
+        }
+
+        public DataTable GetFuncionarioGrid()
+        {
+            using (AppDataContext Context = new AppDataContext())
+            {
+
+                var teste= Context.Database.SqlQuery<List<Funcionario>>(@"select FunId AS Id,FunNome AS Nome, EmpNomeFantasia AS Empresa, DepNomeDepartamento AS Departamento , FncNome AS Funcao
+                    from FunFuncionario
+                    left join EmpEmpresa ON Fun_EmpId = EmpId
+                    left join FncFuncao ON Fun_FncId = FncId
+                    left join DepDepartamento ON Fnc_DepId = DepId
+                    ").ToList();
+
+                var tabela = Context.Funcionarios.SqlQuery(@"select FunId AS Id,FunNome AS Nome, EmpNomeFantasia AS Empresa, DepNomeDepartamento AS Departamento , FncNome AS Funcao
+                    from FunFuncionario
+                    left join EmpEmpresa ON Fun_EmpId = EmpId
+                    left join FncFuncao ON Fun_FncId = FncId
+                    left join DepDepartamento ON Fnc_DepId = DepId
+                    ").ToList();
+
+                return (new DataTable());
+            }
         }
 
         public Funcionario InsertFuncionario(Funcionario funcionario)

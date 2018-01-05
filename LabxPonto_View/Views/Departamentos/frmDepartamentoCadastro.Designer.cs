@@ -34,6 +34,16 @@
             this.txtNomeDepartamento = new MetroFramework.Controls.MetroTextBox();
             this.SuspendLayout();
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(348, 254);
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Location = new System.Drawing.Point(240, 254);
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
@@ -120,13 +130,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(772, 440);
+            this.ClientSize = new System.Drawing.Size(458, 308);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.txtDescricaoDepartamento);
             this.Controls.Add(this.Função);
             this.Controls.Add(this.txtNomeDepartamento);
             this.Name = "frmDepartamentoCadastro";
             this.Text = "Departamento";
+            this.Load += new System.EventHandler(this.frmDepartamentoCadastro_Load);
+            this.Controls.SetChildIndex(this.btnSalvar, 0);
+            this.Controls.SetChildIndex(this.btnCancelar, 0);
             this.Controls.SetChildIndex(this.txtNomeDepartamento, 0);
             this.Controls.SetChildIndex(this.Função, 0);
             this.Controls.SetChildIndex(this.txtDescricaoDepartamento, 0);

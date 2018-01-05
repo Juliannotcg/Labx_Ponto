@@ -69,6 +69,10 @@
     <Compile Include="Migrations\201801041850173_ImaImagem.Designer.cs">
       <DependentUpon>201801041850173_ImaImagem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801051955044_FncFuncao.cs" />
+    <Compile Include="Migrations\201801051955044_FncFuncao.Designer.cs">
+      <DependentUpon>201801051955044_FncFuncao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Contrato.cs" />
     <Compile Include="Model\Departamento.cs" />
@@ -83,7 +87,6 @@
     <Compile Include="Service\DepartamentoService.cs" />
     <Compile Include="Service\FuncaoService.cs" />
     <Compile Include="Service\FuncionarioService.cs" />
-    <Compile Include="Teste.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -99,6 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801041850173_ImaImagem.resx">
       <DependentUpon>201801041850173_ImaImagem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801051955044_FncFuncao.resx">
+      <DependentUpon>201801051955044_FncFuncao.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

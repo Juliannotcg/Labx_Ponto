@@ -21,7 +21,6 @@ namespace LabxPonto_Dao.Model
         public Endereco Endereco { get; set; }
         public Contrato Contrato { get; set; }
         public Funcao Funcao { get; set; }
-        public Departamento Departamento { get; set; }
         public Empresa Empresa { get; set; }
         public Imagem Imagem { get; set; }
         public ICollection<HorarioExpediente> Horario { get; private set; }

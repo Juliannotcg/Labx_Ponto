@@ -39,7 +39,7 @@
             this.btNovo.Location = new System.Drawing.Point(23, 107);
             this.btNovo.Name = "btNovo";
             this.btNovo.Size = new System.Drawing.Size(156, 108);
-            this.btNovo.Style = MetroFramework.MetroColorStyle.Green;
+            this.btNovo.Style = MetroFramework.MetroColorStyle.Blue;
             this.btNovo.TabIndex = 56;
             this.btNovo.Text = "Novo";
             this.btNovo.UseSelectable = true;
@@ -51,7 +51,7 @@
             this.btAlterar.Location = new System.Drawing.Point(23, 221);
             this.btAlterar.Name = "btAlterar";
             this.btAlterar.Size = new System.Drawing.Size(75, 65);
-            this.btAlterar.Style = MetroFramework.MetroColorStyle.Yellow;
+            this.btAlterar.Style = MetroFramework.MetroColorStyle.Silver;
             this.btAlterar.TabIndex = 57;
             this.btAlterar.Text = "Alterar";
             this.btAlterar.UseSelectable = true;

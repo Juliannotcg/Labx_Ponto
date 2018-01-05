@@ -81,6 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\ctrlGerarArquivo.cs" />
+    <Compile Include="Enums\Operacao.cs" />
     <Compile Include="Enums\EstadoCivil.cs" />
     <Compile Include="Enums\Estados.cs" />
     <Compile Include="Enums\TipoHorario.cs" />

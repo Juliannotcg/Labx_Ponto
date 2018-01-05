@@ -99,11 +99,19 @@
             this.tpEndereco.SuspendLayout();
             this.SuspendLayout();
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(733, 506);
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Location = new System.Drawing.Point(623, 506);
+            // 
             // tcCadastroFuncionario
             // 
             this.tcCadastroFuncionario.Controls.Add(this.tpDadosPessoais);
             this.tcCadastroFuncionario.Controls.Add(this.tpEndereco);
-            this.tcCadastroFuncionario.Location = new System.Drawing.Point(11, 62);
+            this.tcCadastroFuncionario.Location = new System.Drawing.Point(31, 62);
             this.tcCadastroFuncionario.Margin = new System.Windows.Forms.Padding(2);
             this.tcCadastroFuncionario.Name = "tcCadastroFuncionario";
             this.tcCadastroFuncionario.SelectedIndex = 0;
@@ -1075,11 +1083,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1219, 776);
+            this.ClientSize = new System.Drawing.Size(859, 560);
             this.Controls.Add(this.tcCadastroFuncionario);
             this.Name = "frmFuncionarioCadastro";
             this.Text = "Funcionario";
             this.Load += new System.EventHandler(this.frmFuncionarioCadastro_Load);
+            this.Controls.SetChildIndex(this.btnSalvar, 0);
+            this.Controls.SetChildIndex(this.btnCancelar, 0);
             this.Controls.SetChildIndex(this.tcCadastroFuncionario, 0);
             this.tcCadastroFuncionario.ResumeLayout(false);
             this.tpDadosPessoais.ResumeLayout(false);

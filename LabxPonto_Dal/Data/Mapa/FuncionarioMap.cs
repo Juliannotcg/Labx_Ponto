@@ -57,10 +57,6 @@ namespace LabxPonto_Dao.Data.Mapa
                .WithMany()
                .Map(m => m.MapKey("Fun_FncId"));
 
-            HasOptional(o => o.Departamento)
-               .WithMany()
-               .Map(m => m.MapKey("Fun_DepId"));
-
             HasOptional(o => o.Empresa)
                .WithMany()
                .Map(m => m.MapKey("Fun_EmpId"));

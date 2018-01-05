@@ -1,5 +1,4 @@
-﻿using LabxPonto_View.Forms;
-using LabxPonto_View.Views;
+﻿using LabxPonto_View.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;

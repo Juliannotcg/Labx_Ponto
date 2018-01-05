@@ -1,4 +1,5 @@
-﻿using LabxPonto_View.Forms;
+﻿using LabxPonto_View.Views.Departamentos;
+using LabxPonto_View.Views.Funcionarios;
 using MetroFramework.Forms;
 
 namespace LabxPonto_View.Views
@@ -12,8 +13,19 @@ namespace LabxPonto_View.Views
 
         public void mtCadastro_Click(object sender, System.EventArgs e)
         {
-            frmCadastros janela = new frmCadastros();
+            frmFuncionarios janela = new frmFuncionarios();
             janela.ShowDialog();
+        }
+
+        private void btnDepartamento_Click(object sender, System.EventArgs e)
+        {
+            frmDepartamentos janela = new frmDepartamentos();
+            janela.ShowDialog();
+        }
+
+        private void btnSair_Click(object sender, System.EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }
