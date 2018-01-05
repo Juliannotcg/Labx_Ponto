@@ -63,22 +63,41 @@ namespace LabxPonto_Dao.Service
             using (AppDataContext Context = new AppDataContext())
             {
 
-                var teste= Context.Database.SqlQuery<List<Funcionario>>(@"select FunId AS Id,FunNome AS Nome, EmpNomeFantasia AS Empresa, DepNomeDepartamento AS Departamento , FncNome AS Funcao
-                    from FunFuncionario
-                    left join EmpEmpresa ON Fun_EmpId = EmpId
-                    left join FncFuncao ON Fun_FncId = FncId
-                    left join DepDepartamento ON Fnc_DepId = DepId
-                    ").ToList();
+                
 
-                var tabela = Context.Funcionarios.SqlQuery(@"select FunId AS Id,FunNome AS Nome, EmpNomeFantasia AS Empresa, DepNomeDepartamento AS Departamento , FncNome AS Funcao
-                    from FunFuncionario
-                    left join EmpEmpresa ON Fun_EmpId = EmpId
-                    left join FncFuncao ON Fun_FncId = FncId
-                    left join DepDepartamento ON Fnc_DepId = DepId
-                    ").ToList();
+                //var teste= Context.Database.SqlQuery<DataTable>(@"select FunId AS Id,FunNome AS Nome, EmpNomeFantasia AS Empresa, DepNomeDepartamento AS Departamento , FncNome AS Funcao
+                //    from FunFuncionario
+                //    left join EmpEmpresa ON Fun_EmpId = EmpId
+                //    left join FncFuncao ON Fun_FncId = FncId
+                //    left join DepDepartamento ON Fnc_DepId = DepId
+                //    ").ToList();
+
+                //var tabela = Context.Funcionarios.SqlQuery(@"select FunId AS Id,FunNome AS Nome, EmpNomeFantasia AS Empresa, DepNomeDepartamento AS Departamento , FncNome AS Funcao
+                //    from FunFuncionario
+                //    left join EmpEmpresa ON Fun_EmpId = EmpId
+                //    left join FncFuncao ON Fun_FncId = FncId
+                //    left join DepDepartamento ON Fnc_DepId = DepId
+                //    ").ToList();
+
+                var results = Context.Funcionarios
+                    .Include("Empresa")
+                    .Include("Funcao")
+                    .Include("Departamento")
+                    .Select(p => new
+                    {
+                        p.Nome,
+                        Empresa = p.Empresa.NomeFantasia,
+                        Funcao = p.Funcao.NomeFuncao,
+                        Departamento = p.Funcao.Departamento.NomeDepartamento
+                    })
+                    .AsEnumerable()
+                    .ToList();
+
+                DataTable tabela = new DataTable();
 
                 return (new DataTable());
             }
+
         }
 
         public Funcionario InsertFuncionario(Funcionario funcionario)
