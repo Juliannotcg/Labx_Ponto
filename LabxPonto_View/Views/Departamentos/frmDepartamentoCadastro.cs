@@ -2,6 +2,7 @@
 using LabxPonto_Dao.Service;
 using LabxPonto_View.Enums;
 using LabxPonto_View.Views.Base;
+using System;
 
 namespace LabxPonto_View.Views.Departamentos
 {
@@ -19,7 +20,17 @@ namespace LabxPonto_View.Views.Departamentos
 
         public bool validar()
         {
-            return true;
+            if (String.IsNullOrEmpty(txtNomeDepartamento.Text))
+            {
+                errorProviderDep.SetError(txtNomeDepartamento, "Informe a descreição do departamento.");
+                return false;
+            }
+            if (String.IsNullOrEmpty(txtDescricaoDepartamento.Text))
+            {
+                errorProviderDep.SetError(txtDescricaoDepartamento, "Informe a descrição do departamento.");
+                return false;
+            }
+                return true;
         }
 
         public void limparTela()
