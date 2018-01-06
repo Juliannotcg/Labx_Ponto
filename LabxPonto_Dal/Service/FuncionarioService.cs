@@ -85,6 +85,7 @@ namespace LabxPonto_Dao.Service
                     .Include("Departamento")
                     .Select(p => new
                     {
+                        p.Id,
                         p.Nome,
                         Empresa = p.Empresa.NomeFantasia,
                         Funcao = p.Funcao.NomeFuncao,
@@ -94,16 +95,57 @@ namespace LabxPonto_Dao.Service
                     .ToList();
 
                 DataTable tabela = new DataTable();
+                tabela.Columns.Add("Id", typeof(int));
+                tabela.Columns.Add("Nome", typeof(string));
+                tabela.Columns.Add("Empresa", typeof(string));
+                tabela.Columns.Add("Funcao", typeof(string));
+                tabela.Columns.Add("Departamento", typeof(string));
 
-                return (new DataTable());
+                foreach (var item in results)
+                {
+                    DataRow linha = tabela.NewRow();
+                    linha["Id"] = item.Id;
+                    linha["Nome"] = item.Nome;
+                    linha["Empresa"] = item.Empresa;
+                    linha["Funcao"] = item.Funcao;
+                    linha["Departamento"] = item.Departamento;
+                    tabela.Rows.Add(linha);
+                }
+                
+                return (tabela);
             }
 
         }
 
-        public Funcionario InsertFuncionario(Funcionario funcionario)
+        public bool Insert(Funcionario funcionario)
         {
+            using (AppDataContext Context = new AppDataContext())
+            {
+                Context.Funcionarios.Add(funcionario);
+                Context.SaveChanges();
+                return true;
+            }
+        }
 
-            return (funcionario);
+        public bool Delete(Funcionario funcionario)
+        {
+            using (AppDataContext Context = new AppDataContext())
+            {
+                Context.Entry(funcionario).State = System.Data.Entity.EntityState.Deleted;
+                Context.Funcionarios.Remove(funcionario);
+                Context.SaveChanges();
+                return true;
+            }
+        }
+
+        public bool Update(Funcionario funcionario)
+        {
+            using (AppDataContext Context = new AppDataContext())
+            {
+                Context.Entry(funcionario).State = System.Data.Entity.EntityState.Modified;
+                Context.SaveChanges();
+                return true;
+            }
         }
     }
 }
