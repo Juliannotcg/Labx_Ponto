@@ -3,6 +3,7 @@ using LabxPonto_Dao.Service;
 using LabxPonto_View.Enums;
 using LabxPonto_View.Views.Base;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace LabxPonto_View.Views.Empresas
 {

@@ -95,7 +95,7 @@
             this.dgEmpresas.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgEmpresas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgEmpresas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgEmpresas.Size = new System.Drawing.Size(708, 218);
+            this.dgEmpresas.Size = new System.Drawing.Size(708, 93);
             this.dgEmpresas.TabIndex = 61;
             // 
             // Id
@@ -134,7 +134,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(981, 620);
+            this.ClientSize = new System.Drawing.Size(981, 495);
             this.Controls.Add(this.dgEmpresas);
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmEmpresas";

@@ -31,6 +31,7 @@
             this.btExcluir = new MetroFramework.Controls.MetroTile();
             this.btAlterar = new MetroFramework.Controls.MetroTile();
             this.btNovo = new MetroFramework.Controls.MetroTile();
+            this.btnVisualizar = new MetroFramework.Controls.MetroTile();
             this.SuspendLayout();
             // 
             // btExcluir
@@ -78,15 +79,31 @@
             this.btNovo.UseTileImage = true;
             this.btNovo.Click += new System.EventHandler(this.btNovo_Click);
             // 
+            // btnVisualizar
+            // 
+            this.btnVisualizar.ActiveControl = null;
+            this.btnVisualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnVisualizar.Location = new System.Drawing.Point(31, 358);
+            this.btnVisualizar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnVisualizar.Name = "btnVisualizar";
+            this.btnVisualizar.Size = new System.Drawing.Size(208, 45);
+            this.btnVisualizar.Style = MetroFramework.MetroColorStyle.Blue;
+            this.btnVisualizar.TabIndex = 59;
+            this.btnVisualizar.Text = "Visualizar";
+            this.btnVisualizar.UseCustomBackColor = true;
+            this.btnVisualizar.UseSelectable = true;
+            this.btnVisualizar.UseTileImage = true;
+            // 
             // frmBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(981, 379);
+            this.ClientSize = new System.Drawing.Size(981, 432);
+            this.Controls.Add(this.btnVisualizar);
             this.Controls.Add(this.btExcluir);
             this.Controls.Add(this.btAlterar);
             this.Controls.Add(this.btNovo);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmBase";
             this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.Text = "Base";
@@ -99,5 +116,6 @@
         public MetroFramework.Controls.MetroTile btNovo;
         public MetroFramework.Controls.MetroTile btAlterar;
         public MetroFramework.Controls.MetroTile btExcluir;
+        public MetroFramework.Controls.MetroTile btnVisualizar;
     }
 }
