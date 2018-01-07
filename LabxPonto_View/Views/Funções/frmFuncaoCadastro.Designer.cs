@@ -36,6 +36,18 @@
             this.cbDepartamento = new MetroFramework.Controls.MetroComboBox();
             this.SuspendLayout();
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(348, 289);
+            this.btnCancelar.TabIndex = 5;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Location = new System.Drawing.Point(239, 289);
+            this.btnSalvar.TabIndex = 4;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click_1);
+            // 
             // Função
             // 
             this.Função.AutoSize = true;
@@ -72,7 +84,7 @@
             this.txtNomeFuncao.SelectionStart = 0;
             this.txtNomeFuncao.ShortcutsEnabled = true;
             this.txtNomeFuncao.Size = new System.Drawing.Size(420, 29);
-            this.txtNomeFuncao.TabIndex = 55;
+            this.txtNomeFuncao.TabIndex = 2;
             this.txtNomeFuncao.UseSelectable = true;
             this.txtNomeFuncao.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtNomeFuncao.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -113,7 +125,7 @@
             this.txtDescricaoFuncao.SelectionStart = 0;
             this.txtDescricaoFuncao.ShortcutsEnabled = true;
             this.txtDescricaoFuncao.Size = new System.Drawing.Size(420, 70);
-            this.txtDescricaoFuncao.TabIndex = 57;
+            this.txtDescricaoFuncao.TabIndex = 3;
             this.txtDescricaoFuncao.UseSelectable = true;
             this.txtDescricaoFuncao.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtDescricaoFuncao.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -124,7 +136,7 @@
             this.Departamento.Location = new System.Drawing.Point(22, 80);
             this.Departamento.Name = "Departamento";
             this.Departamento.Size = new System.Drawing.Size(95, 19);
-            this.Departamento.TabIndex = 60;
+            this.Departamento.TabIndex = 0;
             this.Departamento.Text = "Departamento";
             // 
             // cbDepartamento
@@ -135,7 +147,7 @@
             this.cbDepartamento.Margin = new System.Windows.Forms.Padding(2);
             this.cbDepartamento.Name = "cbDepartamento";
             this.cbDepartamento.Size = new System.Drawing.Size(247, 29);
-            this.cbDepartamento.TabIndex = 59;
+            this.cbDepartamento.TabIndex = 1;
             this.cbDepartamento.UseSelectable = true;
             // 
             // frmFuncaoCadastro
@@ -151,6 +163,9 @@
             this.Controls.Add(this.txtNomeFuncao);
             this.Name = "frmFuncaoCadastro";
             this.Text = "Função";
+            this.Load += new System.EventHandler(this.frmFuncaoCadastro_Load);
+            this.Controls.SetChildIndex(this.btnSalvar, 0);
+            this.Controls.SetChildIndex(this.btnCancelar, 0);
             this.Controls.SetChildIndex(this.txtNomeFuncao, 0);
             this.Controls.SetChildIndex(this.Função, 0);
             this.Controls.SetChildIndex(this.txtDescricaoFuncao, 0);

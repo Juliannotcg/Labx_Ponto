@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFuncionarioCadastro));
             this.tcCadastroFuncionario = new MetroFramework.Controls.MetroTabControl();
             this.tpDadosPessoais = new MetroFramework.Controls.MetroTabPage();
+            this.btCapturar = new MetroFramework.Controls.MetroButton();
             this.metroLabel34 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel33 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel32 = new MetroFramework.Controls.MetroLabel();
@@ -97,6 +98,9 @@
             this.txtCEP = new MetroFramework.Controls.MetroTextBox();
             this.txtBairro = new MetroFramework.Controls.MetroTextBox();
             this.txtEndereco = new MetroFramework.Controls.MetroTextBox();
+            this.buscarArquivo = new System.Windows.Forms.OpenFileDialog();
+            this.htmlToolTip1 = new MetroFramework.Drawing.Html.HtmlToolTip();
+            this.metroToolTip1 = new MetroFramework.Components.MetroToolTip();
             this.errorProviderFunc = new System.Windows.Forms.ErrorProvider(this.components);
             this.tcCadastroFuncionario.SuspendLayout();
             this.tpDadosPessoais.SuspendLayout();
@@ -131,6 +135,7 @@
             // 
             // tpDadosPessoais
             // 
+            this.tpDadosPessoais.Controls.Add(this.btCapturar);
             this.tpDadosPessoais.Controls.Add(this.metroLabel34);
             this.tpDadosPessoais.Controls.Add(this.metroLabel33);
             this.tpDadosPessoais.Controls.Add(this.metroLabel32);
@@ -192,6 +197,17 @@
             this.tpDadosPessoais.VerticalScrollbarBarColor = true;
             this.tpDadosPessoais.VerticalScrollbarHighlightOnWheel = false;
             this.tpDadosPessoais.VerticalScrollbarSize = 11;
+            // 
+            // btCapturar
+            // 
+            this.btCapturar.Location = new System.Drawing.Point(751, 159);
+            this.btCapturar.Margin = new System.Windows.Forms.Padding(2);
+            this.btCapturar.Name = "btCapturar";
+            this.btCapturar.Size = new System.Drawing.Size(80, 59);
+            this.btCapturar.TabIndex = 63;
+            this.btCapturar.Text = "Capturar";
+            this.btCapturar.UseSelectable = true;
+            this.btCapturar.Click += new System.EventHandler(this.btCapturar_Click);
             // 
             // metroLabel34
             // 
@@ -354,6 +370,7 @@
             this.cmbDepartamento.Size = new System.Drawing.Size(328, 30);
             this.cmbDepartamento.TabIndex = 10;
             this.cmbDepartamento.UseSelectable = true;
+            this.cmbDepartamento.SelectedIndexChanged += new System.EventHandler(this.cmbDepartamento_SelectedIndexChanged);
             // 
             // metroLabel22
             // 
@@ -401,6 +418,10 @@
             this.dtAdmissao.Location = new System.Drawing.Point(456, 367);
             this.dtAdmissao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtAdmissao.MinimumSize = new System.Drawing.Size(0, 30);
+            this.dtAdmissao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtAdmissao.Location = new System.Drawing.Point(342, 298);
+            this.dtAdmissao.Margin = new System.Windows.Forms.Padding(2);
+            this.dtAdmissao.MinimumSize = new System.Drawing.Size(0, 29);
             this.dtAdmissao.Name = "dtAdmissao";
             this.dtAdmissao.Size = new System.Drawing.Size(328, 30);
             this.dtAdmissao.TabIndex = 12;
@@ -627,6 +648,7 @@
             this.btnLocalizarImg.TabIndex = 14;
             this.btnLocalizarImg.Text = "Localizar";
             this.btnLocalizarImg.UseSelectable = true;
+            this.btnLocalizarImg.Click += new System.EventHandler(this.btnLocalizarImg_Click);
             // 
             // metroLabel5
             // 
@@ -697,6 +719,8 @@
             // 
             // dtDataNascimento
             // 
+            this.dtDataNascimento.AllowDrop = true;
+            this.dtDataNascimento.CalendarTrailingForeColor = System.Drawing.SystemColors.ControlText;
             this.dtDataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtDataNascimento.Location = new System.Drawing.Point(0, 239);
             this.dtDataNascimento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1116,6 +1140,16 @@
             this.errorProviderFunc.ContainerControl = this;
             this.errorProviderFunc.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProviderFunc.Icon")));
             // 
+            // htmlToolTip1
+            // 
+            this.htmlToolTip1.OwnerDraw = true;
+            // 
+            // metroToolTip1
+            // 
+            this.metroToolTip1.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroToolTip1.StyleManager = null;
+            this.metroToolTip1.Theme = MetroFramework.MetroThemeStyle.Light;
+            // 
             // frmFuncionarioCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1210,6 +1244,10 @@
         private MetroFramework.Controls.MetroLabel metroLabel36;
         private MetroFramework.Controls.MetroLabel metroLabel37;
         private MetroFramework.Controls.MetroComboBox cmbEstado;
+        private System.Windows.Forms.OpenFileDialog buscarArquivo;
+        private MetroFramework.Controls.MetroButton btCapturar;
+        private MetroFramework.Drawing.Html.HtmlToolTip htmlToolTip1;
+        private MetroFramework.Components.MetroToolTip metroToolTip1;
         private System.Windows.Forms.ErrorProvider errorProviderFunc;
     }
 }

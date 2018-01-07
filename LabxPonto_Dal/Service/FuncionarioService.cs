@@ -43,6 +43,17 @@ namespace LabxPonto_Dao.Service
             return (funcionario);
         }
 
+        public Funcionario GetFuncionario(int id)
+        {
+            AppDataContext Context = new AppDataContext();
+            return Context.Funcionarios.Include("Empresa").
+                    Include("Endereco")
+                    .Include("Contrato")
+                    .Include("Funcao")
+                    .Include("Imagem")
+                    .Where(x => x.Id == id).FirstOrDefault();
+        }
+
         public List<Funcionario> GetFuncionario()
         {
             using (AppDataContext Context = new AppDataContext())

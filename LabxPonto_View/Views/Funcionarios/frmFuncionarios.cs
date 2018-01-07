@@ -25,10 +25,10 @@ namespace LabxPonto_View.Views.Funcionarios
             dgFuncionarios.DataSource = servico.GetFuncionarioGrid();
         }
 
-        public Funcionario retornarDepartamentoSelecionado()
+        public Funcionario retornarFuncionarioSelecionado()
         {
             funcionario.Id = (int)dgFuncionarios.CurrentRow.Cells["Id"].Value;
-            //funcionario = servico.GetDepartamento(departamento.Id);
+            funcionario = servico.GetFuncionario(funcionario.Id);
             return funcionario;
         }
 
@@ -40,24 +40,24 @@ namespace LabxPonto_View.Views.Funcionarios
             preencherGrid();
         }
 
-        private void btAlterar_Click_1(object sender, EventArgs e)
-        {
-            cadastro = new frmFuncionarioCadastro(Operacao.Editar);
-            cadastro.Funcionario = retornarDepartamentoSelecionado();
-            cadastro.ShowDialog();
-            preencherGrid();
-        }
-
         private void btExcluir_Click_1(object sender, EventArgs e)
         {
             cadastro = new frmFuncionarioCadastro(Operacao.Excluir);
-            cadastro.Funcionario = retornarDepartamentoSelecionado();
+            cadastro.Funcionario = retornarFuncionarioSelecionado();
             cadastro.ShowDialog();
             preencherGrid();
         }
 
         private void frmFuncionarios_Load(object sender, System.EventArgs e)
         {
+            preencherGrid();
+        }
+
+        private void btAlterar_Click_2(object sender, EventArgs e)
+        {
+            cadastro = new frmFuncionarioCadastro(Operacao.Editar);
+            cadastro.Funcionario = retornarFuncionarioSelecionado();
+            cadastro.ShowDialog();
             preencherGrid();
         }
     }

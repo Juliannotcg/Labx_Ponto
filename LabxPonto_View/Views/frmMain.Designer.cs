@@ -128,6 +128,7 @@
             this.btnFuncoes.TabIndex = 8;
             this.btnFuncoes.Text = "Funções";
             this.btnFuncoes.UseSelectable = true;
+            this.btnFuncoes.Click += new System.EventHandler(this.btnFuncoes_Click);
             // 
             // btnSair
             // 
