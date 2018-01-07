@@ -117,6 +117,7 @@
             this.btnEmpresa.TabIndex = 7;
             this.btnEmpresa.Text = "Empresas";
             this.btnEmpresa.UseSelectable = true;
+            this.btnEmpresa.Click += new System.EventHandler(this.btnEmpresa_Click);
             // 
             // btnFuncoes
             // 

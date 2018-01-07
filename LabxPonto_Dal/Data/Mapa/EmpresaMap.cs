@@ -24,6 +24,24 @@ namespace LabxPonto_Dao.Data.Mapa
             Property(c => c.CNPJ)
                 .HasColumnName("EmpCNPJ");
 
+            Property(c => c.NomeResponsavel)
+                .HasColumnName("EmpNomeResponsavel");
+
+            Property(c => c.EmailResponsavel)
+                .HasColumnName("EmpEmailResponsavel");
+
+            Property(c => c.CEI)
+                .HasColumnName("EmpCEI");
+
+            Property(c => c.CargoResponsavel)
+                .HasColumnName("EmpCargoResponsavel");
+
+            Property(c => c.NumeroFolha)
+                .HasColumnName("EmpNumeroFolha");
+
+            Property(c => c.Inscricao)
+                .HasColumnName("EmpInscricao");
+
             HasOptional(o => o.Endereco)
                .WithMany()
                .Map(m => m.MapKey("Emp_EndId"));

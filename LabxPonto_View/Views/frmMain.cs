@@ -1,5 +1,6 @@
 ﻿using LabxPonto_View.Views.Configurações;
 using LabxPonto_View.Views.Departamentos;
+using LabxPonto_View.Views.Empresas;
 using LabxPonto_View.Views.Funcionarios;
 using LabxPonto_View.Views.Funções;
 using MetroFramework.Forms;
@@ -39,6 +40,12 @@ namespace LabxPonto_View.Views
         private void btnFuncoes_Click(object sender, System.EventArgs e)
         {
             frmFuncoes janela = new frmFuncoes();
+            janela.ShowDialog();
+        }
+
+        private void btnEmpresa_Click(object sender, System.EventArgs e)
+        {
+            frmEmpresas janela = new frmEmpresas();
             janela.ShowDialog();
         }
     }

@@ -73,6 +73,10 @@
     <Compile Include="Migrations\201801051955044_FncFuncao.Designer.cs">
       <DependentUpon>201801051955044_FncFuncao.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801071347586_EmpEmpresa.cs" />
+    <Compile Include="Migrations\201801071347586_EmpEmpresa.Designer.cs">
+      <DependentUpon>201801071347586_EmpEmpresa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Contrato.cs" />
     <Compile Include="Model\Departamento.cs" />
@@ -85,6 +89,7 @@
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\DepartamentoService.cs" />
+    <Compile Include="Service\EmpresaService.cs" />
     <Compile Include="Service\FuncaoService.cs" />
     <Compile Include="Service\FuncionarioService.cs" />
   </ItemGroup>
@@ -105,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801051955044_FncFuncao.resx">
       <DependentUpon>201801051955044_FncFuncao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801071347586_EmpEmpresa.resx">
+      <DependentUpon>201801071347586_EmpEmpresa.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

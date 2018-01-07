@@ -30,12 +30,18 @@
         {
             this.SuspendLayout();
             // 
+            // btNovo
+            // 
+            this.btNovo.Click += new System.EventHandler(this.btNovo_Click_1);
+            // 
             // frmEmpresas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(736, 312);
+            this.ClientSize = new System.Drawing.Size(981, 384);
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "frmEmpresas";
+            this.Padding = new System.Windows.Forms.Padding(36, 91, 36, 31);
             this.Text = "Empresas";
             this.ResumeLayout(false);
 
