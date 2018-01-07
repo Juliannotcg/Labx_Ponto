@@ -1,4 +1,5 @@
 ﻿using LabxPonto_Commons;
+using LabxPonto_Commons.WebService;
 using LabxPonto_Dao.Model;
 using LabxPonto_Dao.Service;
 using LabxPonto_View.Enums;
@@ -14,6 +15,7 @@ namespace LabxPonto_View.Views.Empresas
         private Operacao operacao;
         private EmpresaService servico;
         private ValidateCPF_CNPJ validate;
+        private Endereco endereco;
         protected Empresa empresa;
         protected string caminhoImagem;
 
@@ -228,9 +230,39 @@ namespace LabxPonto_View.Views.Empresas
         {
             if (txtCNPJ.Text.Length == 14)
             {
-                long CPF = Convert.ToInt64(txtCNPJ.Text);
-                string CPFFormatado = String.Format(@"{0:\000\.000\.000\-00}", CPF);
-                txtCNPJ.Text = CPFFormatado;
+                long CNPJ = Convert.ToInt64(txtCNPJ.Text);
+                string CNPJFormatado = String.Format(@"{0:\00\.000\.000/0000-00}", CNPJ);
+                txtCNPJ.Text = CNPJFormatado;
+            }
+        }
+
+        private void frmEmpresaCadastro_Load(object sender, EventArgs e)
+        {
+            if (operacao == Operacao.Inserir)
+                empresa.Endereco = new Endereco();
+        }
+
+        private void btnCancelar_Click_2(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void txtCEP_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Tab)
+            {
+                if (!String.IsNullOrEmpty(txtCEP.Text))
+                {
+                    endereco = new Endereco();
+                    CEPCorreios cepCorreios = new CEPCorreios();
+                    cepCorreios.preencheEndereco(txtCEP.Text);
+
+                    txtBairro.Text = endereco.Bairro;
+                    txtCidade.Text = endereco.Cidade;
+                    txtEndereco.Text = endereco.Logradouro;
+                    txtComplemento.Text = endereco.Complemento;
+                    cmbEstado.Text = endereco.Estado;
+                }
             }
         }
     }
