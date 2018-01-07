@@ -267,7 +267,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LabxPonto_Commons\LabxPonto_Commons.csproj">
-      <Project>{113B9ACA-FCD1-409B-83C3-9F002C5B3609}</Project>
+      <Project>{113b9aca-fcd1-409b-83c3-9f002c5b3609}</Project>
       <Name>LabxPonto_Commons</Name>
     </ProjectReference>
     <ProjectReference Include="..\LabxPonto_Dal\LabxPonto_Dao.csproj">

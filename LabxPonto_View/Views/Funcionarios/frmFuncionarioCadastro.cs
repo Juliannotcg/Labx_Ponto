@@ -141,7 +141,8 @@ namespace LabxPonto_View.Views.Funcionarios
             txtNomeMae.Text = funcionario.NomeMae;
             txtNomePai.Text = funcionario.NomePai;
             txtTelefone.Text = funcionario.Telefone;
-            preencherImagemByte(funcionario.Imagem.Arquivo);
+            if(funcionario.Imagem.Arquivo!=null)
+                preencherImagemByte(funcionario.Imagem.Arquivo);
             
         }
 
