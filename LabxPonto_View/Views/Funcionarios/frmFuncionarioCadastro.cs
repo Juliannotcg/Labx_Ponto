@@ -1,4 +1,5 @@
-﻿using LabxPonto_Dao.Model;
+﻿using LabxPonto_Commons;
+using LabxPonto_Dao.Model;
 using LabxPonto_Dao.Service;
 using LabxPonto_View.Enums;
 using LabxPonto_View.Views.Base;
@@ -20,6 +21,7 @@ namespace LabxPonto_View.Views.Funcionarios
     {
         private Operacao operacao;
         private FuncionarioService servico;
+        private ValidateCPF_CNPJ validate;
         protected Funcionario funcionario;
 
         public Funcionario Funcionario
@@ -30,7 +32,64 @@ namespace LabxPonto_View.Views.Funcionarios
 
         public bool validar()
         {
-            return true;
+            #region DADOS PESSOAIS
+
+            if (String.IsNullOrEmpty(txtFolha.Text))
+                errorProviderFunc.SetError(txtFolha, "Informe o número da folha");
+
+            if (String.IsNullOrEmpty(txtNomeFuncionario.Text))
+                errorProviderFunc.SetError(txtNomeFuncionario, "Informe o nome do funcionário.");
+
+            if (String.IsNullOrEmpty(txtSobreNome.Text))
+                errorProviderFunc.SetError(txtSobreNome, "Informe o sobre nome do funcionário.");
+
+            if (String.IsNullOrEmpty(txtCPF.Text))
+                errorProviderFunc.SetError(txtCPF, "Informe o sobre nome do funcionário.");
+            else
+                if (!validate.ValidarCPF_CNPJ(txtCPF.Text))
+                    errorProviderFunc.SetError(txtCPF, "O CPF informado é inválido.");
+
+            if (String.IsNullOrEmpty(txtRG.Text))
+                errorProviderFunc.SetError(txtRG, "Informe o RG do funcionário.");
+
+            if (String.IsNullOrEmpty(txtTelefone.Text))
+                errorProviderFunc.SetError(txtTelefone, "Informe o telefone do funcionário.");
+
+            if (String.IsNullOrEmpty(txtNomePai.Text))
+                errorProviderFunc.SetError(txtNomePai, "Informe o nome do Pai do funcionário.");
+
+            if (String.IsNullOrEmpty(txtNomeMae.Text))
+                errorProviderFunc.SetError(txtNomeMae, "Informe o nome da Mãe do funcionário.");
+
+            #endregion
+
+            #region DADOS ENDEREÇO
+
+            if (String.IsNullOrEmpty(txtCEP.Text))
+                errorProviderFunc.SetError(txtCEP, "Informe o CEP do funcionário");
+
+            if (String.IsNullOrEmpty(txtCidade.Text))
+                errorProviderFunc.SetError(txtCidade, "Informe a cidade do funcionário.");
+
+            if (String.IsNullOrEmpty(txtBairro.Text))
+                errorProviderFunc.SetError(txtBairro, "Informe o bairro do funcionário.");
+
+            if (String.IsNullOrEmpty(txtComplemento.Text))
+                errorProviderFunc.SetError(txtComplemento, "Informe um complemento do endereço do funcionário.");
+            #endregion
+
+            return ((errorProviderFunc.GetError(txtFolha) == "") &&
+                (errorProviderFunc.GetError(txtNomeFuncionario) == "") &&
+                (errorProviderFunc.GetError(txtSobreNome) == "") &&
+                (errorProviderFunc.GetError(txtCPF) == "") &&
+                (errorProviderFunc.GetError(txtRG) == "") &&
+                (errorProviderFunc.GetError(txtNomePai) == "") &&
+                (errorProviderFunc.GetError(txtNomeMae) == "") &&
+                (errorProviderFunc.GetError(txtTelefone) == "") &&
+                (errorProviderFunc.GetError(txtCEP) == "") &&
+                (errorProviderFunc.GetError(txtCidade) == "") &&
+                (errorProviderFunc.GetError(txtBairro) == "") &&
+                (errorProviderFunc.GetError(txtComplemento) == ""));
         }
 
         public frmFuncionarioCadastro(Operacao _operacao)
@@ -38,11 +97,11 @@ namespace LabxPonto_View.Views.Funcionarios
             InitializeComponent();
             operacao = _operacao;
             servico = new FuncionarioService();
+            validate = new ValidateCPF_CNPJ();
         }
 
         public void limparTela()
         {
-            
             txtBairro.Text = "";
             txtCEP.Text = "";
             txtCidade.Text = "";
@@ -191,6 +250,22 @@ namespace LabxPonto_View.Views.Funcionarios
         private void btnCancelar_Click_1(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void txtFolha_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsDigit(e.KeyChar) || char.IsControl(e.KeyChar)))
+                e.Handled = true;
+        }
+
+        private void txtCPF_Leave(object sender, EventArgs e)
+        {
+            if (txtCPF.Text.Length == 11)
+            {
+                long CPF = Convert.ToInt64(txtCPF.Text);
+                string CPFFormatado = String.Format(@"{0:\000\.000\.000\-00}", CPF);
+                txtCPF.Text = CPFFormatado;
+            }
         }
     }
 }

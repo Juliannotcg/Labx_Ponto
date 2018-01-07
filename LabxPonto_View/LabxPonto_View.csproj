@@ -268,6 +268,14 @@
   <ItemGroup>
     <None Include="Resources\photo-1103596_960_720.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\if_user-add-outline_216487.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_user-delete-outline_216492.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_new-24_103173.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

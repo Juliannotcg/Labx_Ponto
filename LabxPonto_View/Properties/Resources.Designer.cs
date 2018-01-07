@@ -83,6 +83,36 @@ namespace LabxPonto_View.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap if_new_24_103173 {
+            get {
+                object obj = ResourceManager.GetObject("if_new-24_103173", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap if_user_add_outline_216487 {
+            get {
+                object obj = ResourceManager.GetObject("if_user-add-outline_216487", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap if_user_delete_outline_216492 {
+            get {
+                object obj = ResourceManager.GetObject("if_user-delete-outline_216492", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap LogoEmpresa {
             get {
                 object obj = ResourceManager.GetObject("LogoEmpresa", resourceCulture);
