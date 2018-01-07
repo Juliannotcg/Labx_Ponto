@@ -48,6 +48,7 @@
             // btAlterar
             // 
             this.btAlterar.Location = new System.Drawing.Point(23, 195);
+            this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click_2);
             // 
             // btExcluir
             // 

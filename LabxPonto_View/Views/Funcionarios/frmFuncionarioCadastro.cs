@@ -2,6 +2,7 @@
 using LabxPonto_Dao.Service;
 using LabxPonto_View.Enums;
 using LabxPonto_View.Views.Base;
+using LabxPonto_View.Views.Cam;
 using MetroFramework.Controls;
 using MetroFramework.Forms;
 using System;
@@ -9,6 +10,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +23,7 @@ namespace LabxPonto_View.Views.Funcionarios
         private Operacao operacao;
         private FuncionarioService servico;
         protected Funcionario funcionario;
+        protected string caminhoImagem;
 
         public Funcionario Funcionario
         {
@@ -79,6 +82,7 @@ namespace LabxPonto_View.Views.Funcionarios
             txtNomeMae.Text = funcionario.NomeMae;
             txtNomePai.Text = funcionario.NomePai;
             txtTelefone.Text = funcionario.Telefone;
+            preencherImagemByte(funcionario.Imagem.Arquivo);
             
         }
 
@@ -102,6 +106,7 @@ namespace LabxPonto_View.Views.Funcionarios
             funcionario.NomeMae = txtNomeMae.Text;
             funcionario.NomePai = txtNomePai.Text;
             funcionario.Telefone = txtTelefone.Text;
+            funcionario.Imagem.Arquivo = ConverterImagemParaBytes(imgFoto.ImageLocation);
         }
 
 
@@ -169,6 +174,12 @@ namespace LabxPonto_View.Views.Funcionarios
                 case "cmbEstadoCivil":
                     cmbEstadoCivil.DataSource = Enum.GetNames(typeof(EstadoCivil));
                     break;
+                case "cmbDepartamento":
+                    DepartamentoService depService = new DepartamentoService();
+                    cmbDepartamento.DataSource = depService.GetDepartamento();
+                    cmbDepartamento.ValueMember = "Id";
+                    cmbDepartamento.DisplayMember = "NomeDepartamento";
+                    break;
             }
         }
 
@@ -191,6 +202,71 @@ namespace LabxPonto_View.Views.Funcionarios
         private void btnCancelar_Click_1(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void btnLocalizarImg_Click(object sender, EventArgs e)
+        {
+            if (buscarArquivo.ShowDialog() == DialogResult.OK)
+            {
+                caminhoImagem = buscarArquivo.FileName;
+                imgFoto.SizeMode = PictureBoxSizeMode.Zoom;
+
+                imgFoto.ImageLocation = caminhoImagem;
+            }
+        }
+
+        public byte[] ConverterImagemParaBytes(string caminhoImagem)
+        {
+            byte[] arraybytes = null;
+
+            FileInfo informacoesFicnheiro = new FileInfo(caminhoImagem);
+            long numeroBytes = informacoesFicnheiro.Length;
+
+            FileStream fStream = new FileStream(caminhoImagem, FileMode.Open, FileAccess.Read);
+
+            BinaryReader br = new BinaryReader(fStream);
+
+            arraybytes = br.ReadBytes((int)numeroBytes);
+
+            return arraybytes;
+        }
+
+        public void preencherImagemByte(byte[] imagemEmBytes)
+        {
+            MemoryStream ms = new MemoryStream();
+            Image img;
+
+            try
+            {
+                ms = new MemoryStream(imagemEmBytes, 0, imagemEmBytes.Length);
+                ms.Write(imagemEmBytes, 0, imagemEmBytes.Length);
+                img = Image.FromStream(ms, true);
+                imgFoto.Image = img;
+            }
+            catch (ArgumentException aex)
+            {
+                throw new InvalidOperationException("Imagem inválida");
+            }
+            finally
+            {
+                if (ms != null)
+                {
+                    ms.Close();
+                    ms = null;
+                }
+            }
+        }
+
+        private void btCapturar_Click(object sender, EventArgs e)
+        {
+            frmWebCam janela = new frmWebCam();
+            janela.ShowDialog();
+            imgFoto.ImageLocation = janela.caminhoImagemSalva;
+        }
+
+        private void cmbDepartamento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -32,6 +32,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DirectX.Capture, Version=1.0.1313.24984, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Utils\DirectX.Capture.dll</HintPath>
+    </Reference>
+    <Reference Include="DShowNET, Version=1.0.0.1, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Utils\DShowNET.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -96,6 +104,12 @@
     </Compile>
     <Compile Include="Views\Base\frmBase.Designer.cs">
       <DependentUpon>frmBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Cam\frmWebCam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Cam\frmWebCam.Designer.cs">
+      <DependentUpon>frmWebCam.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Configurações\frmConfiguracoes.cs">
       <SubType>Form</SubType>
@@ -184,6 +198,9 @@
     <EmbeddedResource Include="Views\Base\frmBase.resx">
       <DependentUpon>frmBase.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Cam\frmWebCam.resx">
+      <DependentUpon>frmWebCam.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Configurações\frmConfiguracoes.resx">
       <DependentUpon>frmConfiguracoes.cs</DependentUpon>
     </EmbeddedResource>
@@ -268,6 +285,9 @@
   <ItemGroup>
     <None Include="Resources\photo-1103596_960_720.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Utils\DirectX.Capture.dll" />
+    <Content Include="Utils\DShowNET.dll" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
