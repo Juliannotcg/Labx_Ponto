@@ -95,6 +95,21 @@ namespace LabxPonto_View.Views.Funcionarios
                 (errorProviderFunc.GetError(txtComplemento) == ""));
         }
 
+        public void limparErros()
+        {
+            errorProviderFunc.SetError(txtFolha, "");
+            errorProviderFunc.SetError(txtNomeFuncionario, "");
+            errorProviderFunc.SetError(txtSobreNome, "");
+            errorProviderFunc.SetError(txtCPF, "");
+            errorProviderFunc.SetError(txtRG, "");
+            errorProviderFunc.SetError(txtNomePai, "");
+            errorProviderFunc.SetError(txtNomeMae, "");
+            errorProviderFunc.SetError(txtTelefone, "");
+            errorProviderFunc.SetError(txtCidade, "");
+            errorProviderFunc.SetError(txtBairro, "");
+            errorProviderFunc.SetError(txtComplemento, "");
+        }
+
         public frmFuncionarioCadastro(Operacao _operacao)
         {
             InitializeComponent();
@@ -127,7 +142,10 @@ namespace LabxPonto_View.Views.Funcionarios
             txtCPF.Text = funcionario.CPF;
             txtRG.Text = funcionario.RG;
             if(funcionario.DataNascimento > DateTime.MinValue)
-                dtDataNascimento.Value = funcionario.DataNascimento;
+                txtDataNascimento.Text = funcionario.DataNascimento.ToString();
+
+            //if (funcionario.data > DateTime.MinValue)
+            //    txtDataNascimento.Text = funcionario.DataNascimento.ToString();
             // TODO: funcionario.Digital
             // TODO: funcionario.Empresa = cmbEmpresa
             txtBairro.Text = funcionario.Endereco.Bairro;
@@ -137,36 +155,85 @@ namespace LabxPonto_View.Views.Funcionarios
             if(funcionario.Endereco.Estado != null)
                 cmbEstado.SelectedText = funcionario.Endereco.Estado.ToString();
             cmbEstadoCivil.Text = funcionario.EstadoCivil;
-            // TODO: funcionario.Funcao = 
+            if (funcionario.Funcao.Departamento != null)
+            {
+                cmbDepartamento.SelectedItem = funcionario.Funcao.Departamento;
+                cmbDepartamento.SelectedValue = funcionario.Funcao.Departamento.Id;
+            }
+            if (funcionario.Funcao!=null)
+                cmbFuncao.SelectedItem = funcionario.Funcao; 
             txtNomeMae.Text = funcionario.NomeMae;
             txtNomePai.Text = funcionario.NomePai;
             txtTelefone.Text = funcionario.Telefone;
-            if(funcionario.Imagem.Arquivo!=null)
+            if(funcionario.Imagem!=null)
+              if(funcionario.Imagem.Arquivo!=null)
                 preencherImagemByte(funcionario.Imagem.Arquivo);
+            
+           
             
         }
 
         public void preencherFuncionario()
         {
-            funcionario.Nome = txtNomeFuncionario.Text;
-            funcionario.SobreNome = txtSobreNome.Text;
-            funcionario.CPF = txtCPF.Text;
-            funcionario.RG = txtRG.Text;
-            funcionario.DataNascimento = dtDataNascimento.Value;
-            // TODO: funcionario.Digital
+            
+            #region Contrato
+
+            funcionario.Contrato = new Contrato();
+            funcionario.Contrato.NumeroFolha = Convert.ToInt32(txtFolha.Text);
+            if (!String.IsNullOrEmpty(txtDataAdmissao.Text.Replace("/", "").Trim()))
+                funcionario.Contrato.DataAdmissao = Convert.ToDateTime(txtDataAdmissao.Text);
+
+            #endregion
+
+            #region Empresa
+            funcionario.Empresa = new Empresa();
             // TODO: funcionario.Empresa = cmbEmpresa
+
+            #endregion
+
+            #region Endereco
+
+            funcionario.Endereco = new Endereco();
             funcionario.Endereco.Bairro = txtBairro.Text;
             if (!String.IsNullOrEmpty(txtCEP.Text))
                 funcionario.Endereco.Cep = Convert.ToInt32(txtCEP.Text);
             funcionario.Endereco.Cidade = txtCidade.Text;
             funcionario.Endereco.Complemento = txtComplemento.Text;
             funcionario.Endereco.Estado = cmbEstado.Text;
+
+            #endregion
+
+            #region Função
+
+            funcionario.Funcao = new Funcao();
+            funcionario.Funcao = (Funcao)cmbFuncao.SelectedItem;
+
+            #endregion
+
+            #region Imagem
+
+            funcionario.Imagem = new Imagem();
+            if (!String.IsNullOrEmpty(imgFoto.ImageLocation))
+                funcionario.Imagem.Arquivo = ConverterImagemParaBytes(imgFoto.ImageLocation);
+
+            #endregion
+
+            #region Funcionário 
+
+            funcionario.Nome = txtNomeFuncionario.Text;
+            funcionario.SobreNome = txtSobreNome.Text;
+            funcionario.CPF = txtCPF.Text;
+            funcionario.RG = txtRG.Text;
+            if (!String.IsNullOrEmpty(txtDataNascimento.Text.Replace("/", "").Trim()))
+                funcionario.DataNascimento = Convert.ToDateTime(txtDataNascimento.Text);
+            // TODO: funcionario.Digital
             funcionario.EstadoCivil = cmbEstadoCivil.Text;
-            // TODO: funcionario.Funcao = 
             funcionario.NomeMae = txtNomeMae.Text;
             funcionario.NomePai = txtNomePai.Text;
             funcionario.Telefone = txtTelefone.Text;
-            funcionario.Imagem.Arquivo = ConverterImagemParaBytes(imgFoto.ImageLocation);
+            
+            #endregion
+
         }
 
 
@@ -194,15 +261,16 @@ namespace LabxPonto_View.Views.Funcionarios
 
         private void editar()
         {
-            //if (validar())
-            //{
-            //    preencherDepartamento();
-            //    if (servico.Update(departamento))
-            //    {
-            //        MetroFramework.MetroMessageBox.Show(this, "O departamento " + departamento.NomeDepartamento + " foi alterado com sucesso!", "Cadastrado com sucesso!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question);
-            //        this.Dispose();
-            //    }
-            //}
+            limparErros();
+            if (validar())
+            {
+                preencherFuncionario();
+                if (servico.Update(funcionario))
+                {
+                    MetroFramework.MetroMessageBox.Show(this, "O funcionário " + funcionario.Nome + " " + funcionario.SobreNome + " foi alterado com sucesso!", "Alterado com sucesso!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question);
+                    this.Dispose();
+                }
+            }
         }
 
         private void btnCancelar_Click(object sender, System.EventArgs e)
@@ -214,14 +282,10 @@ namespace LabxPonto_View.Views.Funcionarios
         {
             preencherCombos(cmbEstado);
             preencherCombos(cmbEstadoCivil);
-            if(operacao == Operacao.Inserir)
-            {
-                funcionario.Empresa = new Empresa();
-                funcionario.Endereco = new Endereco();
-                funcionario.Funcao = new Funcao();
-                funcionario.Imagem = new Imagem();
-            }
+            preencherCombos(cmbDepartamento);
+            
             preencherTela();
+
         }
 
         private void preencherCombos(MetroComboBox parNomeCombo)
@@ -326,7 +390,14 @@ namespace LabxPonto_View.Views.Funcionarios
 
         private void cmbDepartamento_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            FuncaoService funcaoServico = new FuncaoService();
+            if (cmbDepartamento.SelectedItem != null)
+            {
+                var funcoes = funcaoServico.GetFuncoes(((Departamento)cmbDepartamento.SelectedItem).Id);
+                cmbFuncao.DataSource = funcoes;
+                cmbFuncao.ValueMember = "Id";
+                cmbFuncao.DisplayMember = "NomeFuncao";
+            }
         }
 
         private void txtFolha_KeyPress(object sender, KeyPressEventArgs e)
@@ -344,5 +415,6 @@ namespace LabxPonto_View.Views.Funcionarios
                 txtCPF.Text = CPFFormatado;
             }
         }
+
     }
 }

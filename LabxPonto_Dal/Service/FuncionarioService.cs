@@ -50,7 +50,9 @@ namespace LabxPonto_Dao.Service
                     Include("Endereco")
                     .Include("Contrato")
                     .Include("Funcao")
+                    .Include("Funcao.Departamento")
                     .Include("Imagem")
+                    
                     .Where(x => x.Id == id).FirstOrDefault();
         }
 

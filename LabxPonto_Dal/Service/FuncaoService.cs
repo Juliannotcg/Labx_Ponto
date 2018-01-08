@@ -21,7 +21,7 @@ namespace LabxPonto_Dao.Service
 
                 var resposta = (from c in Context.Funcoes
                                 join b in Context.Departamentos on c.Departamento.Id equals b.Id
-                                where c.Id == c.Departamento.Id
+                                where c.Departamento.Id == depId
                          select c).ToList();
 
                 return (resposta);
