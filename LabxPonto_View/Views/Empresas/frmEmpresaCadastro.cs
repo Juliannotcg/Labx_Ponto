@@ -100,6 +100,21 @@ namespace LabxPonto_View.Views.Empresas
             txtCargoResponsavel.Text = "";
         }
 
+        public void limparErros()
+        {
+            errorProviderEmp.SetError(txtFolha, "");
+            errorProviderEmp.SetError(txtNomeEmpresa, "");
+            errorProviderEmp.SetError(txtCNPJ, "");
+            errorProviderEmp.SetError(txtInscricao, "");
+            errorProviderEmp.SetError(txtNomeResponsavel, "");
+            errorProviderEmp.SetError(txtCargoResponsavel, "");
+            errorProviderEmp.SetError(txtEmailResponsavel, "");
+            errorProviderEmp.SetError(txtCEP, "");
+            errorProviderEmp.SetError(txtCidade, "");
+            errorProviderEmp.SetError(txtBairro, "");
+            errorProviderEmp.SetError(txtComplemento, "");
+        }
+
         public void preencherTela()
         {
             txtNomeEmpresa.Text = empresa.NomeFantasia;
@@ -116,6 +131,23 @@ namespace LabxPonto_View.Views.Empresas
             cmbEstado.Text = empresa.Endereco.Estado;
             txtComplemento.Text = empresa.Endereco.Complemento;
             txtCEP.Text = empresa.Endereco.Cep.ToString();
+
+            if (operacao == Operacao.Visualizar)
+            {
+                txtNomeEmpresa.ReadOnly = true;
+                txtFolha.ReadOnly = true;
+                txtCNPJ.ReadOnly = true;
+                txtInscricao.ReadOnly = true;
+                txtNomeResponsavel.ReadOnly = true;
+                txtCargoResponsavel.ReadOnly = true;
+                txtEmailResponsavel.ReadOnly = true;
+
+                txtEndereco.ReadOnly = true;
+                txtBairro.ReadOnly = true;
+                txtCidade.ReadOnly = true;
+                txtComplemento.ReadOnly = true;
+                txtCEP.ReadOnly = true;
+            }
         }
 
         public void preencherEmpresa()
@@ -153,12 +185,30 @@ namespace LabxPonto_View.Views.Empresas
 
         private void excluir()
         {
-
+            limparErros();
+            if (validar())
+            {
+                preencherEmpresa();
+                if (servico.Delete(empresa))
+                {
+                    MetroFramework.MetroMessageBox.Show(this, "A empresa " + empresa.NomeFantasia + " foi deletada com sucesso!", "Excluído com sucesso!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question);
+                    this.Dispose();
+                }
+            }
         }
 
         private void editar()
         {
-
+            limparErros();
+            if (validar())
+            {
+                preencherEmpresa();
+                if (servico.Update(empresa))
+                {
+                    MetroFramework.MetroMessageBox.Show(this, "A empresa " + empresa.NomeFantasia + " foi alterada com sucesso!", "Alterado com sucesso!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question);
+                    this.Dispose();
+                }
+            }
         }
 
         private void btnCancelar_Click(object sender, System.EventArgs e)

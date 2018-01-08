@@ -42,10 +42,10 @@ namespace LabxPonto_View.Views.Funcionarios
 
         private void btExcluir_Click_1(object sender, EventArgs e)
         {
-            cadastro = new frmFuncionarioCadastro(Operacao.Excluir);
-            cadastro.Funcionario = retornarFuncionarioSelecionado();
-            cadastro.ShowDialog();
-            preencherGrid();
+            //cadastro = new frmFuncionarioCadastro(Operacao.Excluir);
+            //cadastro.Funcionario = retornarFuncionarioSelecionado();
+            //cadastro.ShowDialog();
+            //preencherGrid();
         }
 
         private void frmFuncionarios_Load(object sender, System.EventArgs e)
@@ -59,6 +59,11 @@ namespace LabxPonto_View.Views.Funcionarios
             cadastro.Funcionario = retornarFuncionarioSelecionado();
             cadastro.ShowDialog();
             preencherGrid();
+        }
+
+        private void btExcluir_Click_2(object sender, EventArgs e)
+        {
+
         }
     }
 }

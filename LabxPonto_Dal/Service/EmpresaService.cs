@@ -21,6 +21,14 @@ namespace LabxPonto_Dao.Service
             }
         }
 
+        public Empresa GetEmpresa(int id)
+        {
+            AppDataContext Context = new AppDataContext();
+
+            return Context.Empresas.Include("Endereco")
+                    .Where(x => x.Id == id).FirstOrDefault();
+        }
+
         public DataTable GetEmpresaGrid()
         {
             using (AppDataContext Context = new AppDataContext())
@@ -29,6 +37,7 @@ namespace LabxPonto_Dao.Service
                                 select p).ToList();
 
                 DataTable tabela = new DataTable();
+                tabela.Columns.Add("Id", typeof(int));
                 tabela.Columns.Add("NomeEmpresa", typeof(string));
                 tabela.Columns.Add("CNPJ", typeof(string));
                 tabela.Columns.Add("NomeResponsavel", typeof(string));
@@ -36,6 +45,7 @@ namespace LabxPonto_Dao.Service
                 foreach (var item in resposta)
                 {
                     DataRow linha = tabela.NewRow();
+                    linha["Id"] = item.Id;
                     linha["NomeEmpresa"] = item.NomeFantasia;
                     linha["CNPJ"] = item.CNPJ;
                     linha["NomeResponsavel"] = item.NomeResponsavel;
@@ -43,6 +53,26 @@ namespace LabxPonto_Dao.Service
                 }
 
                 return (tabela);
+            }
+        }
+        public bool Update(Empresa empresa)
+        {
+            using (AppDataContext Context = new AppDataContext())
+            {
+                Context.Entry(empresa).State = System.Data.Entity.EntityState.Modified;
+                Context.SaveChanges();
+                return true;
+            }
+        }
+
+        public bool Delete(Empresa empresa)
+        {
+            using (AppDataContext Context = new AppDataContext())
+            {
+                Context.Entry(empresa).State = System.Data.Entity.EntityState.Deleted;
+                Context.Empresas.Remove(empresa);
+                Context.SaveChanges();
+                return true;
             }
         }
     }

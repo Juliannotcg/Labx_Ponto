@@ -43,6 +43,18 @@
             // 
             this.btNovo.Click += new System.EventHandler(this.btNovo_Click_1);
             // 
+            // btAlterar
+            // 
+            this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click_1);
+            // 
+            // btExcluir
+            // 
+            this.btExcluir.Click += new System.EventHandler(this.btExcluir_Click_1);
+            // 
+            // btnVisualizar
+            // 
+            this.btnVisualizar.Click += new System.EventHandler(this.btnVisualizar_Click);
+            // 
             // dgEmpresas
             // 
             this.dgEmpresas.AllowUserToAddRows = false;
@@ -80,8 +92,7 @@
             this.dgEmpresas.EnableHeadersVisualStyles = false;
             this.dgEmpresas.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dgEmpresas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgEmpresas.Location = new System.Drawing.Point(259, 132);
-            this.dgEmpresas.Margin = new System.Windows.Forms.Padding(4);
+            this.dgEmpresas.Location = new System.Drawing.Point(194, 107);
             this.dgEmpresas.Name = "dgEmpresas";
             this.dgEmpresas.ReadOnly = true;
             this.dgEmpresas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -95,13 +106,13 @@
             this.dgEmpresas.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgEmpresas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgEmpresas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgEmpresas.Size = new System.Drawing.Size(708, 93);
+            this.dgEmpresas.Size = new System.Drawing.Size(531, 221);
             this.dgEmpresas.TabIndex = 61;
             // 
             // Id
             // 
             this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "EmpId";
+            this.Id.HeaderText = "Id";
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
             this.Id.Visible = false;
@@ -132,15 +143,16 @@
             // 
             // frmEmpresas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(981, 495);
+            this.ClientSize = new System.Drawing.Size(736, 402);
             this.Controls.Add(this.dgEmpresas);
-            this.Margin = new System.Windows.Forms.Padding(5);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmEmpresas";
-            this.Padding = new System.Windows.Forms.Padding(36, 91, 36, 31);
+            this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.Text = "Empresas";
             this.Load += new System.EventHandler(this.frmEmpresas_Load);
+            this.Controls.SetChildIndex(this.btnVisualizar, 0);
             this.Controls.SetChildIndex(this.btNovo, 0);
             this.Controls.SetChildIndex(this.btAlterar, 0);
             this.Controls.SetChildIndex(this.btExcluir, 0);

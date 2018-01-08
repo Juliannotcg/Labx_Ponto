@@ -53,6 +53,7 @@
             // btExcluir
             // 
             this.btExcluir.Location = new System.Drawing.Point(104, 195);
+            this.btExcluir.Click += new System.EventHandler(this.btExcluir_Click_2);
             // 
             // dgFuncionarios
             // 
@@ -158,6 +159,7 @@
             this.Name = "frmFuncionarios";
             this.Text = "Funcionários";
             this.Load += new System.EventHandler(this.frmFuncionarios_Load);
+            this.Controls.SetChildIndex(this.btnVisualizar, 0);
             this.Controls.SetChildIndex(this.btNovo, 0);
             this.Controls.SetChildIndex(this.btAlterar, 0);
             this.Controls.SetChildIndex(this.btExcluir, 0);

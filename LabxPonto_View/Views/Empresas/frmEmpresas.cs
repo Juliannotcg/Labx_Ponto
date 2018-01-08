@@ -25,6 +25,13 @@ namespace LabxPonto_View.Views.Empresas
             dgEmpresas.DataSource = servico.GetEmpresaGrid();
         }
 
+        public Empresa retornarEmpresaSelecionado()
+        {
+            empresa.Id = (int)dgEmpresas.CurrentRow.Cells["Id"].Value;
+            empresa = servico.GetEmpresa(empresa.Id);
+            return empresa;
+        }
+
         private void btNovo_Click_1(object sender, System.EventArgs e)
         {
             cadastro = new frmEmpresaCadastro(Operacao.Inserir);
@@ -35,6 +42,30 @@ namespace LabxPonto_View.Views.Empresas
         private void frmEmpresas_Load(object sender, System.EventArgs e)
         {
             preencherGrid();
+        }
+
+        private void btAlterar_Click_1(object sender, System.EventArgs e)
+        {
+            cadastro = new frmEmpresaCadastro(Operacao.Editar);
+            cadastro.Empresa = retornarEmpresaSelecionado();
+            cadastro.preencherTela();
+            cadastro.ShowDialog();
+        }
+
+        private void btnVisualizar_Click(object sender, System.EventArgs e)
+        {
+            cadastro = new frmEmpresaCadastro(Operacao.Visualizar);
+            cadastro.Empresa = retornarEmpresaSelecionado();
+            cadastro.preencherTela();
+            cadastro.ShowDialog();
+        }
+
+        private void btExcluir_Click_1(object sender, System.EventArgs e)
+        {
+            cadastro = new frmEmpresaCadastro(Operacao.Excluir);
+            cadastro.Empresa = retornarEmpresaSelecionado();
+            cadastro.preencherTela();
+            cadastro.ShowDialog();
         }
     }
 }
