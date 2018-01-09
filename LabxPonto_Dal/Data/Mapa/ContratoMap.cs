@@ -19,10 +19,12 @@ namespace LabxPonto_Dao.Data.Mapa
                 .HasColumnName("ConNumeroFolha");
 
             Property(c => c.DataAdmissao)
-                .HasColumnName("ConDataAdmissao");
+                .HasColumnName("ConDataAdmissao")
+                .HasColumnType("datetime2");
 
             Property(c => c.DataRecisao)
-                .HasColumnName("ConDataRecisao");
+                .HasColumnName("ConDataRecisao")
+                 .HasColumnType("datetime2");
 
             Property(c => c.MotivoRecisao)
                 .HasColumnName("ConMotivoRecisao");

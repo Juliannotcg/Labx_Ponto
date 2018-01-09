@@ -1,4 +1,5 @@
-﻿using LabxPonto_Dao.Model;
+﻿using LabxPonto_Dao.Data.Context;
+using LabxPonto_Dao.Model;
 using LabxPonto_Dao.Service;
 using LabxPonto_View.Enums;
 using LabxPonto_View.Views.Base;
@@ -12,12 +13,14 @@ namespace LabxPonto_View.Views.Funcionarios
         private FuncionarioService servico;
         private frmFuncionarioCadastro cadastro;
         private Funcionario funcionario;
+        private AppDataContext context;
 
-        public frmFuncionarios()
+        public frmFuncionarios(AppDataContext con)
         {
             InitializeComponent();
-            servico = new FuncionarioService();
+            servico = new FuncionarioService(con);
             funcionario = new Funcionario();
+            context = con;
         }
 
         public void preencherGrid()
@@ -34,7 +37,7 @@ namespace LabxPonto_View.Views.Funcionarios
 
         private void btNovo_Click_1(object sender, EventArgs e)
         {
-            cadastro = new frmFuncionarioCadastro(Operacao.Inserir);
+            cadastro = new frmFuncionarioCadastro(Operacao.Inserir, context);
             cadastro.Funcionario = new Funcionario();
             cadastro.ShowDialog();
             preencherGrid();
@@ -55,7 +58,7 @@ namespace LabxPonto_View.Views.Funcionarios
 
         private void btAlterar_Click_2(object sender, EventArgs e)
         {
-            cadastro = new frmFuncionarioCadastro(Operacao.Editar);
+            cadastro = new frmFuncionarioCadastro(Operacao.Editar, context);
             cadastro.Funcionario = retornarFuncionarioSelecionado();
             cadastro.ShowDialog();
             preencherGrid();

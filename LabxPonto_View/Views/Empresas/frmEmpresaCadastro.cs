@@ -1,5 +1,6 @@
 ﻿using LabxPonto_Commons;
 using LabxPonto_Commons.WebService;
+using LabxPonto_Dao.Data.Context;
 using LabxPonto_Dao.Model;
 using LabxPonto_Dao.Service;
 using LabxPonto_View.Enums;
@@ -252,11 +253,11 @@ namespace LabxPonto_View.Views.Empresas
                 e.Handled = true;
         }
 
-        public frmEmpresaCadastro(Operacao _operacao)
+        public frmEmpresaCadastro(Operacao _operacao, AppDataContext con)
         {
             InitializeComponent();
             operacao = _operacao;
-            servico = new EmpresaService();
+            servico = new EmpresaService(con);
             validate = new ValidateCPF_CNPJ();
         }
 

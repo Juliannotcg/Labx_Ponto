@@ -1,4 +1,5 @@
-﻿using LabxPonto_Dao.Model;
+﻿using LabxPonto_Dao.Data.Context;
+using LabxPonto_Dao.Model;
 using LabxPonto_Dao.Service;
 using LabxPonto_View.Enums;
 using LabxPonto_View.Views.Base;
@@ -19,6 +20,7 @@ namespace LabxPonto_View.Views.Funções
         private Operacao operacao;
         private FuncaoService servico;
         protected Funcao funcao;
+        private AppDataContext context;
 
         public Funcao Funcao
         {
@@ -53,25 +55,25 @@ namespace LabxPonto_View.Views.Funções
             }
         }
 
-        public frmFuncaoCadastro(Operacao _operacao)
+        public frmFuncaoCadastro(Operacao _operacao, AppDataContext con)
         {
             InitializeComponent();
             operacao = _operacao;
-            servico = new FuncaoService();
+            servico = new FuncaoService(con);
+            context = con;
         }
 
         public void preencherFuncao()
         {
             funcao.NomeFuncao = txtNomeFuncao.Text;
             funcao.Descricao = txtDescricaoFuncao.Text;
-            funcao.Departamento.NomeDepartamento = cbDepartamento.Text;
+            funcao.Departamento = (Departamento)cbDepartamento.SelectedItem;
         }
 
         private void inserir()
         {
             if (validar())
             {
-                funcao.Departamento = new Departamento();
                 preencherFuncao();
                 if (servico.Insert(funcao))
                 {
@@ -105,7 +107,7 @@ namespace LabxPonto_View.Views.Funções
 
         private void frmFuncaoCadastro_Load(object sender, EventArgs e)
         {
-            DepartamentoService depService = new DepartamentoService();
+            DepartamentoService depService = new DepartamentoService(context);
             cbDepartamento.DataSource = depService.GetDepartamento();
             cbDepartamento.ValueMember = "Id";
             cbDepartamento.DisplayMember = "NomeDepartamento"; 

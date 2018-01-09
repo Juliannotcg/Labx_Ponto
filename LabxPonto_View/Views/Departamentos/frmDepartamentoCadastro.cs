@@ -1,4 +1,5 @@
-﻿using LabxPonto_Dao.Model;
+﻿using LabxPonto_Dao.Data.Context;
+using LabxPonto_Dao.Model;
 using LabxPonto_Dao.Service;
 using LabxPonto_View.Enums;
 using LabxPonto_View.Views.Base;
@@ -51,11 +52,11 @@ namespace LabxPonto_View.Views.Departamentos
             }
         }
 
-        public frmDepartamentoCadastro(Operacao _operacao)
+        public frmDepartamentoCadastro(Operacao _operacao, AppDataContext con)
         {
             InitializeComponent();
             operacao = _operacao;
-            servico = new DepartamentoService();
+            servico = new DepartamentoService(con);
         }
 
         public void preencherDepartamento()

@@ -1,4 +1,5 @@
-﻿using LabxPonto_Dao.Model;
+﻿using LabxPonto_Dao.Data.Context;
+using LabxPonto_Dao.Model;
 using LabxPonto_Dao.Service;
 using LabxPonto_View.Enums;
 using LabxPonto_View.Views.Base;
@@ -12,12 +13,13 @@ namespace LabxPonto_View.Views.Departamentos
         private DepartamentoService servico;
         private frmDepartamentoCadastro cadastro;
         private Departamento departamento;
-
-        public frmDepartamentos()
+        private AppDataContext context;
+        public frmDepartamentos(AppDataContext con)
         {
             InitializeComponent();
-            servico = new DepartamentoService();
+            servico = new DepartamentoService(con);
             departamento = new Departamento();
+            context = con;
         }
 
         public void preencherGrid()
@@ -35,7 +37,7 @@ namespace LabxPonto_View.Views.Departamentos
 
         private void btNovo_Click_1(object sender, EventArgs e)
         {
-            cadastro = new frmDepartamentoCadastro(Operacao.Inserir);
+            cadastro = new frmDepartamentoCadastro(Operacao.Inserir,context);
             cadastro.Departamento = new Departamento();
             cadastro.ShowDialog();
             preencherGrid();
@@ -43,7 +45,7 @@ namespace LabxPonto_View.Views.Departamentos
 
         private void btAlterar_Click_1(object sender, EventArgs e)
         {
-            cadastro = new frmDepartamentoCadastro(Operacao.Editar);
+            cadastro = new frmDepartamentoCadastro(Operacao.Editar, context);
             cadastro.Departamento = retornarDepartamentoSelecionado();
             cadastro.ShowDialog();
             preencherGrid();
@@ -51,7 +53,7 @@ namespace LabxPonto_View.Views.Departamentos
 
         private void btExcluir_Click_1(object sender, EventArgs e)
         {
-            cadastro = new frmDepartamentoCadastro(Operacao.Excluir);
+            cadastro = new frmDepartamentoCadastro(Operacao.Excluir, context);
             cadastro.Departamento = retornarDepartamentoSelecionado();
             cadastro.ShowDialog();
             preencherGrid();

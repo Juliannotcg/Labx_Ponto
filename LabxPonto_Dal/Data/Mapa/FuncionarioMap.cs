@@ -43,7 +43,8 @@ namespace LabxPonto_Dao.Data.Mapa
                 .HasColumnName("FunNomeMae");
 
             Property(c => c.DataNascimento)
-                .HasColumnName("FunDataNascimento");
+                .HasColumnName("FunDataNascimento")
+                .HasColumnType("datetime2");
 
             HasOptional(o => o.Endereco)
                .WithMany()

@@ -1,4 +1,5 @@
 ﻿using LabxPonto_Commons;
+using LabxPonto_Dao.Data.Context;
 using LabxPonto_Dao.Model;
 using LabxPonto_Dao.Service;
 using LabxPonto_View.Enums;
@@ -26,6 +27,7 @@ namespace LabxPonto_View.Views.Funcionarios
         private ValidateCPF_CNPJ validate;
         protected Funcionario funcionario;
         protected string caminhoImagem;
+        private AppDataContext context;
 
         public Funcionario Funcionario
         {
@@ -110,12 +112,13 @@ namespace LabxPonto_View.Views.Funcionarios
             errorProviderFunc.SetError(txtComplemento, "");
         }
 
-        public frmFuncionarioCadastro(Operacao _operacao)
+        public frmFuncionarioCadastro(Operacao _operacao, AppDataContext con)
         {
             InitializeComponent();
             operacao = _operacao;
-            servico = new FuncionarioService();
+            servico = new FuncionarioService(con);
             validate = new ValidateCPF_CNPJ();
+            context = con; 
         }
 
         public void limparTela()
@@ -148,20 +151,31 @@ namespace LabxPonto_View.Views.Funcionarios
             //    txtDataNascimento.Text = funcionario.DataNascimento.ToString();
             // TODO: funcionario.Digital
             // TODO: funcionario.Empresa = cmbEmpresa
-            txtBairro.Text = funcionario.Endereco.Bairro;
-             txtCEP.Text = funcionario.Endereco.Cep.ToString();
-            txtCidade.Text = funcionario.Endereco.Cidade;
-            txtComplemento.Text = funcionario.Endereco.Complemento;
-            if(funcionario.Endereco.Estado != null)
-                cmbEstado.SelectedText = funcionario.Endereco.Estado.ToString();
-            cmbEstadoCivil.Text = funcionario.EstadoCivil;
-            if (funcionario.Funcao.Departamento != null)
+
+            if (funcionario.Endereco != null)
             {
-                cmbDepartamento.SelectedItem = funcionario.Funcao.Departamento;
-                cmbDepartamento.SelectedValue = funcionario.Funcao.Departamento.Id;
+                txtBairro.Text = funcionario.Endereco.Bairro;
+                txtCEP.Text = funcionario.Endereco.Cep.ToString();
+                txtCidade.Text = funcionario.Endereco.Cidade;
+                txtComplemento.Text = funcionario.Endereco.Complemento;
+                if (funcionario.Endereco.Estado != null)
+                    cmbEstado.SelectedText = funcionario.Endereco.Estado.ToString();
             }
-            if (funcionario.Funcao!=null)
-                cmbFuncao.SelectedItem = funcionario.Funcao; 
+            cmbEstadoCivil.Text = funcionario.EstadoCivil;
+            if (funcionario.Funcao != null)
+            {
+                if (funcionario.Funcao.Departamento != null)
+                {
+                    cmbDepartamento.SelectedItem = funcionario.Funcao.Departamento;
+                    cmbDepartamento.SelectedValue = funcionario.Funcao.Departamento.Id;
+                }
+                if (funcionario.Funcao != null)
+                    cmbFuncao.SelectedItem = funcionario.Funcao;
+            }
+
+            if (funcionario.Empresa != null)
+                cmbEmpresa.SelectedItem = funcionario.Empresa;
+
             txtNomeMae.Text = funcionario.NomeMae;
             txtNomePai.Text = funcionario.NomePai;
             txtTelefone.Text = funcionario.Telefone;
@@ -187,7 +201,7 @@ namespace LabxPonto_View.Views.Funcionarios
 
             #region Empresa
             funcionario.Empresa = new Empresa();
-            // TODO: funcionario.Empresa = cmbEmpresa
+            funcionario.Empresa = (Empresa)cmbEmpresa.SelectedItem;
 
             #endregion
 
@@ -283,6 +297,7 @@ namespace LabxPonto_View.Views.Funcionarios
             preencherCombos(cmbEstado);
             preencherCombos(cmbEstadoCivil);
             preencherCombos(cmbDepartamento);
+            preencherCombos(cmbEmpresa);
             
             preencherTela();
 
@@ -299,10 +314,16 @@ namespace LabxPonto_View.Views.Funcionarios
                     cmbEstadoCivil.DataSource = Enum.GetNames(typeof(EstadoCivil));
                     break;
                 case "cmbDepartamento":
-                    DepartamentoService depService = new DepartamentoService();
+                    DepartamentoService depService = new DepartamentoService(context);
                     cmbDepartamento.DataSource = depService.GetDepartamento();
                     cmbDepartamento.ValueMember = "Id";
                     cmbDepartamento.DisplayMember = "NomeDepartamento";
+                    break;
+                case "cmbEmpresa":
+                    EmpresaService empresaService = new EmpresaService(context);
+                    cmbEmpresa.DataSource = empresaService.GetEmpresa();
+                    cmbEmpresa.ValueMember = "Id";
+                    cmbEmpresa.DisplayMember = "EmpNomeFantasia";
                     break;
             }
         }
@@ -390,7 +411,7 @@ namespace LabxPonto_View.Views.Funcionarios
 
         private void cmbDepartamento_SelectedIndexChanged(object sender, EventArgs e)
         {
-            FuncaoService funcaoServico = new FuncaoService();
+            FuncaoService funcaoServico = new FuncaoService(context);
             if (cmbDepartamento.SelectedItem != null)
             {
                 var funcoes = funcaoServico.GetFuncoes(((Departamento)cmbDepartamento.SelectedItem).Id);

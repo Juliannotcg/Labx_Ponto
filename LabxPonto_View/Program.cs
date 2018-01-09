@@ -1,9 +1,12 @@
-﻿using LabxPonto_View.Views;
+﻿using LabxPonto_Dao.Injection;
+using LabxPonto_Dao.Service;
+using LabxPonto_View.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Unity;
 
 namespace LabxPonto_View
 {
@@ -18,6 +21,17 @@ namespace LabxPonto_View
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmMain());
+
+
+            // Configure Dependency Injection
+            var container = new UnityContainer();
+            DependencyResolver.Resolve(container);
+
+            container.Resolve<FuncaoService>();
+            container.Resolve<FuncionarioService>();
+            container.Resolve<DepartamentoService>();
+            container.Resolve<EmpresaService>();
+
         }
     }
 }

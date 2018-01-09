@@ -1,4 +1,5 @@
-﻿using LabxPonto_Dao.Model;
+﻿using LabxPonto_Dao.Data.Context;
+using LabxPonto_Dao.Model;
 using LabxPonto_Dao.Service;
 using LabxPonto_View.Enums;
 using LabxPonto_View.Views.Base;
@@ -11,12 +12,14 @@ namespace LabxPonto_View.Views.Funções
         private FuncaoService servico;
         private frmFuncaoCadastro cadastro;
         private Funcao funcao;
+        private AppDataContext context;
 
-        public frmFuncoes()
+        public frmFuncoes(AppDataContext con)
         {
             InitializeComponent();
-            servico = new FuncaoService();
+            servico = new FuncaoService(con);
             funcao = new Funcao();
+            context = con;
         }
 
         public void preencherGrid()
@@ -33,7 +36,7 @@ namespace LabxPonto_View.Views.Funções
 
         private void btNovo_Click_1(object sender, System.EventArgs e)
         {
-            cadastro = new frmFuncaoCadastro(Operacao.Inserir);
+            cadastro = new frmFuncaoCadastro(Operacao.Inserir, context);
             cadastro.Funcao = new Funcao();
             cadastro.ShowDialog();
             preencherGrid();
@@ -41,7 +44,7 @@ namespace LabxPonto_View.Views.Funções
 
         private void btAlterar_Click_1(object sender, System.EventArgs e)
         {
-            cadastro = new frmFuncaoCadastro(Operacao.Editar);
+            cadastro = new frmFuncaoCadastro(Operacao.Editar, context);
             cadastro.Funcao = retornarFuncaoSelecionado();
             cadastro.ShowDialog();
             preencherGrid();
@@ -49,7 +52,7 @@ namespace LabxPonto_View.Views.Funções
 
         private void btExcluir_Click_1(object sender, System.EventArgs e)
         {
-            cadastro = new frmFuncaoCadastro(Operacao.Excluir);
+            cadastro = new frmFuncaoCadastro(Operacao.Excluir, context);
             cadastro.Funcao = retornarFuncaoSelecionado();
             cadastro.ShowDialog();
             preencherGrid();

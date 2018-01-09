@@ -1,4 +1,5 @@
-﻿using LabxPonto_Dao.Model;
+﻿using LabxPonto_Dao.Data.Context;
+using LabxPonto_Dao.Model;
 using LabxPonto_Dao.Service;
 using LabxPonto_View.Enums;
 using LabxPonto_View.Views.Base;
@@ -12,12 +13,14 @@ namespace LabxPonto_View.Views.Empresas
         private frmEmpresaCadastro cadastro;
         private EmpresaService servico;
         private Empresa empresa;
+        AppDataContext context;
 
-        public frmEmpresas()
+        public frmEmpresas(AppDataContext con)
         {
             InitializeComponent();
-            servico = new EmpresaService();
+            servico = new EmpresaService(con);
             empresa = new Empresa();
+            context = con;
         }
 
         public void preencherGrid()
@@ -34,7 +37,7 @@ namespace LabxPonto_View.Views.Empresas
 
         private void btNovo_Click_1(object sender, System.EventArgs e)
         {
-            cadastro = new frmEmpresaCadastro(Operacao.Inserir);
+            cadastro = new frmEmpresaCadastro(Operacao.Inserir, context);
             cadastro.Empresa = new Empresa();
             cadastro.ShowDialog();
         }
@@ -46,7 +49,7 @@ namespace LabxPonto_View.Views.Empresas
 
         private void btAlterar_Click_1(object sender, System.EventArgs e)
         {
-            cadastro = new frmEmpresaCadastro(Operacao.Editar);
+            cadastro = new frmEmpresaCadastro(Operacao.Editar, context);
             cadastro.Empresa = retornarEmpresaSelecionado();
             cadastro.preencherTela();
             cadastro.ShowDialog();
@@ -54,7 +57,7 @@ namespace LabxPonto_View.Views.Empresas
 
         private void btnVisualizar_Click(object sender, System.EventArgs e)
         {
-            cadastro = new frmEmpresaCadastro(Operacao.Visualizar);
+            cadastro = new frmEmpresaCadastro(Operacao.Visualizar, context);
             cadastro.Empresa = retornarEmpresaSelecionado();
             cadastro.preencherTela();
             cadastro.ShowDialog();
@@ -62,7 +65,7 @@ namespace LabxPonto_View.Views.Empresas
 
         private void btExcluir_Click_1(object sender, System.EventArgs e)
         {
-            cadastro = new frmEmpresaCadastro(Operacao.Excluir);
+            cadastro = new frmEmpresaCadastro(Operacao.Excluir, context);
             cadastro.Empresa = retornarEmpresaSelecionado();
             cadastro.preencherTela();
             cadastro.ShowDialog();

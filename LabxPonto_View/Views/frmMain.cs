@@ -1,4 +1,5 @@
-﻿using LabxPonto_View.Views.Configurações;
+﻿using LabxPonto_Dao.Data.Context;
+using LabxPonto_View.Views.Configurações;
 using LabxPonto_View.Views.Departamentos;
 using LabxPonto_View.Views.Empresas;
 using LabxPonto_View.Views.Funcionarios;
@@ -9,20 +10,22 @@ namespace LabxPonto_View.Views
 {
     public partial class frmMain : MetroForm
     {
+        AppDataContext context = new AppDataContext();
         public frmMain()
         {
             InitializeComponent();
+            
         }
 
         public void mtCadastro_Click(object sender, System.EventArgs e)
         {
-            frmFuncionarios janela = new frmFuncionarios();
+            frmFuncionarios janela = new frmFuncionarios(context);
             janela.ShowDialog();
         }
 
         private void btnDepartamento_Click(object sender, System.EventArgs e)
         {
-            frmDepartamentos janela = new frmDepartamentos();
+            frmDepartamentos janela = new frmDepartamentos(context);
             janela.ShowDialog();
         }
 
@@ -39,13 +42,13 @@ namespace LabxPonto_View.Views
 
         private void btnFuncoes_Click(object sender, System.EventArgs e)
         {
-            frmFuncoes janela = new frmFuncoes();
+            frmFuncoes janela = new frmFuncoes(context);
             janela.ShowDialog();
         }
 
         private void btnEmpresa_Click(object sender, System.EventArgs e)
         {
-            frmEmpresas janela = new frmEmpresas();
+            frmEmpresas janela = new frmEmpresas(context);
             janela.ShowDialog();
         }
     }
