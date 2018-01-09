@@ -24,6 +24,9 @@ namespace LabxPonto_Dao.Data.Mapa
             Property(c => c.Estado)
                 .HasColumnName("EndEstado");
 
+            Property(c => c.Pais)
+                .HasColumnName("EmpPais");
+
             Property(c => c.Cidade)
                 .HasColumnName("EndCidade");
 

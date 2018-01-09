@@ -168,6 +168,8 @@ namespace LabxPonto_View.Views.Empresas
             empresa.Endereco.Cidade = txtCidade.Text;
             empresa.Endereco.Estado = cmbEstado.Text;
             empresa.Endereco.Complemento = txtComplemento.Text;
+            empresa.Endereco.Estado = cmbEstado.Text;
+            empresa.Endereco.Pais = cbPais.Text;
 
             if (!String.IsNullOrEmpty(txtCEP.Text))
                 empresa.Endereco.Cep = Convert.ToInt32(txtCEP.Text);
@@ -218,7 +220,6 @@ namespace LabxPonto_View.Views.Empresas
         {
             this.Dispose();
         }
-
 
         private void preencherCombos(MetroComboBox parNomeCombo)
         {
