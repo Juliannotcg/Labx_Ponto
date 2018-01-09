@@ -49,43 +49,46 @@
             this.metroTile1.ActiveControl = null;
             this.metroTile1.BackColor = System.Drawing.Color.CornflowerBlue;
             this.metroTile1.Location = new System.Drawing.Point(476, 350);
-            this.metroTile1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.metroTile1.Margin = new System.Windows.Forms.Padding(2);
             this.metroTile1.Name = "metroTile1";
             this.metroTile1.Size = new System.Drawing.Size(131, 79);
             this.metroTile1.TabIndex = 3;
             this.metroTile1.Text = "Relatórios";
             this.metroTile1.UseCustomBackColor = true;
             this.metroTile1.UseSelectable = true;
+            this.metroTile1.Click += new System.EventHandler(this.metroTile1_Click);
             // 
             // metroTile3
             // 
             this.metroTile3.ActiveControl = null;
             this.metroTile3.Location = new System.Drawing.Point(476, 223);
-            this.metroTile3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.metroTile3.Margin = new System.Windows.Forms.Padding(2);
             this.metroTile3.Name = "metroTile3";
             this.metroTile3.Size = new System.Drawing.Size(131, 123);
             this.metroTile3.TabIndex = 5;
             this.metroTile3.Text = "Leitura de Arquivo";
             this.metroTile3.UseSelectable = true;
+            this.metroTile3.Click += new System.EventHandler(this.metroTile3_Click);
             // 
             // metroTile2
             // 
             this.metroTile2.ActiveControl = null;
             this.metroTile2.BackColor = System.Drawing.Color.LightSeaGreen;
             this.metroTile2.Location = new System.Drawing.Point(341, 223);
-            this.metroTile2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.metroTile2.Margin = new System.Windows.Forms.Padding(2);
             this.metroTile2.Name = "metroTile2";
             this.metroTile2.Size = new System.Drawing.Size(131, 123);
             this.metroTile2.TabIndex = 4;
             this.metroTile2.Text = "Gerar Arquivo";
             this.metroTile2.UseCustomBackColor = true;
             this.metroTile2.UseSelectable = true;
+            this.metroTile2.Click += new System.EventHandler(this.metroTile2_Click);
             // 
             // btnDepartamento
             // 
             this.btnDepartamento.ActiveControl = null;
             this.btnDepartamento.Location = new System.Drawing.Point(18, 350);
-            this.btnDepartamento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDepartamento.Margin = new System.Windows.Forms.Padding(2);
             this.btnDepartamento.Name = "btnDepartamento";
             this.btnDepartamento.Size = new System.Drawing.Size(139, 79);
             this.btnDepartamento.TabIndex = 6;
@@ -97,7 +100,7 @@
             // 
             this.btnEmpresa.ActiveControl = null;
             this.btnEmpresa.Location = new System.Drawing.Point(161, 223);
-            this.btnEmpresa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEmpresa.Margin = new System.Windows.Forms.Padding(2);
             this.btnEmpresa.Name = "btnEmpresa";
             this.btnEmpresa.Size = new System.Drawing.Size(139, 123);
             this.btnEmpresa.TabIndex = 7;
@@ -109,7 +112,7 @@
             // 
             this.btnFuncoes.ActiveControl = null;
             this.btnFuncoes.Location = new System.Drawing.Point(161, 350);
-            this.btnFuncoes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFuncoes.Margin = new System.Windows.Forms.Padding(2);
             this.btnFuncoes.Name = "btnFuncoes";
             this.btnFuncoes.Size = new System.Drawing.Size(139, 79);
             this.btnFuncoes.TabIndex = 8;
@@ -122,7 +125,7 @@
             this.btnSair.ActiveControl = null;
             this.btnSair.BackColor = System.Drawing.Color.Red;
             this.btnSair.Location = new System.Drawing.Point(476, 526);
-            this.btnSair.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSair.Margin = new System.Windows.Forms.Padding(2);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(131, 53);
             this.btnSair.Style = MetroFramework.MetroColorStyle.Red;
@@ -174,7 +177,6 @@
             this.mtConfiguracoes.Style = MetroFramework.MetroColorStyle.Silver;
             this.mtConfiguracoes.TabIndex = 2;
             this.mtConfiguracoes.Text = "Configurações";
-            this.mtConfiguracoes.TileImage = global::LabxPonto_View.Properties.Resources.config;
             this.mtConfiguracoes.UseSelectable = true;
             this.mtConfiguracoes.UseTileImage = true;
             this.mtConfiguracoes.Click += new System.EventHandler(this.mtConfiguracoes_Click);
@@ -189,7 +191,6 @@
             this.btnFuncionario.Size = new System.Drawing.Size(139, 123);
             this.btnFuncionario.TabIndex = 1;
             this.btnFuncionario.Text = "Funcionários";
-            this.btnFuncionario.TileImage = global::LabxPonto_View.Properties.Resources.avatar;
             this.btnFuncionario.UseCustomBackColor = true;
             this.btnFuncionario.UseSelectable = true;
             this.btnFuncionario.UseTileImage = true;
@@ -197,7 +198,6 @@
             // 
             // pbLogo
             // 
-            this.pbLogo.Image = global::LabxPonto_View.Properties.Resources.LogoEmpresa;
             this.pbLogo.Location = new System.Drawing.Point(17, 39);
             this.pbLogo.Margin = new System.Windows.Forms.Padding(2);
             this.pbLogo.Name = "pbLogo";
@@ -224,7 +224,7 @@
             this.Controls.Add(this.mtConfiguracoes);
             this.Controls.Add(this.btnFuncionario);
             this.Controls.Add(this.pbLogo);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmMain";
             this.Padding = new System.Windows.Forms.Padding(15, 60, 15, 16);
             this.Style = MetroFramework.MetroColorStyle.Default;
