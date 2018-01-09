@@ -53,7 +53,7 @@ namespace LabxPonto_View.Views.Funcionarios
                 errorProviderFunc.SetError(txtCPF, "Informe o sobre nome do funcionário.");
             else
                 if (!validate.ValidarCPF_CNPJ(txtCPF.Text))
-                    errorProviderFunc.SetError(txtCPF, "O CPF informado é inválido.");
+                errorProviderFunc.SetError(txtCPF, "O CPF informado é inválido.");
 
             if (String.IsNullOrEmpty(txtRG.Text))
                 errorProviderFunc.SetError(txtRG, "Informe o RG do funcionário.");
@@ -119,7 +119,7 @@ namespace LabxPonto_View.Views.Funcionarios
             operacao = _operacao;
             servico = new FuncionarioService(con);
             validate = new ValidateCPF_CNPJ();
-            context = con; 
+            context = con;
         }
 
         public void limparTela()
@@ -138,21 +138,19 @@ namespace LabxPonto_View.Views.Funcionarios
             txtSobreNome.Text = "";
             txtTelefone.Text = "";
         }
-    
+
         public void preencherTela()
         {
             txtNomeFuncionario.Text = funcionario.Nome;
             txtSobreNome.Text = funcionario.SobreNome;
             txtCPF.Text = funcionario.CPF;
             txtRG.Text = funcionario.RG;
-            if(funcionario.DataNascimento > DateTime.MinValue)
+            if (funcionario.DataNascimento > DateTime.MinValue)
                 txtDataNascimento.Text = funcionario.DataNascimento.ToString();
 
             txtFolha.Text = funcionario.NumeroFolha;
             if (funcionario.DataAdmissao > DateTime.MinValue)
                 txtDataAdmissao.Text = funcionario.DataAdmissao.ToString();
-            // TODO: funcionario.Digital
-            // TODO: funcionario.Empresa = cmbEmpresa
 
             if (funcionario.Endereco != null)
             {
@@ -188,6 +186,37 @@ namespace LabxPonto_View.Views.Funcionarios
                     preencherImagemByte(funcionario.Imagem.Arquivo);
                     imagemByte = funcionario.Imagem.Arquivo;
                 }
+
+            if ((operacao == Operacao.Visualizar)||
+                (operacao == Operacao.Excluir))
+            {
+                txtNomeFuncionario.ReadOnly = true;
+                txtSobreNome.ReadOnly = true;
+                txtCPF.ReadOnly = true;
+                txtRG.ReadOnly = true;
+                txtDataNascimento.ReadOnly = true;
+
+                txtFolha.ReadOnly = true;
+                txtDataAdmissao.ReadOnly = true;
+                txtEndereco.ReadOnly = true;
+                txtBairro.ReadOnly = true;
+                txtCEP.ReadOnly = true;
+                txtCidade.ReadOnly = true;
+                txtComplemento.ReadOnly = true;
+                cmbEstado.Enabled = false;
+                cmbEstadoCivil.Enabled = false;
+                cmbDepartamento.Enabled = false;
+                cmbFuncao.Enabled = false;
+                cmbEmpresa.Enabled = false;
+
+
+                txtNomeMae.ReadOnly = true;
+                txtNomePai.ReadOnly = true;
+                txtTelefone.ReadOnly = true;
+                btCapturar.Enabled = false;
+                btnLocalizarImg.Enabled = false;
+            }
+
         }
 
         public void preencherFuncionario()
@@ -270,11 +299,11 @@ namespace LabxPonto_View.Views.Funcionarios
 
         private void excluir()
         {
-            //if (servico.Delete(departamento))
-            //{
-            //    MetroFramework.MetroMessageBox.Show(this, "O departamento " + departamento.NomeDepartamento + " foi deletado do sistema com sucesso!", "Cadastrado com sucesso!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question);
-            //    this.Dispose();
-            //}
+            if (servico.Delete(funcionario))
+            {
+                MetroFramework.MetroMessageBox.Show(this, "O funcionário " + funcionario.Nome + " " + funcionario.SobreNome + " foi deletado do sistema com sucesso!", "Cadastrado com sucesso!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question);
+                this.Dispose();
+            }
         }
 
         private void editar()
