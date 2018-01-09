@@ -174,7 +174,6 @@
             this.mtConfiguracoes.Style = MetroFramework.MetroColorStyle.Silver;
             this.mtConfiguracoes.TabIndex = 2;
             this.mtConfiguracoes.Text = "Configurações";
-            this.mtConfiguracoes.TileImage = global::LabxPonto_View.Properties.Resources.config;
             this.mtConfiguracoes.UseSelectable = true;
             this.mtConfiguracoes.UseTileImage = true;
             this.mtConfiguracoes.Click += new System.EventHandler(this.mtConfiguracoes_Click);
@@ -189,7 +188,6 @@
             this.btnFuncionario.Size = new System.Drawing.Size(139, 123);
             this.btnFuncionario.TabIndex = 1;
             this.btnFuncionario.Text = "Funcionários";
-            this.btnFuncionario.TileImage = global::LabxPonto_View.Properties.Resources.avatar;
             this.btnFuncionario.UseCustomBackColor = true;
             this.btnFuncionario.UseSelectable = true;
             this.btnFuncionario.UseTileImage = true;

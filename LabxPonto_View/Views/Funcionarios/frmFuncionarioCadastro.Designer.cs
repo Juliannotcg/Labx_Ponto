@@ -704,7 +704,6 @@
             // 
             // imgFoto
             // 
-            this.imgFoto.Image = global::LabxPonto_View.Properties.Resources.photo_1103596_960_720;
             this.imgFoto.Location = new System.Drawing.Point(617, 90);
             this.imgFoto.Margin = new System.Windows.Forms.Padding(2);
             this.imgFoto.Name = "imgFoto";

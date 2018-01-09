@@ -148,6 +148,8 @@ namespace LabxPonto_View.Views.Empresas
                 txtCidade.ReadOnly = true;
                 txtComplemento.ReadOnly = true;
                 txtCEP.ReadOnly = true;
+                cmbEstado.Enabled = false;
+                cbPais.Enabled = false;
             }
         }
 
@@ -217,17 +219,6 @@ namespace LabxPonto_View.Views.Empresas
             this.Dispose();
         }
 
-        private void frmFuncionarioCadastro_Load(object sender, EventArgs e)
-        {
-            preencherCombos(cmbEstado);
-
-            if (operacao == Operacao.Inserir)
-            {
-                empresa.Endereco = new Endereco();
-                empresa.Imagem = new Imagem();
-            }
-            preencherTela();
-        }
 
         private void preencherCombos(MetroComboBox parNomeCombo)
         {
@@ -237,7 +228,7 @@ namespace LabxPonto_View.Views.Empresas
                     cmbEstado.DataSource = Enum.GetNames(typeof(Estados));
                     break;
                 case "cmbPais":
-                    //cmbEstado.DataSource = Enum.GetNames(typeof(Estados));
+                    cbPais.DataSource = Enum.GetNames(typeof(Pais));
                     break;
             }
         }
@@ -263,6 +254,7 @@ namespace LabxPonto_View.Views.Empresas
 
         private void btnSalvar_Click(object sender, System.EventArgs e)
         {
+            limparErros();
             switch (operacao)
             {
                 case Operacao.Inserir:
@@ -289,6 +281,8 @@ namespace LabxPonto_View.Views.Empresas
 
         private void frmEmpresaCadastro_Load(object sender, EventArgs e)
         {
+            preencherCombos(cmbEstado);
+
             if (operacao == Operacao.Inserir)
                 empresa.Endereco = new Endereco();
         }
@@ -298,22 +292,19 @@ namespace LabxPonto_View.Views.Empresas
             this.Dispose();
         }
 
-        private void txtCEP_KeyDown(object sender, KeyEventArgs e)
+        private void txtCEP_Leave(object sender, EventArgs e)
         {
-            if (e.KeyCode == Keys.Tab)
+            if (!String.IsNullOrEmpty(txtCEP.Text))
             {
-                if (!String.IsNullOrEmpty(txtCEP.Text))
-                {
-                    endereco = new Endereco();
-                    CEPCorreios cepCorreios = new CEPCorreios();
-                    cepCorreios.preencheEndereco(txtCEP.Text);
+                endereco = new Endereco();
+                CEPCorreios cepCorreios = new CEPCorreios();
+                cepCorreios.preencheEndereco(txtCEP.Text);
 
-                    txtBairro.Text = endereco.Bairro;
-                    txtCidade.Text = endereco.Cidade;
-                    txtEndereco.Text = endereco.Logradouro;
-                    txtComplemento.Text = endereco.Complemento;
-                    cmbEstado.Text = endereco.Estado;
-                }
+                txtBairro.Text = endereco.Bairro;
+                txtCidade.Text = endereco.Cidade;
+                txtEndereco.Text = endereco.Logradouro;
+                txtComplemento.Text = endereco.Complemento;
+                cmbEstado.Text = endereco.Estado;
             }
         }
     }
