@@ -50,10 +50,6 @@ namespace LabxPonto_Dao.Data.Mapa
                .WithMany()
                .Map(m => m.MapKey("Fun_EndId"));
 
-            HasOptional(o => o.Contrato)
-               .WithMany()
-               .Map(m => m.MapKey("Fun_ConId"));
-
             HasOptional(o => o.Funcao)
                .WithMany()
                .Map(m => m.MapKey("Fun_FncId"));
@@ -66,18 +62,18 @@ namespace LabxPonto_Dao.Data.Mapa
                .WithMany()
                .Map(m => m.MapKey("Fun_ImaId"));
 
-            Property(r => r.Contrato.DataAdmissao)
+            Property(r => r.DataAdmissao)
              .HasColumnName("FunDataAdmissao")
                .HasColumnType("datetime2");
 
-            Property(r => r.Contrato.DataRecisao)
+            Property(r => r.DataRecisao)
             .HasColumnName("FunDataRecisao")
             .HasColumnType("datetime2");
 
-            Property(r => r.Contrato.MotivoRecisao)
+            Property(r => r.MotivoRecisao)
             .HasColumnName("FunMotivoRecisao");
 
-            Property(r => r.Contrato.NumeroFolha)
+            Property(r => r.NumeroFolha)
             .HasColumnName("FunNumeroFolha");
         }
     }

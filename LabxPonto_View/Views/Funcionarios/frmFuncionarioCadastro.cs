@@ -192,9 +192,9 @@ namespace LabxPonto_View.Views.Funcionarios
             
             #region Contrato
 
-            funcionario.Contrato.NumeroFolha = Convert.ToInt32(txtFolha.Text);
+            funcionario.NumeroFolha = txtFolha.Text;
             if (!String.IsNullOrEmpty(txtDataAdmissao.Text.Replace("/", "").Trim()))
-                funcionario.Contrato.DataAdmissao = Convert.ToDateTime(txtDataAdmissao.Text);
+                funcionario.DataAdmissao = Convert.ToDateTime(txtDataAdmissao.Text);
 
             #endregion
 
