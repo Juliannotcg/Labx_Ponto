@@ -85,7 +85,6 @@
             this.btNovo.Style = MetroFramework.MetroColorStyle.Blue;
             this.btNovo.TabIndex = 56;
             this.btNovo.Text = "Novo";
-            this.btNovo.TileImage = global::LabxPonto_View.Properties.Resources.plus_sign_to_add;
             this.btNovo.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btNovo.UseSelectable = true;
             this.btNovo.UseTileImage = true;

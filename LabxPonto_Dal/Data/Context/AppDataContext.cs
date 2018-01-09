@@ -13,7 +13,6 @@ namespace LabxPonto_Dao.Data.Context
             Configuration.LazyLoadingEnabled = false;
         }
 
-        public DbSet<Contrato> Contratos{ get; set; }
         public DbSet<Departamento> Departamentos { get; set; }
         public DbSet<Empresa> Empresas { get; set; }
         public DbSet<Endereco> Enderecos { get; set; }
@@ -40,7 +39,6 @@ namespace LabxPonto_Dao.Data.Context
             modelBuilder.Properties<string>()
                 .Configure(p => p.HasMaxLength(100));
 
-            modelBuilder.Configurations.Add(new ContratoMap());
             modelBuilder.Configurations.Add(new DepartamentoMap());
             modelBuilder.Configurations.Add(new EmpresaMap());
             modelBuilder.Configurations.Add(new EnderecoMap());

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LabxPonto_Dao.VO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -19,7 +20,7 @@ namespace LabxPonto_Dao.Model
         public string NomeMae { get; set; }
         public DateTime DataNascimento { get; set; }
         public Endereco Endereco { get; set; }
-        public Contrato Contrato { get; set; }
+        public ContratoVO Contrato { get; set; }
         public Funcao Funcao { get; set; }
         public Empresa Empresa { get; set; }
         public Imagem Imagem { get; set; }

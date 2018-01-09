@@ -47,13 +47,17 @@
             // 
             // btAlterar
             // 
-            this.btAlterar.Location = new System.Drawing.Point(23, 195);
+            this.btAlterar.Location = new System.Drawing.Point(23, 169);
             this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click_2);
             // 
             // btExcluir
             // 
-            this.btExcluir.Location = new System.Drawing.Point(104, 195);
+            this.btExcluir.Location = new System.Drawing.Point(104, 169);
             this.btExcluir.Click += new System.EventHandler(this.btExcluir_Click_2);
+            // 
+            // btnVisualizar
+            // 
+            this.btnVisualizar.Location = new System.Drawing.Point(23, 265);
             // 
             // dgFuncionarios
             // 

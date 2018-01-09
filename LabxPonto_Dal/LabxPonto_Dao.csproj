@@ -72,7 +72,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\Context\AppDataContext.cs" />
-    <Compile Include="Data\Mapa\ContratoMap.cs" />
     <Compile Include="Data\Mapa\DepartamentoMap.cs" />
     <Compile Include="Data\Mapa\EmpresaMap.cs" />
     <Compile Include="Data\Mapa\EnderecoMap.cs" />
@@ -111,7 +110,6 @@
       <DependentUpon>201801090212355_DateTime2-2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Model\Contrato.cs" />
     <Compile Include="Model\Departamento.cs" />
     <Compile Include="Model\Empresa.cs" />
     <Compile Include="Model\Endereco.cs" />
@@ -125,6 +123,7 @@
     <Compile Include="Service\EmpresaService.cs" />
     <Compile Include="Service\FuncaoService.cs" />
     <Compile Include="Service\FuncionarioService.cs" />
+    <Compile Include="VO\ContratoVO.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

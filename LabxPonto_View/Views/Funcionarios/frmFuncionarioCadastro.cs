@@ -192,7 +192,6 @@ namespace LabxPonto_View.Views.Funcionarios
             
             #region Contrato
 
-            funcionario.Contrato = new Contrato();
             funcionario.Contrato.NumeroFolha = Convert.ToInt32(txtFolha.Text);
             if (!String.IsNullOrEmpty(txtDataAdmissao.Text.Replace("/", "").Trim()))
                 funcionario.Contrato.DataAdmissao = Convert.ToDateTime(txtDataAdmissao.Text);
@@ -323,7 +322,7 @@ namespace LabxPonto_View.Views.Funcionarios
                     EmpresaService empresaService = new EmpresaService(context);
                     cmbEmpresa.DataSource = empresaService.GetEmpresa();
                     cmbEmpresa.ValueMember = "Id";
-                    cmbEmpresa.DisplayMember = "EmpNomeFantasia";
+                    cmbEmpresa.DisplayMember = "NomeFantasia";
                     break;
             }
         }

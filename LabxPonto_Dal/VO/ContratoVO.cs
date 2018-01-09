@@ -1,10 +1,9 @@
 ﻿using System;
 
-namespace LabxPonto_Dao.Model
+namespace LabxPonto_Dao.VO
 {
-    public class Contrato
+    public class ContratoVO
     {
-        public int Id { get; set; }
         public int NumeroFolha { get; set; }
         public DateTime DataAdmissao { get; set; }
         public DateTime DataRecisao { get; set; }
