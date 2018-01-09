@@ -19,11 +19,15 @@ namespace LabxPonto_Dao.Model
         public string NomeMae { get; set; }
         public DateTime DataNascimento { get; set; }
         public Endereco Endereco { get; set; }
-        public Contrato Contrato { get; set; }
         public Funcao Funcao { get; set; }
         public Empresa Empresa { get; set; }
         public Imagem Imagem { get; set; }
         public ICollection<HorarioExpediente> Horario { get; private set; }
+        public DateTime DataAdmissao { get; set; }
+        public DateTime DataRecisao{ get; set; }
+        public string MotivoRecisao { get; set; }
+        public string NumeroFolha { get; set; }
+
         public void Validar()
         {
            

@@ -28,6 +28,7 @@ namespace LabxPonto_View.Views.Funcionarios
         protected Funcionario funcionario;
         protected string caminhoImagem;
         private AppDataContext context;
+        byte[] imagemByte;
 
         public Funcionario Funcionario
         {
@@ -147,13 +148,15 @@ namespace LabxPonto_View.Views.Funcionarios
             if(funcionario.DataNascimento > DateTime.MinValue)
                 txtDataNascimento.Text = funcionario.DataNascimento.ToString();
 
-            //if (funcionario.data > DateTime.MinValue)
-            //    txtDataNascimento.Text = funcionario.DataNascimento.ToString();
+            txtFolha.Text = funcionario.NumeroFolha;
+            if (funcionario.DataAdmissao > DateTime.MinValue)
+                txtDataAdmissao.Text = funcionario.DataAdmissao.ToString();
             // TODO: funcionario.Digital
             // TODO: funcionario.Empresa = cmbEmpresa
 
             if (funcionario.Endereco != null)
             {
+                txtEndereco.Text = funcionario.Endereco.Logradouro;
                 txtBairro.Text = funcionario.Endereco.Bairro;
                 txtCEP.Text = funcionario.Endereco.Cep.ToString();
                 txtCidade.Text = funcionario.Endereco.Cidade;
@@ -179,12 +182,12 @@ namespace LabxPonto_View.Views.Funcionarios
             txtNomeMae.Text = funcionario.NomeMae;
             txtNomePai.Text = funcionario.NomePai;
             txtTelefone.Text = funcionario.Telefone;
-            if(funcionario.Imagem!=null)
-              if(funcionario.Imagem.Arquivo!=null)
-                preencherImagemByte(funcionario.Imagem.Arquivo);
-            
-           
-            
+            if (funcionario.Imagem != null)
+                if (funcionario.Imagem.Arquivo != null)
+                {
+                    preencherImagemByte(funcionario.Imagem.Arquivo);
+                    imagemByte = funcionario.Imagem.Arquivo;
+                }
         }
 
         public void preencherFuncionario()
@@ -192,10 +195,9 @@ namespace LabxPonto_View.Views.Funcionarios
             
             #region Contrato
 
-            funcionario.Contrato = new Contrato();
-            funcionario.Contrato.NumeroFolha = Convert.ToInt32(txtFolha.Text);
+            funcionario.NumeroFolha = txtFolha.Text;
             if (!String.IsNullOrEmpty(txtDataAdmissao.Text.Replace("/", "").Trim()))
-                funcionario.Contrato.DataAdmissao = Convert.ToDateTime(txtDataAdmissao.Text);
+                funcionario.DataAdmissao = Convert.ToDateTime(txtDataAdmissao.Text);
 
             #endregion
 
@@ -214,6 +216,7 @@ namespace LabxPonto_View.Views.Funcionarios
             funcionario.Endereco.Cidade = txtCidade.Text;
             funcionario.Endereco.Complemento = txtComplemento.Text;
             funcionario.Endereco.Estado = cmbEstado.Text;
+            funcionario.Endereco.Logradouro = txtEndereco.Text;
 
             #endregion
 
@@ -228,8 +231,9 @@ namespace LabxPonto_View.Views.Funcionarios
 
             funcionario.Imagem = new Imagem();
             if (!String.IsNullOrEmpty(imgFoto.ImageLocation))
-                funcionario.Imagem.Arquivo = ConverterImagemParaBytes(imgFoto.ImageLocation);
-
+                funcionario.Imagem.Arquivo = imagemByte;
+                //funcionario.Imagem.Arquivo = ConverterImagemParaBytes(imgFoto.ImageLocation);
+                
             #endregion
 
             #region Funcionário 
@@ -323,7 +327,7 @@ namespace LabxPonto_View.Views.Funcionarios
                     EmpresaService empresaService = new EmpresaService(context);
                     cmbEmpresa.DataSource = empresaService.GetEmpresa();
                     cmbEmpresa.ValueMember = "Id";
-                    cmbEmpresa.DisplayMember = "EmpNomeFantasia";
+                    cmbEmpresa.DisplayMember = "NomeFantasia";
                     break;
             }
         }
@@ -357,6 +361,7 @@ namespace LabxPonto_View.Views.Funcionarios
                 imgFoto.SizeMode = PictureBoxSizeMode.Zoom;
 
                 imgFoto.ImageLocation = caminhoImagem;
+                imagemByte = ConverterImagemParaBytes(caminhoImagem);
             }
         }
 

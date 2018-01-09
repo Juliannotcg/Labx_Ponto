@@ -72,7 +72,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\Context\AppDataContext.cs" />
-    <Compile Include="Data\Mapa\ContratoMap.cs" />
     <Compile Include="Data\Mapa\DepartamentoMap.cs" />
     <Compile Include="Data\Mapa\EmpresaMap.cs" />
     <Compile Include="Data\Mapa\EnderecoMap.cs" />
@@ -110,8 +109,11 @@
     <Compile Include="Migrations\201801090212355_DateTime2-2.Designer.cs">
       <DependentUpon>201801090212355_DateTime2-2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801091355512_Contrato.cs" />
+    <Compile Include="Migrations\201801091355512_Contrato.Designer.cs">
+      <DependentUpon>201801091355512_Contrato.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Model\Contrato.cs" />
     <Compile Include="Model\Departamento.cs" />
     <Compile Include="Model\Empresa.cs" />
     <Compile Include="Model\Endereco.cs" />
@@ -152,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801090212355_DateTime2-2.resx">
       <DependentUpon>201801090212355_DateTime2-2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801091355512_Contrato.resx">
+      <DependentUpon>201801091355512_Contrato.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

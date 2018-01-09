@@ -45,13 +45,17 @@
             // 
             // btAlterar
             // 
-            this.btAlterar.Location = new System.Drawing.Point(23, 186);
+            this.btAlterar.Location = new System.Drawing.Point(23, 160);
             this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click_1);
             // 
             // btExcluir
             // 
-            this.btExcluir.Location = new System.Drawing.Point(104, 186);
+            this.btExcluir.Location = new System.Drawing.Point(104, 160);
             this.btExcluir.Click += new System.EventHandler(this.btExcluir_Click_1);
+            // 
+            // btnVisualizar
+            // 
+            this.btnVisualizar.Location = new System.Drawing.Point(23, 255);
             // 
             // dgDepartamentos
             // 
@@ -139,6 +143,7 @@
             this.Name = "frmDepartamentos";
             this.Text = "Departamentos";
             this.Load += new System.EventHandler(this.frmDepartamentos_Load);
+            this.Controls.SetChildIndex(this.btnVisualizar, 0);
             this.Controls.SetChildIndex(this.btNovo, 0);
             this.Controls.SetChildIndex(this.btAlterar, 0);
             this.Controls.SetChildIndex(this.btExcluir, 0);
