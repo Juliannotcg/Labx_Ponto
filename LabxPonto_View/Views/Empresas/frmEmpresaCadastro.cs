@@ -227,7 +227,7 @@ namespace LabxPonto_View.Views.Empresas
                 case "cmbEstado":
                     cmbEstado.DataSource = Enum.GetNames(typeof(Estados));
                     break;
-                case "cmbPais":
+                case "cbPais":
                     cbPais.DataSource = Enum.GetNames(typeof(Pais));
                     break;
             }
@@ -282,6 +282,7 @@ namespace LabxPonto_View.Views.Empresas
         private void frmEmpresaCadastro_Load(object sender, EventArgs e)
         {
             preencherCombos(cmbEstado);
+            preencherCombos(cbPais);
 
             if (operacao == Operacao.Inserir)
                 empresa.Endereco = new Endereco();
