@@ -319,6 +319,7 @@
     <None Include="Resources\if_new-24_103173.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\avatar.png" />
     <Content Include="Utils\DirectX.Capture.dll" />
     <Content Include="Utils\DShowNET.dll" />
   </ItemGroup>

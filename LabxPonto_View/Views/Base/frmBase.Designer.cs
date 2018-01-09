@@ -28,19 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.btnVisualizar = new MetroFramework.Controls.MetroTile();
             this.btExcluir = new MetroFramework.Controls.MetroTile();
             this.btAlterar = new MetroFramework.Controls.MetroTile();
             this.btNovo = new MetroFramework.Controls.MetroTile();
-            this.btnVisualizar = new MetroFramework.Controls.MetroTile();
             this.SuspendLayout();
+            // 
+            // btnVisualizar
+            // 
+            this.btnVisualizar.ActiveControl = null;
+            this.btnVisualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnVisualizar.Location = new System.Drawing.Point(23, 291);
+            this.btnVisualizar.Name = "btnVisualizar";
+            this.btnVisualizar.Size = new System.Drawing.Size(156, 37);
+            this.btnVisualizar.Style = MetroFramework.MetroColorStyle.Blue;
+            this.btnVisualizar.TabIndex = 59;
+            this.btnVisualizar.Text = "Visualizar";
+            this.btnVisualizar.UseCustomBackColor = true;
+            this.btnVisualizar.UseSelectable = true;
+            this.btnVisualizar.UseTileImage = true;
             // 
             // btExcluir
             // 
             this.btExcluir.ActiveControl = null;
-            this.btExcluir.Location = new System.Drawing.Point(139, 241);
-            this.btExcluir.Margin = new System.Windows.Forms.Padding(4);
+            this.btExcluir.Location = new System.Drawing.Point(104, 196);
             this.btExcluir.Name = "btExcluir";
-            this.btExcluir.Size = new System.Drawing.Size(100, 109);
+            this.btExcluir.Size = new System.Drawing.Size(75, 89);
             this.btExcluir.Style = MetroFramework.MetroColorStyle.Red;
             this.btExcluir.TabIndex = 58;
             this.btExcluir.Text = "Deletar";
@@ -52,10 +65,9 @@
             // btAlterar
             // 
             this.btAlterar.ActiveControl = null;
-            this.btAlterar.Location = new System.Drawing.Point(31, 241);
-            this.btAlterar.Margin = new System.Windows.Forms.Padding(4);
+            this.btAlterar.Location = new System.Drawing.Point(23, 196);
             this.btAlterar.Name = "btAlterar";
-            this.btAlterar.Size = new System.Drawing.Size(100, 109);
+            this.btAlterar.Size = new System.Drawing.Size(75, 89);
             this.btAlterar.Style = MetroFramework.MetroColorStyle.Silver;
             this.btAlterar.TabIndex = 57;
             this.btAlterar.Text = "Alterar";
@@ -67,45 +79,28 @@
             // btNovo
             // 
             this.btNovo.ActiveControl = null;
-            this.btNovo.Location = new System.Drawing.Point(31, 132);
-            this.btNovo.Margin = new System.Windows.Forms.Padding(4);
+            this.btNovo.Location = new System.Drawing.Point(23, 107);
             this.btNovo.Name = "btNovo";
-            this.btNovo.Size = new System.Drawing.Size(208, 101);
+            this.btNovo.Size = new System.Drawing.Size(156, 82);
             this.btNovo.Style = MetroFramework.MetroColorStyle.Blue;
             this.btNovo.TabIndex = 56;
             this.btNovo.Text = "Novo";
-            this.btNovo.TileImage = global::LabxPonto_View.Properties.Resources.if_user_add_outline_216487;
+            this.btNovo.TileImage = global::LabxPonto_View.Properties.Resources.plus_sign_to_add;
+            this.btNovo.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btNovo.UseSelectable = true;
             this.btNovo.UseTileImage = true;
             this.btNovo.Click += new System.EventHandler(this.btNovo_Click);
             // 
-            // btnVisualizar
-            // 
-            this.btnVisualizar.ActiveControl = null;
-            this.btnVisualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnVisualizar.Location = new System.Drawing.Point(31, 358);
-            this.btnVisualizar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnVisualizar.Name = "btnVisualizar";
-            this.btnVisualizar.Size = new System.Drawing.Size(208, 45);
-            this.btnVisualizar.Style = MetroFramework.MetroColorStyle.Blue;
-            this.btnVisualizar.TabIndex = 59;
-            this.btnVisualizar.Text = "Visualizar";
-            this.btnVisualizar.UseCustomBackColor = true;
-            this.btnVisualizar.UseSelectable = true;
-            this.btnVisualizar.UseTileImage = true;
-            // 
             // frmBase
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(981, 432);
+            this.ClientSize = new System.Drawing.Size(736, 351);
             this.Controls.Add(this.btnVisualizar);
             this.Controls.Add(this.btExcluir);
             this.Controls.Add(this.btAlterar);
             this.Controls.Add(this.btNovo);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmBase";
-            this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.Text = "Base";
             this.ResumeLayout(false);
 

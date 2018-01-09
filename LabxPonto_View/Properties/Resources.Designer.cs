@@ -73,6 +73,16 @@ namespace LabxPonto_View.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap avatar {
+            get {
+                object obj = ResourceManager.GetObject("avatar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap config {
             get {
                 object obj = ResourceManager.GetObject("config", resourceCulture);
@@ -126,6 +136,16 @@ namespace LabxPonto_View.Properties {
         internal static System.Drawing.Bitmap photo_1103596_960_720 {
             get {
                 object obj = ResourceManager.GetObject("photo-1103596_960_720", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plus_sign_to_add {
+            get {
+                object obj = ResourceManager.GetObject("plus-sign-to-add", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
