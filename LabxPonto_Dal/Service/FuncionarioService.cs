@@ -51,7 +51,6 @@ namespace LabxPonto_Dao.Service
         {
             return Context.Funcionarios.Include("Empresa").
                     Include("Endereco")
-                    .Include("Contrato")
                     .Include("Funcao")
                     .Include("Funcao.Departamento")
                     .Include("Imagem")
