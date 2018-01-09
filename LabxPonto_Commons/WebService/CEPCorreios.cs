@@ -15,7 +15,7 @@ namespace LabxPonto_Commons.WebService
         {
             endereco = new Endereco();
 
-            var ws = new ServiceCEP.AtendeClienteClient();
+            var ws = new ServiceCEPCorreios.AtendeClienteClient();
             var resposta = ws.consultaCEP(cep);
 
             endereco.Logradouro = resposta.end;

@@ -116,6 +116,7 @@
     <Compile Include="Enums\Operacao.cs" />
     <Compile Include="Enums\EstadoCivil.cs" />
     <Compile Include="Enums\Estados.cs" />
+    <Compile Include="Enums\Pais.cs" />
     <Compile Include="Enums\TipoHorario.cs" />
     <Compile Include="Views\Base\frmBaseCadastro.cs">
       <SubType>Form</SubType>

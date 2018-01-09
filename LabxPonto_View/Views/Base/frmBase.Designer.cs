@@ -57,7 +57,6 @@
             this.btExcluir.Style = MetroFramework.MetroColorStyle.Red;
             this.btExcluir.TabIndex = 58;
             this.btExcluir.Text = "Deletar";
-            this.btExcluir.TileImage = global::LabxPonto_View.Properties.Resources.if_user_delete_outline_216492;
             this.btExcluir.UseSelectable = true;
             this.btExcluir.UseTileImage = true;
             this.btExcluir.Click += new System.EventHandler(this.btExcluir_Click);
@@ -71,7 +70,6 @@
             this.btAlterar.Style = MetroFramework.MetroColorStyle.Silver;
             this.btAlterar.TabIndex = 57;
             this.btAlterar.Text = "Alterar";
-            this.btAlterar.TileImage = global::LabxPonto_View.Properties.Resources.if_new_24_103173;
             this.btAlterar.UseSelectable = true;
             this.btAlterar.UseTileImage = true;
             this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click);
