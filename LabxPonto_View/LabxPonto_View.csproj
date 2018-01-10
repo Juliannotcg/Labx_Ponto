@@ -325,6 +325,7 @@
   <ItemGroup>
     <None Include="Resources\avatar.png" />
     <Content Include="favicon.ico" />
+    <None Include="Resources\Logo11.jpg" />
     <Content Include="Utils\DirectX.Capture.dll" />
     <Content Include="Utils\DShowNET.dll" />
   </ItemGroup>
