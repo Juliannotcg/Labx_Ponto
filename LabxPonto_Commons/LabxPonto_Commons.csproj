@@ -51,6 +51,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="MasksTxt.cs" />
+    <Compile Include="Model\ApiEndereco.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resource\ErrosMessage_Endereco.Designer.cs">
       <AutoGen>True</AutoGen>

@@ -360,13 +360,13 @@ namespace LabxPonto_View.Views.Empresas
             {
                 endereco = new Endereco();
                 CEPCorreios cepCorreios = new CEPCorreios();
-                cepCorreios.BuscaCep(txtCEP.Text);
+                endereco = cepCorreios.BuscaCep(txtCEP.Text);
 
                 txtBairro.Text = endereco.Bairro;
                 txtCidade.Text = endereco.Cidade;
                 txtEndereco.Text = endereco.Logradouro;
                 txtComplemento.Text = endereco.Complemento;
-                cmbEstado.Text = endereco.Estado;
+                cmbEstado.SelectedText = endereco.Estado;
             }
         }
 
