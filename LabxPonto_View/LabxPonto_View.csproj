@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CommonServiceLocator, Version=2.0.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
       <HintPath>..\packages\Unity.5.5.4\lib\net45\CommonServiceLocator.dll</HintPath>
@@ -321,8 +324,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\avatar.png" />
-    <None Include="Resources\ePonto.jpg" />
-    <None Include="Resources\Logo1.jpg" />
+    <Content Include="favicon.ico" />
     <Content Include="Utils\DirectX.Capture.dll" />
     <Content Include="Utils\DShowNET.dll" />
   </ItemGroup>
