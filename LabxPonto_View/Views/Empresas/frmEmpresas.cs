@@ -40,6 +40,7 @@ namespace LabxPonto_View.Views.Empresas
             cadastro = new frmEmpresaCadastro(Operacao.Inserir, context);
             cadastro.Empresa = new Empresa();
             cadastro.ShowDialog();
+            preencherGrid();
         }
 
         private void frmEmpresas_Load(object sender, System.EventArgs e)
@@ -53,6 +54,7 @@ namespace LabxPonto_View.Views.Empresas
             cadastro.Empresa = retornarEmpresaSelecionado();
             cadastro.preencherTela();
             cadastro.ShowDialog();
+            preencherGrid();
         }
 
         private void btnVisualizar_Click(object sender, System.EventArgs e)
@@ -61,6 +63,7 @@ namespace LabxPonto_View.Views.Empresas
             cadastro.Empresa = retornarEmpresaSelecionado();
             cadastro.preencherTela();
             cadastro.ShowDialog();
+            preencherGrid();
         }
 
         private void btExcluir_Click_1(object sender, System.EventArgs e)
@@ -69,6 +72,7 @@ namespace LabxPonto_View.Views.Empresas
             cadastro.Empresa = retornarEmpresaSelecionado();
             cadastro.preencherTela();
             cadastro.ShowDialog();
+            preencherGrid();
         }
     }
 }

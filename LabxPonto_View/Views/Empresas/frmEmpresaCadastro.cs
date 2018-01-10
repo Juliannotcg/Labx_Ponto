@@ -5,8 +5,12 @@ using LabxPonto_Dao.Model;
 using LabxPonto_Dao.Service;
 using LabxPonto_View.Enums;
 using LabxPonto_View.Views.Base;
+using LabxPonto_View.Views.Cam;
 using MetroFramework.Controls;
 using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace LabxPonto_View.Views.Empresas
@@ -19,6 +23,7 @@ namespace LabxPonto_View.Views.Empresas
         private Endereco endereco;
         protected Empresa empresa;
         protected string caminhoImagem;
+        byte[] imagemByte;
 
         public Empresa Empresa
         {
@@ -126,14 +131,18 @@ namespace LabxPonto_View.Views.Empresas
             txtCargoResponsavel.Text = empresa.CargoResponsavel;
             txtEmailResponsavel.Text = empresa.EmailResponsavel;
 
-            txtEndereco.Text = empresa.Endereco.Logradouro;
-            txtBairro.Text = empresa.Endereco.Bairro;
-            txtCidade.Text = empresa.Endereco.Cidade;
-            cmbEstado.Text = empresa.Endereco.Estado;
-            txtComplemento.Text = empresa.Endereco.Complemento;
-            txtCEP.Text = empresa.Endereco.Cep.ToString();
+            if (empresa.Endereco != null)
+            {
+                txtEndereco.Text = empresa.Endereco.Logradouro;
+                txtBairro.Text = empresa.Endereco.Bairro;
+                txtCidade.Text = empresa.Endereco.Cidade;
+                cmbEstado.Text = empresa.Endereco.Estado;
+                txtComplemento.Text = empresa.Endereco.Complemento;
+                txtCEP.Text = empresa.Endereco.Cep.ToString();
+            }
 
-            if (operacao == Operacao.Visualizar)
+            if ((operacao == Operacao.Visualizar)||
+                (operacao == Operacao.Excluir))
             {
                 txtNomeEmpresa.ReadOnly = true;
                 txtFolha.ReadOnly = true;
@@ -150,7 +159,23 @@ namespace LabxPonto_View.Views.Empresas
                 txtCEP.ReadOnly = true;
                 cmbEstado.Enabled = false;
                 cbPais.Enabled = false;
+                btCapturar.Enabled = false;
+                btnLocalizarImg.Enabled = false;
             }
+
+            if(operacao == Operacao.Visualizar)
+            {
+                btnSalvar.Visible = false;
+                btnCancelar.Text = "Fechar";
+            }
+
+            if (empresa.Imagem != null)
+                if (empresa.Imagem.Arquivo != null)
+                {
+                    preencherImagemByte(empresa.Imagem.Arquivo);
+                    imagemByte = empresa.Imagem.Arquivo;
+                }
+
         }
 
         public void preencherEmpresa()
@@ -173,6 +198,41 @@ namespace LabxPonto_View.Views.Empresas
 
             if (!String.IsNullOrEmpty(txtCEP.Text))
                 empresa.Endereco.Cep = Convert.ToInt32(txtCEP.Text);
+
+            #region Imagem
+
+            empresa.Imagem = new Imagem();
+            if (imagemByte!=null)
+                empresa.Imagem.Arquivo = imagemByte;
+            //funcionario.Imagem.Arquivo = ConverterImagemParaBytes(imgFoto.ImageLocation);
+
+            #endregion
+        }
+
+        public void preencherImagemByte(byte[] imagemEmBytes)
+        {
+            MemoryStream ms = new MemoryStream();
+            Image img;
+
+            try
+            {
+                ms = new MemoryStream(imagemEmBytes, 0, imagemEmBytes.Length);
+                ms.Write(imagemEmBytes, 0, imagemEmBytes.Length);
+                img = Image.FromStream(ms, true);
+                imgFoto.Image = img;
+            }
+            catch (ArgumentException aex)
+            {
+                throw new InvalidOperationException("Imagem inválida");
+            }
+            finally
+            {
+                if (ms != null)
+                {
+                    ms.Close();
+                    ms = null;
+                }
+            }
         }
 
         private void inserir()
@@ -190,15 +250,11 @@ namespace LabxPonto_View.Views.Empresas
 
         private void excluir()
         {
-            limparErros();
-            if (validar())
+            preencherEmpresa();
+            if (servico.Delete(empresa))
             {
-                preencherEmpresa();
-                if (servico.Delete(empresa))
-                {
-                    MetroFramework.MetroMessageBox.Show(this, "A empresa " + empresa.NomeFantasia + " foi deletada com sucesso!", "Excluído com sucesso!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question);
-                    this.Dispose();
-                }
+                MetroFramework.MetroMessageBox.Show(this, "A empresa " + empresa.NomeFantasia + " foi deletada com sucesso!", "Excluído com sucesso!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question);
+                this.Dispose();
             }
         }
 
@@ -272,10 +328,11 @@ namespace LabxPonto_View.Views.Empresas
 
         private void txtCNPJ_Leave(object sender, EventArgs e)
         {
-            if (txtCNPJ.Text.Length == 14)
+            string cnpjTexto = txtCNPJ.Text.Replace(".", "").Replace("-", "").Replace("/", "");
+            if (cnpjTexto.Length == 14)
             {
-                long CNPJ = Convert.ToInt64(txtCNPJ.Text);
-                string CNPJFormatado = String.Format(@"{0:\00\.000\.000/0000-00}", CNPJ);
+                long CNPJ = Convert.ToInt64(cnpjTexto);
+                string CNPJFormatado = String.Format(@"{0:00\.000\.000\/0000\-00}", CNPJ);
                 txtCNPJ.Text = CNPJFormatado;
             }
         }
@@ -308,6 +365,41 @@ namespace LabxPonto_View.Views.Empresas
                 txtComplemento.Text = endereco.Complemento;
                 cmbEstado.Text = endereco.Estado;
             }
+        }
+
+        private void btnLocalizarImg_Click(object sender, EventArgs e)
+        {
+            if (buscarArquivo.ShowDialog() == DialogResult.OK)
+            {
+                caminhoImagem = buscarArquivo.FileName;
+                imgFoto.SizeMode = PictureBoxSizeMode.Zoom;
+
+                imgFoto.ImageLocation = caminhoImagem;
+                imagemByte = ConverterImagemParaBytes(caminhoImagem);
+            }
+        }
+
+        public byte[] ConverterImagemParaBytes(string caminhoImagem)
+        {
+            byte[] arraybytes = null;
+
+            FileInfo informacoesFicnheiro = new FileInfo(caminhoImagem);
+            long numeroBytes = informacoesFicnheiro.Length;
+
+            FileStream fStream = new FileStream(caminhoImagem, FileMode.Open, FileAccess.Read);
+
+            BinaryReader br = new BinaryReader(fStream);
+
+            arraybytes = br.ReadBytes((int)numeroBytes);
+
+            return arraybytes;
+        }
+
+        private void btCapturar_Click(object sender, EventArgs e)
+        {
+            frmWebCam janela = new frmWebCam();
+            janela.ShowDialog();
+            imgFoto.ImageLocation = janela.caminhoImagemSalva;
         }
     }
 }

@@ -58,6 +58,7 @@
             // btnVisualizar
             // 
             this.btnVisualizar.Location = new System.Drawing.Point(23, 265);
+            this.btnVisualizar.Click += new System.EventHandler(this.btnVisualizar_Click);
             // 
             // dgFuncionarios
             // 

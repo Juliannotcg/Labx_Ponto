@@ -216,6 +216,11 @@ namespace LabxPonto_View.Views.Funcionarios
                 btCapturar.Enabled = false;
                 btnLocalizarImg.Enabled = false;
             }
+            if(operacao == Operacao.Visualizar)
+            {
+                btnSalvar.Visible = false;
+                btnCancelar.Text = "Fechar";
+            }
 
         }
 
@@ -259,7 +264,7 @@ namespace LabxPonto_View.Views.Funcionarios
             #region Imagem
 
             funcionario.Imagem = new Imagem();
-            if (!String.IsNullOrEmpty(imgFoto.ImageLocation))
+            if (imagemByte != null)
                 funcionario.Imagem.Arquivo = imagemByte;
                 //funcionario.Imagem.Arquivo = ConverterImagemParaBytes(imgFoto.ImageLocation);
                 
