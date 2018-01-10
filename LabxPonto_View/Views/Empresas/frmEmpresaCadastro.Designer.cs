@@ -708,7 +708,7 @@
             // metroLabel27
             // 
             this.metroLabel27.AutoSize = true;
-            this.metroLabel27.Location = new System.Drawing.Point(565, 129);
+            this.metroLabel27.Location = new System.Drawing.Point(565, 124);
             this.metroLabel27.Name = "metroLabel27";
             this.metroLabel27.Size = new System.Drawing.Size(31, 19);
             this.metroLabel27.TabIndex = 63;
@@ -720,7 +720,9 @@
             // 
             this.cbPais.FormattingEnabled = true;
             this.cbPais.ItemHeight = 23;
-            this.cbPais.Location = new System.Drawing.Point(565, 149);
+            this.cbPais.Items.AddRange(new object[] {
+            "Brasil"});
+            this.cbPais.Location = new System.Drawing.Point(565, 144);
             this.cbPais.Margin = new System.Windows.Forms.Padding(2);
             this.cbPais.Name = "cbPais";
             this.cbPais.Size = new System.Drawing.Size(185, 29);

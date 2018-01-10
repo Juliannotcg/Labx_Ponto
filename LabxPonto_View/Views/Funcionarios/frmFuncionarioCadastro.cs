@@ -1,4 +1,5 @@
 ﻿using LabxPonto_Commons;
+using LabxPonto_Commons.WebService;
 using LabxPonto_Dao.Data.Context;
 using LabxPonto_Dao.Model;
 using LabxPonto_Dao.Service;
@@ -479,5 +480,21 @@ namespace LabxPonto_View.Views.Funcionarios
             }
         }
 
+        private void txtCEP_Leave(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(txtCEP.Text))
+            {
+                Endereco endereco = new Endereco();
+                CEPCorreios cepCorreios = new CEPCorreios();
+                endereco = cepCorreios.BuscaCep(txtCEP.Text);
+
+                txtBairro.Text = endereco.Bairro;
+                txtCidade.Text = endereco.Cidade;
+                txtEndereco.Text = endereco.Logradouro;
+                txtComplemento.Text = endereco.Complemento;
+                cmbEstado.SelectedItem = endereco.Estado;
+
+            }
+        }
     }
 }

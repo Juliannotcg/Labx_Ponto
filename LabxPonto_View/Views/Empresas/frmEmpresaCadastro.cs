@@ -366,7 +366,9 @@ namespace LabxPonto_View.Views.Empresas
                 txtCidade.Text = endereco.Cidade;
                 txtEndereco.Text = endereco.Logradouro;
                 txtComplemento.Text = endereco.Complemento;
-                cmbEstado.SelectedText = endereco.Estado;
+                cmbEstado.SelectedItem = endereco.Estado;
+                
+                //cmbEstado.DataSource = Enum.GetNames(typeof(Estados));
             }
         }
 

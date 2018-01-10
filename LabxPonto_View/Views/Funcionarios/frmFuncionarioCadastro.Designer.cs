@@ -131,7 +131,7 @@
             this.tcCadastroFuncionario.Location = new System.Drawing.Point(31, 62);
             this.tcCadastroFuncionario.Margin = new System.Windows.Forms.Padding(2);
             this.tcCadastroFuncionario.Name = "tcCadastroFuncionario";
-            this.tcCadastroFuncionario.SelectedIndex = 0;
+            this.tcCadastroFuncionario.SelectedIndex = 1;
             this.tcCadastroFuncionario.Size = new System.Drawing.Size(876, 468);
             this.tcCadastroFuncionario.TabIndex = 1;
             this.tcCadastroFuncionario.UseCustomBackColor = true;
@@ -1160,6 +1160,7 @@
             this.txtCEP.UseSelectable = true;
             this.txtCEP.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtCEP.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtCEP.Leave += new System.EventHandler(this.txtCEP_Leave);
             // 
             // txtBairro
             // 
