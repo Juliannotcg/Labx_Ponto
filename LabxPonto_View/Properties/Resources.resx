@@ -133,6 +133,9 @@
   <data name="photo-1103596_960_720" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\photo-1103596_960_720.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="theme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\theme.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="if_user-add-outline_216487" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_user-add-outline_216487.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -141,5 +144,8 @@
   </data>
   <data name="add-user-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add-user-icon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="theme1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\theme1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

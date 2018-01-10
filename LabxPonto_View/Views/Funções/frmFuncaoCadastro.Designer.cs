@@ -34,6 +34,7 @@
             this.txtDescricaoFuncao = new MetroFramework.Controls.MetroTextBox();
             this.Departamento = new MetroFramework.Controls.MetroLabel();
             this.cbDepartamento = new MetroFramework.Controls.MetroComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -56,6 +57,8 @@
             this.Função.Size = new System.Drawing.Size(51, 19);
             this.Função.TabIndex = 56;
             this.Função.Text = "Função";
+            this.Função.UseCustomBackColor = true;
+            this.Função.UseCustomForeColor = true;
             // 
             // txtNomeFuncao
             // 
@@ -97,6 +100,8 @@
             this.metroLabel1.Size = new System.Drawing.Size(65, 19);
             this.metroLabel1.TabIndex = 58;
             this.metroLabel1.Text = "Descrição";
+            this.metroLabel1.UseCustomBackColor = true;
+            this.metroLabel1.UseCustomForeColor = true;
             // 
             // txtDescricaoFuncao
             // 
@@ -138,6 +143,8 @@
             this.Departamento.Size = new System.Drawing.Size(95, 19);
             this.Departamento.TabIndex = 0;
             this.Departamento.Text = "Departamento";
+            this.Departamento.UseCustomBackColor = true;
+            this.Departamento.UseCustomForeColor = true;
             // 
             // cbDepartamento
             // 
@@ -172,6 +179,7 @@
             this.Controls.SetChildIndex(this.metroLabel1, 0);
             this.Controls.SetChildIndex(this.cbDepartamento, 0);
             this.Controls.SetChildIndex(this.Departamento, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -35,6 +35,7 @@
             this.Função = new MetroFramework.Controls.MetroLabel();
             this.txtNomeDepartamento = new MetroFramework.Controls.MetroTextBox();
             this.errorProviderDep = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderDep)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,6 +62,8 @@
             this.metroLabel1.Size = new System.Drawing.Size(65, 19);
             this.metroLabel1.TabIndex = 62;
             this.metroLabel1.Text = "Descrição";
+            this.metroLabel1.UseCustomBackColor = true;
+            this.metroLabel1.UseCustomForeColor = true;
             // 
             // txtDescricaoDepartamento
             // 
@@ -69,7 +72,7 @@
             // 
             this.txtDescricaoDepartamento.CustomButton.Image = null;
             this.txtDescricaoDepartamento.CustomButton.Location = new System.Drawing.Point(352, 2);
-            this.txtDescricaoDepartamento.CustomButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDescricaoDepartamento.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescricaoDepartamento.CustomButton.Name = "";
             this.txtDescricaoDepartamento.CustomButton.Size = new System.Drawing.Size(65, 65);
             this.txtDescricaoDepartamento.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -79,7 +82,7 @@
             this.txtDescricaoDepartamento.CustomButton.Visible = false;
             this.txtDescricaoDepartamento.Lines = new string[0];
             this.txtDescricaoDepartamento.Location = new System.Drawing.Point(22, 150);
-            this.txtDescricaoDepartamento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDescricaoDepartamento.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescricaoDepartamento.MaxLength = 255;
             this.txtDescricaoDepartamento.Multiline = true;
             this.txtDescricaoDepartamento.Name = "txtDescricaoDepartamento";
@@ -103,6 +106,8 @@
             this.Função.Size = new System.Drawing.Size(95, 19);
             this.Função.TabIndex = 60;
             this.Função.Text = "Departamento";
+            this.Função.UseCustomBackColor = true;
+            this.Função.UseCustomForeColor = true;
             // 
             // txtNomeDepartamento
             // 
@@ -110,10 +115,10 @@
             // 
             // 
             this.txtNomeDepartamento.CustomButton.Image = null;
-            this.txtNomeDepartamento.CustomButton.Location = new System.Drawing.Point(294, 1);
-            this.txtNomeDepartamento.CustomButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNomeDepartamento.CustomButton.Location = new System.Drawing.Point(392, 1);
+            this.txtNomeDepartamento.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.txtNomeDepartamento.CustomButton.Name = "";
-            this.txtNomeDepartamento.CustomButton.Size = new System.Drawing.Size(20, 22);
+            this.txtNomeDepartamento.CustomButton.Size = new System.Drawing.Size(27, 27);
             this.txtNomeDepartamento.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtNomeDepartamento.CustomButton.TabIndex = 1;
             this.txtNomeDepartamento.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -121,7 +126,7 @@
             this.txtNomeDepartamento.CustomButton.Visible = false;
             this.txtNomeDepartamento.Lines = new string[0];
             this.txtNomeDepartamento.Location = new System.Drawing.Point(22, 98);
-            this.txtNomeDepartamento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNomeDepartamento.Margin = new System.Windows.Forms.Padding(2);
             this.txtNomeDepartamento.MaxLength = 100;
             this.txtNomeDepartamento.Name = "txtNomeDepartamento";
             this.txtNomeDepartamento.PasswordChar = '\0';
@@ -150,7 +155,7 @@
             this.Controls.Add(this.txtDescricaoDepartamento);
             this.Controls.Add(this.Função);
             this.Controls.Add(this.txtNomeDepartamento);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmDepartamentoCadastro";
             this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.Text = "Departamento";
@@ -161,6 +166,7 @@
             this.Controls.SetChildIndex(this.Função, 0);
             this.Controls.SetChildIndex(this.txtDescricaoDepartamento, 0);
             this.Controls.SetChildIndex(this.metroLabel1, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderDep)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

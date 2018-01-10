@@ -38,6 +38,7 @@ namespace LabxPonto_View.Views.Empresas
         private void btNovo_Click_1(object sender, System.EventArgs e)
         {
             cadastro = new frmEmpresaCadastro(Operacao.Inserir, context);
+            cadastro.StyleManager = this.StyleManager;
             cadastro.Empresa = new Empresa();
             cadastro.ShowDialog();
             preencherGrid();
@@ -51,6 +52,7 @@ namespace LabxPonto_View.Views.Empresas
         private void btAlterar_Click_1(object sender, System.EventArgs e)
         {
             cadastro = new frmEmpresaCadastro(Operacao.Editar, context);
+            cadastro.StyleManager = this.StyleManager;
             cadastro.Empresa = retornarEmpresaSelecionado();
             cadastro.preencherTela();
             cadastro.ShowDialog();
@@ -60,6 +62,7 @@ namespace LabxPonto_View.Views.Empresas
         private void btnVisualizar_Click(object sender, System.EventArgs e)
         {
             cadastro = new frmEmpresaCadastro(Operacao.Visualizar, context);
+            cadastro.StyleManager = this.StyleManager;
             cadastro.Empresa = retornarEmpresaSelecionado();
             cadastro.preencherTela();
             cadastro.ShowDialog();
@@ -69,6 +72,7 @@ namespace LabxPonto_View.Views.Empresas
         private void btExcluir_Click_1(object sender, System.EventArgs e)
         {
             cadastro = new frmEmpresaCadastro(Operacao.Excluir, context);
+            cadastro.StyleManager = this.StyleManager;
             cadastro.Empresa = retornarEmpresaSelecionado();
             cadastro.preencherTela();
             cadastro.ShowDialog();

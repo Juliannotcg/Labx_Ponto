@@ -344,6 +344,9 @@ namespace LabxPonto_View.Views.Empresas
 
             if (operacao == Operacao.Inserir)
                 empresa.Endereco = new Endereco();
+
+            tcCadastroFuncionario.StyleManager = this.StyleManager;
+
         }
 
         private void btnCancelar_Click_2(object sender, EventArgs e)

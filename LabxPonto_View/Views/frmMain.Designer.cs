@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.metroTile3 = new MetroFramework.Controls.MetroTile();
@@ -41,7 +42,11 @@
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.mtConfiguracoes = new MetroFramework.Controls.MetroTile();
             this.btnFuncionario = new MetroFramework.Controls.MetroTile();
+            this.metroStyleExtender = new MetroFramework.Components.MetroStyleExtender(this.components);
+            this.metroStyleManager = new MetroFramework.Components.MetroStyleManager(this.components);
+            this.btTema = new MetroFramework.Controls.MetroTile();
             this.pbLogo = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -197,6 +202,27 @@
             this.btnFuncionario.UseTileImage = true;
             this.btnFuncionario.Click += new System.EventHandler(this.mtCadastro_Click);
             // 
+            // metroStyleManager
+            // 
+            this.metroStyleManager.Owner = this;
+            // 
+            // btTema
+            // 
+            this.btTema.ActiveControl = null;
+            this.btTema.BackColor = System.Drawing.Color.Transparent;
+            this.btTema.Location = new System.Drawing.Point(304, 526);
+            this.btTema.Margin = new System.Windows.Forms.Padding(2);
+            this.btTema.Name = "btTema";
+            this.btTema.PaintTileCount = false;
+            this.btTema.Size = new System.Drawing.Size(50, 53);
+            this.btTema.TabIndex = 13;
+            this.btTema.TileImage = global::LabxPonto_View.Properties.Resources.theme1;
+            this.btTema.UseCustomBackColor = true;
+            this.btTema.UseMnemonic = false;
+            this.btTema.UseSelectable = true;
+            this.btTema.UseTileImage = true;
+            this.btTema.Click += new System.EventHandler(this.btTema_Click);
+            // 
             // pbLogo
             // 
             this.pbLogo.Location = new System.Drawing.Point(17, 39);
@@ -209,9 +235,11 @@
             // 
             // frmMain
             // 
+            this.ApplyImageInvert = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(657, 597);
+            this.Controls.Add(this.btTema);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
@@ -229,7 +257,8 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmMain";
             this.Padding = new System.Windows.Forms.Padding(15, 60, 15, 16);
-            this.Style = MetroFramework.MetroColorStyle.Default;
+            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -251,5 +280,8 @@
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel3;
+        private MetroFramework.Components.MetroStyleExtender metroStyleExtender;
+        public MetroFramework.Controls.MetroTile btTema;
+        public MetroFramework.Components.MetroStyleManager metroStyleManager;
     }
 }

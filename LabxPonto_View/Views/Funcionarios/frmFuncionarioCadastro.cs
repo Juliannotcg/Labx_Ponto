@@ -339,6 +339,9 @@ namespace LabxPonto_View.Views.Funcionarios
             
             preencherTela();
 
+            tcCadastroFuncionario.StyleManager = this.StyleManager;
+            tcCadastroFuncionario.Theme = this.StyleManager.Theme;
+
         }
 
         private void preencherCombos(MetroComboBox parNomeCombo)

@@ -28,9 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBaseCadastro));
             this.btnCancelar = new MetroFramework.Controls.MetroButton();
             this.btnSalvar = new MetroFramework.Controls.MetroButton();
+            this.metroStyleManager = new MetroFramework.Components.MetroStyleManager(this.components);
+            this.metroStyleExtender = new MetroFramework.Components.MetroStyleExtender(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -56,6 +60,10 @@
             this.btnSalvar.Text = "Confirmar";
             this.btnSalvar.UseSelectable = true;
             // 
+            // metroStyleManager
+            // 
+            this.metroStyleManager.Owner = null;
+            // 
             // frmBaseCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -66,6 +74,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmBaseCadastro";
             this.Text = "Base cadastro";
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -74,5 +83,7 @@
 
         public MetroFramework.Controls.MetroButton btnCancelar;
         public MetroFramework.Controls.MetroButton btnSalvar;
+        public MetroFramework.Components.MetroStyleManager metroStyleManager;
+        public MetroFramework.Components.MetroStyleExtender metroStyleExtender;
     }
 }

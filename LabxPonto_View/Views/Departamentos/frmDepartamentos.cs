@@ -38,6 +38,7 @@ namespace LabxPonto_View.Views.Departamentos
         private void btNovo_Click_1(object sender, EventArgs e)
         {
             cadastro = new frmDepartamentoCadastro(Operacao.Inserir,context);
+            cadastro.StyleManager = this.StyleManager;
             cadastro.Departamento = new Departamento();
             cadastro.ShowDialog();
             preencherGrid();
@@ -46,6 +47,7 @@ namespace LabxPonto_View.Views.Departamentos
         private void btAlterar_Click_1(object sender, EventArgs e)
         {
             cadastro = new frmDepartamentoCadastro(Operacao.Editar, context);
+            cadastro.StyleManager = this.StyleManager;
             cadastro.Departamento = retornarDepartamentoSelecionado();
             cadastro.ShowDialog();
             preencherGrid();
@@ -54,6 +56,7 @@ namespace LabxPonto_View.Views.Departamentos
         private void btExcluir_Click_1(object sender, EventArgs e)
         {
             cadastro = new frmDepartamentoCadastro(Operacao.Excluir, context);
+            cadastro.StyleManager = this.StyleManager;
             cadastro.Departamento = retornarDepartamentoSelecionado();
             cadastro.ShowDialog();
             preencherGrid();

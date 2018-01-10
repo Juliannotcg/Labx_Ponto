@@ -28,11 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBase));
             this.btnVisualizar = new MetroFramework.Controls.MetroTile();
             this.btExcluir = new MetroFramework.Controls.MetroTile();
             this.btAlterar = new MetroFramework.Controls.MetroTile();
             this.btNovo = new MetroFramework.Controls.MetroTile();
+            this.metroStyleManager = new MetroFramework.Components.MetroStyleManager(this.components);
+            this.metroStyleExtender = new MetroFramework.Components.MetroStyleExtender(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
             this.SuspendLayout();
             // 
             // btnVisualizar
@@ -89,6 +93,10 @@
             this.btNovo.UseTileImage = true;
             this.btNovo.Click += new System.EventHandler(this.btNovo_Click);
             // 
+            // metroStyleManager
+            // 
+            this.metroStyleManager.Owner = null;
+            // 
             // frmBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -101,6 +109,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmBase";
             this.Text = "Base";
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -111,5 +120,7 @@
         public MetroFramework.Controls.MetroTile btAlterar;
         public MetroFramework.Controls.MetroTile btExcluir;
         public MetroFramework.Controls.MetroTile btnVisualizar;
+        public MetroFramework.Components.MetroStyleManager metroStyleManager;
+        public MetroFramework.Components.MetroStyleExtender metroStyleExtender;
     }
 }

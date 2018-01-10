@@ -37,6 +37,7 @@ namespace LabxPonto_View.Views.Funções
         private void btNovo_Click_1(object sender, System.EventArgs e)
         {
             cadastro = new frmFuncaoCadastro(Operacao.Inserir, context);
+            cadastro.StyleManager = this.StyleManager;
             cadastro.Funcao = new Funcao();
             cadastro.ShowDialog();
             preencherGrid();
@@ -45,6 +46,7 @@ namespace LabxPonto_View.Views.Funções
         private void btAlterar_Click_1(object sender, System.EventArgs e)
         {
             cadastro = new frmFuncaoCadastro(Operacao.Editar, context);
+            cadastro.StyleManager = this.StyleManager;
             cadastro.Funcao = retornarFuncaoSelecionado();
             cadastro.ShowDialog();
             preencherGrid();
@@ -53,6 +55,7 @@ namespace LabxPonto_View.Views.Funções
         private void btExcluir_Click_1(object sender, System.EventArgs e)
         {
             cadastro = new frmFuncaoCadastro(Operacao.Excluir, context);
+            cadastro.StyleManager = this.StyleManager;
             cadastro.Funcao = retornarFuncaoSelecionado();
             cadastro.ShowDialog();
             preencherGrid();

@@ -125,5 +125,6 @@ namespace LabxPonto_View.Views.Departamentos
         {
             preencherTela();
         }
+
     }
 }

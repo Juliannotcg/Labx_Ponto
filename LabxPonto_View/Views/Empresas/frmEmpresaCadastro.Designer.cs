@@ -87,6 +87,7 @@
             this.txtEndereco = new MetroFramework.Controls.MetroTextBox();
             this.errorProviderEmp = new System.Windows.Forms.ErrorProvider(this.components);
             this.buscarArquivo = new System.Windows.Forms.OpenFileDialog();
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
             this.tcCadastroFuncionario.SuspendLayout();
             this.tpDadosPessoais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgFoto)).BeginInit();
@@ -112,9 +113,11 @@
             this.tcCadastroFuncionario.Location = new System.Drawing.Point(20, 61);
             this.tcCadastroFuncionario.Margin = new System.Windows.Forms.Padding(2);
             this.tcCadastroFuncionario.Name = "tcCadastroFuncionario";
-            this.tcCadastroFuncionario.SelectedIndex = 0;
+            this.tcCadastroFuncionario.SelectedIndex = 1;
             this.tcCadastroFuncionario.Size = new System.Drawing.Size(876, 355);
             this.tcCadastroFuncionario.TabIndex = 55;
+            this.tcCadastroFuncionario.UseCustomBackColor = true;
+            this.tcCadastroFuncionario.UseCustomForeColor = true;
             this.tcCadastroFuncionario.UseSelectable = true;
             // 
             // tpDadosPessoais
@@ -163,6 +166,8 @@
             this.tpDadosPessoais.Size = new System.Drawing.Size(868, 313);
             this.tpDadosPessoais.TabIndex = 0;
             this.tpDadosPessoais.Text = "Dados da Empresa";
+            this.tpDadosPessoais.UseCustomBackColor = true;
+            this.tpDadosPessoais.UseCustomForeColor = true;
             this.tpDadosPessoais.VerticalScrollbarBarColor = true;
             this.tpDadosPessoais.VerticalScrollbarHighlightOnWheel = false;
             this.tpDadosPessoais.VerticalScrollbarSize = 8;
@@ -175,6 +180,8 @@
             this.metroLabel21.Size = new System.Drawing.Size(47, 19);
             this.metroLabel21.TabIndex = 71;
             this.metroLabel21.Text = "E-mail";
+            this.metroLabel21.UseCustomBackColor = true;
+            this.metroLabel21.UseCustomForeColor = true;
             // 
             // txtEmailResponsavel
             // 
@@ -216,6 +223,8 @@
             this.metroLabel15.Size = new System.Drawing.Size(46, 19);
             this.metroLabel15.TabIndex = 69;
             this.metroLabel15.Text = "Cargo";
+            this.metroLabel15.UseCustomBackColor = true;
+            this.metroLabel15.UseCustomForeColor = true;
             // 
             // txtCargoResponsavel
             // 
@@ -257,6 +266,8 @@
             this.metroLabel14.Size = new System.Drawing.Size(138, 19);
             this.metroLabel14.TabIndex = 67;
             this.metroLabel14.Text = "Nome do responsável";
+            this.metroLabel14.UseCustomBackColor = true;
+            this.metroLabel14.UseCustomForeColor = true;
             // 
             // txtNomeResponsavel
             // 
@@ -298,6 +309,8 @@
             this.metroLabel11.Size = new System.Drawing.Size(59, 19);
             this.metroLabel11.TabIndex = 65;
             this.metroLabel11.Text = "Inscrição";
+            this.metroLabel11.UseCustomBackColor = true;
+            this.metroLabel11.UseCustomForeColor = true;
             // 
             // txtInscricao
             // 
@@ -350,6 +363,8 @@
             this.metroLabel34.Size = new System.Drawing.Size(92, 19);
             this.metroLabel34.TabIndex = 62;
             this.metroLabel34.Text = "Imagem Logo";
+            this.metroLabel34.UseCustomBackColor = true;
+            this.metroLabel34.UseCustomForeColor = true;
             // 
             // metroLabel26
             // 
@@ -359,6 +374,8 @@
             this.metroLabel26.Size = new System.Drawing.Size(40, 19);
             this.metroLabel26.TabIndex = 52;
             this.metroLabel26.Text = "CNPJ";
+            this.metroLabel26.UseCustomBackColor = true;
+            this.metroLabel26.UseCustomForeColor = true;
             // 
             // metroLabel20
             // 
@@ -368,6 +385,8 @@
             this.metroLabel20.Size = new System.Drawing.Size(60, 19);
             this.metroLabel20.TabIndex = 50;
             this.metroLabel20.Text = "Empresa";
+            this.metroLabel20.UseCustomBackColor = true;
+            this.metroLabel20.UseCustomForeColor = true;
             // 
             // metroLabel19
             // 
@@ -377,6 +396,8 @@
             this.metroLabel19.Size = new System.Drawing.Size(61, 19);
             this.metroLabel19.TabIndex = 49;
             this.metroLabel19.Text = "Nº Folha";
+            this.metroLabel19.UseCustomBackColor = true;
+            this.metroLabel19.UseCustomForeColor = true;
             // 
             // metroLabel22
             // 
@@ -678,6 +699,8 @@
             this.tpEndereco.Size = new System.Drawing.Size(868, 313);
             this.tpEndereco.TabIndex = 1;
             this.tpEndereco.Text = "Endereço";
+            this.tpEndereco.UseCustomBackColor = true;
+            this.tpEndereco.UseCustomForeColor = true;
             this.tpEndereco.VerticalScrollbarBarColor = true;
             this.tpEndereco.VerticalScrollbarHighlightOnWheel = false;
             this.tpEndereco.VerticalScrollbarSize = 8;
@@ -690,6 +713,8 @@
             this.metroLabel27.Size = new System.Drawing.Size(31, 19);
             this.metroLabel27.TabIndex = 63;
             this.metroLabel27.Text = "País";
+            this.metroLabel27.UseCustomBackColor = true;
+            this.metroLabel27.UseCustomForeColor = true;
             // 
             // cbPais
             // 
@@ -710,6 +735,8 @@
             this.metroLabel37.Size = new System.Drawing.Size(48, 19);
             this.metroLabel37.TabIndex = 61;
             this.metroLabel37.Text = "Estado";
+            this.metroLabel37.UseCustomBackColor = true;
+            this.metroLabel37.UseCustomForeColor = true;
             // 
             // cmbEstado
             // 
@@ -730,6 +757,8 @@
             this.metroLabel39.Size = new System.Drawing.Size(94, 19);
             this.metroLabel39.TabIndex = 59;
             this.metroLabel39.Text = "Complemento";
+            this.metroLabel39.UseCustomBackColor = true;
+            this.metroLabel39.UseCustomForeColor = true;
             // 
             // metroLabel38
             // 
@@ -739,6 +768,8 @@
             this.metroLabel38.Size = new System.Drawing.Size(45, 19);
             this.metroLabel38.TabIndex = 58;
             this.metroLabel38.Text = "Bairro";
+            this.metroLabel38.UseCustomBackColor = true;
+            this.metroLabel38.UseCustomForeColor = true;
             // 
             // Cidade
             // 
@@ -748,6 +779,8 @@
             this.Cidade.Size = new System.Drawing.Size(51, 19);
             this.Cidade.TabIndex = 57;
             this.Cidade.Text = "Cidade";
+            this.Cidade.UseCustomBackColor = true;
+            this.Cidade.UseCustomForeColor = true;
             // 
             // metroLabel36
             // 
@@ -757,6 +790,8 @@
             this.metroLabel36.Size = new System.Drawing.Size(64, 19);
             this.metroLabel36.TabIndex = 56;
             this.metroLabel36.Text = "Endereço";
+            this.metroLabel36.UseCustomBackColor = true;
+            this.metroLabel36.UseCustomForeColor = true;
             // 
             // metroLabel35
             // 
@@ -766,6 +801,8 @@
             this.metroLabel35.Size = new System.Drawing.Size(33, 19);
             this.metroLabel35.TabIndex = 0;
             this.metroLabel35.Text = "CEP";
+            this.metroLabel35.UseCustomBackColor = true;
+            this.metroLabel35.UseCustomForeColor = true;
             // 
             // metroLabel23
             // 
@@ -974,6 +1011,7 @@
             this.Controls.SetChildIndex(this.btnSalvar, 0);
             this.Controls.SetChildIndex(this.btnCancelar, 0);
             this.Controls.SetChildIndex(this.tcCadastroFuncionario, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
             this.tcCadastroFuncionario.ResumeLayout(false);
             this.tpDadosPessoais.ResumeLayout(false);
             this.tpDadosPessoais.PerformLayout();
