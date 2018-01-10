@@ -321,6 +321,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\avatar.png" />
+    <None Include="Resources\ePonto.jpg" />
+    <None Include="Resources\Logo1.jpg" />
     <Content Include="Utils\DirectX.Capture.dll" />
     <Content Include="Utils\DShowNET.dll" />
   </ItemGroup>
