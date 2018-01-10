@@ -113,7 +113,7 @@
             this.tcCadastroFuncionario.Location = new System.Drawing.Point(20, 61);
             this.tcCadastroFuncionario.Margin = new System.Windows.Forms.Padding(2);
             this.tcCadastroFuncionario.Name = "tcCadastroFuncionario";
-            this.tcCadastroFuncionario.SelectedIndex = 1;
+            this.tcCadastroFuncionario.SelectedIndex = 0;
             this.tcCadastroFuncionario.Size = new System.Drawing.Size(876, 355);
             this.tcCadastroFuncionario.TabIndex = 55;
             this.tcCadastroFuncionario.UseCustomBackColor = true;
@@ -198,6 +198,7 @@
             this.txtEmailResponsavel.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtEmailResponsavel.CustomButton.UseSelectable = true;
             this.txtEmailResponsavel.CustomButton.Visible = false;
+            this.txtEmailResponsavel.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtEmailResponsavel.Lines = new string[0];
             this.txtEmailResponsavel.Location = new System.Drawing.Point(0, 274);
             this.txtEmailResponsavel.Margin = new System.Windows.Forms.Padding(2);
@@ -241,6 +242,7 @@
             this.txtCargoResponsavel.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtCargoResponsavel.CustomButton.UseSelectable = true;
             this.txtCargoResponsavel.CustomButton.Visible = false;
+            this.txtCargoResponsavel.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtCargoResponsavel.Lines = new string[0];
             this.txtCargoResponsavel.Location = new System.Drawing.Point(326, 218);
             this.txtCargoResponsavel.Margin = new System.Windows.Forms.Padding(2);
@@ -284,6 +286,7 @@
             this.txtNomeResponsavel.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtNomeResponsavel.CustomButton.UseSelectable = true;
             this.txtNomeResponsavel.CustomButton.Visible = false;
+            this.txtNomeResponsavel.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtNomeResponsavel.Lines = new string[0];
             this.txtNomeResponsavel.Location = new System.Drawing.Point(0, 218);
             this.txtNomeResponsavel.Margin = new System.Windows.Forms.Padding(2);
@@ -327,6 +330,7 @@
             this.txtInscricao.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtInscricao.CustomButton.UseSelectable = true;
             this.txtInscricao.CustomButton.Visible = false;
+            this.txtInscricao.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtInscricao.Lines = new string[0];
             this.txtInscricao.Location = new System.Drawing.Point(326, 90);
             this.txtInscricao.Margin = new System.Windows.Forms.Padding(2);
@@ -478,6 +482,7 @@
             this.txtFolha.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtFolha.CustomButton.UseSelectable = true;
             this.txtFolha.CustomButton.Visible = false;
+            this.txtFolha.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtFolha.Lines = new string[0];
             this.txtFolha.Location = new System.Drawing.Point(0, 38);
             this.txtFolha.Margin = new System.Windows.Forms.Padding(2);
@@ -603,6 +608,7 @@
             this.txtCNPJ.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtCNPJ.CustomButton.UseSelectable = true;
             this.txtCNPJ.CustomButton.Visible = false;
+            this.txtCNPJ.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtCNPJ.Lines = new string[0];
             this.txtCNPJ.Location = new System.Drawing.Point(0, 142);
             this.txtCNPJ.Margin = new System.Windows.Forms.Padding(2);
@@ -654,6 +660,7 @@
             this.txtNomeEmpresa.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtNomeEmpresa.CustomButton.UseSelectable = true;
             this.txtNomeEmpresa.CustomButton.Visible = false;
+            this.txtNomeEmpresa.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtNomeEmpresa.Lines = new string[0];
             this.txtNomeEmpresa.Location = new System.Drawing.Point(0, 90);
             this.txtNomeEmpresa.Margin = new System.Windows.Forms.Padding(2);
@@ -718,21 +725,22 @@
             // 
             // cbPais
             // 
+            this.cbPais.FontSize = MetroFramework.MetroComboBoxSize.Tall;
             this.cbPais.FormattingEnabled = true;
-            this.cbPais.ItemHeight = 23;
+            this.cbPais.ItemHeight = 29;
             this.cbPais.Items.AddRange(new object[] {
             "Brasil"});
             this.cbPais.Location = new System.Drawing.Point(565, 144);
             this.cbPais.Margin = new System.Windows.Forms.Padding(2);
             this.cbPais.Name = "cbPais";
-            this.cbPais.Size = new System.Drawing.Size(185, 29);
+            this.cbPais.Size = new System.Drawing.Size(185, 35);
             this.cbPais.TabIndex = 6;
             this.cbPais.UseSelectable = true;
             // 
             // metroLabel37
             // 
             this.metroLabel37.AutoSize = true;
-            this.metroLabel37.Location = new System.Drawing.Point(565, 72);
+            this.metroLabel37.Location = new System.Drawing.Point(565, 70);
             this.metroLabel37.Name = "metroLabel37";
             this.metroLabel37.Size = new System.Drawing.Size(48, 19);
             this.metroLabel37.TabIndex = 61;
@@ -742,12 +750,13 @@
             // 
             // cmbEstado
             // 
+            this.cmbEstado.FontSize = MetroFramework.MetroComboBoxSize.Tall;
             this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.ItemHeight = 23;
-            this.cmbEstado.Location = new System.Drawing.Point(565, 92);
+            this.cmbEstado.ItemHeight = 29;
+            this.cmbEstado.Location = new System.Drawing.Point(565, 89);
             this.cmbEstado.Margin = new System.Windows.Forms.Padding(2);
             this.cmbEstado.Name = "cmbEstado";
-            this.cmbEstado.Size = new System.Drawing.Size(185, 29);
+            this.cmbEstado.Size = new System.Drawing.Size(185, 35);
             this.cmbEstado.TabIndex = 3;
             this.cmbEstado.UseSelectable = true;
             // 
@@ -839,6 +848,7 @@
             this.txtCidade.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtCidade.CustomButton.UseSelectable = true;
             this.txtCidade.CustomButton.Visible = false;
+            this.txtCidade.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtCidade.Lines = new string[0];
             this.txtCidade.Location = new System.Drawing.Point(349, 92);
             this.txtCidade.Margin = new System.Windows.Forms.Padding(2);
@@ -880,6 +890,7 @@
             this.txtComplemento.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtComplemento.CustomButton.UseSelectable = true;
             this.txtComplemento.CustomButton.Visible = false;
+            this.txtComplemento.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtComplemento.Lines = new string[0];
             this.txtComplemento.Location = new System.Drawing.Point(169, 144);
             this.txtComplemento.Margin = new System.Windows.Forms.Padding(2);
@@ -912,6 +923,7 @@
             this.txtCEP.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtCEP.CustomButton.UseSelectable = true;
             this.txtCEP.CustomButton.Visible = false;
+            this.txtCEP.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtCEP.Lines = new string[0];
             this.txtCEP.Location = new System.Drawing.Point(0, 37);
             this.txtCEP.Margin = new System.Windows.Forms.Padding(2);
@@ -945,6 +957,7 @@
             this.txtBairro.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtBairro.CustomButton.UseSelectable = true;
             this.txtBairro.CustomButton.Visible = false;
+            this.txtBairro.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtBairro.Lines = new string[0];
             this.txtBairro.Location = new System.Drawing.Point(0, 144);
             this.txtBairro.Margin = new System.Windows.Forms.Padding(2);
@@ -977,6 +990,7 @@
             this.txtEndereco.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtEndereco.CustomButton.UseSelectable = true;
             this.txtEndereco.CustomButton.Visible = false;
+            this.txtEndereco.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtEndereco.Lines = new string[0];
             this.txtEndereco.Location = new System.Drawing.Point(0, 92);
             this.txtEndereco.Margin = new System.Windows.Forms.Padding(2);
