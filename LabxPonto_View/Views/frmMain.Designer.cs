@@ -148,7 +148,7 @@
             this.metroLabel1.Location = new System.Drawing.Point(24, 254);
             this.metroLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(67, 17);
+            this.metroLabel1.Size = new System.Drawing.Size(59, 15);
             this.metroLabel1.TabIndex = 10;
             this.metroLabel1.Text = "Cadastros";
             // 
@@ -160,7 +160,7 @@
             this.metroLabel2.Location = new System.Drawing.Point(455, 254);
             this.metroLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(131, 17);
+            this.metroLabel2.Size = new System.Drawing.Size(117, 15);
             this.metroLabel2.TabIndex = 11;
             this.metroLabel2.Text = "Arquivos / Relatórios";
             // 
@@ -172,7 +172,7 @@
             this.metroLabel3.Location = new System.Drawing.Point(24, 546);
             this.metroLabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(53, 17);
+            this.metroLabel3.Size = new System.Drawing.Size(48, 15);
             this.metroLabel3.TabIndex = 12;
             this.metroLabel3.Text = "Sistema";
             // 
@@ -213,7 +213,7 @@
             // 
             this.btTema.ActiveControl = null;
             this.btTema.BackColor = System.Drawing.Color.Transparent;
-            this.btTema.Location = new System.Drawing.Point(304, 526);
+            this.btTema.Location = new System.Drawing.Point(405, 659);
             this.btTema.Margin = new System.Windows.Forms.Padding(2);
             this.btTema.Name = "btTema";
             this.btTema.PaintTileCount = false;
@@ -242,7 +242,7 @@
             this.ApplyImageInvert = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(657, 597);
+            this.ClientSize = new System.Drawing.Size(867, 739);
             this.Controls.Add(this.btTema);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroLabel2);
@@ -260,10 +260,9 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmMain";
-            this.Padding = new System.Windows.Forms.Padding(20, 74, 20, 20);
-            this.Style = MetroFramework.MetroColorStyle.Default;
             this.Padding = new System.Windows.Forms.Padding(15, 60, 15, 16);
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
+            this.Style = MetroFramework.MetroColorStyle.Default;
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
