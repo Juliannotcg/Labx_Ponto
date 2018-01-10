@@ -43,12 +43,17 @@
             this.mtConfiguracoes = new MetroFramework.Controls.MetroTile();
             this.btnFuncionario = new MetroFramework.Controls.MetroTile();
             this.metroStyleExtender = new MetroFramework.Components.MetroStyleExtender(this.components);
-            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.metroStyleManager = new MetroFramework.Components.MetroStyleManager(this.components);
-            this.btTema = new MetroFramework.Controls.MetroTile();
             this.metroToolTip1 = new MetroFramework.Components.MetroToolTip();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.btnUsuario = new MetroFramework.Controls.MetroTile();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.btnBiometria = new MetroFramework.Controls.MetroTile();
+            this.btnHorario = new MetroFramework.Controls.MetroTile();
+            this.btTema = new MetroFramework.Controls.MetroTile();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // metroTile1
@@ -143,7 +148,7 @@
             // 
             this.btnSair.ActiveControl = null;
             this.btnSair.BackColor = System.Drawing.Color.Red;
-            this.btnSair.Location = new System.Drawing.Point(635, 647);
+            this.btnSair.Location = new System.Drawing.Point(862, 649);
             this.btnSair.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(175, 65);
@@ -224,27 +229,89 @@
             this.btnFuncionario.UseTileImage = true;
             this.btnFuncionario.Click += new System.EventHandler(this.mtCadastro_Click);
             // 
-            // pbLogo
-            // 
-            this.metroStyleExtender.SetApplyMetroTheme(this.pbLogo, true);
-            this.pbLogo.Image = global::LabxPonto_View.Properties.Resources.Logo11;
-            this.pbLogo.Location = new System.Drawing.Point(23, 48);
-            this.pbLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(787, 134);
-            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbLogo.TabIndex = 0;
-            this.pbLogo.TabStop = false;
-            // 
             // metroStyleManager
             // 
             this.metroStyleManager.Owner = this;
+            // 
+            // metroToolTip1
+            // 
+            this.metroToolTip1.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroToolTip1.StyleManager = null;
+            this.metroToolTip1.Theme = MetroFramework.MetroThemeStyle.Light;
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel4.Location = new System.Drawing.Point(862, 477);
+            this.metroLabel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(47, 15);
+            this.metroLabel4.TabIndex = 17;
+            this.metroLabel4.Text = "Usuário";
+            // 
+            // btnUsuario
+            // 
+            this.btnUsuario.ActiveControl = null;
+            this.btnUsuario.BackColor = System.Drawing.Color.Goldenrod;
+            this.btnUsuario.Location = new System.Drawing.Point(862, 494);
+            this.btnUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnUsuario.Name = "btnUsuario";
+            this.btnUsuario.Size = new System.Drawing.Size(175, 151);
+            this.btnUsuario.TabIndex = 15;
+            this.btnUsuario.Text = "Usuário";
+            this.btnUsuario.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.metroToolTip1.SetToolTip(this.btnUsuario, "Gerar arquivo");
+            this.btnUsuario.UseCustomBackColor = true;
+            this.btnUsuario.UseSelectable = true;
+            this.btnUsuario.Click += new System.EventHandler(this.btnUsuario_Click);
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel5.Location = new System.Drawing.Point(455, 544);
+            this.metroLabel5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(108, 15);
+            this.metroLabel5.TabIndex = 21;
+            this.metroLabel5.Text = "Horários/Biometria";
+            // 
+            // btnBiometria
+            // 
+            this.btnBiometria.ActiveControl = null;
+            this.btnBiometria.Location = new System.Drawing.Point(635, 561);
+            this.btnBiometria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBiometria.Name = "btnBiometria";
+            this.btnBiometria.Size = new System.Drawing.Size(175, 151);
+            this.btnBiometria.TabIndex = 20;
+            this.btnBiometria.Text = "Biometria";
+            this.btnBiometria.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.metroToolTip1.SetToolTip(this.btnBiometria, "Ler arquivo");
+            this.btnBiometria.UseSelectable = true;
+            // 
+            // btnHorario
+            // 
+            this.btnHorario.ActiveControl = null;
+            this.btnHorario.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnHorario.Location = new System.Drawing.Point(455, 561);
+            this.btnHorario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnHorario.Name = "btnHorario";
+            this.btnHorario.Size = new System.Drawing.Size(175, 151);
+            this.btnHorario.TabIndex = 19;
+            this.btnHorario.Text = "Horários";
+            this.btnHorario.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.metroToolTip1.SetToolTip(this.btnHorario, "Gerar arquivo");
+            this.btnHorario.UseCustomBackColor = true;
+            this.btnHorario.UseSelectable = true;
             // 
             // btTema
             // 
             this.btTema.ActiveControl = null;
             this.btTema.BackColor = System.Drawing.Color.Transparent;
-            this.btTema.Location = new System.Drawing.Point(405, 659);
+            this.btTema.Location = new System.Drawing.Point(987, 433);
             this.btTema.Margin = new System.Windows.Forms.Padding(2);
             this.btTema.Name = "btTema";
             this.btTema.PaintTileCount = false;
@@ -258,18 +325,29 @@
             this.btTema.UseTileImage = true;
             this.btTema.Click += new System.EventHandler(this.btTema_Click);
             // 
-            // metroToolTip1
+            // pbLogo
             // 
-            this.metroToolTip1.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroToolTip1.StyleManager = null;
-            this.metroToolTip1.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroStyleExtender.SetApplyMetroTheme(this.pbLogo, true);
+            this.pbLogo.Image = global::LabxPonto_View.Properties.Resources.Logo11;
+            this.pbLogo.Location = new System.Drawing.Point(23, 48);
+            this.pbLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(787, 134);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbLogo.TabIndex = 0;
+            this.pbLogo.TabStop = false;
             // 
             // frmMain
             // 
             this.ApplyImageInvert = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(867, 739);
+            this.ClientSize = new System.Drawing.Size(1064, 739);
+            this.Controls.Add(this.metroLabel5);
+            this.Controls.Add(this.btnBiometria);
+            this.Controls.Add(this.btnHorario);
+            this.Controls.Add(this.metroLabel4);
+            this.Controls.Add(this.btnUsuario);
             this.Controls.Add(this.btTema);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroLabel2);
@@ -291,8 +369,8 @@
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
             this.Style = MetroFramework.MetroColorStyle.Default;
             this.Load += new System.EventHandler(this.frmMain_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -317,5 +395,10 @@
         public MetroFramework.Controls.MetroTile btTema;
         public MetroFramework.Components.MetroStyleManager metroStyleManager;
         private MetroFramework.Components.MetroToolTip metroToolTip1;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
+        public MetroFramework.Controls.MetroTile btnBiometria;
+        public MetroFramework.Controls.MetroTile btnHorario;
+        private MetroFramework.Controls.MetroLabel metroLabel4;
+        public MetroFramework.Controls.MetroTile btnUsuario;
     }
 }

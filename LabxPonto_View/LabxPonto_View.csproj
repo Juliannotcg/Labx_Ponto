@@ -234,6 +234,18 @@
     <Compile Include="Views\Funções\frmFuncoes.Designer.cs">
       <DependentUpon>frmFuncoes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Usuário\frmUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Usuário\frmUsuario.Designer.cs">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Usuário\frmUsuarioCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Usuário\frmUsuarioCadastro.Designer.cs">
+      <DependentUpon>frmUsuarioCadastro.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="rltFuncionario.rdlc" />
     <EmbeddedResource Include="Views\Base\frmBaseCadastro.resx">
       <DependentUpon>frmBaseCadastro.cs</DependentUpon>
@@ -292,6 +304,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Funções\frmFuncoes.resx">
       <DependentUpon>frmFuncoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Usuário\frmUsuario.resx">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\LabxPonto_Dao.Model.Funcionario.datasource" />
@@ -356,6 +371,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Horários\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

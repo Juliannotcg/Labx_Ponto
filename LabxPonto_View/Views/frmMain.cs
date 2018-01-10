@@ -4,6 +4,7 @@ using LabxPonto_View.Views.Departamentos;
 using LabxPonto_View.Views.Empresas;
 using LabxPonto_View.Views.Funcionarios;
 using LabxPonto_View.Views.Funções;
+using LabxPonto_View.Views.Usuário;
 using MetroFramework;
 using MetroFramework.Forms;
 using Microsoft.Win32;
@@ -121,6 +122,12 @@ namespace LabxPonto_View.Views
         private void frmMain_Load(object sender, System.EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void btnUsuario_Click(object sender, System.EventArgs e)
+        {
+            frmUsuario janela = new frmUsuario();
+            janela.Show();
         }
     }
 }
