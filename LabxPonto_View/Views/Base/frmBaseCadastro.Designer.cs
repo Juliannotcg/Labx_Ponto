@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBaseCadastro));
             this.btnCancelar = new MetroFramework.Controls.MetroButton();
             this.btnSalvar = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
@@ -62,6 +63,7 @@
             this.ClientSize = new System.Drawing.Size(292, 179);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmBaseCadastro";
             this.Text = "Base cadastro";
             this.ResumeLayout(false);

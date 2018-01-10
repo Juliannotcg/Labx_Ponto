@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.metroTile3 = new MetroFramework.Controls.MetroTile();
             this.metroTile2 = new MetroFramework.Controls.MetroTile();
@@ -224,6 +225,7 @@
             this.Controls.Add(this.mtConfiguracoes);
             this.Controls.Add(this.btnFuncionario);
             this.Controls.Add(this.pbLogo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmMain";
             this.Padding = new System.Windows.Forms.Padding(15, 60, 15, 16);

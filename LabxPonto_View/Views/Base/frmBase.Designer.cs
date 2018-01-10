@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBase));
             this.btnVisualizar = new MetroFramework.Controls.MetroTile();
             this.btExcluir = new MetroFramework.Controls.MetroTile();
             this.btAlterar = new MetroFramework.Controls.MetroTile();
@@ -97,6 +98,7 @@
             this.Controls.Add(this.btExcluir);
             this.Controls.Add(this.btAlterar);
             this.Controls.Add(this.btNovo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmBase";
             this.Text = "Base";
             this.ResumeLayout(false);
