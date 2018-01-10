@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2010
+VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{492768F3-864C-40C6-A7DC-AE566ED250E7}"
 EndProject
@@ -14,6 +14,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Commons", "Commons", "{0DBC00FD-7206-4851-A29E-C881DB8E97AA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabxPonto_Commons", "LabxPonto_Commons\LabxPonto_Commons.csproj", "{113B9ACA-FCD1-409B-83C3-9F002C5B3609}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deploy", "Deploy", "{66DF7424-63CC-4AC6-9F59-D51FF7A1FC92}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ePonto.Installer", "ePonto.Installer\ePonto.Installer.vdproj", "{4D638FB4-154C-4C77-A9BF-325548F16A0F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,8 @@ Global
 		{113B9ACA-FCD1-409B-83C3-9F002C5B3609}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{113B9ACA-FCD1-409B-83C3-9F002C5B3609}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{113B9ACA-FCD1-409B-83C3-9F002C5B3609}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D638FB4-154C-4C77-A9BF-325548F16A0F}.Debug|Any CPU.ActiveCfg = Debug
+		{4D638FB4-154C-4C77-A9BF-325548F16A0F}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,6 +47,7 @@ Global
 		{90CD6129-5B72-4407-ACE8-8B1892FEFD69} = {492768F3-864C-40C6-A7DC-AE566ED250E7}
 		{09864DE5-F895-4444-9976-220E10E3BD1C} = {784BD261-F3EB-4B5D-B2F7-A16AD47A8DED}
 		{113B9ACA-FCD1-409B-83C3-9F002C5B3609} = {0DBC00FD-7206-4851-A29E-C881DB8E97AA}
+		{4D638FB4-154C-4C77-A9BF-325548F16A0F} = {66DF7424-63CC-4AC6-9F59-D51FF7A1FC92}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {844BC8E9-CBA7-433E-AF9F-FBECFB35E50C}
