@@ -45,10 +45,11 @@
             this.btnVisualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnVisualizar.Location = new System.Drawing.Point(23, 291);
             this.btnVisualizar.Name = "btnVisualizar";
-            this.btnVisualizar.Size = new System.Drawing.Size(156, 37);
+            this.btnVisualizar.Size = new System.Drawing.Size(159, 52);
             this.btnVisualizar.Style = MetroFramework.MetroColorStyle.Blue;
             this.btnVisualizar.TabIndex = 59;
             this.btnVisualizar.Text = "Visualizar";
+            this.btnVisualizar.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btnVisualizar.UseCustomBackColor = true;
             this.btnVisualizar.UseSelectable = true;
             this.btnVisualizar.UseTileImage = true;
@@ -58,10 +59,11 @@
             this.btExcluir.ActiveControl = null;
             this.btExcluir.Location = new System.Drawing.Point(104, 196);
             this.btExcluir.Name = "btExcluir";
-            this.btExcluir.Size = new System.Drawing.Size(75, 89);
+            this.btExcluir.Size = new System.Drawing.Size(78, 89);
             this.btExcluir.Style = MetroFramework.MetroColorStyle.Red;
             this.btExcluir.TabIndex = 58;
             this.btExcluir.Text = "Deletar";
+            this.btExcluir.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btExcluir.UseSelectable = true;
             this.btExcluir.UseTileImage = true;
             this.btExcluir.Click += new System.EventHandler(this.btExcluir_Click);
@@ -75,6 +77,7 @@
             this.btAlterar.Style = MetroFramework.MetroColorStyle.Silver;
             this.btAlterar.TabIndex = 57;
             this.btAlterar.Text = "Alterar";
+            this.btAlterar.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btAlterar.UseSelectable = true;
             this.btAlterar.UseTileImage = true;
             this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click);
@@ -84,11 +87,12 @@
             this.btNovo.ActiveControl = null;
             this.btNovo.Location = new System.Drawing.Point(23, 107);
             this.btNovo.Name = "btNovo";
-            this.btNovo.Size = new System.Drawing.Size(156, 82);
+            this.btNovo.Size = new System.Drawing.Size(159, 82);
             this.btNovo.Style = MetroFramework.MetroColorStyle.Blue;
             this.btNovo.TabIndex = 56;
             this.btNovo.Text = "Novo";
             this.btNovo.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btNovo.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btNovo.UseSelectable = true;
             this.btNovo.UseTileImage = true;
             this.btNovo.Click += new System.EventHandler(this.btNovo_Click);

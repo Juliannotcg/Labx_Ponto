@@ -61,6 +61,7 @@
             this.metroTile1.Size = new System.Drawing.Size(175, 97);
             this.metroTile1.TabIndex = 3;
             this.metroTile1.Text = "Relatórios";
+            this.metroTile1.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.metroToolTip1.SetToolTip(this.metroTile1, "Gerar relatórios");
             this.metroTile1.UseCustomBackColor = true;
             this.metroTile1.UseSelectable = true;
@@ -75,6 +76,7 @@
             this.metroTile3.Size = new System.Drawing.Size(175, 151);
             this.metroTile3.TabIndex = 5;
             this.metroTile3.Text = "Leitura de Arquivo";
+            this.metroTile3.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.metroToolTip1.SetToolTip(this.metroTile3, "Ler arquivo");
             this.metroTile3.UseSelectable = true;
             this.metroTile3.Click += new System.EventHandler(this.metroTile3_Click);
@@ -89,6 +91,7 @@
             this.metroTile2.Size = new System.Drawing.Size(175, 151);
             this.metroTile2.TabIndex = 4;
             this.metroTile2.Text = "Gerar Arquivo";
+            this.metroTile2.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.metroToolTip1.SetToolTip(this.metroTile2, "Gerar arquivo");
             this.metroTile2.UseCustomBackColor = true;
             this.metroTile2.UseSelectable = true;
@@ -103,6 +106,7 @@
             this.btnDepartamento.Size = new System.Drawing.Size(185, 97);
             this.btnDepartamento.TabIndex = 6;
             this.btnDepartamento.Text = "Departamentos";
+            this.btnDepartamento.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.metroToolTip1.SetToolTip(this.btnDepartamento, "Cadastro de departamentos");
             this.btnDepartamento.UseSelectable = true;
             this.btnDepartamento.Click += new System.EventHandler(this.btnDepartamento_Click);
@@ -116,6 +120,7 @@
             this.btnEmpresa.Size = new System.Drawing.Size(185, 151);
             this.btnEmpresa.TabIndex = 7;
             this.btnEmpresa.Text = "Empresas";
+            this.btnEmpresa.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.metroToolTip1.SetToolTip(this.btnEmpresa, "Cadastro de empresas");
             this.btnEmpresa.UseSelectable = true;
             this.btnEmpresa.Click += new System.EventHandler(this.btnEmpresa_Click);
@@ -129,6 +134,7 @@
             this.btnFuncoes.Size = new System.Drawing.Size(185, 97);
             this.btnFuncoes.TabIndex = 8;
             this.btnFuncoes.Text = "Funções";
+            this.btnFuncoes.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.metroToolTip1.SetToolTip(this.btnFuncoes, "Cadastro de funções");
             this.btnFuncoes.UseSelectable = true;
             this.btnFuncoes.Click += new System.EventHandler(this.btnFuncoes_Click);
@@ -144,6 +150,7 @@
             this.btnSair.Style = MetroFramework.MetroColorStyle.Red;
             this.btnSair.TabIndex = 9;
             this.btnSair.Text = "Sair";
+            this.btnSair.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.metroToolTip1.SetToolTip(this.btnSair, "Sair do sistema");
             this.btnSair.UseSelectable = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
@@ -194,6 +201,7 @@
             this.mtConfiguracoes.Style = MetroFramework.MetroColorStyle.Silver;
             this.mtConfiguracoes.TabIndex = 2;
             this.mtConfiguracoes.Text = "Configurações";
+            this.mtConfiguracoes.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.metroToolTip1.SetToolTip(this.mtConfiguracoes, "Acessar as configurações do sistema");
             this.mtConfiguracoes.UseSelectable = true;
             this.mtConfiguracoes.UseTileImage = true;
@@ -209,6 +217,7 @@
             this.btnFuncionario.Size = new System.Drawing.Size(185, 151);
             this.btnFuncionario.TabIndex = 1;
             this.btnFuncionario.Text = "Funcionários";
+            this.btnFuncionario.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.metroToolTip1.SetToolTip(this.btnFuncionario, "Cadastro de funcionários");
             this.btnFuncionario.UseCustomBackColor = true;
             this.btnFuncionario.UseSelectable = true;
@@ -281,6 +290,7 @@
             this.Padding = new System.Windows.Forms.Padding(15, 60, 15, 16);
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
             this.Style = MetroFramework.MetroColorStyle.Default;
+            this.Load += new System.EventHandler(this.frmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
             this.ResumeLayout(false);

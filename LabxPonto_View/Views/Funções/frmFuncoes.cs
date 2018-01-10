@@ -29,7 +29,7 @@ namespace LabxPonto_View.Views.Funções
 
         public Funcao retornarFuncaoSelecionado()
         {
-            funcao.Id = (int)dgFuncao.CurrentRow.Cells["Id"].Value;
+            funcao.Id = (int)dgFuncao.Rows[dgFuncao.CurrentRow.Index].Cells["Id"].Value;
             funcao = servico.GetFuncao(funcao.Id);
             return funcao;
         }

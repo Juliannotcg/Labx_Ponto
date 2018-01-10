@@ -30,7 +30,7 @@ namespace LabxPonto_View.Views.Funcionarios
 
         public Funcionario retornarFuncionarioSelecionado()
         {
-            funcionario.Id = (int)dgFuncionarios.CurrentRow.Cells["Id"].Value;
+            funcionario.Id = (int)dgFuncionarios.Rows[dgFuncionarios.CurrentRow.Index].Cells["Id"].Value;
             funcionario = servico.GetFuncionario(funcionario.Id);
             return funcionario;
         }

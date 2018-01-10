@@ -8,6 +8,7 @@ using MetroFramework;
 using MetroFramework.Forms;
 using Microsoft.Win32;
 using System.IO;
+using System.Windows.Forms;
 
 namespace LabxPonto_View.Views
 {
@@ -115,6 +116,11 @@ namespace LabxPonto_View.Views
                 
             caminhoArquivo += @"\config.txt";
             File.WriteAllText(caminhoArquivo, metroStyleManager.Theme.ToString());
+        }
+
+        private void frmMain_Load(object sender, System.EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
         }
     }
 }

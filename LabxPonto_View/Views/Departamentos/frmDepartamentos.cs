@@ -30,7 +30,7 @@ namespace LabxPonto_View.Views.Departamentos
 
         public Departamento retornarDepartamentoSelecionado()
         {
-            departamento.Id = (int)dgDepartamentos.CurrentRow.Cells["Id"].Value;
+            departamento.Id = (int)dgDepartamentos.Rows[dgDepartamentos.CurrentRow.Index].Cells["Id"].Value;
             departamento = servico.GetDepartamento(departamento.Id);
             return departamento;
         }

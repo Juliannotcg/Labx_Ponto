@@ -36,23 +36,35 @@
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Departamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descrição = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuncao)).BeginInit();
             this.SuspendLayout();
             // 
             // btNovo
             // 
             this.btNovo.Location = new System.Drawing.Point(23, 63);
+            this.btNovo.Size = new System.Drawing.Size(167, 82);
+            this.btNovo.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btNovo.Click += new System.EventHandler(this.btNovo_Click_1);
             // 
             // btAlterar
             // 
-            this.btAlterar.Location = new System.Drawing.Point(23, 177);
+            this.btAlterar.Location = new System.Drawing.Point(23, 151);
+            this.btAlterar.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click_1);
             // 
             // btExcluir
             // 
-            this.btExcluir.Location = new System.Drawing.Point(104, 177);
+            this.btExcluir.Location = new System.Drawing.Point(104, 151);
+            this.btExcluir.Size = new System.Drawing.Size(86, 89);
+            this.btExcluir.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btExcluir.Click += new System.EventHandler(this.btExcluir_Click_1);
+            // 
+            // btnVisualizar
+            // 
+            this.btnVisualizar.Location = new System.Drawing.Point(23, 246);
+            this.btnVisualizar.Size = new System.Drawing.Size(167, 46);
+            this.btnVisualizar.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             // 
             // dgFuncao
             // 
@@ -91,7 +103,7 @@
             this.dgFuncao.EnableHeadersVisualStyles = false;
             this.dgFuncao.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dgFuncao.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgFuncao.Location = new System.Drawing.Point(185, 63);
+            this.dgFuncao.Location = new System.Drawing.Point(196, 63);
             this.dgFuncao.Name = "dgFuncao";
             this.dgFuncao.ReadOnly = true;
             this.dgFuncao.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -105,7 +117,7 @@
             this.dgFuncao.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgFuncao.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgFuncao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgFuncao.Size = new System.Drawing.Size(530, 356);
+            this.dgFuncao.Size = new System.Drawing.Size(519, 356);
             this.dgFuncao.TabIndex = 62;
             // 
             // Id
@@ -149,10 +161,12 @@
             this.Name = "frmFuncoes";
             this.Text = "Funções";
             this.Load += new System.EventHandler(this.frmFuncoes_Load);
+            this.Controls.SetChildIndex(this.btnVisualizar, 0);
             this.Controls.SetChildIndex(this.btNovo, 0);
             this.Controls.SetChildIndex(this.btAlterar, 0);
             this.Controls.SetChildIndex(this.btExcluir, 0);
             this.Controls.SetChildIndex(this.dgFuncao, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuncao)).EndInit();
             this.ResumeLayout(false);
 

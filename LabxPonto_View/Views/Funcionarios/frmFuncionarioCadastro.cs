@@ -342,6 +342,7 @@ namespace LabxPonto_View.Views.Funcionarios
 
             tcCadastroFuncionario.StyleManager = this.StyleManager;
             tcCadastroFuncionario.Theme = this.StyleManager.Theme;
+            tcCadastroFuncionario.SelectedIndex = 0; 
 
         }
 
@@ -475,7 +476,7 @@ namespace LabxPonto_View.Views.Funcionarios
             if (txtCPF.Text.Length == 11)
             {
                 long CPF = Convert.ToInt64(txtCPF.Text);
-                string CPFFormatado = String.Format(@"{0:\000\.000\.000\-00}", CPF);
+                string CPFFormatado = String.Format(@"{0:000\.000\.000\-00}", CPF);
                 txtCPF.Text = CPFFormatado;
             }
         }

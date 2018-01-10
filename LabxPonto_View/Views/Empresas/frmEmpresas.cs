@@ -30,7 +30,7 @@ namespace LabxPonto_View.Views.Empresas
 
         public Empresa retornarEmpresaSelecionado()
         {
-            empresa.Id = (int)dgEmpresas.CurrentRow.Cells["Id"].Value;
+            empresa.Id = (int)dgEmpresas.Rows[dgEmpresas.CurrentRow.Index].Cells["Id"].Value; ;
             empresa = servico.GetEmpresa(empresa.Id);
             return empresa;
         }
