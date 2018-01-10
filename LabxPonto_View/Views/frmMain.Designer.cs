@@ -228,6 +228,7 @@
             // 
             // pbLogo
             // 
+            this.metroStyleExtender.SetApplyMetroTheme(this.pbLogo, true);
             this.pbLogo.Image = global::LabxPonto_View.Properties.Resources.Logo11;
             this.pbLogo.Location = new System.Drawing.Point(23, 48);
             this.pbLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
