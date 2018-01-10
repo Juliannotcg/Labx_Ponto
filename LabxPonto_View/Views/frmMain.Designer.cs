@@ -43,11 +43,12 @@
             this.mtConfiguracoes = new MetroFramework.Controls.MetroTile();
             this.btnFuncionario = new MetroFramework.Controls.MetroTile();
             this.metroStyleExtender = new MetroFramework.Components.MetroStyleExtender(this.components);
+            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.metroStyleManager = new MetroFramework.Components.MetroStyleManager(this.components);
             this.btTema = new MetroFramework.Controls.MetroTile();
-            this.pbLogo = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
+            this.metroToolTip1 = new MetroFramework.Components.MetroToolTip();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
             this.SuspendLayout();
             // 
             // metroTile1
@@ -60,6 +61,7 @@
             this.metroTile1.Size = new System.Drawing.Size(175, 97);
             this.metroTile1.TabIndex = 3;
             this.metroTile1.Text = "Relatórios";
+            this.metroToolTip1.SetToolTip(this.metroTile1, "Gerar relatórios");
             this.metroTile1.UseCustomBackColor = true;
             this.metroTile1.UseSelectable = true;
             this.metroTile1.Click += new System.EventHandler(this.metroTile1_Click);
@@ -73,6 +75,7 @@
             this.metroTile3.Size = new System.Drawing.Size(175, 151);
             this.metroTile3.TabIndex = 5;
             this.metroTile3.Text = "Leitura de Arquivo";
+            this.metroToolTip1.SetToolTip(this.metroTile3, "Ler arquivo");
             this.metroTile3.UseSelectable = true;
             this.metroTile3.Click += new System.EventHandler(this.metroTile3_Click);
             // 
@@ -86,6 +89,7 @@
             this.metroTile2.Size = new System.Drawing.Size(175, 151);
             this.metroTile2.TabIndex = 4;
             this.metroTile2.Text = "Gerar Arquivo";
+            this.metroToolTip1.SetToolTip(this.metroTile2, "Gerar arquivo");
             this.metroTile2.UseCustomBackColor = true;
             this.metroTile2.UseSelectable = true;
             this.metroTile2.Click += new System.EventHandler(this.metroTile2_Click);
@@ -99,6 +103,7 @@
             this.btnDepartamento.Size = new System.Drawing.Size(185, 97);
             this.btnDepartamento.TabIndex = 6;
             this.btnDepartamento.Text = "Departamentos";
+            this.metroToolTip1.SetToolTip(this.btnDepartamento, "Cadastro de departamentos");
             this.btnDepartamento.UseSelectable = true;
             this.btnDepartamento.Click += new System.EventHandler(this.btnDepartamento_Click);
             // 
@@ -111,6 +116,7 @@
             this.btnEmpresa.Size = new System.Drawing.Size(185, 151);
             this.btnEmpresa.TabIndex = 7;
             this.btnEmpresa.Text = "Empresas";
+            this.metroToolTip1.SetToolTip(this.btnEmpresa, "Cadastro de empresas");
             this.btnEmpresa.UseSelectable = true;
             this.btnEmpresa.Click += new System.EventHandler(this.btnEmpresa_Click);
             // 
@@ -123,6 +129,7 @@
             this.btnFuncoes.Size = new System.Drawing.Size(185, 97);
             this.btnFuncoes.TabIndex = 8;
             this.btnFuncoes.Text = "Funções";
+            this.metroToolTip1.SetToolTip(this.btnFuncoes, "Cadastro de funções");
             this.btnFuncoes.UseSelectable = true;
             this.btnFuncoes.Click += new System.EventHandler(this.btnFuncoes_Click);
             // 
@@ -137,6 +144,7 @@
             this.btnSair.Style = MetroFramework.MetroColorStyle.Red;
             this.btnSair.TabIndex = 9;
             this.btnSair.Text = "Sair";
+            this.metroToolTip1.SetToolTip(this.btnSair, "Sair do sistema");
             this.btnSair.UseSelectable = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
@@ -186,6 +194,7 @@
             this.mtConfiguracoes.Style = MetroFramework.MetroColorStyle.Silver;
             this.mtConfiguracoes.TabIndex = 2;
             this.mtConfiguracoes.Text = "Configurações";
+            this.metroToolTip1.SetToolTip(this.mtConfiguracoes, "Acessar as configurações do sistema");
             this.mtConfiguracoes.UseSelectable = true;
             this.mtConfiguracoes.UseTileImage = true;
             this.mtConfiguracoes.Click += new System.EventHandler(this.mtConfiguracoes_Click);
@@ -200,10 +209,23 @@
             this.btnFuncionario.Size = new System.Drawing.Size(185, 151);
             this.btnFuncionario.TabIndex = 1;
             this.btnFuncionario.Text = "Funcionários";
+            this.metroToolTip1.SetToolTip(this.btnFuncionario, "Cadastro de funcionários");
             this.btnFuncionario.UseCustomBackColor = true;
             this.btnFuncionario.UseSelectable = true;
             this.btnFuncionario.UseTileImage = true;
             this.btnFuncionario.Click += new System.EventHandler(this.mtCadastro_Click);
+            // 
+            // pbLogo
+            // 
+            this.metroStyleExtender.SetApplyMetroTheme(this.pbLogo, true);
+            this.pbLogo.Image = global::LabxPonto_View.Properties.Resources.Logo11;
+            this.pbLogo.Location = new System.Drawing.Point(23, 48);
+            this.pbLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(787, 134);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbLogo.TabIndex = 0;
+            this.pbLogo.TabStop = false;
             // 
             // metroStyleManager
             // 
@@ -220,23 +242,18 @@
             this.btTema.Size = new System.Drawing.Size(50, 53);
             this.btTema.TabIndex = 13;
             this.btTema.TileImage = global::LabxPonto_View.Properties.Resources.theme1;
+            this.metroToolTip1.SetToolTip(this.btTema, "Alterar tema");
             this.btTema.UseCustomBackColor = true;
             this.btTema.UseMnemonic = false;
             this.btTema.UseSelectable = true;
             this.btTema.UseTileImage = true;
             this.btTema.Click += new System.EventHandler(this.btTema_Click);
             // 
-            // pbLogo
+            // metroToolTip1
             // 
-            this.metroStyleExtender.SetApplyMetroTheme(this.pbLogo, true);
-            this.pbLogo.Image = global::LabxPonto_View.Properties.Resources.Logo11;
-            this.pbLogo.Location = new System.Drawing.Point(23, 48);
-            this.pbLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(787, 134);
-            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbLogo.TabIndex = 0;
-            this.pbLogo.TabStop = false;
+            this.metroToolTip1.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroToolTip1.StyleManager = null;
+            this.metroToolTip1.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
             // frmMain
             // 
@@ -264,8 +281,8 @@
             this.Padding = new System.Windows.Forms.Padding(15, 60, 15, 16);
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
             this.Style = MetroFramework.MetroColorStyle.Default;
-            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,5 +306,6 @@
         private MetroFramework.Components.MetroStyleExtender metroStyleExtender;
         public MetroFramework.Controls.MetroTile btTema;
         public MetroFramework.Components.MetroStyleManager metroStyleManager;
+        private MetroFramework.Components.MetroToolTip metroToolTip1;
     }
 }
