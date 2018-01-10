@@ -1,7 +1,12 @@
 ﻿using LabxPonto_Dao.Model;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,22 +14,26 @@ namespace LabxPonto_Commons.WebService
 {
     public class CEPCorreios
     {
-        private Endereco endereco;
 
-        public Endereco preencheEndereco(string cep)
+
+        public Endereco BuscaCep(string cep)
         {
-            endereco = new Endereco();
+            Endereco endereco = new Endereco();
+            string Baseurl = "http://viacep.com.br/ws/" + cep + "/json/";
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri(Baseurl);
+            MediaTypeWithQualityHeaderValue contentType = new MediaTypeWithQualityHeaderValue("application/json");
+            client.DefaultRequestHeaders.Accept.Add(contentType);
+            HttpResponseMessage response = client.GetAsync(Baseurl).Result;
 
-            var ws = new ServiceCEPCorreios.AtendeClienteClient();
-            var resposta = ws.consultaCEP(cep);
+            string stringData = response.Content.ReadAsStringAsync().Result;
+            var data = JsonConvert.DeserializeObject<Endereco>(stringData);
 
-            endereco.Logradouro = resposta.end;
-            endereco.Bairro = resposta.bairro;
-            endereco.Cidade = resposta.cidade;
-            endereco.Complemento = resposta.complemento;
-            endereco.Estado = resposta.uf;
+            
+            var listaProduto = data;
 
             return endereco;
         }
+
     }
 }

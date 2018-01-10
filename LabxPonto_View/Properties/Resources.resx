@@ -121,6 +121,12 @@
   <data name="LogoEmpresa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LogoEmpresa.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Logo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logo1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ePonto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ePonto.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="if_new-24_103173" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_new-24_103173.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -147,5 +153,8 @@
   </data>
   <data name="theme1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\theme1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Logo11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logo11.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

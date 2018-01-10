@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
@@ -42,12 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connected Services\ServiceCEPCorreios\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Connected Services\ServiceCEP\Reference.cs">
+    <Compile Include="Connected Services\WSCorreios\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -79,349 +77,171 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiceCEPCorreios\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Connected Services\ServiceCEPCorreios\AtendeClienteService.wsdl" />
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.assuntoPIMaster.datasource">
+    <None Include="Connected Services\WSCorreios\AtendeClienteService.wsdl" />
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.assuntoPIMaster.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.atualizaPagamentoNaEntregaResponse.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.atualizaPagamentoNaEntregaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.atualizaRemessaAgrupadaResponse.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.atualizaRemessaAgrupadaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.bloquearObjetoResponse.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.bloquearObjetoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.buscaClienteResponse.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.buscaClienteResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.buscaContratoResponse.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.buscaContratoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.buscaPagamentoEntregaResponse.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.buscaPagamentoEntregaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.buscaServicosAdicionaisAtivosResponse.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.buscaServicosAdicionaisAtivosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.buscaServicosResponse.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.buscaServicosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.buscaServicosValorDeclaradoResponse.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.buscaServicosValorDeclaradoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.buscaServicosXServicosAdicionaisResponse.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.buscaServicosXServicosAdicionaisResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.buscaTarifaValeResponse.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.buscaTarifaValeResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.calculaTarifaServicoResponse.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.calculaTarifaServicoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.cancelarObjetoResponse.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.cancelarObjetoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.cancelarPedidoScolResponse.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.cancelarPedidoScolResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.clienteERP.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.clienteERP.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.consultaCEPResponse.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.consultaCEPResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.consultarPedidosInformacaoResponse.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.consultarPedidosInformacaoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.consultaSROResponse.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.consultaSROResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.contratoERP.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.contratoERP.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.embalagemLRSMaster.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.embalagemLRSMaster.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.enderecoERP.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.enderecoERP.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.fechaPlpResponse.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.fechaPlpResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.fechaPlpVariosServicosResponse.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.fechaPlpVariosServicosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.geraDigitoVerificadorEtiquetasResponse.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.geraDigitoVerificadorEtiquetasResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.getStatusCartaoPostagemResponse.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.getStatusCartaoPostagemResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.getStatusPLPResponse.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.getStatusPLPResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.integrarUsuarioScolResponse.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.integrarUsuarioScolResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.mensagemRetornoPIMaster.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.mensagemRetornoPIMaster.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.motivoPIMaster.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.motivoPIMaster.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.obterAssuntosPIResponse.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.obterAssuntosPIResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.obterClienteAtualizacaoResponse.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.obterClienteAtualizacaoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.obterEmbalagemLRSResponse.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.obterEmbalagemLRSResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.obterMensagemRetornoPIResponse.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.obterMensagemRetornoPIResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.obterMotivosPIResponse.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.obterMotivosPIResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.registrarPedidosInformacaoResponse.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.registrarPedidosInformacaoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.retorno.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.retorno.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.retornoCancelamento.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.retornoCancelamento.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.servicoAdicionalXML.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.servicoAdicionalXML.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.servicoERP.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.servicoERP.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.solicitaEtiquetasResponse.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.solicitaEtiquetasResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.solicitaPLPResponse.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.solicitaPLPResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.solicitarPostagemScolResponse.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.solicitarPostagemScolResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.solicitaXmlPlpResponse.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.solicitaXmlPlpResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.statusCartao.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.statusCartao.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.statusPlp.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.statusPlp.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.valePostal.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.valePostal.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.validaEtiquetaPLPResponse.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.validaEtiquetaPLPResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.validaPlpResponse.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.validaPlpResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.validarPostagemReversaResponse.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.validarPostagemReversaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.validarPostagemSimultaneaResponse.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.validarPostagemSimultaneaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.verificaDisponibilidadeServicoResponse.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.verificaDisponibilidadeServicoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEPCorreios\LabxPonto_Commons.ServiceCEPCorreios.VerificaSeTodosObjetosCanceladosResponse.datasource">
+    <None Include="Connected Services\WSCorreios\LabxPonto_Commons.WSCorreios.VerificaSeTodosObjetosCanceladosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceCEP\AtendeClienteService.wsdl" />
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.assuntoPIMaster.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.atualizaPagamentoNaEntregaResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.atualizaRemessaAgrupadaResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.bloquearObjetoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.buscaClienteResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.buscaContratoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.buscaPagamentoEntregaResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.buscaServicosAdicionaisAtivosResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.buscaServicosResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.buscaServicosValorDeclaradoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.buscaServicosXServicosAdicionaisResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.buscaTarifaValeResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.calculaTarifaServicoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.cancelarObjetoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.cancelarPedidoScolResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.clienteERP.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.consultaCEPResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.consultarPedidosInformacaoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.consultaSROResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.contratoERP.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.embalagemLRSMaster.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.enderecoERP.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.fechaPlpResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.fechaPlpVariosServicosResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.geraDigitoVerificadorEtiquetasResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.getStatusCartaoPostagemResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.getStatusPLPResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.integrarUsuarioScolResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.mensagemRetornoPIMaster.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.motivoPIMaster.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.obterAssuntosPIResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.obterClienteAtualizacaoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.obterEmbalagemLRSResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.obterMensagemRetornoPIResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.obterMotivosPIResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.registrarPedidosInformacaoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.retorno.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.retornoCancelamento.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.servicoAdicionalXML.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.servicoERP.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.solicitaEtiquetasResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.solicitaPLPResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.solicitarPostagemScolResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.solicitaXmlPlpResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.statusCartao.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.statusPlp.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.valePostal.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.validaEtiquetaPLPResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.validaPlpResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.validarPostagemReversaResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.validarPostagemSimultaneaResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.verificaDisponibilidadeServicoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceCEP\LabxPonto_Commons.ServiceCEP.VerificaSeTodosObjetosCanceladosResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\ServiceCEPCorreios\" />
-    <WCFMetadataStorage Include="Connected Services\ServiceCEP\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServiceCEP\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServiceCEP\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServiceCEP\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LabxPonto_Dal\LabxPonto_Dao.csproj">
@@ -430,10 +250,16 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiceCEPCorreios\configuration.svcinfo" />
+    <WCFMetadataStorage Include="Connected Services\WSCorreios\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiceCEPCorreios\Reference.svcmap">
+    <None Include="Connected Services\WSCorreios\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WSCorreios\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WSCorreios\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
