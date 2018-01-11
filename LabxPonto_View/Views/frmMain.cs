@@ -16,12 +16,14 @@ namespace LabxPonto_View.Views
 {
     public partial class frmMain : MetroForm
     {
-        AppDataContext context = new AppDataContext();
-        public frmMain()
+        AppDataContext context;
+        public frmMain(AppDataContext contexto)
         {
             InitializeComponent();
+            context = contexto;
             StyleManager = metroStyleManager;
             verificarArquivoConfiguracao();
+            
         }
 
         public void mtCadastro_Click(object sender, System.EventArgs e)

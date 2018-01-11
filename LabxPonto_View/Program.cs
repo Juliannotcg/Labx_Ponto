@@ -1,4 +1,5 @@
-﻿using LabxPonto_Dao.Injection;
+﻿using LabxPonto_Dao.Data.Context;
+using LabxPonto_Dao.Injection;
 using LabxPonto_Dao.Service;
 using LabxPonto_View.Views;
 using System;
@@ -20,8 +21,14 @@ namespace LabxPonto_View
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin());
-
+            AppDataContext contexto = new AppDataContext();
+            //Application.Run(new frmLogin(contexto));
+            frmLogin login = new frmLogin(contexto);
+            
+            if(login.ShowDialog() == DialogResult.OK)
+            {
+                Application.Run(new frmMain(contexto));
+            }
 
             // Configure Dependency Injection
             var container = new UnityContainer();

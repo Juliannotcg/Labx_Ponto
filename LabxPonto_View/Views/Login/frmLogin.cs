@@ -28,15 +28,28 @@ namespace LabxPonto_View.Views
             set { usuario = value; }
         }
 
-        public frmLogin()
+        public frmLogin(AppDataContext con)
         {
             InitializeComponent();
+            usuario = new Usuario();
+            servico = new UsuarioServico(con);
+            context = con;
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
             preencherUsuario();
-            validar(usuario.Login, usuario.Senha);
+            if(validar(usuario.Login, usuario.Senha))
+            {
+                this.DialogResult = DialogResult.OK;
+                this.Dispose();
+                
+            }
+            else
+            {
+                DialogResult = DialogResult.None;
+            }
+            
         }
 
         public void preencherUsuario()
