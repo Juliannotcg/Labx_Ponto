@@ -30,7 +30,7 @@ namespace LabxPonto_View.Views.Empresas
 
         public Empresa retornarEmpresaSelecionado()
         {
-            empresa.Id = (int)dgEmpresas.Rows[dgEmpresas.CurrentRow.Index].Cells["Id"].Value; ;
+            empresa.Id = (int)dgEmpresas.Rows[dgEmpresas.CurrentRow.Index].Cells["Id"].Value;
             empresa = servico.GetEmpresa(empresa.Id);
             return empresa;
         }
@@ -74,6 +74,11 @@ namespace LabxPonto_View.Views.Empresas
             cadastro = new frmEmpresaCadastro(Operacao.Excluir, context);
             cadastro.StyleManager = this.StyleManager;
             cadastro.Empresa = retornarEmpresaSelecionado();
+            if (!servico.VerificarDependencias(empresa.Id))
+            {
+                MetroFramework.MetroMessageBox.Show(this, "A Empresa \"" + empresa.NomeFantasia + "\" não pode ser deletada, existem um ou mais Funcionários cadastrados com essa Empresa. \nAntes de excluir, será necessário desvinculá-la de todos os Funcionários relacionados.", "Atenção!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Hand);
+                return;
+            }
             cadastro.preencherTela();
             cadastro.ShowDialog();
             preencherGrid();

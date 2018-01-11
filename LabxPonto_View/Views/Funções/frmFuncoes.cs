@@ -57,6 +57,11 @@ namespace LabxPonto_View.Views.Funções
             cadastro = new frmFuncaoCadastro(Operacao.Excluir, context);
             cadastro.StyleManager = this.StyleManager;
             cadastro.Funcao = retornarFuncaoSelecionado();
+            if (!servico.VerificarDependencias(funcao.Id))
+            {
+                MetroFramework.MetroMessageBox.Show(this, "A Função \"" + funcao.NomeFuncao + "\" não pode ser deletada, existem um ou mais Funcionários cadastrados com essa Função. \nAntes de excluir, será necessário desvinculá-la de todos os Funcionários relacionados.", "Atenção!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Hand);
+                return;
+            }
             cadastro.ShowDialog();
             preencherGrid();
         }

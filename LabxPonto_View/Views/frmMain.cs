@@ -4,7 +4,7 @@ using LabxPonto_View.Views.Departamentos;
 using LabxPonto_View.Views.Empresas;
 using LabxPonto_View.Views.Funcionarios;
 using LabxPonto_View.Views.Funções;
-using LabxPonto_View.Views.Usuário;
+//using LabxPonto_View.Views.Usuário;
 using MetroFramework;
 using MetroFramework.Forms;
 using Microsoft.Win32;
