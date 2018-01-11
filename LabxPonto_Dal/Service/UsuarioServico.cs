@@ -49,15 +49,21 @@ namespace LabxPonto_Dao.Service
         {
             var result = Context.Usuarios.Where(x => x.Login == usuario).FirstOrDefault();
 
-            return true;
+            if (result != null)
+                return true;
+            else
+                return false;
 
         }
 
         public bool GetSenha(string senha)
         {
-            var resultado = Context.Usuarios.Where(x => x.Senha == senha).FirstOrDefault();
+            var result = Context.Usuarios.Where(x => x.Senha == senha).FirstOrDefault();
 
-            return true;
+            if (result != null)
+                return true;
+            else
+                return false;
         }
 
         public DataTable GetUsuarioGrid()

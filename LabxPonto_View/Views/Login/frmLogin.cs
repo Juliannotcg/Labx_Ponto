@@ -66,7 +66,11 @@ namespace LabxPonto_View.Views
                 errorProviderLogin.SetError(txtUsuario, "Informe o usuário");
             else
             {
-                servico.GetUsuarioLogin(usuario);
+                if (!servico.GetUsuarioLogin(usuario))
+                {
+                    MetroFramework.MetroMessageBox.Show(this, "O usuário \"" + txtUsuario.Text + "\" não foi encontrado!", "Atenção!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Hand);
+                    return false;
+                }
             }
 
             if (String.IsNullOrEmpty(txtSenha.Text))
@@ -74,7 +78,11 @@ namespace LabxPonto_View.Views
             else
             {
                 senhaCript =  cript.Base64Encode(senha);
-                servico.GetSenha(senhaCript);
+                if(!servico.GetSenha(senhaCript))
+                {
+                    MetroFramework.MetroMessageBox.Show(this, "A senha está incorreta!", "Atenção!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Hand);
+                    return false;
+                }
             }
 
             return ((errorProviderLogin.GetError(txtUsuario) == "") &&

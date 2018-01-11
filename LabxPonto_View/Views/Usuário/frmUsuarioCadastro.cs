@@ -1,4 +1,5 @@
-﻿using LabxPonto_Dao.Data.Context;
+﻿using LabxPonto_Commons;
+using LabxPonto_Dao.Data.Context;
 using LabxPonto_Dao.Model;
 using LabxPonto_Dao.Service;
 using LabxPonto_View.Enums;
@@ -73,6 +74,9 @@ namespace LabxPonto_View.Views.Usuário
         {
             txtUsuario.Text = usuario.Login;
             txtSenha.Text = usuario.Senha;
+            txtConfirmaSenha.Text = usuario.Senha;
+            cbPerfil.Text = usuario.Perfil;
+
 
             if (operacao == Operacao.Excluir)
             {
@@ -83,9 +87,11 @@ namespace LabxPonto_View.Views.Usuário
         }
         public void preencherUsuario()
         {
+            Criptografar criptografar = new Criptografar();
+            string senha = criptografar.Base64Encode(txtSenha.Text);
             usuario.Login = txtUsuario.Text;
             usuario.Perfil = cbPerfil.Text;
-            usuario.Senha = txtSenha.Text;
+            usuario.Senha = senha;
         }
         private void inserir()
         {
@@ -146,7 +152,10 @@ namespace LabxPonto_View.Views.Usuário
 
         private void frmUsuarioCadastro_Load(object sender, EventArgs e)
         {
-            if(this.StyleManager.Theme == MetroFramework.MetroThemeStyle.Dark)
+            if(operacao != Operacao.Inserir)
+                preencherTela();
+
+            if (this.StyleManager.Theme == MetroFramework.MetroThemeStyle.Dark)
             {
                 lbUsuario.ForeColor = Color.WhiteSmoke;
                 lbSenha.ForeColor = Color.WhiteSmoke;
