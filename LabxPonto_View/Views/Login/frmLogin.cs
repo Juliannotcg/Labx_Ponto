@@ -36,7 +36,16 @@ namespace LabxPonto_View.Views
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
             preencherUsuario();
-            validar(usuario.Login, usuario.Senha);
+
+            if (validar(usuario.Login, usuario.Senha))
+                confirmar();
+        }
+
+        public void confirmar()
+        {
+            frmMain janela = new frmMain();
+            janela.Show();
+            this.Dispose();
         }
 
         public void preencherUsuario()
