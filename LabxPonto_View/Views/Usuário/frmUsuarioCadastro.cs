@@ -28,10 +28,6 @@ namespace LabxPonto_View.Views.Usuário
             get { return (usuario); }
             set { usuario = value; }
         }
-        public frmUsuarioCadastro()
-        {
-            InitializeComponent();
-        }
 
         public bool validar()
         {
@@ -66,13 +62,13 @@ namespace LabxPonto_View.Views.Usuário
             servico = new UsuarioServico(con);
             context = con;
         }
+
         public void limparTela()
         {
             txtUsuario.Text = "";
             txtSenha.Text = "";
             txtConfirmaSenha.Text = "";
         }
-
         public void preencherTela()
         {
             txtUsuario.Text = usuario.Login;
@@ -85,7 +81,6 @@ namespace LabxPonto_View.Views.Usuário
                 cbPerfil.Enabled = false;
             }
         }
-
         public void preencherUsuario()
         {
             usuario.Login = txtUsuario.Text;

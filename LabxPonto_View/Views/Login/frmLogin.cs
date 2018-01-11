@@ -20,6 +20,7 @@ namespace LabxPonto_View.Views
         private UsuarioServico servico;
         protected Usuario usuario;
         private AppDataContext context;
+        private Criptografar cript;
 
         public Usuario Usuario
         {
@@ -35,7 +36,7 @@ namespace LabxPonto_View.Views
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
             preencherUsuario();
-            validar(usuario.Senha);
+            validar(usuario.Login, usuario.Senha);
         }
 
         public void preencherUsuario()
@@ -43,6 +44,35 @@ namespace LabxPonto_View.Views
             usuario.Login = txtUsuario.Text;
             usuario.Senha = txtSenha.Text;
         }
+        public bool validar(string usuario, string senha)
+        {
+            cript = new Criptografar();
+            string senhaCript = "";
+
+            if (String.IsNullOrEmpty(txtUsuario.Text))
+                errorProviderLogin.SetError(txtUsuario, "Informe o usuário");
+            else
+            {
+                servico.GetUsuarioLogin(usuario);
+            }
+
+            if (String.IsNullOrEmpty(txtSenha.Text))
+                errorProviderLogin.SetError(txtSenha, "Informe a senha.");
+            else
+            {
+                senhaCript =  cript.Base64Encode(senha);
+                servico.GetSenha(senhaCript);
+            }
+
+            return ((errorProviderLogin.GetError(txtUsuario) == "") &&
+                     (errorProviderLogin.GetError(txtSenha) == ""));
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
         public void validar(string senha)
         {
             Criptografar cript = new Criptografar();

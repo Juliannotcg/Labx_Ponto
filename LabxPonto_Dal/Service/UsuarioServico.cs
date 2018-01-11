@@ -32,18 +32,34 @@ namespace LabxPonto_Dao.Service
         //    return (resposta);
         //}
 
-        public List<Funcao> GetFuncoes()
+        public List<Usuario> GetUsuarios()
         {
-            var resposta = (from p in Context.Funcoes
+            var resposta = (from p in Context.Usuarios
                             select p).ToList();
 
             return (resposta);
         }
 
-        public Funcao GetFuncao(int id)
+        public Usuario GetUsuario(string usuario)
         {
-            return Context.Funcoes.Where(x => x.Id == id).FirstOrDefault();
+            return Context.Usuarios.Where(x => x.Login == usuario).FirstOrDefault();
         }
+
+        public bool GetUsuarioLogin(string usuario)
+        {
+            var result = Context.Usuarios.Where(x => x.Login == usuario).FirstOrDefault();
+
+            return true;
+
+        }
+
+        public bool GetSenha(string senha)
+        {
+            var resultado = Context.Usuarios.Where(x => x.Senha == senha).FirstOrDefault();
+
+            return true;
+        }
+
         public DataTable GetUsuarioGrid()
         {
             var results = Context.Usuarios
