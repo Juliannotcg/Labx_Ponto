@@ -250,7 +250,6 @@ namespace LabxPonto_View.Views.Empresas
 
         private void excluir()
         {
-            preencherEmpresa();
             if (servico.Delete(empresa))
             {
                 MetroFramework.MetroMessageBox.Show(this, "A empresa " + empresa.NomeFantasia + " foi deletada com sucesso!", "Excluído com sucesso!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question);
@@ -283,9 +282,25 @@ namespace LabxPonto_View.Views.Empresas
             {
                 case "cmbEstado":
                     cmbEstado.DataSource = Enum.GetNames(typeof(Estados));
+                    cmbEstado.AutoCompleteSource = AutoCompleteSource.ListItems;
+                    cmbEstado.DropDownStyle = ComboBoxStyle.DropDownList;
+                    cmbEstado.DropDownHeight = 200;
+                    cmbEstado.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                    foreach (var item in Enum.GetNames(typeof(Estados)))
+                    {
+                        cmbEstado.AutoCompleteCustomSource.Add(item);
+                    }
                     break;
                 case "cbPais":
                     cbPais.DataSource = Enum.GetNames(typeof(Pais));
+                    cbPais.AutoCompleteSource = AutoCompleteSource.ListItems;
+                    cbPais.DropDownStyle = ComboBoxStyle.DropDownList;
+                    cbPais.DropDownHeight = 200;
+                    cbPais.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                    foreach (var item in Enum.GetNames(typeof(Pais)))
+                    {
+                        cbPais.AutoCompleteCustomSource.Add(item);
+                    }
                     break;
             }
         }

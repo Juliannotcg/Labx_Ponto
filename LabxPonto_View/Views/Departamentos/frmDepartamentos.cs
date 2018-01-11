@@ -58,6 +58,11 @@ namespace LabxPonto_View.Views.Departamentos
             cadastro = new frmDepartamentoCadastro(Operacao.Excluir, context);
             cadastro.StyleManager = this.StyleManager;
             cadastro.Departamento = retornarDepartamentoSelecionado();
+            if(!servico.VerificarDependencias(departamento.Id))
+            {
+                MetroFramework.MetroMessageBox.Show(this, "O Departamento \""+ departamento.NomeDepartamento+"\" não pode ser deletado, existem uma ou mais Funções cadastradas com esse Departamento. \nAntes de excluir, será necessário desvinculá-lo de todas as Funções relacionadas.", "Atenção!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Hand);
+                return;
+            }
             cadastro.ShowDialog();
             preencherGrid();
         }

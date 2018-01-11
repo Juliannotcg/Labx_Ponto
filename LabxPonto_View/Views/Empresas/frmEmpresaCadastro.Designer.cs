@@ -728,8 +728,6 @@
             this.cbPais.FontSize = MetroFramework.MetroComboBoxSize.Tall;
             this.cbPais.FormattingEnabled = true;
             this.cbPais.ItemHeight = 29;
-            this.cbPais.Items.AddRange(new object[] {
-            "Brasil"});
             this.cbPais.Location = new System.Drawing.Point(565, 144);
             this.cbPais.Margin = new System.Windows.Forms.Padding(2);
             this.cbPais.Name = "cbPais";

@@ -51,5 +51,14 @@ namespace LabxPonto_Dao.Service
             Context.SaveChanges();
             return true;
         }
+
+        public bool VerificarDependencias(int id)
+        {
+            var list = Context.Funcoes.Where(x => x.Departamento.Id == id).ToList();
+            if (list.Count > 0)
+                return false;
+            else
+                return true;
+        }
     }
 }

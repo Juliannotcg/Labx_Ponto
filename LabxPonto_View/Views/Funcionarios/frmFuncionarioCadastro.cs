@@ -352,6 +352,15 @@ namespace LabxPonto_View.Views.Funcionarios
             {
                 case "cmbEstado":
                     cmbEstado.DataSource = Enum.GetNames(typeof(Estados));
+                    cmbEstado.DataSource = Enum.GetNames(typeof(Estados));
+                    cmbEstado.AutoCompleteSource = AutoCompleteSource.ListItems;
+                    cmbEstado.DropDownStyle = ComboBoxStyle.DropDownList;
+                    cmbEstado.DropDownHeight = 200;
+                    cmbEstado.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                    foreach (var item in Enum.GetNames(typeof(Estados)))
+                    {
+                        cmbEstado.AutoCompleteCustomSource.Add(item);
+                    }
                     break;
                 case "cmbEstadoCivil":
                     cmbEstadoCivil.DataSource = Enum.GetNames(typeof(EstadoCivil));
