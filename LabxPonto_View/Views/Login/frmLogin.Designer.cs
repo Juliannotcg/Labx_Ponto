@@ -79,6 +79,7 @@
             this.txtUsuario.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtUsuario.CustomButton.UseSelectable = true;
             this.txtUsuario.CustomButton.Visible = false;
+            this.txtUsuario.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtUsuario.Lines = new string[0];
             this.txtUsuario.Location = new System.Drawing.Point(70, 187);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(2);

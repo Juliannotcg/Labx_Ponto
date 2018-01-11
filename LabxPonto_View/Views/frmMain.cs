@@ -1,4 +1,6 @@
 ﻿using LabxPonto_Dao.Data.Context;
+using LabxPonto_Dao.Model;
+using LabxPonto_View.Views.Biometria;
 using LabxPonto_View.Views.Configurações;
 using LabxPonto_View.Views.Departamentos;
 using LabxPonto_View.Views.Empresas;
@@ -17,6 +19,13 @@ namespace LabxPonto_View.Views
     public partial class frmMain : MetroForm
     {
         AppDataContext context;
+        Usuario usuario;
+        public Usuario Usuario
+        {
+            get { return (usuario); }
+            set { usuario = value; }
+        }
+
         public frmMain(AppDataContext contexto)
         {
             InitializeComponent();
@@ -126,6 +135,9 @@ namespace LabxPonto_View.Views
 
         private void frmMain_Load(object sender, System.EventArgs e)
         {
+            lbUsuario.Text = "Usuário " + usuario.Login.ToString() + " logado.";
+            lbVersao.Text = "VERSÃO: 1.0.2"; //TODO
+
             this.WindowState = FormWindowState.Maximized;
         }
 
@@ -133,6 +145,12 @@ namespace LabxPonto_View.Views
         {
             frmUsuario janela = new frmUsuario(context);
             janela.StyleManager = metroStyleManager;
+            janela.Show();
+        }
+
+        private void btnBiometria_Click(object sender, System.EventArgs e)
+        {
+            frmBiometria janela = new frmBiometria();
             janela.Show();
         }
     }

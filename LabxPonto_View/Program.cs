@@ -27,7 +27,9 @@ namespace LabxPonto_View
             
             if(login.ShowDialog() == DialogResult.OK)
             {
-                Application.Run(new frmMain(contexto));
+                frmMain main = new frmMain(contexto);
+                main.Usuario = login.Usuario;
+                Application.Run(main);
             }
 
             // Configure Dependency Injection
