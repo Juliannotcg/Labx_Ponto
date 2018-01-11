@@ -103,6 +103,26 @@ namespace LabxPonto_View.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_leitor_de_impressão_digital_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-leitor-de-impressão-digital-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_leitor_de_impressão_digital_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-leitor-de-impressão-digital-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap if_new_24_103173 {
             get {
                 object obj = ResourceManager.GetObject("if_new-24_103173", resourceCulture);

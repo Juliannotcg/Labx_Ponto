@@ -308,6 +308,9 @@
     <EmbeddedResource Include="Views\Usuário\frmUsuario.resx">
       <DependentUpon>frmUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Usuário\frmUsuarioCadastro.resx">
+      <DependentUpon>frmUsuarioCadastro.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\LabxPonto_Dao.Model.Funcionario.datasource" />
     <None Include="Properties\Settings.settings">
@@ -357,6 +360,8 @@
     <Content Include="favicon.ico" />
     <None Include="Resources\Logo11.jpg" />
     <None Include="Resources\theme1.png" />
+    <None Include="Resources\icons8-leitor-de-impressão-digital-50.png" />
+    <None Include="Resources\icons8-leitor-de-impressão-digital-100.png" />
     <Content Include="Utils\DirectX.Capture.dll" />
     <Content Include="Utils\DShowNET.dll" />
   </ItemGroup>

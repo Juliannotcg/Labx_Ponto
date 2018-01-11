@@ -20,6 +20,9 @@ namespace LabxPonto_Dao.Data.Mapa
 
             Property(c => c.Senha)
                 .HasColumnName("UsuSenha");
+
+            Property(c => c.Perfil)
+                .HasColumnName("UsuPerfil");
         }
     }
 }

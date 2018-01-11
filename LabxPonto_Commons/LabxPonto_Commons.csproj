@@ -50,6 +50,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Criptografar.cs" />
     <Compile Include="MasksTxt.cs" />
     <Compile Include="Model\ApiEndereco.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

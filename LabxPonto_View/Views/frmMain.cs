@@ -126,7 +126,8 @@ namespace LabxPonto_View.Views
 
         private void btnUsuario_Click(object sender, System.EventArgs e)
         {
-            frmUsuario janela = new frmUsuario();
+            frmUsuario janela = new frmUsuario(context);
+            janela.StyleManager = metroStyleManager;
             janela.Show();
         }
     }
