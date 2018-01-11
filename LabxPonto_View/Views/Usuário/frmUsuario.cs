@@ -47,5 +47,30 @@ namespace LabxPonto_View.Views.Usuário
         {
             preencherGrid();
         }
+
+        public Usuario retornarUsuarioSelecionado()
+        {
+            usuario.Id = (int)dgUsuario.Rows[dgUsuario.CurrentRow.Index].Cells["Id"].Value;
+            usuario = servico.GetUsuario(usuario.Id);
+            return usuario;
+        }
+
+        private void btExcluir_Click_1(object sender, EventArgs e)
+        {
+            cadastro = new frmUsuarioCadastro(Operacao.Excluir, context);
+            cadastro.StyleManager = this.StyleManager;
+            cadastro.Usuario = retornarUsuarioSelecionado();
+            cadastro.ShowDialog();
+            preencherGrid();
+        }
+
+        private void btAlterar_Click_1(object sender, EventArgs e)
+        {
+            cadastro = new frmUsuarioCadastro(Operacao.Editar, context);
+            cadastro.StyleManager = this.StyleManager;
+            cadastro.Usuario = retornarUsuarioSelecionado();
+            cadastro.ShowDialog();
+            preencherGrid();
+        }
     }
 }

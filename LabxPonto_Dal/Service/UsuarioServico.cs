@@ -40,9 +40,9 @@ namespace LabxPonto_Dao.Service
             return (resposta);
         }
 
-        public Usuario GetUsuario(string usuario)
+        public Usuario GetUsuario(int id)
         {
-            return Context.Usuarios.Where(x => x.Login == usuario).FirstOrDefault();
+            return Context.Usuarios.Where(x => x.Id == id).FirstOrDefault();
         }
 
         public bool GetUsuarioLogin(string usuario)
@@ -109,6 +109,15 @@ namespace LabxPonto_Dao.Service
             Context.Entry(usuario).State = System.Data.Entity.EntityState.Modified;
             Context.SaveChanges();
             return true;
+        }
+
+        public bool VerificarDependencias(int id)
+        {
+            var list = Context.Funcoes.Where(x => x.Departamento.Id == id).ToList();
+            if (list.Count > 0)
+                return false;
+            else
+                return true;
         }
     }
 }
