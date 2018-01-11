@@ -46,7 +46,7 @@ namespace LabxPonto_View.Views
         public void validar(string senha)
         {
             Criptografar cript = new Criptografar();
-            cript.Base64Decode(senha)
+            cript.Base64Decode(senha);
         }
     }
 }

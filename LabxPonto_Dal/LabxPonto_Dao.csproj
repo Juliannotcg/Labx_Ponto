@@ -121,6 +121,10 @@
     <Compile Include="Migrations\201801110028097_UsuPerfil.Designer.cs">
       <DependentUpon>201801110028097_UsuPerfil.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801111101053_USUARIO.cs" />
+    <Compile Include="Migrations\201801111101053_USUARIO.Designer.cs">
+      <DependentUpon>201801111101053_USUARIO.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Departamento.cs" />
     <Compile Include="Model\Empresa.cs" />
@@ -173,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801110028097_UsuPerfil.resx">
       <DependentUpon>201801110028097_UsuPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801111101053_USUARIO.resx">
+      <DependentUpon>201801111101053_USUARIO.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

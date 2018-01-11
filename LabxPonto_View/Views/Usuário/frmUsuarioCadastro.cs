@@ -96,6 +96,7 @@ namespace LabxPonto_View.Views.Usuário
         {
             if (validar())
             {
+                usuario = new Usuario();
                 preencherUsuario();
                 if (servico.Insert(usuario))
                 {
@@ -140,6 +141,23 @@ namespace LabxPonto_View.Views.Usuário
                 case Operacao.Editar:
                     editar();
                     break;
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void frmUsuarioCadastro_Load(object sender, EventArgs e)
+        {
+            if(this.StyleManager.Theme == MetroFramework.MetroThemeStyle.Dark)
+            {
+                lbUsuario.ForeColor = Color.WhiteSmoke;
+                lbSenha.ForeColor = Color.WhiteSmoke;
+                lbConfirmarSenha.ForeColor = Color.WhiteSmoke;
+                lbPerfil.ForeColor = Color.WhiteSmoke;
+                this.Refresh();
             }
         }
     }

@@ -36,8 +36,10 @@ namespace LabxPonto_View.Views.Usuário
 
         private void btNovo_Click_1(object sender, EventArgs e)
         {
-            frmUsuarioCadastro janela = new frmUsuarioCadastro();
-            janela.Show();
+            cadastro = new frmUsuarioCadastro(Enums.Operacao.Inserir, context);
+            cadastro.StyleManager = this.StyleManager;
+            cadastro.ShowDialog();
+            preencherGrid();
         }
 
         private void frmUsuario_Load(object sender, EventArgs e)

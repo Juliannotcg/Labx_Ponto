@@ -43,6 +43,10 @@
             // 
             this.btNovo.Click += new System.EventHandler(this.btNovo_Click_1);
             // 
+            // metroStyleManager
+            // 
+            this.metroStyleManager.Owner = this;
+            // 
             // dgUsuario
             // 
             this.dgUsuario.AllowUserToAddRows = false;
@@ -79,8 +83,7 @@
             this.dgUsuario.EnableHeadersVisualStyles = false;
             this.dgUsuario.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dgUsuario.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgUsuario.Location = new System.Drawing.Point(251, 132);
-            this.dgUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.dgUsuario.Location = new System.Drawing.Point(188, 107);
             this.dgUsuario.Name = "dgUsuario";
             this.dgUsuario.ReadOnly = true;
             this.dgUsuario.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -94,7 +97,7 @@
             this.dgUsuario.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgUsuario.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgUsuario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgUsuario.Size = new System.Drawing.Size(692, 290);
+            this.dgUsuario.Size = new System.Drawing.Size(519, 236);
             this.dgUsuario.TabIndex = 63;
             // 
             // Id
@@ -123,13 +126,13 @@
             // 
             // frmUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(981, 506);
+            this.ClientSize = new System.Drawing.Size(736, 411);
             this.Controls.Add(this.dgUsuario);
-            this.Margin = new System.Windows.Forms.Padding(5);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmUsuario";
-            this.Padding = new System.Windows.Forms.Padding(36, 91, 36, 31);
+            this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.Text = "Usuario";
             this.Load += new System.EventHandler(this.frmUsuario_Load);
             this.Controls.SetChildIndex(this.btNovo, 0);
