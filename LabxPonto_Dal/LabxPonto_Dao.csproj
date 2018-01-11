@@ -135,7 +135,6 @@
     <Compile Include="Service\EmpresaService.cs" />
     <Compile Include="Service\FuncaoService.cs" />
     <Compile Include="Service\FuncionarioService.cs" />
-    <Compile Include="Service\LoginService.cs" />
     <Compile Include="Service\UsuarioServico.cs" />
   </ItemGroup>
   <ItemGroup>

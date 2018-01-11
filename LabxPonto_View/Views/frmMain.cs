@@ -4,6 +4,7 @@ using LabxPonto_View.Views.Departamentos;
 using LabxPonto_View.Views.Empresas;
 using LabxPonto_View.Views.Funcionarios;
 using LabxPonto_View.Views.Funções;
+using LabxPonto_View.Views.Usuário;
 //using LabxPonto_View.Views.Usuário;
 using MetroFramework;
 using MetroFramework.Forms;
@@ -75,7 +76,9 @@ namespace LabxPonto_View.Views
 
         private void metroTile1_Click(object sender, System.EventArgs e)
         {
-            MetroFramework.MetroMessageBox.Show(this, "Funcionalidade em desenvolvimento", "Atenção!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Hand);
+            frmRelatorios janela = new frmRelatorios();
+            janela.Show();
+            
         }
 
         private void btTema_Click(object sender, System.EventArgs e)

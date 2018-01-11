@@ -1,6 +1,7 @@
 ﻿using LabxPonto_Dao.Data.Context;
 using LabxPonto_Dao.Model;
 using LabxPonto_Dao.Service;
+using LabxPonto_View.Enums;
 using LabxPonto_View.Views.Base;
 using System;
 using System.Collections.Generic;
@@ -36,7 +37,7 @@ namespace LabxPonto_View.Views.Usuário
 
         private void btNovo_Click_1(object sender, EventArgs e)
         {
-            frmUsuarioCadastro janela = new frmUsuarioCadastro();
+            frmUsuarioCadastro janela = new frmUsuarioCadastro(Operacao.Inserir, context);
             janela.Show();
         }
 
