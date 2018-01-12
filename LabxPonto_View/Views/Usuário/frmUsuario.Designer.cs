@@ -36,6 +36,7 @@
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Perfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,9 +52,21 @@
             // 
             this.btExcluir.Click += new System.EventHandler(this.btExcluir_Click_1);
             // 
+            // btnVisualizar
+            // 
+            this.btnVisualizar.Click += new System.EventHandler(this.btnVisualizar_Click);
+            // 
             // metroStyleManager
             // 
             this.metroStyleManager.Owner = this;
+            // 
+            // pbLogo
+            // 
+            this.pbLogo.Location = new System.Drawing.Point(6, 462);
+            // 
+            // metroLink1
+            // 
+            this.metroLink1.Location = new System.Drawing.Point(139, 12);
             // 
             // dgUsuario
             // 
@@ -91,7 +104,8 @@
             this.dgUsuario.EnableHeadersVisualStyles = false;
             this.dgUsuario.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dgUsuario.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgUsuario.Location = new System.Drawing.Point(188, 107);
+            this.dgUsuario.Location = new System.Drawing.Point(251, 132);
+            this.dgUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.dgUsuario.Name = "dgUsuario";
             this.dgUsuario.ReadOnly = true;
             this.dgUsuario.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -105,7 +119,7 @@
             this.dgUsuario.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgUsuario.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgUsuario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgUsuario.Size = new System.Drawing.Size(519, 236);
+            this.dgUsuario.Size = new System.Drawing.Size(692, 290);
             this.dgUsuario.TabIndex = 63;
             // 
             // Id
@@ -134,21 +148,24 @@
             // 
             // frmUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(736, 411);
+            this.ClientSize = new System.Drawing.Size(981, 506);
             this.Controls.Add(this.dgUsuario);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmUsuario";
-            this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
+            this.Padding = new System.Windows.Forms.Padding(36, 91, 36, 31);
             this.Text = "Usuario";
             this.Load += new System.EventHandler(this.frmUsuario_Load);
+            this.Controls.SetChildIndex(this.metroLink1, 0);
+            this.Controls.SetChildIndex(this.pbLogo, 0);
             this.Controls.SetChildIndex(this.btNovo, 0);
             this.Controls.SetChildIndex(this.btAlterar, 0);
             this.Controls.SetChildIndex(this.btExcluir, 0);
             this.Controls.SetChildIndex(this.btnVisualizar, 0);
             this.Controls.SetChildIndex(this.dgUsuario, 0);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuario)).EndInit();
             this.ResumeLayout(false);
 

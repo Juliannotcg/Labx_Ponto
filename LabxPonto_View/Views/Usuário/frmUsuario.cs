@@ -72,5 +72,15 @@ namespace LabxPonto_View.Views.Usuário
             cadastro.ShowDialog();
             preencherGrid();
         }
+
+        private void btnVisualizar_Click(object sender, EventArgs e)
+        {
+            cadastro = new frmUsuarioCadastro(Operacao.Visualizar, context);
+            cadastro.StyleManager = this.StyleManager;
+            cadastro.Usuario = retornarUsuarioSelecionado();
+            cadastro.preencherTela();
+            cadastro.ShowDialog();
+            preencherGrid();
+        }
     }
 }

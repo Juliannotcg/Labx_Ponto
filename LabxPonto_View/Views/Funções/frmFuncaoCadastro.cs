@@ -30,14 +30,26 @@ namespace LabxPonto_View.Views.Funções
 
         public bool validar()
         {
-            return true;
+            if (String.IsNullOrEmpty(txtNomeFuncao.Text))
+                errorProviderFun.SetError(txtNomeFuncao, "Informe o nome da função.");
+
+            if (String.IsNullOrEmpty(txtDescricaoFuncao.Text))
+                errorProviderFun.SetError(txtDescricaoFuncao, "Informe a descrição da função.");
+
+            return ((errorProviderFun.GetError(txtNomeFuncao) == "") &&
+                (errorProviderFun.GetError(txtDescricaoFuncao) == ""));
         }
 
         public void limparTela()
         {
             txtDescricaoFuncao.Text = "";
             txtNomeFuncao.Text = "";
-            
+        }
+
+        public void limparErros()
+        {
+            errorProviderFun.SetError(txtNomeFuncao, "");
+            errorProviderFun.SetError(txtDescricaoFuncao, "");
         }
 
         public void preencherTela()
@@ -47,7 +59,8 @@ namespace LabxPonto_View.Views.Funções
             if(funcao.Departamento!=null)
                 cbDepartamento.Text = funcao.Departamento.NomeDepartamento;
 
-            if (operacao == Operacao.Excluir)
+            if (operacao == Operacao.Excluir ||
+                operacao == Operacao.Visualizar)
             {
                 txtDescricaoFuncao.ReadOnly = true;
                 txtNomeFuncao.ReadOnly = true;
@@ -116,6 +129,8 @@ namespace LabxPonto_View.Views.Funções
 
         private void btnSalvar_Click_1(object sender, EventArgs e)
         {
+            limparErros();
+
             switch (operacao)
             {
                 case Operacao.Inserir:

@@ -8,5 +8,10 @@ namespace LabxPonto_View.Views.Base
         {
             InitializeComponent();
         }
+
+        private void metroLink1_Click(object sender, System.EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

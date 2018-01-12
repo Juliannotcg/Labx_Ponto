@@ -70,5 +70,15 @@ namespace LabxPonto_View.Views.Funções
         {
             preencherGrid();
         }
+
+        private void btnVisualizar_Click(object sender, EventArgs e)
+        {
+            cadastro = new frmFuncaoCadastro(Operacao.Visualizar, context);
+            cadastro.StyleManager = this.StyleManager;
+            cadastro.Funcao = retornarFuncaoSelecionado();
+            cadastro.preencherTela();
+            cadastro.ShowDialog();
+            preencherGrid();
+        }
     }
 }

@@ -21,17 +21,15 @@ namespace LabxPonto_View.Views.Departamentos
 
         public bool validar()
         {
+
             if (String.IsNullOrEmpty(txtNomeDepartamento.Text))
-            {
-                errorProviderDep.SetError(txtNomeDepartamento, "Informe a descreição do departamento.");
-                return false;
-            }
+                errorProviderDep.SetError(txtNomeDepartamento, "Informe o nome do departamento.");
+
             if (String.IsNullOrEmpty(txtDescricaoDepartamento.Text))
-            {
                 errorProviderDep.SetError(txtDescricaoDepartamento, "Informe a descrição do departamento.");
-                return false;
-            }
-                return true;
+
+            return ((errorProviderDep.GetError(txtNomeDepartamento) == "") &&
+                (errorProviderDep.GetError(txtDescricaoDepartamento) == ""));
         }
 
         public void limparTela()
@@ -40,12 +38,19 @@ namespace LabxPonto_View.Views.Departamentos
             txtNomeDepartamento.Text = "";
         }
 
+        public void limparErros()
+        {
+            errorProviderDep.SetError(txtNomeDepartamento, "");
+            errorProviderDep.SetError(txtDescricaoDepartamento, "");
+        }
+
         public void preencherTela()
         {
             txtDescricaoDepartamento.Text = departamento.Descricao;
             txtNomeDepartamento.Text = departamento.NomeDepartamento;
 
-            if(operacao == Operacao.Excluir)
+            if(operacao == Operacao.Excluir ||
+                operacao == Operacao.Visualizar)
             {
                 txtDescricaoDepartamento.ReadOnly = true;
                 txtNomeDepartamento.ReadOnly = true;
@@ -67,6 +72,8 @@ namespace LabxPonto_View.Views.Departamentos
 
         private void btnSalvar_Click(object sender, System.EventArgs e)
         {
+            limparErros();
+
             switch (operacao)
             {
                 case Operacao.Inserir:

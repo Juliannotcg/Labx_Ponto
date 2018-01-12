@@ -37,31 +37,35 @@
             this.CNPJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NomeResponsavel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgEmpresas)).BeginInit();
             this.SuspendLayout();
             // 
             // btNovo
             // 
-            this.btNovo.Size = new System.Drawing.Size(165, 82);
-            this.btNovo.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.btNovo.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btNovo.Size = new System.Drawing.Size(220, 101);
             this.btNovo.Click += new System.EventHandler(this.btNovo_Click_1);
             // 
             // btAlterar
             // 
-            this.btAlterar.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click_1);
             // 
             // btExcluir
             // 
-            this.btExcluir.Size = new System.Drawing.Size(84, 89);
-            this.btExcluir.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.btExcluir.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btExcluir.Size = new System.Drawing.Size(112, 110);
             this.btExcluir.Click += new System.EventHandler(this.btExcluir_Click_1);
             // 
             // btnVisualizar
             // 
-            this.btnVisualizar.Size = new System.Drawing.Size(165, 49);
-            this.btnVisualizar.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.btnVisualizar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnVisualizar.Size = new System.Drawing.Size(220, 60);
             this.btnVisualizar.Click += new System.EventHandler(this.btnVisualizar_Click);
+            // 
+            // metroLink1
+            // 
+            this.metroLink1.Location = new System.Drawing.Point(181, 12);
             // 
             // dgEmpresas
             // 
@@ -100,7 +104,8 @@
             this.dgEmpresas.EnableHeadersVisualStyles = false;
             this.dgEmpresas.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dgEmpresas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgEmpresas.Location = new System.Drawing.Point(204, 107);
+            this.dgEmpresas.Location = new System.Drawing.Point(272, 132);
+            this.dgEmpresas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgEmpresas.Name = "dgEmpresas";
             this.dgEmpresas.ReadOnly = true;
             this.dgEmpresas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -114,7 +119,7 @@
             this.dgEmpresas.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgEmpresas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgEmpresas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgEmpresas.Size = new System.Drawing.Size(521, 221);
+            this.dgEmpresas.Size = new System.Drawing.Size(695, 272);
             this.dgEmpresas.TabIndex = 61;
             // 
             // Id
@@ -151,21 +156,24 @@
             // 
             // frmEmpresas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(736, 402);
+            this.ClientSize = new System.Drawing.Size(981, 495);
             this.Controls.Add(this.dgEmpresas);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "frmEmpresas";
-            this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
+            this.Padding = new System.Windows.Forms.Padding(36, 91, 36, 31);
             this.Text = "Empresas";
             this.Load += new System.EventHandler(this.frmEmpresas_Load);
+            this.Controls.SetChildIndex(this.pbLogo, 0);
+            this.Controls.SetChildIndex(this.metroLink1, 0);
             this.Controls.SetChildIndex(this.btnVisualizar, 0);
             this.Controls.SetChildIndex(this.btNovo, 0);
             this.Controls.SetChildIndex(this.btAlterar, 0);
             this.Controls.SetChildIndex(this.btExcluir, 0);
             this.Controls.SetChildIndex(this.dgEmpresas, 0);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgEmpresas)).EndInit();
             this.ResumeLayout(false);
 

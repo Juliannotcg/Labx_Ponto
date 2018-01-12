@@ -71,5 +71,15 @@ namespace LabxPonto_View.Views.Departamentos
         {
             preencherGrid();
         }
+
+        private void btnVisualizar_Click(object sender, EventArgs e)
+        {
+            cadastro = new frmDepartamentoCadastro(Operacao.Visualizar, context);
+            cadastro.StyleManager = this.StyleManager;
+            cadastro.Departamento = retornarDepartamentoSelecionado();
+            cadastro.preencherTela();
+            cadastro.ShowDialog();
+            preencherGrid();
+        }
     }
 }

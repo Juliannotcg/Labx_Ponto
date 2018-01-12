@@ -38,35 +38,41 @@
             this.Departamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Funcao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuncionarios)).BeginInit();
             this.SuspendLayout();
             // 
             // btNovo
             // 
-            this.btNovo.Location = new System.Drawing.Point(23, 81);
-            this.btNovo.Size = new System.Drawing.Size(169, 82);
-            this.btNovo.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.btNovo.Location = new System.Drawing.Point(31, 100);
+            this.btNovo.Margin = new System.Windows.Forms.Padding(5);
+            this.btNovo.Size = new System.Drawing.Size(225, 101);
             this.btNovo.Click += new System.EventHandler(this.btNovo_Click_1);
             // 
             // btAlterar
             // 
-            this.btAlterar.Location = new System.Drawing.Point(23, 169);
-            this.btAlterar.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.btAlterar.Location = new System.Drawing.Point(31, 208);
+            this.btAlterar.Margin = new System.Windows.Forms.Padding(5);
             this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click_2);
             // 
             // btExcluir
             // 
-            this.btExcluir.Location = new System.Drawing.Point(104, 169);
-            this.btExcluir.Size = new System.Drawing.Size(88, 89);
-            this.btExcluir.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.btExcluir.Location = new System.Drawing.Point(139, 208);
+            this.btExcluir.Margin = new System.Windows.Forms.Padding(5);
+            this.btExcluir.Size = new System.Drawing.Size(117, 110);
             this.btExcluir.Click += new System.EventHandler(this.btExcluir_Click_2);
             // 
             // btnVisualizar
             // 
-            this.btnVisualizar.Location = new System.Drawing.Point(23, 265);
-            this.btnVisualizar.Size = new System.Drawing.Size(169, 47);
-            this.btnVisualizar.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.btnVisualizar.Location = new System.Drawing.Point(31, 326);
+            this.btnVisualizar.Margin = new System.Windows.Forms.Padding(5);
+            this.btnVisualizar.Size = new System.Drawing.Size(225, 58);
             this.btnVisualizar.Click += new System.EventHandler(this.btnVisualizar_Click);
+            // 
+            // pbLogo
+            // 
+            this.pbLogo.Location = new System.Drawing.Point(12, 426);
+            this.pbLogo.Size = new System.Drawing.Size(108, 43);
             // 
             // dgFuncionarios
             // 
@@ -106,7 +112,8 @@
             this.dgFuncionarios.EnableHeadersVisualStyles = false;
             this.dgFuncionarios.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dgFuncionarios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgFuncionarios.Location = new System.Drawing.Point(198, 81);
+            this.dgFuncionarios.Location = new System.Drawing.Point(264, 100);
+            this.dgFuncionarios.Margin = new System.Windows.Forms.Padding(4);
             this.dgFuncionarios.Name = "dgFuncionarios";
             this.dgFuncionarios.ReadOnly = true;
             this.dgFuncionarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -120,7 +127,7 @@
             this.dgFuncionarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgFuncionarios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgFuncionarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgFuncionarios.Size = new System.Drawing.Size(701, 437);
+            this.dgFuncionarios.Size = new System.Drawing.Size(935, 284);
             this.dgFuncionarios.TabIndex = 61;
             // 
             // Id
@@ -165,19 +172,24 @@
             // 
             // frmFuncionarios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(922, 547);
+            this.ClientSize = new System.Drawing.Size(1229, 478);
             this.Controls.Add(this.dgFuncionarios);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmFuncionarios";
+            this.Padding = new System.Windows.Forms.Padding(36, 91, 36, 31);
             this.Text = "Funcionários";
             this.Load += new System.EventHandler(this.frmFuncionarios_Load);
+            this.Controls.SetChildIndex(this.metroLink1, 0);
+            this.Controls.SetChildIndex(this.pbLogo, 0);
             this.Controls.SetChildIndex(this.btnVisualizar, 0);
             this.Controls.SetChildIndex(this.btNovo, 0);
             this.Controls.SetChildIndex(this.btAlterar, 0);
             this.Controls.SetChildIndex(this.btExcluir, 0);
             this.Controls.SetChildIndex(this.dgFuncionarios, 0);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuncionarios)).EndInit();
             this.ResumeLayout(false);
 

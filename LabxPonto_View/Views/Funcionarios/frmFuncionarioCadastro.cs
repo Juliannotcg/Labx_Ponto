@@ -81,8 +81,8 @@ namespace LabxPonto_View.Views.Funcionarios
             if (String.IsNullOrEmpty(txtBairro.Text))
                 errorProviderFunc.SetError(txtBairro, "Informe o bairro do funcionário.");
 
-            if (String.IsNullOrEmpty(txtComplemento.Text))
-                errorProviderFunc.SetError(txtComplemento, "Informe um complemento do endereço do funcionário.");
+            if (String.IsNullOrEmpty(txtEndereco.Text))
+                errorProviderFunc.SetError(txtEndereco, "Informe o endereço do funcionário.");
             #endregion
 
             return ((errorProviderFunc.GetError(txtFolha) == "") &&
@@ -96,7 +96,7 @@ namespace LabxPonto_View.Views.Funcionarios
                 (errorProviderFunc.GetError(txtCEP) == "") &&
                 (errorProviderFunc.GetError(txtCidade) == "") &&
                 (errorProviderFunc.GetError(txtBairro) == "") &&
-                (errorProviderFunc.GetError(txtComplemento) == ""));
+                (errorProviderFunc.GetError(txtEndereco) == ""));
         }
 
         public void limparErros()
@@ -111,7 +111,7 @@ namespace LabxPonto_View.Views.Funcionarios
             errorProviderFunc.SetError(txtTelefone, "");
             errorProviderFunc.SetError(txtCidade, "");
             errorProviderFunc.SetError(txtBairro, "");
-            errorProviderFunc.SetError(txtComplemento, "");
+            errorProviderFunc.SetError(txtEndereco, "");
         }
 
         public frmFuncionarioCadastro(Operacao _operacao, AppDataContext con)
@@ -382,6 +382,8 @@ namespace LabxPonto_View.Views.Funcionarios
 
         private void btnSalvar_Click_1(object sender, EventArgs e)
         {
+            limparErros();
+
             switch (operacao)
             {
                 case Operacao.Inserir:
@@ -503,7 +505,6 @@ namespace LabxPonto_View.Views.Funcionarios
                 txtEndereco.Text = endereco.Logradouro;
                 txtComplemento.Text = endereco.Complemento;
                 cmbEstado.SelectedItem = endereco.Estado;
-
             }
         }
     }

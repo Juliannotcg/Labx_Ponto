@@ -6,6 +6,7 @@ using LabxPonto_View.Views.Departamentos;
 using LabxPonto_View.Views.Empresas;
 using LabxPonto_View.Views.Funcionarios;
 using LabxPonto_View.Views.Funções;
+using LabxPonto_View.Views.Suporte;
 using LabxPonto_View.Views.Usuário;
 //using LabxPonto_View.Views.Usuário;
 using MetroFramework;
@@ -151,6 +152,12 @@ namespace LabxPonto_View.Views
         private void btnBiometria_Click(object sender, System.EventArgs e)
         {
             frmBiometria janela = new frmBiometria();
+            janela.Show();
+        }
+
+        private void btnSuporte_Click(object sender, System.EventArgs e)
+        {
+            frmSuporte janela = new frmSuporte();
             janela.Show();
         }
     }

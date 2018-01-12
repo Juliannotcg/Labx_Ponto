@@ -1,4 +1,5 @@
-﻿using LabxPonto_Dao.Model;
+﻿using LabxPonto_Commons.Model;
+using LabxPonto_Dao.Model;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -26,14 +27,14 @@ namespace LabxPonto_Commons.WebService
 
             string stringData = response.Content.ReadAsStringAsync().Result;
 
-            //var data = JsonConvert.DeserializeObject<ApiEndereco>(stringData);
+            var data = JsonConvert.DeserializeObject<ApiEndereco>(stringData);
 
-            //endereco.Logradouro = data.Logradouro;
-            //endereco.Cidade = data.Localidade;
-            //endereco.Bairro = data.Bairro;
-            //endereco.Estado = data.Uf;
-            //endereco.Complemento = data.Complemento;
-            
+            endereco.Logradouro = data.Logradouro;
+            endereco.Cidade = data.Localidade;
+            endereco.Bairro = data.Bairro;
+            endereco.Estado = data.Uf;
+            endereco.Complemento = data.Complemento;
+
             return endereco;
         }
 

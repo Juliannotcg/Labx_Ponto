@@ -70,6 +70,13 @@ namespace LabxPonto_View.Views.Usuário
             txtSenha.Text = "";
             txtConfirmaSenha.Text = "";
         }
+
+        public void limparErros()
+        {
+            errorProviderUsu.SetError(txtUsuario, "");
+            errorProviderUsu.SetError(txtSenha, "");
+            errorProviderUsu.SetError(txtConfirmaSenha, "");
+        }
         public void preencherTela()
         {
             txtUsuario.Text = usuario.Login;
@@ -78,7 +85,8 @@ namespace LabxPonto_View.Views.Usuário
             cbPerfil.Text = usuario.Perfil;
 
 
-            if (operacao == Operacao.Excluir)
+            if (operacao == Operacao.Excluir ||
+                operacao == Operacao.Visualizar)
             {
                 txtUsuario.ReadOnly = true;
                 txtSenha.ReadOnly = true;
@@ -131,6 +139,8 @@ namespace LabxPonto_View.Views.Usuário
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            limparErros();
+
             switch (operacao)
             {
                 case Operacao.Inserir:
