@@ -36,6 +36,7 @@ namespace LabxPonto_Dao.Service
                 funcionario.NomePai = a.NomePai;
                 funcionario.NomeMae = a.NomeMae;
                 funcionario.Telefone = a.Telefone;
+                funcionario.Telefone = a.LocalTrabalho;
                 funcionario.Funcao.NomeFuncao = a.Funcao.NomeFuncao;
                 funcionario.Endereco.Cidade = a.Endereco.Cidade;
                 funcionario.Endereco.Bairro = a.Endereco.Bairro;
@@ -107,7 +108,6 @@ namespace LabxPonto_Dao.Service
             }
                 
             return (tabela);
-
         }
 
         public bool Insert(Funcionario funcionario)

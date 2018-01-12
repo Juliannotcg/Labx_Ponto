@@ -17,6 +17,7 @@ namespace LabxPonto_Dao.Model
         public string Telefone { get; set; }
         public string NomePai { get; set; }
         public string NomeMae { get; set; }
+        public string LocalTrabalho { get; set; }
         public DateTime DataNascimento { get; set; }
         public Endereco Endereco { get; set; }
         public Funcao Funcao { get; set; }

@@ -125,6 +125,10 @@
     <Compile Include="Migrations\201801111101053_USUARIO.Designer.cs">
       <DependentUpon>201801111101053_USUARIO.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801120949495_FunLocalTrabalho.cs" />
+    <Compile Include="Migrations\201801120949495_FunLocalTrabalho.Designer.cs">
+      <DependentUpon>201801120949495_FunLocalTrabalho.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Departamento.cs" />
     <Compile Include="Model\Empresa.cs" />
@@ -179,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801111101053_USUARIO.resx">
       <DependentUpon>201801111101053_USUARIO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801120949495_FunLocalTrabalho.resx">
+      <DependentUpon>201801120949495_FunLocalTrabalho.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

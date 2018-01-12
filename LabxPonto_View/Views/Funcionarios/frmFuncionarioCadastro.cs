@@ -44,6 +44,9 @@ namespace LabxPonto_View.Views.Funcionarios
             if (String.IsNullOrEmpty(txtFolha.Text))
                 errorProviderFunc.SetError(txtFolha, "Informe o número da folha");
 
+            if (String.IsNullOrEmpty(txtLocalTrabalho.Text))
+                errorProviderFunc.SetError(txtLocalTrabalho, "Informe o local de trabalho");
+
             if (String.IsNullOrEmpty(txtNomeFuncionario.Text))
                 errorProviderFunc.SetError(txtNomeFuncionario, "Informe o nome do funcionário.");
 
@@ -96,6 +99,7 @@ namespace LabxPonto_View.Views.Funcionarios
                 (errorProviderFunc.GetError(txtCEP) == "") &&
                 (errorProviderFunc.GetError(txtCidade) == "") &&
                 (errorProviderFunc.GetError(txtBairro) == "") &&
+                (errorProviderFunc.GetError(txtLocalTrabalho) == "") &&
                 (errorProviderFunc.GetError(txtEndereco) == ""));
         }
 
@@ -112,6 +116,7 @@ namespace LabxPonto_View.Views.Funcionarios
             errorProviderFunc.SetError(txtCidade, "");
             errorProviderFunc.SetError(txtBairro, "");
             errorProviderFunc.SetError(txtEndereco, "");
+            errorProviderFunc.SetError(txtLocalTrabalho, "");
         }
 
         public frmFuncionarioCadastro(Operacao _operacao, AppDataContext con)
@@ -138,6 +143,7 @@ namespace LabxPonto_View.Views.Funcionarios
             txtRG.Text = "";
             txtSobreNome.Text = "";
             txtTelefone.Text = "";
+            txtLocalTrabalho.Text = "";
         }
 
         public void preencherTela()
@@ -181,6 +187,7 @@ namespace LabxPonto_View.Views.Funcionarios
             txtNomeMae.Text = funcionario.NomeMae;
             txtNomePai.Text = funcionario.NomePai;
             txtTelefone.Text = funcionario.Telefone;
+            txtLocalTrabalho.Text = funcionario.LocalTrabalho;
             if (funcionario.Imagem != null)
                 if (funcionario.Imagem.Arquivo != null)
                 {
@@ -210,9 +217,9 @@ namespace LabxPonto_View.Views.Funcionarios
                 cmbFuncao.Enabled = false;
                 cmbEmpresa.Enabled = false;
 
-
                 txtNomeMae.ReadOnly = true;
                 txtNomePai.ReadOnly = true;
+                txtLocalTrabalho.ReadOnly = true;
                 txtTelefone.ReadOnly = true;
                 btCapturar.Enabled = false;
                 btnLocalizarImg.Enabled = false;
@@ -284,7 +291,8 @@ namespace LabxPonto_View.Views.Funcionarios
             funcionario.NomeMae = txtNomeMae.Text;
             funcionario.NomePai = txtNomePai.Text;
             funcionario.Telefone = txtTelefone.Text;
-            
+            funcionario.LocalTrabalho = txtLocalTrabalho.Text;
+
             #endregion
 
         }

@@ -42,6 +42,9 @@ namespace LabxPonto_Dao.Data.Mapa
             Property(c => c.NomeMae)
                 .HasColumnName("FunNomeMae");
 
+            Property(c => c.LocalTrabalho)
+                .HasColumnName("FunLocalTrabalho");
+
             Property(c => c.DataNascimento)
                 .HasColumnName("FunDataNascimento")
                 .HasColumnType("datetime2");
