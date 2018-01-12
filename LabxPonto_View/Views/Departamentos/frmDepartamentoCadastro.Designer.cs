@@ -59,6 +59,10 @@
             // 
             this.pbLogo.Location = new System.Drawing.Point(6, 335);
             // 
+            // metroLink1
+            // 
+            this.metroLink1.Location = new System.Drawing.Point(240, 12);
+            // 
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
@@ -77,10 +81,10 @@
             // 
             // 
             this.txtDescricaoDepartamento.CustomButton.Image = null;
-            this.txtDescricaoDepartamento.CustomButton.Location = new System.Drawing.Point(635, 2);
+            this.txtDescricaoDepartamento.CustomButton.Location = new System.Drawing.Point(476, 2);
             this.txtDescricaoDepartamento.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDescricaoDepartamento.CustomButton.Name = "";
-            this.txtDescricaoDepartamento.CustomButton.Size = new System.Drawing.Size(108, 100);
+            this.txtDescricaoDepartamento.CustomButton.Size = new System.Drawing.Size(81, 81);
             this.txtDescricaoDepartamento.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtDescricaoDepartamento.CustomButton.TabIndex = 1;
             this.txtDescricaoDepartamento.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -122,10 +126,10 @@
             // 
             // 
             this.txtNomeDepartamento.CustomButton.Image = null;
-            this.txtNomeDepartamento.CustomButton.Location = new System.Drawing.Point(701, 2);
+            this.txtNomeDepartamento.CustomButton.Location = new System.Drawing.Point(526, 2);
             this.txtNomeDepartamento.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNomeDepartamento.CustomButton.Name = "";
-            this.txtNomeDepartamento.CustomButton.Size = new System.Drawing.Size(41, 38);
+            this.txtNomeDepartamento.CustomButton.Size = new System.Drawing.Size(31, 31);
             this.txtNomeDepartamento.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtNomeDepartamento.CustomButton.TabIndex = 1;
             this.txtNomeDepartamento.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -162,11 +166,12 @@
             this.Controls.Add(this.txtDescricaoDepartamento);
             this.Controls.Add(this.Função);
             this.Controls.Add(this.txtNomeDepartamento);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmDepartamentoCadastro";
             this.Padding = new System.Windows.Forms.Padding(36, 91, 36, 31);
             this.Text = "Departamento";
             this.Load += new System.EventHandler(this.frmDepartamentoCadastro_Load);
+            this.Controls.SetChildIndex(this.metroLink1, 0);
             this.Controls.SetChildIndex(this.pbLogo, 0);
             this.Controls.SetChildIndex(this.btnSalvar, 0);
             this.Controls.SetChildIndex(this.btnCancelar, 0);

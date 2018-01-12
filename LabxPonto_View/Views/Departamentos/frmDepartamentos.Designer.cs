@@ -127,7 +127,7 @@
             this.dgDepartamentos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgDepartamentos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgDepartamentos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgDepartamentos.Size = new System.Drawing.Size(701, 113);
+            this.dgDepartamentos.Size = new System.Drawing.Size(701, 282);
             this.dgDepartamentos.TabIndex = 60;
             // 
             // Id
