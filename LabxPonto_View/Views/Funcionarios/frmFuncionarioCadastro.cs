@@ -492,11 +492,25 @@ namespace LabxPonto_View.Views.Funcionarios
 
         private void txtCPF_Leave(object sender, EventArgs e)
         {
+            bool CPFexiste = false;
+
             if (txtCPF.Text.Length == 11)
             {
                 long CPF = Convert.ToInt64(txtCPF.Text);
                 string CPFFormatado = String.Format(@"{0:000\.000\.000\-00}", CPF);
                 txtCPF.Text = CPFFormatado;
+            }
+
+            if (operacao == Operacao.Inserir)
+            {
+                if (!String.IsNullOrEmpty(txtCPF.Text))
+                    CPFexiste = servico.GetFuncionarioCPF(txtCPF.Text);
+
+                if (CPFexiste)
+                {
+                    MetroFramework.MetroMessageBox.Show(this, "Esse CPF já está associado a um funcionário no sistema.", "Atenção!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Hand);
+                    limparTela();
+                }
             }
         }
 

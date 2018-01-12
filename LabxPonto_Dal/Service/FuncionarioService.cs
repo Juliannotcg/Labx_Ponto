@@ -48,6 +48,18 @@ namespace LabxPonto_Dao.Service
             return (funcionario);
         }
 
+        public bool GetFuncionarioCPF(string CPF)
+        {
+            Funcionario funcionario = new Funcionario();
+
+            var result = Context.Funcionarios.Where(x => x.CPF == CPF).FirstOrDefault();
+
+            if (result != null)
+                return true;
+            else
+                return false;
+        }
+
         public Funcionario GetFuncionario(int id)
         {
             return Context.Funcionarios.Include("Empresa").
