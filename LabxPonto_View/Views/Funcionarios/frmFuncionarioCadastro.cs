@@ -504,8 +504,10 @@ namespace LabxPonto_View.Views.Funcionarios
             if (operacao == Operacao.Inserir)
             {
                 if (!String.IsNullOrEmpty(txtCPF.Text))
-                    CPFexiste = servico.GetFuncionarioCPF(txtCPF.Text);
-
+                {
+                    if(servico.GetFuncionarioCPF(txtCPF.Text)!=null)
+                        CPFexiste = true;
+                }
                 if (CPFexiste)
                 {
                     MetroFramework.MetroMessageBox.Show(this, "Esse CPF já está associado a um funcionário no sistema.", "Atenção!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Hand);

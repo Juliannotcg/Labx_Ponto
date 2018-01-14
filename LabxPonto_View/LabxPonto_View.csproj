@@ -198,6 +198,12 @@
     <Compile Include="Views\frmGerarArquivo.Designer.cs">
       <DependentUpon>frmGerarArquivo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Horários\frmHorarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Horários\frmHorarios.Designer.cs">
+      <DependentUpon>frmHorarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Login\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -302,6 +308,9 @@
     <EmbeddedResource Include="Views\Funcionarios\frmFuncionarios.resx">
       <DependentUpon>frmFuncionarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Horários\frmHorarios.resx">
+      <DependentUpon>frmHorarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -382,6 +391,11 @@
     <None Include="Resources\icons8-leitor-de-impressão-digital-100.png" />
     <None Include="Resources\left-arrow.png" />
     <None Include="Resources\left-arrow %281%29.png" />
+    <None Include="Resources\find.png" />
+    <None Include="Resources\appbar.page.search.png" />
+    <None Include="Resources\if_icons_search_1564527.png" />
+    <None Include="Resources\if_access-time_326483.png" />
+    <None Include="Resources\if_access-time_326483 %281%29.png" />
     <Content Include="Utils\DirectX.Capture.dll" />
     <Content Include="Utils\DShowNET.dll" />
   </ItemGroup>
@@ -397,8 +411,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Horários\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

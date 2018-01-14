@@ -16,31 +16,14 @@ namespace LabxPonto_Dao.Data.Mapa
               .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             Property(c => c.Data)
-                .HasColumnName("HorDataExpediente");
+                .HasColumnName("HorData");
 
-            Property(c => c.Descricao)
-                .HasColumnName("HorDescricao");
 
-            Property(c => c.InicioTurno)
-                .HasColumnName("HorInicioTurno");
+            Property(c => c.Entrada)
+                .HasColumnName("HorEntrada");
 
-            Property(c => c.FimTurno)
-                .HasColumnName("HorFimTurno");
-
-            Property(c => c.InicioAlmoco)
-                .HasColumnName("HorInicioAlmoco");
-
-            Property(c => c.FimAlmoco)
-                .HasColumnName("HorFimAlmoco");
-
-            Property(c => c.InicioAbono)
-                .HasColumnName("HorInicioAbono");
-
-            Property(c => c.FimAbono)
-                .HasColumnName("HorFimAbono");
-
-            Property(c => c.JustificativaAbono)
-                .HasColumnName("HorJustificativaAbono");
+            Property(c => c.Saida)
+                .HasColumnName("HorSaida");
 
             HasOptional(o => o.Funcionario)
                .WithMany()

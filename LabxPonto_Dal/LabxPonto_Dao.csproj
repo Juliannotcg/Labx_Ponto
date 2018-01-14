@@ -129,6 +129,10 @@
     <Compile Include="Migrations\201801120949495_FunLocalTrabalho.Designer.cs">
       <DependentUpon>201801120949495_FunLocalTrabalho.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801132322380_HorExpediente.cs" />
+    <Compile Include="Migrations\201801132322380_HorExpediente.Designer.cs">
+      <DependentUpon>201801132322380_HorExpediente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Departamento.cs" />
     <Compile Include="Model\Empresa.cs" />
@@ -186,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801120949495_FunLocalTrabalho.resx">
       <DependentUpon>201801120949495_FunLocalTrabalho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801132322380_HorExpediente.resx">
+      <DependentUpon>201801132322380_HorExpediente.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -6,6 +6,7 @@ using LabxPonto_View.Views.Departamentos;
 using LabxPonto_View.Views.Empresas;
 using LabxPonto_View.Views.Funcionarios;
 using LabxPonto_View.Views.Funções;
+using LabxPonto_View.Views.Horários;
 using LabxPonto_View.Views.Suporte;
 using LabxPonto_View.Views.Usuário;
 //using LabxPonto_View.Views.Usuário;
@@ -158,6 +159,12 @@ namespace LabxPonto_View.Views
         private void btnSuporte_Click(object sender, System.EventArgs e)
         {
             frmSuporte janela = new frmSuporte();
+            janela.Show();
+        }
+
+        private void btnHorario_Click(object sender, System.EventArgs e)
+        {
+            frmHorarios janela = new frmHorarios(this.context);
             janela.Show();
         }
     }
