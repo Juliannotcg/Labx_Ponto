@@ -29,21 +29,28 @@
         private void InitializeComponent()
         {
             this.lbUsuario = new MetroFramework.Controls.MetroLabel();
-            this.txtUsuario = new MetroFramework.Controls.MetroTextBox();
+            this.txtCpf = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.btnBiometriaLer = new MetroFramework.Controls.MetroTile();
+            this.imgDigital = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgDigital)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(419, 217);
+            this.btnCancelar.Location = new System.Drawing.Point(419, 288);
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(312, 217);
+            this.btnSalvar.Location = new System.Drawing.Point(312, 288);
+            // 
+            // pbLogo
+            // 
+            this.pbLogo.Location = new System.Drawing.Point(7, 303);
             // 
             // lbUsuario
             // 
@@ -55,37 +62,38 @@
             this.lbUsuario.Text = "CPF";
             this.lbUsuario.UseCustomBackColor = true;
             // 
-            // txtUsuario
+            // txtCpf
             // 
             // 
             // 
             // 
-            this.txtUsuario.CustomButton.Image = null;
-            this.txtUsuario.CustomButton.Location = new System.Drawing.Point(253, 1);
-            this.txtUsuario.CustomButton.Margin = new System.Windows.Forms.Padding(2);
-            this.txtUsuario.CustomButton.Name = "";
-            this.txtUsuario.CustomButton.Size = new System.Drawing.Size(27, 27);
-            this.txtUsuario.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtUsuario.CustomButton.TabIndex = 1;
-            this.txtUsuario.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtUsuario.CustomButton.UseSelectable = true;
-            this.txtUsuario.CustomButton.Visible = false;
-            this.txtUsuario.Lines = new string[0];
-            this.txtUsuario.Location = new System.Drawing.Point(22, 89);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(2);
-            this.txtUsuario.MaxLength = 20;
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.PasswordChar = '\0';
-            this.txtUsuario.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtUsuario.SelectedText = "";
-            this.txtUsuario.SelectionLength = 0;
-            this.txtUsuario.SelectionStart = 0;
-            this.txtUsuario.ShortcutsEnabled = true;
-            this.txtUsuario.Size = new System.Drawing.Size(281, 29);
-            this.txtUsuario.TabIndex = 72;
-            this.txtUsuario.UseSelectable = true;
-            this.txtUsuario.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtUsuario.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtCpf.CustomButton.Image = null;
+            this.txtCpf.CustomButton.Location = new System.Drawing.Point(253, 1);
+            this.txtCpf.CustomButton.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCpf.CustomButton.Name = "";
+            this.txtCpf.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.txtCpf.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtCpf.CustomButton.TabIndex = 1;
+            this.txtCpf.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtCpf.CustomButton.UseSelectable = true;
+            this.txtCpf.CustomButton.Visible = false;
+            this.txtCpf.Lines = new string[0];
+            this.txtCpf.Location = new System.Drawing.Point(22, 89);
+            this.txtCpf.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCpf.MaxLength = 20;
+            this.txtCpf.Name = "txtCpf";
+            this.txtCpf.PasswordChar = '\0';
+            this.txtCpf.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtCpf.SelectedText = "";
+            this.txtCpf.SelectionLength = 0;
+            this.txtCpf.SelectionStart = 0;
+            this.txtCpf.ShortcutsEnabled = true;
+            this.txtCpf.Size = new System.Drawing.Size(281, 29);
+            this.txtCpf.TabIndex = 72;
+            this.txtCpf.UseSelectable = true;
+            this.txtCpf.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtCpf.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtCpf.Leave += new System.EventHandler(this.txtUsuario_Leave);
             // 
             // metroLabel1
             // 
@@ -132,7 +140,7 @@
             // btnBiometriaLer
             // 
             this.btnBiometriaLer.ActiveControl = null;
-            this.btnBiometriaLer.Location = new System.Drawing.Point(302, 141);
+            this.btnBiometriaLer.Location = new System.Drawing.Point(22, 181);
             this.btnBiometriaLer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBiometriaLer.Name = "btnBiometriaLer";
             this.btnBiometriaLer.Size = new System.Drawing.Size(86, 41);
@@ -143,27 +151,44 @@
             this.btnBiometriaLer.TileTextFontSize = MetroFramework.MetroTileTextSize.Small;
             this.btnBiometriaLer.UseSelectable = true;
             this.btnBiometriaLer.UseTileImage = true;
+            this.btnBiometriaLer.Click += new System.EventHandler(this.btnBiometriaLer_Click);
+            // 
+            // imgDigital
+            // 
+            this.imgDigital.Location = new System.Drawing.Point(326, 42);
+            this.imgDigital.Name = "imgDigital";
+            this.imgDigital.Size = new System.Drawing.Size(169, 179);
+            this.imgDigital.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgDigital.TabIndex = 77;
+            this.imgDigital.TabStop = false;
             // 
             // frmBiometria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(541, 271);
+            this.ClientSize = new System.Drawing.Size(541, 342);
+            this.Controls.Add(this.imgDigital);
             this.Controls.Add(this.btnBiometriaLer);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.metroTextBox1);
             this.Controls.Add(this.lbUsuario);
-            this.Controls.Add(this.txtUsuario);
+            this.Controls.Add(this.txtCpf);
             this.Name = "frmBiometria";
             this.Text = "Biometria";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmBiometria_FormClosing);
+            this.Controls.SetChildIndex(this.pbLogo, 0);
+            this.Controls.SetChildIndex(this.metroLink1, 0);
             this.Controls.SetChildIndex(this.btnSalvar, 0);
             this.Controls.SetChildIndex(this.btnCancelar, 0);
-            this.Controls.SetChildIndex(this.txtUsuario, 0);
+            this.Controls.SetChildIndex(this.txtCpf, 0);
             this.Controls.SetChildIndex(this.lbUsuario, 0);
             this.Controls.SetChildIndex(this.metroTextBox1, 0);
             this.Controls.SetChildIndex(this.metroLabel1, 0);
             this.Controls.SetChildIndex(this.btnBiometriaLer, 0);
+            this.Controls.SetChildIndex(this.imgDigital, 0);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgDigital)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,9 +197,10 @@
         #endregion
 
         public MetroFramework.Controls.MetroLabel lbUsuario;
-        private MetroFramework.Controls.MetroTextBox txtUsuario;
+        private MetroFramework.Controls.MetroTextBox txtCpf;
         public MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroTextBox metroTextBox1;
         public MetroFramework.Controls.MetroTile btnBiometriaLer;
+        private System.Windows.Forms.PictureBox imgDigital;
     }
 }
