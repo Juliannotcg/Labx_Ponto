@@ -80,5 +80,11 @@ namespace LabxPonto_View.Views.Funções
             cadastro.ShowDialog();
             preencherGrid();
         }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            frmRltFuncao janela = new frmRltFuncao();
+            janela.Show();
+        }
     }
 }

@@ -153,7 +153,9 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Model\ModelRelatorio\" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201801031150273_CriacaoBanco.resx">
       <DependentUpon>201801031150273_CriacaoBanco.cs</DependentUpon>

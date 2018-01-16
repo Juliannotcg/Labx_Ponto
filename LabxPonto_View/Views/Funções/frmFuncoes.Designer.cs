@@ -36,6 +36,7 @@
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Departamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descrição = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnImprimir = new MetroFramework.Controls.MetroLink();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuncao)).BeginInit();
@@ -164,11 +165,25 @@
             this.Descrição.Name = "Descrição";
             this.Descrição.ReadOnly = true;
             // 
+            // btnImprimir
+            // 
+            this.btnImprimir.Image = global::LabxPonto_View.Properties.Resources.printer;
+            this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImprimir.ImageSize = 50;
+            this.btnImprimir.Location = new System.Drawing.Point(229, 8);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.NoFocusImage = global::LabxPonto_View.Properties.Resources.printer__1_;
+            this.btnImprimir.Size = new System.Drawing.Size(70, 65);
+            this.btnImprimir.TabIndex = 64;
+            this.btnImprimir.UseSelectable = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
             // frmFuncoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(981, 441);
+            this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.dgFuncao);
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmFuncoes";
@@ -182,6 +197,7 @@
             this.Controls.SetChildIndex(this.btAlterar, 0);
             this.Controls.SetChildIndex(this.btExcluir, 0);
             this.Controls.SetChildIndex(this.dgFuncao, 0);
+            this.Controls.SetChildIndex(this.btnImprimir, 0);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuncao)).EndInit();
@@ -196,5 +212,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Departamento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descrição;
+        public MetroFramework.Controls.MetroLink btnImprimir;
     }
 }

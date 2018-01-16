@@ -136,6 +136,7 @@
     <Compile Include="Enums\Estados.cs" />
     <Compile Include="Enums\Pais.cs" />
     <Compile Include="Enums\TipoHorario.cs" />
+    <Compile Include="ModelRlt\FuncaoRlt.cs" />
     <Compile Include="Views\Base\frmBaseCadastro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,11 +193,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Empresas\frmRelatorioEmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Empresas\frmRelatorioEmp.Designer.cs">
+      <DependentUpon>frmRelatorioEmp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\frmGerarArquivo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\frmGerarArquivo.Designer.cs">
       <DependentUpon>frmGerarArquivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Funções\frmRltFuncao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Funções\frmRltFuncao.Designer.cs">
+      <DependentUpon>frmRltFuncao.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Horários\frmHorarios.cs">
       <SubType>Form</SubType>
@@ -302,12 +315,20 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\Empresas\frmRelatorioEmp.resx">
+      <DependentUpon>frmRelatorioEmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Empresas\rltEmpresa.rdlc" />
     <EmbeddedResource Include="Views\frmGerarArquivo.resx">
       <DependentUpon>frmGerarArquivo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Funcionarios\frmFuncionarios.resx">
       <DependentUpon>frmFuncionarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Funções\frmRltFuncao.resx">
+      <DependentUpon>frmRltFuncao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Funções\ReportFuncao.rdlc" />
     <EmbeddedResource Include="Views\Horários\frmHorarios.resx">
       <DependentUpon>frmHorarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -340,6 +361,9 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\LabxPonto_Dao.Model.Funcionario.datasource" />
+    <None Include="Properties\DataSources\LabxPonto_Dao.Model.ModelRelatorio.FuncaoRlt.datasource" />
+    <None Include="Properties\DataSources\LabxPonto_Dao.Model.ModelRelatorio.RltFuncionarioPorEmpresa.datasource" />
+    <None Include="Properties\DataSources\LabxPonto_View.ModelRlt.FuncaoRlt.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -396,6 +420,8 @@
     <None Include="Resources\if_icons_search_1564527.png" />
     <None Include="Resources\if_access-time_326483.png" />
     <None Include="Resources\if_access-time_326483 %281%29.png" />
+    <None Include="Resources\printer.png" />
+    <None Include="Resources\printer %281%29.png" />
     <Content Include="Utils\DirectX.Capture.dll" />
     <Content Include="Utils\DShowNET.dll" />
   </ItemGroup>
