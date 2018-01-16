@@ -33,7 +33,6 @@ namespace LabxPonto_View.Views.Funções
                                     Departamento = c.Departamento.NomeDepartamento
                                 }).ToArray();
 
-
                 var dataSource = new Microsoft.Reporting.WinForms.ReportDataSource("DataSetFuncao", resposta);
                 this.reportViewerFuncao.LocalReport.DataSources.Clear();
                 this.reportViewerFuncao.LocalReport.DataSources.Add(dataSource);
