@@ -13,6 +13,7 @@ using LabxPonto_View.Views.Usuário;
 using MetroFramework;
 using MetroFramework.Forms;
 using Microsoft.Win32;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -35,6 +36,16 @@ namespace LabxPonto_View.Views
             StyleManager = metroStyleManager;
             verificarArquivoConfiguracao();
             
+        }
+
+        private void NotificarNovosCadastro(int quantidade)
+        {
+            //iconeNotificacao.Icon = SystemIcons.Warning;
+            //iconeNotificacao.BalloonTipIcon = ToolTipIcon.Warning;
+            //iconeNotificacao.BalloonTipText = "Existem " + quantidade + " boletos novos ou alterações de boletos que ainda não foram transmitidos para " + CodigoBancoHelper.GetSigla(parametros.Prop<CodigoBanco>("ParBancoIntimacao")) + ".";
+            //iconeNotificacao.BalloonTipTitle = "Aviso";
+            //iconeNotificacao.Visible = true;
+            //iconeNotificacao.ShowBalloonTip(5000);
         }
 
         public void mtCadastro_Click(object sender, System.EventArgs e)
@@ -79,7 +90,8 @@ namespace LabxPonto_View.Views
 
         private void metroTile2_Click(object sender, System.EventArgs e)
         {
-            MetroFramework.MetroMessageBox.Show(this, "Funcionalidade em desenvolvimento", "Atenção!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Hand);
+            frmGerarArquivo janela = new frmGerarArquivo();
+            janela.Show();
         }
 
         private void metroTile3_Click(object sender, System.EventArgs e)

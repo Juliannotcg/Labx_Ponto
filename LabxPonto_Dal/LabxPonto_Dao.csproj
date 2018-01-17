@@ -151,13 +151,16 @@
     <Compile Include="Service\EmpresaService.cs" />
     <Compile Include="Service\FuncaoService.cs" />
     <Compile Include="Service\FuncionarioService.cs" />
+    <Compile Include="Service\HorarioService.cs" />
     <Compile Include="Service\UsuarioServico.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Model\ModelRelatorio\" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201801031150273_CriacaoBanco.resx">
       <DependentUpon>201801031150273_CriacaoBanco.cs</DependentUpon>

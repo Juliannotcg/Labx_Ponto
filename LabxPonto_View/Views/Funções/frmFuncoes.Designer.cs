@@ -36,6 +36,7 @@
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Departamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descrição = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnImprimir = new MetroFramework.Controls.MetroLink();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuncao)).BeginInit();
@@ -43,39 +44,41 @@
             // 
             // btNovo
             // 
-            this.btNovo.Location = new System.Drawing.Point(31, 78);
-            this.btNovo.Margin = new System.Windows.Forms.Padding(5);
-            this.btNovo.Size = new System.Drawing.Size(223, 101);
+            this.btNovo.Location = new System.Drawing.Point(23, 63);
+            this.btNovo.Margin = new System.Windows.Forms.Padding(4);
+            this.btNovo.Size = new System.Drawing.Size(167, 82);
             this.btNovo.Click += new System.EventHandler(this.btNovo_Click_1);
             // 
             // btAlterar
             // 
-            this.btAlterar.Location = new System.Drawing.Point(31, 186);
-            this.btAlterar.Margin = new System.Windows.Forms.Padding(5);
+            this.btAlterar.Location = new System.Drawing.Point(23, 151);
+            this.btAlterar.Margin = new System.Windows.Forms.Padding(4);
             this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click_1);
             // 
             // btExcluir
             // 
-            this.btExcluir.Location = new System.Drawing.Point(139, 186);
-            this.btExcluir.Margin = new System.Windows.Forms.Padding(5);
-            this.btExcluir.Size = new System.Drawing.Size(115, 110);
+            this.btExcluir.Location = new System.Drawing.Point(104, 151);
+            this.btExcluir.Margin = new System.Windows.Forms.Padding(4);
+            this.btExcluir.Size = new System.Drawing.Size(86, 89);
             this.btExcluir.Click += new System.EventHandler(this.btExcluir_Click_1);
             // 
             // btnVisualizar
             // 
-            this.btnVisualizar.Location = new System.Drawing.Point(31, 303);
-            this.btnVisualizar.Margin = new System.Windows.Forms.Padding(5);
-            this.btnVisualizar.Size = new System.Drawing.Size(223, 57);
+            this.btnVisualizar.Location = new System.Drawing.Point(23, 246);
+            this.btnVisualizar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnVisualizar.Size = new System.Drawing.Size(167, 46);
             this.btnVisualizar.Click += new System.EventHandler(this.btnVisualizar_Click);
             // 
             // pbLogo
             // 
-            this.pbLogo.Location = new System.Drawing.Point(6, 396);
-            this.pbLogo.Size = new System.Drawing.Size(108, 37);
+            this.pbLogo.Location = new System.Drawing.Point(4, 322);
+            this.pbLogo.Margin = new System.Windows.Forms.Padding(2);
+            this.pbLogo.Size = new System.Drawing.Size(81, 30);
             // 
             // metroLink1
             // 
-            this.metroLink1.Location = new System.Drawing.Point(153, 8);
+            this.metroLink1.Location = new System.Drawing.Point(115, 6);
+            this.metroLink1.Size = new System.Drawing.Size(53, 53);
             // 
             // dgFuncao
             // 
@@ -114,8 +117,7 @@
             this.dgFuncao.EnableHeadersVisualStyles = false;
             this.dgFuncao.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dgFuncao.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgFuncao.Location = new System.Drawing.Point(261, 78);
-            this.dgFuncao.Margin = new System.Windows.Forms.Padding(4);
+            this.dgFuncao.Location = new System.Drawing.Point(196, 63);
             this.dgFuncao.Name = "dgFuncao";
             this.dgFuncao.ReadOnly = true;
             this.dgFuncao.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -129,7 +131,7 @@
             this.dgFuncao.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgFuncao.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgFuncao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgFuncao.Size = new System.Drawing.Size(692, 179);
+            this.dgFuncao.Size = new System.Drawing.Size(519, 145);
             this.dgFuncao.TabIndex = 62;
             // 
             // Id
@@ -164,15 +166,30 @@
             this.Descrição.Name = "Descrição";
             this.Descrição.ReadOnly = true;
             // 
+            // btnImprimir
+            // 
+            this.btnImprimir.Image = global::LabxPonto_View.Properties.Resources.printer;
+            this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImprimir.ImageSize = 50;
+            this.btnImprimir.Location = new System.Drawing.Point(172, 6);
+            this.btnImprimir.Margin = new System.Windows.Forms.Padding(2);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.NoFocusImage = global::LabxPonto_View.Properties.Resources.printer__1_;
+            this.btnImprimir.Size = new System.Drawing.Size(58, 53);
+            this.btnImprimir.TabIndex = 64;
+            this.btnImprimir.UseSelectable = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
             // frmFuncoes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(981, 441);
+            this.ClientSize = new System.Drawing.Size(736, 358);
+            this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.dgFuncao);
-            this.Margin = new System.Windows.Forms.Padding(5);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmFuncoes";
-            this.Padding = new System.Windows.Forms.Padding(36, 91, 36, 31);
+            this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.Text = "Funções";
             this.Load += new System.EventHandler(this.frmFuncoes_Load);
             this.Controls.SetChildIndex(this.metroLink1, 0);
@@ -182,6 +199,7 @@
             this.Controls.SetChildIndex(this.btAlterar, 0);
             this.Controls.SetChildIndex(this.btExcluir, 0);
             this.Controls.SetChildIndex(this.dgFuncao, 0);
+            this.Controls.SetChildIndex(this.btnImprimir, 0);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuncao)).EndInit();
@@ -196,5 +214,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Departamento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descrição;
+        public MetroFramework.Controls.MetroLink btnImprimir;
     }
 }

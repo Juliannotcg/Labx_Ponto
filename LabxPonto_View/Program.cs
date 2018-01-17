@@ -43,6 +43,7 @@ namespace LabxPonto_View
             container.Resolve<FuncionarioService>();
             container.Resolve<DepartamentoService>();
             container.Resolve<EmpresaService>();
+            container.Resolve<HorarioService>();
 
         }
     }
