@@ -57,6 +57,7 @@
             this.lbUsuario = new System.Windows.Forms.Label();
             this.lbVersao = new System.Windows.Forms.Label();
             this.iconeNotificacao = new System.Windows.Forms.NotifyIcon(this.components);
+            this.btnLerArquivo = new MetroFramework.Controls.MetroTile();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
             this.SuspendLayout();
@@ -407,12 +408,28 @@
             this.iconeNotificacao.Text = "E-Ponto";
             this.iconeNotificacao.Visible = true;
             // 
+            // btnLerArquivo
+            // 
+            this.btnLerArquivo.ActiveControl = null;
+            this.btnLerArquivo.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnLerArquivo.Location = new System.Drawing.Point(455, 431);
+            this.btnLerArquivo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLerArquivo.Name = "btnLerArquivo";
+            this.btnLerArquivo.Size = new System.Drawing.Size(175, 97);
+            this.btnLerArquivo.TabIndex = 26;
+            this.btnLerArquivo.Text = "Ler Arquivo";
+            this.btnLerArquivo.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.metroToolTip1.SetToolTip(this.btnLerArquivo, "Ler arquivo");
+            this.btnLerArquivo.UseCustomBackColor = true;
+            this.btnLerArquivo.UseSelectable = true;
+            // 
             // frmMain
             // 
             this.ApplyImageInvert = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1040, 752);
+            this.Controls.Add(this.btnLerArquivo);
             this.Controls.Add(this.btnSuporte);
             this.Controls.Add(this.lbVersao);
             this.Controls.Add(this.lbUsuario);
@@ -479,5 +496,6 @@
         private System.Windows.Forms.Label lbVersao;
         public MetroFramework.Controls.MetroTile btnSuporte;
         private System.Windows.Forms.NotifyIcon iconeNotificacao;
+        public MetroFramework.Controls.MetroTile btnLerArquivo;
     }
 }

@@ -27,66 +27,75 @@ namespace LabxPonto_View.Views
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
+            Confirmar();
+        }
+
+        public void Confirmar()
+        {
             HorarioService horarioService = new HorarioService();
             HorarioExpediente horarioExpediente = new HorarioExpediente();
 
             DateTime dateIni = dtDataIni.Value;
             DateTime dateFim = dtDataFim.Value;
 
-            horarioExpediente = horarioService.GetHorarioXml(dateIni, dateFim);
-
-            gerarXml(horarioExpediente);
+            DataTable tabela = horarioService.GetHorarioXml(dateIni, dateFim);
 
             SaveFileDialog saveFile = new SaveFileDialog();
             saveFile.FileName = NomeArquivo();
             saveFile.ShowDialog();
 
-            string xml = "";
-
-            using (StreamWriter stream = new StreamWriter(saveFile.FileName, false, Encoding.UTF8))
-            {
-                //stream.Write();
-            }
-
+            if (gerarXml(tabela, saveFile.FileName))
+                MetroFramework.MetroMessageBox.Show(this, "Arquivo gerado com sucesso", "Sucesso!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question);
+            else
+                MetroFramework.MetroMessageBox.Show(this, "O Arquivo não foi gerado, entrar em contato com o suporte.", "Erro!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Hand);
         }
 
         public string NomeArquivo()
         {
             string NomeArquivo = "";
-
             NomeArquivo = DateTime.Now.ToString("ddMMyyyy") + "Funcionario" + ".xml";
 
             return NomeArquivo;
         }
-        public string gerarXml(HorarioExpediente horarioExpediente)
+        public bool gerarXml(DataTable tabela, string caminho)
         {
+            XmlTextWriter xml = new XmlTextWriter(caminho, System.Text.Encoding.GetEncoding("iso-8859-1"));
 
-            XmlTextWriter writer = new XmlTextWriter(@"c:", null);
+            for (int i = 0; i < tabela.Rows.Count; i++)
+            {
+                xml.WriteStartElement("Funcionario");
+                xml.WriteAttributeString("CPF", tabela.Rows[i]["CPF"].ToString());
 
-            //inicia o documento xml
-            writer.WriteStartDocument();
+                #region Dados do Funcionario
 
-            //Dados do Funcionario
-            writer.WriteStartElement("DadosPessoais");
-            writer.WriteAttributeString("CPF", horarioExpediente.Funcionario.CPF.ToString());
-            //Dados pessoais do Funcionário
-            writer.WriteElementString("Nome", horarioExpediente.Funcionario.Nome.ToString());
+                xml.WriteStartElement("DadosFuncionario");
+                xml.WriteElementString("Nome", tabela.Rows[i]["NomeFuncionario"].ToString());
+                xml.WriteElementString("CPF", tabela.Rows[i]["CPF"].ToString());
+                xml.WriteEndElement();
 
-            //for (int i = 0; i < horarioExpediente.; i++)
-            //{
-            //    //Dados pessoais do Funcionário
-            //    //writer.WriteElementString("Data", funcionario.Horario.ToList());
-            //    //writer.WriteElementString("SobreNome", funcionario.SobreNome.ToString());
-            //    //writer.WriteElementString("RG", funcionario.RG.ToString());
-            //    //Enncerra os dados pessoais do funcionário.
+                #endregion
+                
+                xml.WriteStartElement("Horarios");
+                xml.WriteElementString("Data", tabela.Rows[i]["Data"].ToString());
+                xml.WriteElementString("Entrada", tabela.Rows[i]["Entrada"].ToString());
+                xml.WriteElementString("Saida", tabela.Rows[i]["Saida"].ToString());
+                xml.WriteEndElement();
 
-            //}
+                xml.WriteFullEndElement();
+            }
 
-            writer.WriteEndElement();
-            //Escreve o XML para o arquivo e fecha o objeto escritor
-            writer.Close();
+            //escreve o XML para o arquivo e fecha o escritor
+            xml.Close();
+            XmlDocument doc = new XmlDocument();
+            doc.XmlResolver = null;
+            doc.Load(caminho);
 
-            return ("");
+            return (true);
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
     
