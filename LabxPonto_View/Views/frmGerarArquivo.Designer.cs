@@ -28,29 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.metroDateTime1 = new MetroFramework.Controls.MetroDateTime();
-            this.metroDateTime2 = new MetroFramework.Controls.MetroDateTime();
+            this.dtDataIni = new MetroFramework.Controls.MetroDateTime();
+            this.dtDataFim = new MetroFramework.Controls.MetroDateTime();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.btnConfirmar = new MetroFramework.Controls.MetroButton();
             this.btnCancelar = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
-            // metroDateTime1
+            // dtDataIni
             // 
-            this.metroDateTime1.Location = new System.Drawing.Point(23, 111);
-            this.metroDateTime1.MinimumSize = new System.Drawing.Size(0, 30);
-            this.metroDateTime1.Name = "metroDateTime1";
-            this.metroDateTime1.Size = new System.Drawing.Size(200, 30);
-            this.metroDateTime1.TabIndex = 0;
+            this.dtDataIni.Location = new System.Drawing.Point(23, 111);
+            this.dtDataIni.MinimumSize = new System.Drawing.Size(0, 30);
+            this.dtDataIni.Name = "dtDataIni";
+            this.dtDataIni.Size = new System.Drawing.Size(200, 30);
+            this.dtDataIni.TabIndex = 0;
             // 
-            // metroDateTime2
+            // dtDataFim
             // 
-            this.metroDateTime2.Location = new System.Drawing.Point(274, 111);
-            this.metroDateTime2.MinimumSize = new System.Drawing.Size(0, 30);
-            this.metroDateTime2.Name = "metroDateTime2";
-            this.metroDateTime2.Size = new System.Drawing.Size(200, 30);
-            this.metroDateTime2.TabIndex = 1;
+            this.dtDataFim.Location = new System.Drawing.Point(274, 111);
+            this.dtDataFim.MinimumSize = new System.Drawing.Size(0, 30);
+            this.dtDataFim.Name = "dtDataFim";
+            this.dtDataFim.Size = new System.Drawing.Size(200, 30);
+            this.dtDataFim.TabIndex = 1;
             // 
             // metroLabel1
             // 
@@ -98,8 +98,8 @@
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
-            this.Controls.Add(this.metroDateTime2);
-            this.Controls.Add(this.metroDateTime1);
+            this.Controls.Add(this.dtDataFim);
+            this.Controls.Add(this.dtDataIni);
             this.Name = "frmGerarArquivo";
             this.Text = "Gerar Arquivo de Ponto";
             this.ResumeLayout(false);
@@ -109,8 +109,8 @@
 
         #endregion
 
-        private MetroFramework.Controls.MetroDateTime metroDateTime1;
-        private MetroFramework.Controls.MetroDateTime metroDateTime2;
+        private MetroFramework.Controls.MetroDateTime dtDataIni;
+        private MetroFramework.Controls.MetroDateTime dtDataFim;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroButton btnConfirmar;

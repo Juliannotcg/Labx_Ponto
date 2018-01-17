@@ -90,7 +90,8 @@ namespace LabxPonto_View.Views
 
         private void metroTile2_Click(object sender, System.EventArgs e)
         {
-            MetroFramework.MetroMessageBox.Show(this, "Funcionalidade em desenvolvimento", "Atenção!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Hand);
+            frmGerarArquivo janela = new frmGerarArquivo();
+            janela.Show();
         }
 
         private void metroTile3_Click(object sender, System.EventArgs e)

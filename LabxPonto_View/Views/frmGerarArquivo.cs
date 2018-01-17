@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,8 @@ namespace LabxPonto_View.Views
 {
     public partial class frmGerarArquivo : MetroForm
     {
+        private AppDataContext con;
+
         public frmGerarArquivo()
         {
             InitializeComponent();
@@ -24,10 +27,38 @@ namespace LabxPonto_View.Views
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            buscarFuncionario("CPF");
+            HorarioService horarioService = new HorarioService(con);
+            HorarioExpediente horarioExpediente = new HorarioExpediente();
+
+            DateTime dateIni = dtDataIni.Value;
+            DateTime dateFim = dtDataFim.Value;
+
+            horarioExpediente = horarioService.GetHorarioXml(dateIni, dateFim);
+
+            gerarXml(horarioExpediente);
+
+            SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.FileName = NomeArquivo();
+            saveFile.ShowDialog();
+
+            string xml = "";
+
+            using (StreamWriter stream = new StreamWriter(saveFile.FileName, false, Encoding.UTF8))
+            {
+                //stream.Write();
+            }
+
         }
 
-        public bool gerarXml(Funcionario funcionario)
+        public string NomeArquivo()
+        {
+            string NomeArquivo = "";
+
+            NomeArquivo = DateTime.Now.ToString("ddMMyyyy") + "Funcionario" + ".xml";
+
+            return NomeArquivo;
+        }
+        public string gerarXml(HorarioExpediente horarioExpediente)
         {
 
             XmlTextWriter writer = new XmlTextWriter(@"c:", null);
@@ -37,39 +68,25 @@ namespace LabxPonto_View.Views
 
             //Dados do Funcionario
             writer.WriteStartElement("DadosPessoais");
-            writer.WriteAttributeString("CPF", funcionario.CPF.ToString());
+            writer.WriteAttributeString("CPF", horarioExpediente.Funcionario.CPF.ToString());
             //Dados pessoais do Funcionário
-            writer.WriteElementString("Nome", funcionario.Nome.ToString());
-            writer.WriteElementString("SobreNome", funcionario.SobreNome.ToString());
-            writer.WriteElementString("RG", funcionario.RG.ToString());
+            writer.WriteElementString("Nome", horarioExpediente.Funcionario.Nome.ToString());
 
-            for (int i = 0; i < funcionario.Horario.Count; i++)
-            {
-                //Dados pessoais do Funcionário
-                //writer.WriteElementString("Data", funcionario.Horario.ToList());
-                //writer.WriteElementString("SobreNome", funcionario.SobreNome.ToString());
-                //writer.WriteElementString("RG", funcionario.RG.ToString());
-                //Enncerra os dados pessoais do funcionário.
-               
-            }
+            //for (int i = 0; i < horarioExpediente.; i++)
+            //{
+            //    //Dados pessoais do Funcionário
+            //    //writer.WriteElementString("Data", funcionario.Horario.ToList());
+            //    //writer.WriteElementString("SobreNome", funcionario.SobreNome.ToString());
+            //    //writer.WriteElementString("RG", funcionario.RG.ToString());
+            //    //Enncerra os dados pessoais do funcionário.
+
+            //}
 
             writer.WriteEndElement();
             //Escreve o XML para o arquivo e fecha o objeto escritor
             writer.Close();
 
-
-            return (true);
-        }
-
-        public void buscarFuncionario(string CPF)
-        {
-            AppDataContext con = new AppDataContext();
-            Funcionario funcionario = new Funcionario();
-            FuncionarioService service = new FuncionarioService(con);
-
-            funcionario = service.GetFuncionarioCPF(CPF);
-
-            gerarXml(funcionario);
+            return ("");
         }
     }
     
