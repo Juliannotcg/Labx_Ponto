@@ -171,6 +171,11 @@
     <Compile Include="Enums\Pais.cs" />
     <Compile Include="Enums\TipoHorario.cs" />
     <Compile Include="ModelRlt\FuncaoRlt.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Base\frmBaseCadastro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -353,14 +358,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Views\Empresas\frmRelatorioEmp.resx">
       <DependentUpon>frmRelatorioEmp.cs</DependentUpon>
     </EmbeddedResource>

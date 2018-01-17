@@ -27,7 +27,7 @@ namespace LabxPonto_View.Views
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            HorarioService horarioService = new HorarioService(con);
+            HorarioService horarioService = new HorarioService();
             HorarioExpediente horarioExpediente = new HorarioExpediente();
 
             DateTime dateIni = dtDataIni.Value;
