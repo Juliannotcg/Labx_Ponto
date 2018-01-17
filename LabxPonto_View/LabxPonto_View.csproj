@@ -253,6 +253,12 @@
     <Compile Include="Views\frmGerarArquivo.Designer.cs">
       <DependentUpon>frmGerarArquivo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\frmLerArquivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmLerArquivo.Designer.cs">
+      <DependentUpon>frmLerArquivo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Funções\frmRltFuncao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -367,6 +373,9 @@
     <EmbeddedResource Include="Views\Empresas\rltEmpresa.rdlc" />
     <EmbeddedResource Include="Views\frmGerarArquivo.resx">
       <DependentUpon>frmGerarArquivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmLerArquivo.resx">
+      <DependentUpon>frmLerArquivo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Funcionarios\frmFuncionarios.resx">
       <DependentUpon>frmFuncionarios.cs</DependentUpon>

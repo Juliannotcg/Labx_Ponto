@@ -51,13 +51,13 @@
             this.btnHorario = new MetroFramework.Controls.MetroTile();
             this.btTema = new MetroFramework.Controls.MetroTile();
             this.mtConfiguracoes = new MetroFramework.Controls.MetroTile();
+            this.btnLerArquivo = new MetroFramework.Controls.MetroTile();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.lbUsuario = new System.Windows.Forms.Label();
             this.lbVersao = new System.Windows.Forms.Label();
             this.iconeNotificacao = new System.Windows.Forms.NotifyIcon(this.components);
-            this.btnLerArquivo = new MetroFramework.Controls.MetroTile();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
             this.SuspendLayout();
@@ -344,6 +344,22 @@
             this.mtConfiguracoes.UseTileImage = true;
             this.mtConfiguracoes.Click += new System.EventHandler(this.mtConfiguracoes_Click);
             // 
+            // btnLerArquivo
+            // 
+            this.btnLerArquivo.ActiveControl = null;
+            this.btnLerArquivo.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnLerArquivo.Location = new System.Drawing.Point(455, 431);
+            this.btnLerArquivo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLerArquivo.Name = "btnLerArquivo";
+            this.btnLerArquivo.Size = new System.Drawing.Size(175, 97);
+            this.btnLerArquivo.TabIndex = 26;
+            this.btnLerArquivo.Text = "Ler Arquivo";
+            this.btnLerArquivo.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.metroToolTip1.SetToolTip(this.btnLerArquivo, "Ler arquivo");
+            this.btnLerArquivo.UseCustomBackColor = true;
+            this.btnLerArquivo.UseSelectable = true;
+            this.btnLerArquivo.Click += new System.EventHandler(this.btnLerArquivo_Click);
+            // 
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
@@ -407,21 +423,6 @@
             // 
             this.iconeNotificacao.Text = "E-Ponto";
             this.iconeNotificacao.Visible = true;
-            // 
-            // btnLerArquivo
-            // 
-            this.btnLerArquivo.ActiveControl = null;
-            this.btnLerArquivo.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.btnLerArquivo.Location = new System.Drawing.Point(455, 431);
-            this.btnLerArquivo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnLerArquivo.Name = "btnLerArquivo";
-            this.btnLerArquivo.Size = new System.Drawing.Size(175, 97);
-            this.btnLerArquivo.TabIndex = 26;
-            this.btnLerArquivo.Text = "Ler Arquivo";
-            this.btnLerArquivo.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
-            this.metroToolTip1.SetToolTip(this.btnLerArquivo, "Ler arquivo");
-            this.btnLerArquivo.UseCustomBackColor = true;
-            this.btnLerArquivo.UseSelectable = true;
             // 
             // frmMain
             // 

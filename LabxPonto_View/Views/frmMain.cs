@@ -180,5 +180,11 @@ namespace LabxPonto_View.Views
             frmHorarios janela = new frmHorarios(this.context);
             janela.Show();
         }
+
+        private void btnLerArquivo_Click(object sender, System.EventArgs e)
+        {
+            frmLerArquivo janela = new frmLerArquivo();
+            janela.Show();
+        }
     }
 }
