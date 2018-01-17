@@ -137,7 +137,8 @@ namespace LabxPonto_View.Views
 
         private void frmMain_Load(object sender, System.EventArgs e)
         {
-            lbUsuario.Text = "Usuário " + usuario.Login.ToString() + " logado.";
+            if(usuario!=null)
+                lbUsuario.Text = "Usuário " + usuario.Login.ToString() + " logado.";
             lbVersao.Text = "VERSÃO: 1.0.2"; //TODO
 
             this.WindowState = FormWindowState.Maximized;
@@ -152,7 +153,7 @@ namespace LabxPonto_View.Views
 
         private void btnBiometria_Click(object sender, System.EventArgs e)
         {
-            frmBiometria janela = new frmBiometria();
+            frmBiometria janela = new frmBiometria(context);
             janela.Show();
         }
 

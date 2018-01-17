@@ -60,36 +60,36 @@
     <Reference Include="DPFPCtlXTypeLibNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=c0c98f712d5392a7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>True</EmbedInteropTypes>
-      <HintPath>..\..\..\..\..\..\Program Files\DigitalPersona\One Touch SDK\.NET\Bin\DPFPCtlXTypeLibNET.dll</HintPath>
+      <HintPath>Utils\DPFPCtlXTypeLibNET.dll</HintPath>
     </Reference>
     <Reference Include="DPFPCtlXWrapperNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=c0c98f712d5392a7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Program Files\DigitalPersona\One Touch SDK\.NET\Bin\DPFPCtlXWrapperNET.dll</HintPath>
+      <HintPath>Utils\DPFPCtlXWrapperNET.dll</HintPath>
     </Reference>
     <Reference Include="DPFPDevNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=696774c42ee28c57, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Program Files\DigitalPersona\One Touch SDK\.NET\Bin\DPFPDevNET.dll</HintPath>
+      <HintPath>Utils\DPFPDevNET.dll</HintPath>
     </Reference>
     <Reference Include="DPFPEngNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=7fe76e7adf19964b, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Program Files\DigitalPersona\One Touch SDK\.NET\Bin\DPFPEngNET.dll</HintPath>
+      <HintPath>Utils\DPFPEngNET.dll</HintPath>
     </Reference>
     <Reference Include="DPFPGuiNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=d4f4a0bd9c559145, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Program Files\DigitalPersona\One Touch SDK\.NET\Bin\DPFPGuiNET.dll</HintPath>
+      <HintPath>Utils\DPFPGuiNET.dll</HintPath>
     </Reference>
     <Reference Include="DPFPShrNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=d902fe275a8d6cf2, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Program Files\DigitalPersona\One Touch SDK\.NET\Bin\DPFPShrNET.dll</HintPath>
+      <HintPath>Utils\DPFPShrNET.dll</HintPath>
     </Reference>
     <Reference Include="DPFPShrXTypeLibNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=c0c98f712d5392a7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>True</EmbedInteropTypes>
-      <HintPath>..\..\..\..\..\..\Program Files\DigitalPersona\One Touch SDK\.NET\Bin\DPFPShrXTypeLibNET.dll</HintPath>
+      <HintPath>Utils\DPFPShrXTypeLibNET.dll</HintPath>
     </Reference>
     <Reference Include="DPFPVerNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=4de0a9c4dcc83984, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Program Files\DigitalPersona\One Touch SDK\.NET\Bin\DPFPVerNET.dll</HintPath>
+      <HintPath>Utils\DPFPVerNET.dll</HintPath>
     </Reference>
     <Reference Include="DShowNET, Version=1.0.0.1, Culture=neutral">
       <SpecificVersion>False</SpecificVersion>
@@ -187,6 +187,15 @@
     </Compile>
     <Compile Include="Views\Biometria\frmBiometria.Designer.cs">
       <DependentUpon>frmBiometria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Biometria\frmInscricaoBiometrica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Biometria\frmLeituraBiometrica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Biometria\frmLeituraBiometrica.Designer.cs">
+      <DependentUpon>frmLeituraBiometrica.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Cam\frmWebCam.cs">
       <SubType>Form</SubType>
@@ -307,6 +316,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Biometria\frmBiometria.resx">
       <DependentUpon>frmBiometria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Biometria\frmLeituraBiometrica.resx">
+      <DependentUpon>frmLeituraBiometrica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Cam\frmWebCam.resx">
       <DependentUpon>frmWebCam.cs</DependentUpon>
@@ -430,6 +442,7 @@
     <None Include="Resources\if_icons_search_1564527.png" />
     <None Include="Resources\if_access-time_326483.png" />
     <None Include="Resources\if_access-time_326483 %281%29.png" />
+    <None Include="Resources\if_Touch_ID_363335.png" />
     <Content Include="Utils\DirectX.Capture.dll" />
     <Content Include="Utils\DShowNET.dll" />
   </ItemGroup>
@@ -444,44 +457,6 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <COMReference Include="DPFPCtlXLib">
-      <Guid>{B49E66FF-6927-4378-9685-937F14679ADD}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
-    <COMReference Include="DPFPDevXLib">
-      <Guid>{BCDEF2D4-F788-4A38-B0C2-C97B3F9FB791}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
-    <COMReference Include="DPFPEngXLib">
-      <Guid>{A9EFB3F6-A8C8-4684-841E-4330973057C6}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
-    <COMReference Include="DPFPShrXLib">
-      <Guid>{B8FAC44B-A9C5-478E-A9BF-566419996CAE}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

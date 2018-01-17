@@ -133,6 +133,10 @@
     <Compile Include="Migrations\201801132322380_HorExpediente.Designer.cs">
       <DependentUpon>201801132322380_HorExpediente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801170022543_FuncionarioDigital.cs" />
+    <Compile Include="Migrations\201801170022543_FuncionarioDigital.Designer.cs">
+      <DependentUpon>201801170022543_FuncionarioDigital.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Departamento.cs" />
     <Compile Include="Model\Empresa.cs" />
@@ -193,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801132322380_HorExpediente.resx">
       <DependentUpon>201801132322380_HorExpediente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801170022543_FuncionarioDigital.resx">
+      <DependentUpon>201801170022543_FuncionarioDigital.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
