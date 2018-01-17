@@ -18,10 +18,11 @@ namespace LabxPonto_View.Views
 {
     public partial class frmGerarArquivo : MetroForm
     {
-        private AppDataContext con;
+        private AppDataContext context;
 
-        public frmGerarArquivo()
+        public frmGerarArquivo(AppDataContext con )
         {
+            context = con;
             InitializeComponent();
         }
 
@@ -32,7 +33,7 @@ namespace LabxPonto_View.Views
 
         public void Confirmar()
         {
-            HorarioService horarioService = new HorarioService();
+            HorarioService horarioService = new HorarioService(context);
             HorarioExpediente horarioExpediente = new HorarioExpediente();
 
             DateTime dateIni = dtDataIni.Value;

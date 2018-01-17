@@ -90,7 +90,8 @@ namespace LabxPonto_View.Views
 
         private void metroTile2_Click(object sender, System.EventArgs e)
         {
-            frmGerarArquivo janela = new frmGerarArquivo();
+            frmGerarArquivo janela = new frmGerarArquivo(context);
+            janela.StyleManager = metroStyleManager;
             janela.Show();
         }
 
