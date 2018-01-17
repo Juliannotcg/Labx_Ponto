@@ -44,6 +44,7 @@
             this.txtCPF = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel26 = new MetroFramework.Controls.MetroLabel();
             this.errorProviderFunc = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btVerificarDigital = new MetroFramework.Controls.MetroTile();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgDigital)).BeginInit();
@@ -53,17 +54,17 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(689, 402);
+            this.btnCancelar.Location = new System.Drawing.Point(689, 419);
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(582, 402);
+            this.btnSalvar.Location = new System.Drawing.Point(582, 419);
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // pbLogo
             // 
-            this.pbLogo.Location = new System.Drawing.Point(7, 417);
+            this.pbLogo.Location = new System.Drawing.Point(7, 434);
             // 
             // imgDigital
             // 
@@ -73,6 +74,7 @@
             this.imgDigital.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgDigital.TabIndex = 77;
             this.imgDigital.TabStop = false;
+            this.imgDigital.LoadCompleted += new System.ComponentModel.AsyncCompletedEventHandler(this.imgDigital_LoadCompleted);
             // 
             // btDigital
             // 
@@ -237,11 +239,26 @@
             this.errorProviderFunc.ContainerControl = this;
             this.errorProviderFunc.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProviderFunc.Icon")));
             // 
+            // btVerificarDigital
+            // 
+            this.btVerificarDigital.ActiveControl = null;
+            this.btVerificarDigital.Location = new System.Drawing.Point(626, 364);
+            this.btVerificarDigital.Name = "btVerificarDigital";
+            this.btVerificarDigital.Size = new System.Drawing.Size(113, 43);
+            this.btVerificarDigital.TabIndex = 90;
+            this.btVerificarDigital.Text = "Verificar";
+            this.btVerificarDigital.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btVerificarDigital.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.btVerificarDigital.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.btVerificarDigital.UseSelectable = true;
+            this.btVerificarDigital.Click += new System.EventHandler(this.metroTile1_Click);
+            // 
             // frmBiometria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(811, 456);
+            this.ClientSize = new System.Drawing.Size(811, 473);
+            this.Controls.Add(this.btVerificarDigital);
             this.Controls.Add(this.txtCPF);
             this.Controls.Add(this.metroLabel26);
             this.Controls.Add(this.txtFuncao);
@@ -274,6 +291,7 @@
             this.Controls.SetChildIndex(this.txtFuncao, 0);
             this.Controls.SetChildIndex(this.metroLabel26, 0);
             this.Controls.SetChildIndex(this.txtCPF, 0);
+            this.Controls.SetChildIndex(this.btVerificarDigital, 0);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgDigital)).EndInit();
@@ -299,5 +317,6 @@
         private MetroFramework.Controls.MetroTextBox txtCPF;
         private MetroFramework.Controls.MetroLabel metroLabel26;
         private System.Windows.Forms.ErrorProvider errorProviderFunc;
+        private MetroFramework.Controls.MetroTile btVerificarDigital;
     }
 }

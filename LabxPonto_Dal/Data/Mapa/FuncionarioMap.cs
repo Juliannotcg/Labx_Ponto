@@ -31,6 +31,10 @@ namespace LabxPonto_Dao.Data.Mapa
                 .HasColumnName("FunDigital")
                 .HasColumnType("varbinary(MAX)");
 
+            Property(c => c.Digital)
+               .HasColumnName("FunImagemDigital")
+               .HasColumnType("varbinary(MAX)");
+
             Property(c => c.EstadoCivil)
                 .HasColumnName("FunEstadoCivil");
 

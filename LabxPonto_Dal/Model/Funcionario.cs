@@ -13,6 +13,7 @@ namespace LabxPonto_Dao.Model
         public string RG { get; set; }
         public string CPF { get; set; }
         public byte[] Digital{ get; set; }
+        public byte[] ImagemDigital { get; set; }
         public string EstadoCivil { get; set; }
         public string Telefone { get; set; }
         public string NomePai { get; set; }
