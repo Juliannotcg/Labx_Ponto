@@ -1,4 +1,5 @@
-﻿using LabxPonto_View.Views.Base;
+﻿using LabxPonto_Dao.Data.Context;
+using LabxPonto_View.Views.Base;
 using LabxPonto_View.Views.Funcionarios;
 using MetroFramework.Forms;
 using System;
@@ -15,8 +16,10 @@ namespace LabxPonto_View.Views
 {
     public partial class frmRelatorios : frmBaseCadastro
     {
-        public frmRelatorios()
+        private AppDataContext context; 
+        public frmRelatorios(AppDataContext con)
         {
+            context = con;
             InitializeComponent();
         }
 
@@ -30,15 +33,30 @@ namespace LabxPonto_View.Views
 
         }
 
+        public bool Validar()
+        {
+            if (String.IsNullOrEmpty(txtCPF.Text))
+                errorProviderRlt.SetError(txtCPF, "Informe o número do CPF.");
+
+            if (dtDataIni.Value < dtDataFim.Value)
+                errorProviderRlt.SetError(dtDataFim, "A data inicial não pode ser menor que a data inicial.");
+
+            return ((errorProviderRlt.GetError(txtCPF) == "") &&
+                (errorProviderRlt.GetError(dtDataFim) == ""));
+        }
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            frmRltFuncionario janela = new frmRltFuncionario();
-            janela.Show();
+            Confirmar();
         }
 
         public void Confirmar()
         {
-
+            if (Validar())
+            {
+                frmRltFuncionario janela = new frmRltFuncionario(context, txtCPF.Text);
+                janela.Show();
+            }
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

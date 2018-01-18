@@ -149,6 +149,8 @@
     <Compile Include="Model\Funcionario.cs" />
     <Compile Include="Model\HorarioExpediente.cs" />
     <Compile Include="Model\Imagem.cs" />
+    <Compile Include="Model\ModelRelatorio\FuncionarioRlt.cs" />
+    <Compile Include="Model\ModelRelatorio\RltFuncionario.cs" />
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\DepartamentoService.cs" />
@@ -162,9 +164,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\ModelRelatorio\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201801031150273_CriacaoBanco.resx">
       <DependentUpon>201801031150273_CriacaoBanco.cs</DependentUpon>

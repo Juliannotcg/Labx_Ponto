@@ -28,63 +28,79 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.txtCPF = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel37 = new MetroFramework.Controls.MetroLabel();
-            this.cmbEstado = new MetroFramework.Controls.MetroComboBox();
-            this.dpDataIni = new System.Windows.Forms.MaskedTextBox();
+            this.components = new System.ComponentModel.Container();
             this.metroLabel29 = new MetroFramework.Controls.MetroLabel();
-            this.dpDataFim = new System.Windows.Forms.MaskedTextBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.txtCPF = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel26 = new MetroFramework.Controls.MetroLabel();
+            this.errorProviderRlt = new System.Windows.Forms.ErrorProvider(this.components);
+            this.dtDataIni = new MetroFramework.Controls.MetroDateTime();
+            this.dtDataFim = new MetroFramework.Controls.MetroDateTime();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderRlt)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(604, 238);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btnCancelar.Location = new System.Drawing.Point(287, 193);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(473, 238);
-            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btnSalvar.Location = new System.Drawing.Point(189, 193);
+            this.btnSalvar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // pbLogo
             // 
-            this.pbLogo.Location = new System.Drawing.Point(7, 261);
+            this.pbLogo.Location = new System.Drawing.Point(5, 212);
+            this.pbLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             // 
-            // metroLabel1
+            // metroLabel29
             // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(29, 84);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(33, 20);
-            this.metroLabel1.TabIndex = 56;
-            this.metroLabel1.Text = "CPF";
-            this.metroLabel1.Click += new System.EventHandler(this.metroLabel1_Click);
+            this.metroLabel29.AutoSize = true;
+            this.metroLabel29.Location = new System.Drawing.Point(21, 130);
+            this.metroLabel29.Name = "metroLabel29";
+            this.metroLabel29.Size = new System.Drawing.Size(55, 19);
+            this.metroLabel29.TabIndex = 65;
+            this.metroLabel29.Text = "Período";
+            this.metroLabel29.UseCustomBackColor = true;
+            this.metroLabel29.UseCustomForeColor = true;
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(181, 162);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(16, 19);
+            this.metroLabel2.TabIndex = 67;
+            this.metroLabel2.Text = "a";
+            this.metroLabel2.UseCustomBackColor = true;
+            this.metroLabel2.UseCustomForeColor = true;
             // 
             // txtCPF
             // 
             // 
             // 
             // 
-            this.txtCPF.CustomButton.Image = null;
-            this.txtCPF.CustomButton.Location = new System.Drawing.Point(269, 1);
-            this.txtCPF.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCPF.CustomButton.Image = global::LabxPonto_View.Properties.Resources.if_icons_search_1564527;
+            this.txtCPF.CustomButton.Location = new System.Drawing.Point(202, 1);
+            this.txtCPF.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.txtCPF.CustomButton.Name = "";
-            this.txtCPF.CustomButton.Size = new System.Drawing.Size(41, 41);
+            this.txtCPF.CustomButton.Size = new System.Drawing.Size(27, 27);
             this.txtCPF.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtCPF.CustomButton.TabIndex = 1;
+            this.txtCPF.CustomButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.txtCPF.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtCPF.CustomButton.UseSelectable = true;
-            this.txtCPF.CustomButton.Visible = false;
+            this.txtCPF.CustomButton.UseVisualStyleBackColor = false;
+            this.txtCPF.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtCPF.Lines = new string[0];
-            this.txtCPF.Location = new System.Drawing.Point(29, 110);
-            this.txtCPF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtCPF.MaxLength = 20;
+            this.txtCPF.Location = new System.Drawing.Point(20, 89);
+            this.txtCPF.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCPF.MaxLength = 32767;
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.PasswordChar = '\0';
             this.txtCPF.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -92,130 +108,86 @@
             this.txtCPF.SelectionLength = 0;
             this.txtCPF.SelectionStart = 0;
             this.txtCPF.ShortcutsEnabled = true;
-            this.txtCPF.Size = new System.Drawing.Size(311, 43);
-            this.txtCPF.TabIndex = 55;
+            this.txtCPF.ShowButton = true;
+            this.txtCPF.Size = new System.Drawing.Size(230, 29);
+            this.txtCPF.TabIndex = 90;
             this.txtCPF.UseSelectable = true;
             this.txtCPF.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtCPF.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtCPF.Click += new System.EventHandler(this.txtCPF_Click);
             // 
-            // metroLabel37
+            // metroLabel26
             // 
-            this.metroLabel37.AutoSize = true;
-            this.metroLabel37.Location = new System.Drawing.Point(367, 86);
-            this.metroLabel37.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.metroLabel37.Name = "metroLabel37";
-            this.metroLabel37.Size = new System.Drawing.Size(114, 20);
-            this.metroLabel37.TabIndex = 63;
-            this.metroLabel37.Text = "Tipo do Relatório";
-            this.metroLabel37.UseCustomBackColor = true;
-            this.metroLabel37.UseCustomForeColor = true;
+            this.metroLabel26.AutoSize = true;
+            this.metroLabel26.Location = new System.Drawing.Point(20, 68);
+            this.metroLabel26.Name = "metroLabel26";
+            this.metroLabel26.Size = new System.Drawing.Size(33, 19);
+            this.metroLabel26.TabIndex = 91;
+            this.metroLabel26.Text = "CPF";
+            this.metroLabel26.UseCustomBackColor = true;
+            this.metroLabel26.UseCustomForeColor = true;
             // 
-            // cmbEstado
+            // errorProviderRlt
             // 
-            this.cmbEstado.FontSize = MetroFramework.MetroComboBoxSize.Tall;
-            this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.ItemHeight = 29;
-            this.cmbEstado.Location = new System.Drawing.Point(367, 110);
-            this.cmbEstado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cmbEstado.Name = "cmbEstado";
-            this.cmbEstado.Size = new System.Drawing.Size(365, 35);
-            this.cmbEstado.TabIndex = 62;
-            this.cmbEstado.UseSelectable = true;
+            this.errorProviderRlt.ContainerControl = this;
             // 
-            // dpDataIni
+            // dtDataIni
             // 
-            this.dpDataIni.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dpDataIni.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.dpDataIni.Location = new System.Drawing.Point(27, 187);
-            this.dpDataIni.Margin = new System.Windows.Forms.Padding(4, 6, 4, 4);
-            this.dpDataIni.Mask = "00/00/0000";
-            this.dpDataIni.Name = "dpDataIni";
-            this.dpDataIni.Size = new System.Drawing.Size(171, 34);
-            this.dpDataIni.TabIndex = 64;
-            this.dpDataIni.ValidatingType = typeof(System.DateTime);
+            this.dtDataIni.Location = new System.Drawing.Point(20, 152);
+            this.dtDataIni.Margin = new System.Windows.Forms.Padding(2);
+            this.dtDataIni.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dtDataIni.Name = "dtDataIni";
+            this.dtDataIni.Size = new System.Drawing.Size(151, 29);
+            this.dtDataIni.TabIndex = 92;
             // 
-            // metroLabel29
+            // dtDataFim
             // 
-            this.metroLabel29.AutoSize = true;
-            this.metroLabel29.Location = new System.Drawing.Point(28, 160);
-            this.metroLabel29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.metroLabel29.Name = "metroLabel29";
-            this.metroLabel29.Size = new System.Drawing.Size(56, 20);
-            this.metroLabel29.TabIndex = 65;
-            this.metroLabel29.Text = "Período";
-            this.metroLabel29.UseCustomBackColor = true;
-            this.metroLabel29.UseCustomForeColor = true;
-            // 
-            // dpDataFim
-            // 
-            this.dpDataFim.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dpDataFim.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.dpDataFim.Location = new System.Drawing.Point(231, 187);
-            this.dpDataFim.Margin = new System.Windows.Forms.Padding(4, 6, 4, 4);
-            this.dpDataFim.Mask = "00/00/0000";
-            this.dpDataFim.Name = "dpDataFim";
-            this.dpDataFim.Size = new System.Drawing.Size(171, 34);
-            this.dpDataFim.TabIndex = 66;
-            this.dpDataFim.ValidatingType = typeof(System.DateTime);
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(205, 199);
-            this.metroLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(16, 20);
-            this.metroLabel2.TabIndex = 67;
-            this.metroLabel2.Text = "à";
-            this.metroLabel2.UseCustomBackColor = true;
-            this.metroLabel2.UseCustomForeColor = true;
+            this.dtDataFim.Location = new System.Drawing.Point(210, 152);
+            this.dtDataFim.Margin = new System.Windows.Forms.Padding(2);
+            this.dtDataFim.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dtDataFim.Name = "dtDataFim";
+            this.dtDataFim.Size = new System.Drawing.Size(151, 29);
+            this.dtDataFim.TabIndex = 93;
             // 
             // frmRelatorios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(759, 304);
-            this.Controls.Add(this.metroLabel2);
-            this.Controls.Add(this.dpDataFim);
-            this.Controls.Add(this.dpDataIni);
-            this.Controls.Add(this.metroLabel29);
-            this.Controls.Add(this.metroLabel37);
-            this.Controls.Add(this.cmbEstado);
-            this.Controls.Add(this.metroLabel1);
+            this.ClientSize = new System.Drawing.Size(403, 247);
+            this.Controls.Add(this.dtDataFim);
+            this.Controls.Add(this.dtDataIni);
             this.Controls.Add(this.txtCPF);
-            this.Margin = new System.Windows.Forms.Padding(5);
+            this.Controls.Add(this.metroLabel26);
+            this.Controls.Add(this.metroLabel2);
+            this.Controls.Add(this.metroLabel29);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmRelatorios";
-            this.Padding = new System.Windows.Forms.Padding(36, 91, 36, 31);
+            this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.Text = "Relatórios";
             this.Controls.SetChildIndex(this.metroLink1, 0);
             this.Controls.SetChildIndex(this.pbLogo, 0);
             this.Controls.SetChildIndex(this.btnSalvar, 0);
             this.Controls.SetChildIndex(this.btnCancelar, 0);
-            this.Controls.SetChildIndex(this.txtCPF, 0);
-            this.Controls.SetChildIndex(this.metroLabel1, 0);
-            this.Controls.SetChildIndex(this.cmbEstado, 0);
-            this.Controls.SetChildIndex(this.metroLabel37, 0);
             this.Controls.SetChildIndex(this.metroLabel29, 0);
-            this.Controls.SetChildIndex(this.dpDataIni, 0);
-            this.Controls.SetChildIndex(this.dpDataFim, 0);
             this.Controls.SetChildIndex(this.metroLabel2, 0);
+            this.Controls.SetChildIndex(this.metroLabel26, 0);
+            this.Controls.SetChildIndex(this.txtCPF, 0);
+            this.Controls.SetChildIndex(this.dtDataIni, 0);
+            this.Controls.SetChildIndex(this.dtDataFim, 0);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderRlt)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroTextBox txtCPF;
-        private MetroFramework.Controls.MetroLabel metroLabel37;
-        private MetroFramework.Controls.MetroComboBox cmbEstado;
-        public System.Windows.Forms.MaskedTextBox dpDataIni;
         private MetroFramework.Controls.MetroLabel metroLabel29;
-        public System.Windows.Forms.MaskedTextBox dpDataFim;
         private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroTextBox txtCPF;
+        private MetroFramework.Controls.MetroLabel metroLabel26;
+        private System.Windows.Forms.ErrorProvider errorProviderRlt;
+        private MetroFramework.Controls.MetroDateTime dtDataFim;
+        private MetroFramework.Controls.MetroDateTime dtDataIni;
     }
 }

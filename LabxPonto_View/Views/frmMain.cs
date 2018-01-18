@@ -102,7 +102,7 @@ namespace LabxPonto_View.Views
 
         private void metroTile1_Click(object sender, System.EventArgs e)
         {
-            frmRelatorios janela = new frmRelatorios();
+            frmRelatorios janela = new frmRelatorios(context);
             janela.Show();
             
         }
