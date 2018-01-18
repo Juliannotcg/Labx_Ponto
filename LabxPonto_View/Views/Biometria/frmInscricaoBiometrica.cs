@@ -61,7 +61,7 @@ namespace LabxPonto_View.Views.Biometria
         private void UpdateStatus()
         {
             // Show number of samples needed.
-            SetStatus(String.Format("Fingerprint samples needed: {0}", Enroller.FeaturesNeeded));
+            SetStatus(String.Format("Quantidade de imagens necessárias: {0}", Enroller.FeaturesNeeded));
         }
 
         private DPFP.Processing.Enrollment Enroller;

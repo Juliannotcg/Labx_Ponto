@@ -97,11 +97,15 @@ namespace LabxPonto_View.Views.Biometria
 
         private void btDigital_Click(object sender, EventArgs e)
         {
-            Enroller = new frmInscricaoBiometrica();
-            Enroller.OnTemplate += this.OnTemplate;
-            Enroller.ShowDialog();
-            byte[] by = Template.Bytes;
-            imgDigital.Image = Enroller.image;
+            if (validar())
+            {
+
+                Enroller = new frmInscricaoBiometrica();
+                Enroller.OnTemplate += this.OnTemplate;
+                Enroller.ShowDialog();
+                byte[] by = Template.Bytes;
+                imgDigital.Image = Enroller.image;
+            }
 
         }
 
@@ -128,6 +132,11 @@ namespace LabxPonto_View.Views.Biometria
                         {
                             imgFoto.Image =  preencherImagemByte(funcionario.Imagem.Arquivo);
                         }
+
+                    if(funcionario.ImagemDigital!=null)
+                    {
+                        imgDigital.Image = preencherImagemByte(funcionario.ImagemDigital); 
+                    }
                 }
 
             }
@@ -186,6 +195,7 @@ namespace LabxPonto_View.Views.Biometria
             if (validar())
             {
                 funcionario.Digital = Template.Bytes;
+                funcionario.ImagemDigital = ConverterImagemParaBytes(imgDigital.Image);
                 FuncionarioService servicoFuncionario = new FuncionarioService(context);
                 if(servicoFuncionario.Update(funcionario))
                 {
@@ -194,6 +204,30 @@ namespace LabxPonto_View.Views.Biometria
                 }
 
             }
+        }
+
+        public byte[] ConverterImagemParaBytes(Image imageIn)
+        {
+            MemoryStream ms = new MemoryStream();
+
+            imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Gif);
+
+            return ms.ToArray();
+        }
+
+        private void imgDigital_LoadCompleted(object sender, AsyncCompletedEventArgs e)
+        {
+
+        }
+
+        private void metroTile1_Click(object sender, EventArgs e)
+        {
+            frmVerificarBiometrica Verifier = new frmVerificarBiometrica();
+            DPFP.Template template = new Template();
+            template.DeSerialize(funcionario.Digital);
+            Verifier.Verify(template);
+
+            
         }
     }
 }
