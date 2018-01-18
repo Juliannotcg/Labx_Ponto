@@ -45,18 +45,20 @@
             // 
             this.btnCancelar.Location = new System.Drawing.Point(287, 193);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnSalvar
             // 
             this.btnSalvar.Location = new System.Drawing.Point(189, 193);
             this.btnSalvar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSalvar.TabIndex = 3;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // pbLogo
             // 
             this.pbLogo.Location = new System.Drawing.Point(5, 212);
-            this.pbLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbLogo.Margin = new System.Windows.Forms.Padding(2);
             // 
             // metroLabel29
             // 
@@ -100,7 +102,7 @@
             this.txtCPF.Lines = new string[0];
             this.txtCPF.Location = new System.Drawing.Point(20, 89);
             this.txtCPF.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCPF.MaxLength = 32767;
+            this.txtCPF.MaxLength = 11;
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.PasswordChar = '\0';
             this.txtCPF.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -110,10 +112,11 @@
             this.txtCPF.ShortcutsEnabled = true;
             this.txtCPF.ShowButton = true;
             this.txtCPF.Size = new System.Drawing.Size(230, 29);
-            this.txtCPF.TabIndex = 90;
+            this.txtCPF.TabIndex = 0;
             this.txtCPF.UseSelectable = true;
             this.txtCPF.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtCPF.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtCPF.Leave += new System.EventHandler(this.txtCPF_Leave);
             // 
             // metroLabel26
             // 
@@ -137,7 +140,7 @@
             this.dtDataIni.MinimumSize = new System.Drawing.Size(0, 29);
             this.dtDataIni.Name = "dtDataIni";
             this.dtDataIni.Size = new System.Drawing.Size(151, 29);
-            this.dtDataIni.TabIndex = 92;
+            this.dtDataIni.TabIndex = 1;
             // 
             // dtDataFim
             // 
@@ -146,7 +149,7 @@
             this.dtDataFim.MinimumSize = new System.Drawing.Size(0, 29);
             this.dtDataFim.Name = "dtDataFim";
             this.dtDataFim.Size = new System.Drawing.Size(151, 29);
-            this.dtDataFim.TabIndex = 93;
+            this.dtDataFim.TabIndex = 2;
             // 
             // frmRelatorios
             // 
@@ -159,7 +162,7 @@
             this.Controls.Add(this.metroLabel26);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel29);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmRelatorios";
             this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.Text = "Relatórios";
