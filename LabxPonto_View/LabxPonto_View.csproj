@@ -171,6 +171,7 @@
     <Compile Include="Enums\Pais.cs" />
     <Compile Include="Enums\TipoHorario.cs" />
     <Compile Include="ModelRlt\FuncaoRlt.cs" />
+    <Compile Include="ModelRlt\FuncionarioRlt.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -258,6 +259,12 @@
     </Compile>
     <Compile Include="Views\frmLerArquivo.Designer.cs">
       <DependentUpon>frmLerArquivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Funcionarios\frmRltFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Funcionarios\frmRltFuncionario.Designer.cs">
+      <DependentUpon>frmRltFuncionario.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Funções\frmRltFuncao.cs">
       <SubType>Form</SubType>
@@ -380,6 +387,10 @@
     <EmbeddedResource Include="Views\Funcionarios\frmFuncionarios.resx">
       <DependentUpon>frmFuncionarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Funcionarios\frmRltFuncionario.resx">
+      <DependentUpon>frmRltFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Funcionarios\ReportFuncionario.rdlc" />
     <EmbeddedResource Include="Views\Funções\frmRltFuncao.resx">
       <DependentUpon>frmRltFuncao.cs</DependentUpon>
     </EmbeddedResource>
@@ -419,6 +430,7 @@
     <None Include="Properties\DataSources\LabxPonto_Dao.Model.ModelRelatorio.FuncaoRlt.datasource" />
     <None Include="Properties\DataSources\LabxPonto_Dao.Model.ModelRelatorio.RltFuncionarioPorEmpresa.datasource" />
     <None Include="Properties\DataSources\LabxPonto_View.ModelRlt.FuncaoRlt.datasource" />
+    <None Include="Properties\DataSources\LabxPonto_View.ModelRlt.FuncionarioRlt.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

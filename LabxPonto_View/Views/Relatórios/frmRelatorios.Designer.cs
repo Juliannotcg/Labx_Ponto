@@ -32,9 +32,9 @@
             this.txtCPF = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel37 = new MetroFramework.Controls.MetroLabel();
             this.cmbEstado = new MetroFramework.Controls.MetroComboBox();
-            this.txtDataNascimento = new System.Windows.Forms.MaskedTextBox();
+            this.dpDataIni = new System.Windows.Forms.MaskedTextBox();
             this.metroLabel29 = new MetroFramework.Controls.MetroLabel();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.dpDataFim = new System.Windows.Forms.MaskedTextBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
@@ -72,10 +72,10 @@
             // 
             // 
             this.txtCPF.CustomButton.Image = null;
-            this.txtCPF.CustomButton.Location = new System.Drawing.Point(359, 1);
+            this.txtCPF.CustomButton.Location = new System.Drawing.Point(269, 1);
             this.txtCPF.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCPF.CustomButton.Name = "";
-            this.txtCPF.CustomButton.Size = new System.Drawing.Size(55, 50);
+            this.txtCPF.CustomButton.Size = new System.Drawing.Size(41, 41);
             this.txtCPF.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtCPF.CustomButton.TabIndex = 1;
             this.txtCPF.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -123,17 +123,17 @@
             this.cmbEstado.TabIndex = 62;
             this.cmbEstado.UseSelectable = true;
             // 
-            // txtDataNascimento
+            // dpDataIni
             // 
-            this.txtDataNascimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDataNascimento.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.txtDataNascimento.Location = new System.Drawing.Point(25, 187);
-            this.txtDataNascimento.Margin = new System.Windows.Forms.Padding(4, 6, 4, 4);
-            this.txtDataNascimento.Mask = "00/00/0000";
-            this.txtDataNascimento.Name = "txtDataNascimento";
-            this.txtDataNascimento.Size = new System.Drawing.Size(171, 34);
-            this.txtDataNascimento.TabIndex = 64;
-            this.txtDataNascimento.ValidatingType = typeof(System.DateTime);
+            this.dpDataIni.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dpDataIni.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.dpDataIni.Location = new System.Drawing.Point(27, 187);
+            this.dpDataIni.Margin = new System.Windows.Forms.Padding(4, 6, 4, 4);
+            this.dpDataIni.Mask = "00/00/0000";
+            this.dpDataIni.Name = "dpDataIni";
+            this.dpDataIni.Size = new System.Drawing.Size(171, 34);
+            this.dpDataIni.TabIndex = 64;
+            this.dpDataIni.ValidatingType = typeof(System.DateTime);
             // 
             // metroLabel29
             // 
@@ -147,17 +147,17 @@
             this.metroLabel29.UseCustomBackColor = true;
             this.metroLabel29.UseCustomForeColor = true;
             // 
-            // maskedTextBox1
+            // dpDataFim
             // 
-            this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox1.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.maskedTextBox1.Location = new System.Drawing.Point(231, 187);
-            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 4);
-            this.maskedTextBox1.Mask = "00/00/0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(171, 34);
-            this.maskedTextBox1.TabIndex = 66;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.dpDataFim.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dpDataFim.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.dpDataFim.Location = new System.Drawing.Point(231, 187);
+            this.dpDataFim.Margin = new System.Windows.Forms.Padding(4, 6, 4, 4);
+            this.dpDataFim.Mask = "00/00/0000";
+            this.dpDataFim.Name = "dpDataFim";
+            this.dpDataFim.Size = new System.Drawing.Size(171, 34);
+            this.dpDataFim.TabIndex = 66;
+            this.dpDataFim.ValidatingType = typeof(System.DateTime);
             // 
             // metroLabel2
             // 
@@ -177,17 +177,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(759, 304);
             this.Controls.Add(this.metroLabel2);
-            this.Controls.Add(this.maskedTextBox1);
-            this.Controls.Add(this.txtDataNascimento);
+            this.Controls.Add(this.dpDataFim);
+            this.Controls.Add(this.dpDataIni);
             this.Controls.Add(this.metroLabel29);
             this.Controls.Add(this.metroLabel37);
             this.Controls.Add(this.cmbEstado);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.txtCPF);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmRelatorios";
             this.Padding = new System.Windows.Forms.Padding(36, 91, 36, 31);
             this.Text = "Relatórios";
+            this.Controls.SetChildIndex(this.metroLink1, 0);
             this.Controls.SetChildIndex(this.pbLogo, 0);
             this.Controls.SetChildIndex(this.btnSalvar, 0);
             this.Controls.SetChildIndex(this.btnCancelar, 0);
@@ -196,8 +197,8 @@
             this.Controls.SetChildIndex(this.cmbEstado, 0);
             this.Controls.SetChildIndex(this.metroLabel37, 0);
             this.Controls.SetChildIndex(this.metroLabel29, 0);
-            this.Controls.SetChildIndex(this.txtDataNascimento, 0);
-            this.Controls.SetChildIndex(this.maskedTextBox1, 0);
+            this.Controls.SetChildIndex(this.dpDataIni, 0);
+            this.Controls.SetChildIndex(this.dpDataFim, 0);
             this.Controls.SetChildIndex(this.metroLabel2, 0);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
@@ -212,9 +213,9 @@
         private MetroFramework.Controls.MetroTextBox txtCPF;
         private MetroFramework.Controls.MetroLabel metroLabel37;
         private MetroFramework.Controls.MetroComboBox cmbEstado;
-        public System.Windows.Forms.MaskedTextBox txtDataNascimento;
+        public System.Windows.Forms.MaskedTextBox dpDataIni;
         private MetroFramework.Controls.MetroLabel metroLabel29;
-        public System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        public System.Windows.Forms.MaskedTextBox dpDataFim;
         private MetroFramework.Controls.MetroLabel metroLabel2;
     }
 }

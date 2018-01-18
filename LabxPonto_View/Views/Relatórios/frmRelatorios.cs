@@ -1,4 +1,5 @@
 ﻿using LabxPonto_View.Views.Base;
+using LabxPonto_View.Views.Funcionarios;
 using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
@@ -31,7 +32,13 @@ namespace LabxPonto_View.Views
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            MetroFramework.MetroMessageBox.Show(this, "Funcionalidade em desenvolvimento", "Atenção!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Hand);
+            frmRltFuncionario janela = new frmRltFuncionario();
+            janela.Show();
+        }
+
+        public void Confirmar()
+        {
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
