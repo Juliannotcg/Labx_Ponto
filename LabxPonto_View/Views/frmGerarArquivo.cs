@@ -19,6 +19,9 @@ namespace LabxPonto_View.Views
     public partial class frmGerarArquivo : MetroForm
     {
         private AppDataContext context;
+        private HorarioExpediente horarioExpediente;
+        private Funcionario funcionario;
+        private HorarioService horarioService;
 
         public frmGerarArquivo(AppDataContext con )
         {
@@ -33,8 +36,8 @@ namespace LabxPonto_View.Views
 
         public void Confirmar()
         {
-            HorarioService horarioService = new HorarioService(context);
-            HorarioExpediente horarioExpediente = new HorarioExpediente();
+            horarioService = new HorarioService(context);
+            horarioExpediente = new HorarioExpediente();
 
             DateTime dateIni = dtDataIni.Value;
             DateTime dateFim = dtDataFim.Value;
@@ -65,24 +68,14 @@ namespace LabxPonto_View.Views
 
             for (int i = 0; i < tabela.Rows.Count; i++)
             {
-                //xml.WriteAttributeString("CPF", tabela.Rows[i]["CPF"].ToString());
 
-                #region Dados do Funcionario
-
-                xml.WriteStartElement("DadosFuncionario");
-                xml.WriteElementString("Nome", tabela.Rows[i]["NomeFuncionario"].ToString());
-                xml.WriteElementString("CPF", tabela.Rows[i]["CPF"].ToString());
-                xml.WriteEndElement();
-
-                #endregion
-                
+                xml.WriteElementString("Id", tabela.Rows[i]["Id"].ToString());
                 xml.WriteStartElement("Horarios");
                 xml.WriteElementString("Data", tabela.Rows[i]["Data"].ToString());
                 xml.WriteElementString("Entrada", tabela.Rows[i]["Entrada"].ToString());
                 xml.WriteElementString("Saida", tabela.Rows[i]["Saida"].ToString());
                 xml.WriteEndElement();
 
-                //xml.WriteFullEndElement();
             }
 
             //escreve o XML para o arquivo e fecha o escritor

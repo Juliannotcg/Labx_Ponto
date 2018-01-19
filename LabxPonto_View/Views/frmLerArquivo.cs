@@ -13,6 +13,8 @@ namespace LabxPonto_View.Views
     {
         private AppDataContext context;
         private HorarioService servico;
+        private Funcionario funcionario;
+        private HorarioExpediente horarioExpediente;
 
         public frmLerArquivo(AppDataContext con)
         {
@@ -39,25 +41,18 @@ namespace LabxPonto_View.Views
             servico = new HorarioService(context);
 
             //TO DO
-            HorarioExpediente horarioExpediente = new HorarioExpediente();
-            Funcionario funcionario = new Funcionario();
+            horarioExpediente = new HorarioExpediente();
 
             XmlDocument doc = new XmlDocument();
             doc.Load(caminho);
 
-            XmlNodeList xmlFuncionario = doc.GetElementsByTagName("DadosFuncionario");
-
-            for (int i = 0; i < xmlFuncionario.Count; i++)
-            {
-                funcionario.Nome = xmlFuncionario[i]["Nome"].InnerText;
-                funcionario.CPF = xmlFuncionario[i]["CPF"].InnerText;
-            }
-
             XmlNodeList xmlHorarios = doc.GetElementsByTagName("Horarios");
 
             //Usando for para imprimir na tela
+
             for (int x = 0; x < xmlHorarios.Count; x++)
             {
+                horarioExpediente.Funcionario.Id = int.Parse(xmlHorarios[x]["Id"].InnerText);
                 horarioExpediente.Data = Convert.ToDateTime(xmlHorarios[x]["Data"].InnerText);
                 horarioExpediente.Entrada = Convert.ToDateTime(xmlHorarios[x]["Entrada"].InnerText);
                 horarioExpediente.Saida = Convert.ToDateTime(xmlHorarios[x]["Saida"].InnerText);

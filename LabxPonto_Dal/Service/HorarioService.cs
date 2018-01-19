@@ -15,6 +15,7 @@ namespace LabxPonto_Dao.Service
     {
         private AppDataContext Context;
         private HorarioExpediente horario;
+        private Funcionario funcionario;
 
         public HorarioService(AppDataContext con)
         {
@@ -32,8 +33,6 @@ namespace LabxPonto_Dao.Service
         {
             horario = new HorarioExpediente();
 
-            //using (var context = new AppDataContext())
-            //{
                 var results = Context.HorariosExpediente
                .Where(x => x.Data >= dataIni &&  x.Data <= dataFim)
                .Include("Funcionario")
@@ -42,14 +41,13 @@ namespace LabxPonto_Dao.Service
                    p.Data,
                    p.Entrada,
                    p.Saida,
-                   Funcionario = p.Funcionario
+                   Funcionario = p.Funcionario.Id
                })
                .AsEnumerable()
                .ToList();
 
                 DataTable tabela = new DataTable();
-                tabela.Columns.Add("NomeFuncionario", typeof(string));
-                tabela.Columns.Add("CPF", typeof(string));
+                tabela.Columns.Add("Id", typeof(int));
                 tabela.Columns.Add("Data", typeof(DateTime));
                 tabela.Columns.Add("Entrada", typeof(DateTime));
                 tabela.Columns.Add("Saida", typeof(DateTime));
@@ -57,8 +55,7 @@ namespace LabxPonto_Dao.Service
                 foreach (var item in results)
                 {
                     DataRow linha = tabela.NewRow();
-                    linha["NomeFuncionario"] = item.Funcionario.Nome;
-                    linha["CPF"] = item.Funcionario.CPF;
+                    linha["Id"] = item.Funcionario;
                     linha["Data"] = item.Data;
                     linha["Entrada"] = item.Entrada;
                     linha["Saida"] = item.Saida;
@@ -66,7 +63,7 @@ namespace LabxPonto_Dao.Service
                 }
 
                 return (tabela);
-            //}
+            
         }
 
 

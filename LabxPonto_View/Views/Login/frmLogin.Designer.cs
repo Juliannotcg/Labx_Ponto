@@ -44,7 +44,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::LabxPonto_View.Properties.Resources.LogoEmpresa;
+            //this.pictureBox1.Image = global::LabxPonto_View.Properties.Resources.LogoEmpresa;
             this.pictureBox1.Location = new System.Drawing.Point(9, 11);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
