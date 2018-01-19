@@ -1,5 +1,6 @@
 ﻿using LabxPonto_Dao.Data.Context;
 using LabxPonto_Dao.Model;
+using LabxPonto_Dao.Model.ModelRelatorio;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -107,6 +108,23 @@ namespace LabxPonto_Dao.Service
                 return false;
             else
                 return true;
+        }
+
+        public List<RltFuncao> GetRelatorio()
+        {
+            var results = Context.Funcoes
+                .Include("Departamento")
+                .Select(p => new RltFuncao()
+                {
+                    IdDepartamento = p.Departamento.Id,
+                    NomeFuncao = p.NomeFuncao,
+                    Descricao = p.Descricao,
+                    Departamento = p.Departamento.NomeDepartamento
+                })
+                .AsEnumerable()
+                .ToList();
+
+            return (results);
         }
     }
 }

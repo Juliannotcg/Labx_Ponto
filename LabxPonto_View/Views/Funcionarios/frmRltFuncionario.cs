@@ -1,14 +1,6 @@
 ﻿using LabxPonto_Dao.Data.Context;
 using LabxPonto_Dao.Service;
-using LabxPonto_View.ModelRlt;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LabxPonto_View.Views.Funcionarios
@@ -18,9 +10,13 @@ namespace LabxPonto_View.Views.Funcionarios
         private FuncionarioService service;
         private AppDataContext context;
         private string CPF = "";
+        private DateTime DataIni;
+        private DateTime DataFim;
 
-        public frmRltFuncionario(AppDataContext con, string cpf)
+        public frmRltFuncionario(AppDataContext con, string cpf, DateTime dataIni, DateTime dataFim)
         {
+            DataIni = dataIni;
+            DataFim = dataFim;
             CPF = cpf;
             context = con;
             InitializeComponent();
@@ -30,7 +26,7 @@ namespace LabxPonto_View.Views.Funcionarios
         {
             service = new FuncionarioService(context);
 
-            var resposta = service.GetRelatorio(CPF);
+            var resposta = service.GetRelatorio(CPF, DataIni, DataFim);
 
             var dataSource = new Microsoft.Reporting.WinForms.ReportDataSource("DataSetFuncionario", resposta);
             this.reportViewerFuncionario.LocalReport.DataSources.Clear();

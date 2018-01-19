@@ -14,15 +14,23 @@ namespace LabxPonto_Dao.Service
     public class HorarioService
     {
         private AppDataContext Context;
+        private HorarioExpediente horario;
 
         public HorarioService(AppDataContext con)
         {
             Context = con;
         }
+        public bool Insert(HorarioExpediente horario)
+        {
+            Context.HorariosExpediente.Add(horario);
+            Context.SaveChanges();
+            return true;
+        }
+
 
         public DataTable GetHorarioXml(DateTime dataIni, DateTime dataFim)
         {
-            HorarioExpediente horarioExpediente = new HorarioExpediente();
+            horario = new HorarioExpediente();
 
             //using (var context = new AppDataContext())
             //{

@@ -1,43 +1,29 @@
 ﻿using LabxPonto_Dao.Data.Context;
-using LabxPonto_View.ModelRlt;
-using MetroFramework.Forms;
+using LabxPonto_Dao.Service;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LabxPonto_View.Views.Funções
 {
     public partial class frmRltFuncao : Form
     {
-        public frmRltFuncao()
+        private AppDataContext context;
+        private FuncaoService servico;
+        public frmRltFuncao(AppDataContext con)
         {
+            context = con;
             InitializeComponent();
         }
 
         private void frmRltFuncao_Load_1(object sender, EventArgs e)
         {
-            using (var context = new AppDataContext())
-            {
-                var resposta = (from c in context.Funcoes
-                                select new FuncaoRlt()
-                                {
-                                    IdDepartamento = c.Departamento.Id,
-                                    NomeFuncao = c.NomeFuncao,
-                                    Descricao = c.Descricao,
-                                    Departamento = c.Departamento.NomeDepartamento
-                                }).ToArray();
+            servico = new FuncaoService(context);
 
-                var dataSource = new Microsoft.Reporting.WinForms.ReportDataSource("DataSetFuncao", resposta);
-                this.reportViewerFuncao.LocalReport.DataSources.Clear();
-                this.reportViewerFuncao.LocalReport.DataSources.Add(dataSource);
+            var resposta = servico.GetRelatorio();
 
-            }
+            var dataSource = new Microsoft.Reporting.WinForms.ReportDataSource("DataSetFuncao", resposta);
+            this.reportViewerFuncao.LocalReport.DataSources.Clear();
+            this.reportViewerFuncao.LocalReport.DataSources.Add(dataSource);
             this.reportViewerFuncao.RefreshReport();
         }
     }

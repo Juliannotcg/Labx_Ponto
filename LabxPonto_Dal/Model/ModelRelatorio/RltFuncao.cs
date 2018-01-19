@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LabxPonto_View.ModelRlt
+namespace LabxPonto_Dao.Model.ModelRelatorio
 {
-    public class FuncaoRlt
+    public class RltFuncao
     {
         public int IdDepartamento { get; set; }
         public string Departamento { get; set; }

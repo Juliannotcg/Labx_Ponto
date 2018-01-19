@@ -170,7 +170,6 @@
     <Compile Include="Enums\Estados.cs" />
     <Compile Include="Enums\Pais.cs" />
     <Compile Include="Enums\TipoHorario.cs" />
-    <Compile Include="ModelRlt\FuncaoRlt.cs" />
     <Compile Include="Properties\Resources1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -492,6 +491,13 @@
     <None Include="Resources\if_Touch_ID_363335.png" />
     <None Include="Resources\printer.png" />
     <None Include="Resources\printer %281%29.png" />
+    <None Include="Resources\newspaper.png" />
+    <None Include="Resources\turn-off.png" />
+    <None Include="Resources\icon.png" />
+    <None Include="Resources\icon %281%29.png" />
+    <None Include="Resources\user-list.png" />
+    <None Include="Resources\folders.png" />
+    <None Include="Resources\power.png" />
     <Content Include="Utils\DirectX.Capture.dll" />
     <Content Include="Utils\DShowNET.dll" />
   </ItemGroup>

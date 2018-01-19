@@ -37,7 +37,6 @@
             // 
             // FuncaoRltBindingSource
             // 
-            this.FuncaoRltBindingSource.DataSource = typeof(LabxPonto_View.ModelRlt.FuncaoRlt);
             // 
             // reportViewerFuncao
             // 
@@ -60,7 +59,9 @@
             this.Controls.Add(this.reportViewerFuncao);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmRltFuncao";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Relatório";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmRltFuncao_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.FuncaoRltBindingSource)).EndInit();
             this.ResumeLayout(false);

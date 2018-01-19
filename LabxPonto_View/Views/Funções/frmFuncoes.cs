@@ -81,9 +81,9 @@ namespace LabxPonto_View.Views.Funções
             preencherGrid();
         }
 
-        private void btnImprimir_Click(object sender, EventArgs e)
+        private void btnImprimir_Click_1(object sender, EventArgs e)
         {
-            frmRltFuncao janela = new frmRltFuncao();
+            frmRltFuncao janela = new frmRltFuncao(context);
             janela.Show();
         }
     }

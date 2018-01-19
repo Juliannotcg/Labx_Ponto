@@ -184,7 +184,7 @@ namespace LabxPonto_View.Views
 
         private void btnLerArquivo_Click(object sender, System.EventArgs e)
         {
-            frmLerArquivo janela = new frmLerArquivo();
+            frmLerArquivo janela = new frmLerArquivo(context);
             janela.Show();
         }
     }

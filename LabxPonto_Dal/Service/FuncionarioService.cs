@@ -1,6 +1,7 @@
 ﻿using LabxPonto_Dao.Data.Context;
 using LabxPonto_Dao.Model;
 using LabxPonto_Dao.Model.ModelRelatorio;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -165,16 +166,19 @@ namespace LabxPonto_Dao.Service
             return true;
         }
 
-        public List<RltFuncionario> GetRelatorio(string CPF)
+        public List<RltFuncionario> GetRelatorio(string CPF, DateTime DataIni, DateTime DataFim)
         {
             var results = Context.HorariosExpediente
                 .Include("Funcionario")
-                .Where(p => p.Funcionario.CPF == CPF)
+                .Where(p => p.Funcionario.CPF == CPF &&
+                p.Data >= DataIni &&
+                p.Data <= DataFim)
                 .Select(p => new RltFuncionario()
                 {
 
                     IdFuncionario = p.Funcionario.Id,
                     Funcionario = p.Funcionario.Nome,
+                    CPF = p.Funcionario.CPF,
                     Data = p.Data,
                     Entrada = p.Entrada,
                     Saida = p.Saida

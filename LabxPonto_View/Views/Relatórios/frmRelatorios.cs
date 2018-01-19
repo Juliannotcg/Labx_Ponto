@@ -32,8 +32,8 @@ namespace LabxPonto_View.Views
             if (String.IsNullOrEmpty(txtCPF.Text))
                 errorProviderRlt.SetError(txtCPF, "Informe o número do CPF.");
 
-            if (dtDataIni.Value < dtDataFim.Value)
-                errorProviderRlt.SetError(dtDataFim, "A data inicial não pode ser menor que a data inicial.");
+            if (dtDataIni.Value > dtDataFim.Value)
+                errorProviderRlt.SetError(dtDataFim, "A data inicial não pode ser maior que a data final.");
 
             return ((errorProviderRlt.GetError(txtCPF) == "") &&
                 (errorProviderRlt.GetError(dtDataFim) == ""));
@@ -43,8 +43,15 @@ namespace LabxPonto_View.Views
         {
             txtCPF.Text = "";
         }
+        public void limparErros()
+        {
+            errorProviderRlt.SetError(txtCPF, "");
+            errorProviderRlt.SetError(dtDataFim, "");
+        }
+
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            limparErros();
             Confirmar();
         }
 
@@ -52,10 +59,9 @@ namespace LabxPonto_View.Views
         {
             if (Validar())
             {
-                frmRltFuncionario janela = new frmRltFuncionario(context, txtCPF.Text);
+                frmRltFuncionario janela = new frmRltFuncionario(context, txtCPF.Text, dtDataIni.Value, dtDataFim.Value);
                 janela.Show();
             }
-            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -63,30 +69,33 @@ namespace LabxPonto_View.Views
             this.Dispose();
         }
 
-        private void txtCPF_Leave(object sender, EventArgs e)
+        private void txtCPF_Leave_1(object sender, EventArgs e)
         {
             servico = new FuncionarioService(context);
-
             bool CPFexiste = false;
 
-            if (txtCPF.Text.Length == 11)
+            limparErros();
+            if (Validar())
             {
-                long CPF = Convert.ToInt64(txtCPF.Text);
-                string CPFFormatado = String.Format(@"{0:000\.000\.000\-00}", CPF);
-                txtCPF.Text = CPFFormatado;
-            }
-           
-            if (!String.IsNullOrEmpty(txtCPF.Text))
-            {
-                if (servico.GetFuncionarioCPF(txtCPF.Text) != null)
-                    CPFexiste = true;
-            }
-            if (!CPFexiste)
-            {
-                MetroFramework.MetroMessageBox.Show(this, "Esse CPF não existe cadastrado no sistema no sistema.", "Atenção!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Hand);
-                LimparTela();
-                txtCPF.Focus();
-                return;
+                if (txtCPF.Text.Length == 11)
+                {
+                    long CPF = Convert.ToInt64(txtCPF.Text);
+                    string CPFFormatado = String.Format(@"{0:000\.000\.000\-00}", CPF);
+                    txtCPF.Text = CPFFormatado;
+                }
+
+                if (!String.IsNullOrEmpty(txtCPF.Text))
+                {
+                    if (servico.GetFuncionarioCPF(txtCPF.Text) != null)
+                        CPFexiste = true;
+                }
+                if (!CPFexiste)
+                {
+                    MetroFramework.MetroMessageBox.Show(this, "Esse CPF não existe cadastrado no sistema no sistema.", "Atenção!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Hand);
+                    LimparTela();
+                    txtCPF.Focus();
+                    return;
+                }
             }
         }
     }

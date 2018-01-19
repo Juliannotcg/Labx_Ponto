@@ -61,11 +61,11 @@ namespace LabxPonto_View.Views
         public bool gerarXml(DataTable tabela, string caminho)
         {
             XmlTextWriter xml = new XmlTextWriter(caminho, System.Text.Encoding.GetEncoding("iso-8859-1"));
+            xml.WriteStartElement("Funcionario");
 
             for (int i = 0; i < tabela.Rows.Count; i++)
             {
-                xml.WriteStartElement("Funcionario");
-                xml.WriteAttributeString("CPF", tabela.Rows[i]["CPF"].ToString());
+                //xml.WriteAttributeString("CPF", tabela.Rows[i]["CPF"].ToString());
 
                 #region Dados do Funcionario
 
@@ -82,15 +82,13 @@ namespace LabxPonto_View.Views
                 xml.WriteElementString("Saida", tabela.Rows[i]["Saida"].ToString());
                 xml.WriteEndElement();
 
-                xml.WriteFullEndElement();
+                //xml.WriteFullEndElement();
             }
 
             //escreve o XML para o arquivo e fecha o escritor
             xml.Close();
             XmlDocument doc = new XmlDocument();
             doc.XmlResolver = null;
-            doc.Load(caminho);
-
             return (true);
         }
 

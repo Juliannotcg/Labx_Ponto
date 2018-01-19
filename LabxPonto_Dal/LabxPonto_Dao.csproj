@@ -149,7 +149,7 @@
     <Compile Include="Model\Funcionario.cs" />
     <Compile Include="Model\HorarioExpediente.cs" />
     <Compile Include="Model\Imagem.cs" />
-    <Compile Include="Model\ModelRelatorio\FuncionarioRlt.cs" />
+    <Compile Include="Model\ModelRelatorio\RltFuncao.cs" />
     <Compile Include="Model\ModelRelatorio\RltFuncionario.cs" />
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
