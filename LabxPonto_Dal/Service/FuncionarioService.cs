@@ -15,6 +15,11 @@ namespace LabxPonto_Dao.Service
             Context = con;
         }
 
+        public List<Funcionario> GetFuncionarios()
+        {
+            return Context.Funcionarios.Include("Empresa").Include("Funcao").Include("Funcao.Departamento").Include("Imagem").ToList();
+        }
+
         public Funcionario GetFuncionario(string CPF)
         {
             Funcionario funcionario = new Funcionario();
@@ -52,6 +57,13 @@ namespace LabxPonto_Dao.Service
         {
             Funcionario funcionario = new Funcionario();
             funcionario = Context.Funcionarios.Include("Empresa").Include("Funcao").Include("Funcao.Departamento").Include("Imagem").Where(x => x.CPF == CPF).FirstOrDefault();
+            return (funcionario);
+        }
+
+        public Funcionario GetFuncionarioDigital(byte[] digital)
+        {
+            Funcionario funcionario = new Funcionario();
+            funcionario = Context.Funcionarios.Include("Empresa").Include("Funcao").Include("Funcao.Departamento").Include("Imagem").Where(x => x.Digital == digital).FirstOrDefault();
             return (funcionario);
         }
 

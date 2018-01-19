@@ -57,6 +57,7 @@
             this.lbUsuario = new System.Windows.Forms.Label();
             this.lbVersao = new System.Windows.Forms.Label();
             this.iconeNotificacao = new System.Windows.Forms.NotifyIcon(this.components);
+            this.bPonto = new MetroFramework.Controls.MetroTile();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
             this.SuspendLayout();
@@ -298,7 +299,7 @@
             this.btnHorario.Location = new System.Drawing.Point(455, 561);
             this.btnHorario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHorario.Name = "btnHorario";
-            this.btnHorario.Size = new System.Drawing.Size(175, 151);
+            this.btnHorario.Size = new System.Drawing.Size(175, 75);
             this.btnHorario.TabIndex = 19;
             this.btnHorario.Text = "Horários";
             this.btnHorario.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
@@ -407,12 +408,30 @@
             this.iconeNotificacao.Text = "E-Ponto";
             this.iconeNotificacao.Visible = true;
             // 
+            // bPonto
+            // 
+            this.bPonto.ActiveControl = null;
+            this.bPonto.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.bPonto.Location = new System.Drawing.Point(455, 640);
+            this.bPonto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bPonto.Name = "bPonto";
+            this.bPonto.Size = new System.Drawing.Size(175, 72);
+            this.bPonto.TabIndex = 26;
+            this.bPonto.Text = "Ponto";
+            this.bPonto.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.metroToolTip1.SetToolTip(this.bPonto, "Gerar arquivo");
+            this.bPonto.UseCustomBackColor = true;
+            this.bPonto.UseSelectable = true;
+            this.bPonto.UseTileImage = true;
+            this.bPonto.Click += new System.EventHandler(this.bPonto_Click);
+            // 
             // frmMain
             // 
             this.ApplyImageInvert = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1040, 752);
+            this.Controls.Add(this.bPonto);
             this.Controls.Add(this.btnSuporte);
             this.Controls.Add(this.lbVersao);
             this.Controls.Add(this.lbUsuario);
@@ -479,5 +498,6 @@
         private System.Windows.Forms.Label lbVersao;
         public MetroFramework.Controls.MetroTile btnSuporte;
         private System.Windows.Forms.NotifyIcon iconeNotificacao;
+        public MetroFramework.Controls.MetroTile bPonto;
     }
 }
