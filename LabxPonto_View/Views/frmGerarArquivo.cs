@@ -68,14 +68,14 @@ namespace LabxPonto_View.Views
 
             for (int i = 0; i < tabela.Rows.Count; i++)
             {
-
-                xml.WriteElementString("Id", tabela.Rows[i]["Id"].ToString());
                 xml.WriteStartElement("Horarios");
+                xml.WriteElementString("IdFuncionario", tabela.Rows[i]["IdFuncionario"].ToString());
+                xml.WriteElementString("NomeFuncionario", tabela.Rows[i]["NomeFuncionario"].ToString());
+                xml.WriteElementString("CPFFuncionario", tabela.Rows[i]["CPFFuncionario"].ToString());
                 xml.WriteElementString("Data", tabela.Rows[i]["Data"].ToString());
                 xml.WriteElementString("Entrada", tabela.Rows[i]["Entrada"].ToString());
                 xml.WriteElementString("Saida", tabela.Rows[i]["Saida"].ToString());
                 xml.WriteEndElement();
-
             }
 
             //escreve o XML para o arquivo e fecha o escritor

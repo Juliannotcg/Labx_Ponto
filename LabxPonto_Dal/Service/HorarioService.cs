@@ -28,7 +28,6 @@ namespace LabxPonto_Dao.Service
             return true;
         }
 
-
         public DataTable GetHorarioXml(DateTime dataIni, DateTime dataFim)
         {
             horario = new HorarioExpediente();
@@ -41,13 +40,17 @@ namespace LabxPonto_Dao.Service
                    p.Data,
                    p.Entrada,
                    p.Saida,
-                   Funcionario = p.Funcionario.Id
+                   NomeFuncionario = p.Funcionario.Nome,
+                   IdFuncionario = p.Funcionario.Id,
+                   CPFFuncionario = p.Funcionario.CPF,
                })
                .AsEnumerable()
                .ToList();
 
                 DataTable tabela = new DataTable();
-                tabela.Columns.Add("Id", typeof(int));
+                tabela.Columns.Add("IdFuncionario", typeof(int));
+                tabela.Columns.Add("NomeFuncionario", typeof(string));
+                tabela.Columns.Add("CPFFuncionario", typeof(string));
                 tabela.Columns.Add("Data", typeof(DateTime));
                 tabela.Columns.Add("Entrada", typeof(DateTime));
                 tabela.Columns.Add("Saida", typeof(DateTime));
@@ -55,7 +58,9 @@ namespace LabxPonto_Dao.Service
                 foreach (var item in results)
                 {
                     DataRow linha = tabela.NewRow();
-                    linha["Id"] = item.Funcionario;
+                    linha["IdFuncionario"] = item.IdFuncionario;
+                    linha["NomeFuncionario"] = item.NomeFuncionario;
+                    linha["CPFFuncionario"] = item.CPFFuncionario;
                     linha["Data"] = item.Data;
                     linha["Entrada"] = item.Entrada;
                     linha["Saida"] = item.Saida;

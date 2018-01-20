@@ -62,6 +62,17 @@ namespace LabxPonto_Dao.Service
             return (funcionario);
         }
 
+        public bool GetFuncionarioCPFExiste(string CPF)
+        {
+            Funcionario funcionario = new Funcionario();
+            funcionario = Context.Funcionarios.Where(x => x.CPF == CPF).FirstOrDefault();
+
+            if (funcionario != null)
+                return true;
+            else
+                return false;
+        }
+
         public Funcionario GetFuncionarioDigital(byte[] digital)
         {
             Funcionario funcionario = new Funcionario();
@@ -79,31 +90,6 @@ namespace LabxPonto_Dao.Service
                     
                     .Where(x => x.Id == id).FirstOrDefault();
         }
-
-        //public EmpresaFuncionario[] GetFuncionarioPorEmpresa(string CNPJ)
-        //{
-        //    Funcionario funcionario = new Funcionario();
-        //    EmpresaFuncionario rltFuncionarioPorEmpresa = new RltFuncionarioPorEmpresa();
-
-        //    var resposta = (from c in Context.Funcionarios
-        //                   where c.Empresa.CNPJ == CNPJ
-        //                   select new RltFuncionarioPorEmpresa()
-        //                   {
-        //                       IdFuncionario = c.Empresa.Id,
-        //                       Nome = c.Nome,
-        //                       SobreNome = c.SobreNome,
-        //                       RG = c.RG,
-        //                       CPF = c.CPF,
-        //                       Telefone = c.Telefone,
-        //                       LocalTrabalho = c.LocalTrabalho,
-        //                       DataNascimento = c.DataNascimento,
-        //                       Funcao = c.Funcao.NomeFuncao,
-        //                       Empresa = c.Empresa.NomeFantasia,
-        //                       NumeroFolha = c.NumeroFolha,
-        //                   }).ToArray();
-
-        //    return (resposta);
-        //}
 
         public List<Funcionario> GetFuncionario()
         {

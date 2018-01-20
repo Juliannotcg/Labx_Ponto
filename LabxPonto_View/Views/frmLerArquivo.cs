@@ -3,6 +3,7 @@ using LabxPonto_Dao.Model;
 using LabxPonto_Dao.Service;
 using MetroFramework.Forms;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using System.Xml;
@@ -12,7 +13,8 @@ namespace LabxPonto_View.Views
     public partial class frmLerArquivo : MetroForm
     {
         private AppDataContext context;
-        private HorarioService servico;
+        private HorarioService servicoHorario;
+        private FuncionarioService servicoFuncionario;
         private Funcionario funcionario;
         private HorarioExpediente horarioExpediente;
 
@@ -38,11 +40,8 @@ namespace LabxPonto_View.Views
 
         public void LerXml(string caminho)
         {
-            servico = new HorarioService(context);
-
-            //TO DO
-            horarioExpediente = new HorarioExpediente();
-
+            servicoHorario = new HorarioService(context);
+            servicoFuncionario = new FuncionarioService(context);
             XmlDocument doc = new XmlDocument();
             doc.Load(caminho);
 
@@ -52,13 +51,24 @@ namespace LabxPonto_View.Views
 
             for (int x = 0; x < xmlHorarios.Count; x++)
             {
-                horarioExpediente.Funcionario.Id = int.Parse(xmlHorarios[x]["Id"].InnerText);
+                HorarioExpediente horarioExpediente = new HorarioExpediente();
+
+                //Preenchendo Objeto.
+                horarioExpediente.Funcionario.Id = int.Parse(xmlHorarios[x]["IdFuncionario"].InnerText);
+                horarioExpediente.Funcionario.Nome = xmlHorarios[x]["NomeFuncionario"].InnerText;
+                horarioExpediente.Funcionario.CPF = xmlHorarios[x]["CPFFuncionario"].InnerText;
                 horarioExpediente.Data = Convert.ToDateTime(xmlHorarios[x]["Data"].InnerText);
                 horarioExpediente.Entrada = Convert.ToDateTime(xmlHorarios[x]["Entrada"].InnerText);
                 horarioExpediente.Saida = Convert.ToDateTime(xmlHorarios[x]["Saida"].InnerText);
-            }
 
-            servico.Insert(horarioExpediente);
+                if (servicoFuncionario.GetFuncionarioCPFExiste(horarioExpediente.Funcionario.CPF))
+                    servicoHorario.Insert(horarioExpediente);
+                else
+                {
+                    MetroFramework.MetroMessageBox.Show(this, "O Funcionário: " + horarioExpediente.Funcionario.Nome.ToString() + ", " + "com CPF: " + horarioExpediente.Funcionario.Nome.ToString() + " não está cadastrado no banco principal, cadastre e leia o arquivo novamente", "Atenção!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Hand);
+                    return;
+                }
+            }
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
