@@ -68,10 +68,24 @@ namespace LabxPonto_Dao.Service
                 }
 
                 return (tabela);
-            
         }
 
+        //Verifica se já existe um horário 
+        public bool GetHorarioArquivo(string cpf, DateTime data, DateTime entrada)
+        {
+            var results = Context.HorariosExpediente
+              .Where(x => x.Funcionario.CPF == cpf &&
+                     x.Data == data &&
+                     x.Entrada == entrada)
+              .Include("Funcionario")
+              .FirstOrDefault();
 
+            if (results != null)
+                return false;
+            else
+                return true;
+
+        }
 
     }
 }

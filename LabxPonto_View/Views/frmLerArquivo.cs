@@ -31,7 +31,12 @@ namespace LabxPonto_View.Views
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            Confirmar();
+            if (!String.IsNullOrEmpty(txtArquivo.Text))
+            {
+                Confirmar();
+                //LerXml(openFileDialog.FileName);
+            }
+            
         }
         public void Confirmar()
         {
@@ -62,7 +67,15 @@ namespace LabxPonto_View.Views
                 horarioExpediente.Saida = Convert.ToDateTime(xmlHorarios[x]["Saida"].InnerText);
 
                 if (servicoFuncionario.GetFuncionarioCPFExiste(horarioExpediente.Funcionario.CPF))
-                    servicoHorario.Insert(horarioExpediente);
+                {
+                    if (servicoHorario.GetHorarioArquivo(horarioExpediente.Funcionario.CPF, horarioExpediente.Data, horarioExpediente.Entrada))
+                        servicoHorario.Insert(horarioExpediente);
+                    else
+                    {
+                        MetroFramework.MetroMessageBox.Show(this, "Esse arquivo já foi processado no sistema.", "Atenção!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Hand);
+                        return;
+                    }
+                }
                 else
                 {
                     MetroFramework.MetroMessageBox.Show(this, "O Funcionário: " + horarioExpediente.Funcionario.Nome.ToString() + ", " + "com CPF: " + horarioExpediente.Funcionario.Nome.ToString() + " não está cadastrado no banco principal, cadastre e leia o arquivo novamente", "Atenção!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Hand);
@@ -77,9 +90,6 @@ namespace LabxPonto_View.Views
                 return;
 
             txtArquivo.Text = openFileDialog.FileName;
-            LerXml(openFileDialog.FileName);
-
-
         }
 
         private void txtArquivo_DragOver(object sender, DragEventArgs e)
