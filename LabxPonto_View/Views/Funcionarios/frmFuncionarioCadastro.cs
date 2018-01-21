@@ -296,8 +296,6 @@ namespace LabxPonto_View.Views.Funcionarios
             #endregion
 
         }
-
-
         private void inserir()
         {
             if (validar())
@@ -315,7 +313,7 @@ namespace LabxPonto_View.Views.Funcionarios
         {
             if (servico.Delete(funcionario))
             {
-                MetroFramework.MetroMessageBox.Show(this, "O funcionário " + funcionario.Nome + " " + funcionario.SobreNome + " foi deletado do sistema com sucesso!", "Cadastrado com sucesso!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question);
+                MetroFramework.MetroMessageBox.Show(this, "O funcionário " + funcionario.Nome + " " + funcionario.SobreNome + " foi deletado do sistema com sucesso!", "Excluído com sucesso!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question);
                 this.Dispose();
             }
         }
