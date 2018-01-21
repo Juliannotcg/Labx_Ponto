@@ -152,7 +152,8 @@ namespace LabxPonto_View.Views
         {
             if(usuario!=null)
                 lbUsuario.Text = "Usuário " + usuario.Login.ToString() + " logado.";
-            lbVersao.Text = "VERSÃO: 1.0.2"; //TODO
+            
+            lblVersao.Text = "Versão: " + Application.ProductVersion;
 
             this.WindowState = FormWindowState.Maximized;
         }

@@ -55,10 +55,10 @@
             // 
             // 
             this.txtArquivo.CustomButton.Image = null;
-            this.txtArquivo.CustomButton.Location = new System.Drawing.Point(831, 2);
+            this.txtArquivo.CustomButton.Location = new System.Drawing.Point(623, 2);
             this.txtArquivo.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtArquivo.CustomButton.Name = "";
-            this.txtArquivo.CustomButton.Size = new System.Drawing.Size(41, 38);
+            this.txtArquivo.CustomButton.Size = new System.Drawing.Size(31, 31);
             this.txtArquivo.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtArquivo.CustomButton.TabIndex = 1;
             this.txtArquivo.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -102,7 +102,7 @@
             // btnCancelar
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelar.Location = new System.Drawing.Point(627, 188);
+            this.btnCancelar.Location = new System.Drawing.Point(627, 191);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(125, 39);
@@ -115,7 +115,7 @@
             // 
             this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSalvar.BackColor = System.Drawing.Color.White;
-            this.btnSalvar.Location = new System.Drawing.Point(483, 188);
+            this.btnSalvar.Location = new System.Drawing.Point(483, 191);
             this.btnSalvar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(125, 39);
@@ -134,13 +134,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(805, 255);
+            this.ClientSize = new System.Drawing.Size(805, 258);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.Arquivo);
             this.Controls.Add(this.txtArquivo);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmLerArquivo";
             this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.Text = "Ler Arquivo";

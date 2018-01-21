@@ -71,7 +71,7 @@
             // 
             this.pbLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.metroStyleExtender.SetApplyMetroTheme(this.pbLogo, true);
-            //this.pbLogo.Image = global::LabxPonto_View.Properties.Resources.LogoEmpresa;
+            this.pbLogo.Image = global::LabxPonto_View.Properties.Resources.LogoEmpresa2;
             this.pbLogo.Location = new System.Drawing.Point(9, 286);
             this.pbLogo.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.pbLogo.Name = "pbLogo";

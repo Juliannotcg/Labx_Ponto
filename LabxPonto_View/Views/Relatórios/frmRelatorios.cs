@@ -75,20 +75,19 @@ namespace LabxPonto_View.Views
             bool CPFexiste = false;
 
             limparErros();
-            if (Validar())
-            {
-                if (txtCPF.Text.Length == 11)
-                {
-                    long CPF = Convert.ToInt64(txtCPF.Text);
-                    string CPFFormatado = String.Format(@"{0:000\.000\.000\-00}", CPF);
-                    txtCPF.Text = CPFFormatado;
-                }
 
-                if (!String.IsNullOrEmpty(txtCPF.Text))
-                {
-                    if (servico.GetFuncionarioCPF(txtCPF.Text) != null)
-                        CPFexiste = true;
-                }
+            if (txtCPF.Text.Length == 11)
+            {
+                long CPF = Convert.ToInt64(txtCPF.Text);
+                string CPFFormatado = String.Format(@"{0:000\.000\.000\-00}", CPF);
+                txtCPF.Text = CPFFormatado;
+            }
+
+            if (!String.IsNullOrEmpty(txtCPF.Text))
+            {
+                if (servico.GetFuncionarioCPF(txtCPF.Text) != null)
+                    CPFexiste = true;
+
                 if (!CPFexiste)
                 {
                     MetroFramework.MetroMessageBox.Show(this, "Esse CPF não existe cadastrado no sistema no sistema.", "Atenção!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Hand);

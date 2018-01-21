@@ -38,18 +38,22 @@ namespace LabxPonto_View.Views
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
+            Confirmar();
+        }
+
+        public void Confirmar()
+        {
             preencherUsuario();
-            if(validar(usuario.Login, usuario.Senha))
+            if (validar(usuario.Login, usuario.Senha))
             {
                 this.DialogResult = DialogResult.OK;
                 this.Dispose();
-                
+
             }
             else
             {
                 DialogResult = DialogResult.None;
             }
-            
         }
 
         public void preencherUsuario()
@@ -98,6 +102,17 @@ namespace LabxPonto_View.Views
         {
             Criptografar cript = new Criptografar();
             cript.Base64Decode(senha);
+        }
+
+        private void txtSenha_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+                Confirmar();
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            lblVersao.Text = "Versão: " + Application.ProductVersion;
         }
     }
 }
