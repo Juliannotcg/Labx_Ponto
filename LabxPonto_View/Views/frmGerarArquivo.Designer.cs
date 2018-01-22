@@ -34,6 +34,7 @@
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.btnConfirmar = new MetroFramework.Controls.MetroButton();
             this.btnCancelar = new MetroFramework.Controls.MetroButton();
+            this.progresseGerarArquivo = new MetroFramework.Controls.MetroProgressBar();
             this.SuspendLayout();
             // 
             // dtDataIni
@@ -94,11 +95,19 @@
             this.btnCancelar.UseSelectable = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // progresseGerarArquivo
+            // 
+            this.progresseGerarArquivo.Location = new System.Drawing.Point(23, 210);
+            this.progresseGerarArquivo.Name = "progresseGerarArquivo";
+            this.progresseGerarArquivo.Size = new System.Drawing.Size(452, 23);
+            this.progresseGerarArquivo.TabIndex = 6;
+            // 
             // frmGerarArquivo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(501, 220);
+            this.ClientSize = new System.Drawing.Size(501, 237);
+            this.Controls.Add(this.progresseGerarArquivo);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.metroLabel2);
@@ -122,5 +131,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroButton btnConfirmar;
         private MetroFramework.Controls.MetroButton btnCancelar;
+        private MetroFramework.Controls.MetroProgressBar progresseGerarArquivo;
     }
 }

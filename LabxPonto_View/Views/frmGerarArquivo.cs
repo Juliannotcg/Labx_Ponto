@@ -44,14 +44,19 @@ namespace LabxPonto_View.Views
 
             DataTable tabela = horarioService.GetHorarioXml(dateIni, dateFim);
 
-            SaveFileDialog saveFile = new SaveFileDialog();
-            saveFile.FileName = NomeArquivo();
-            saveFile.ShowDialog();
+            if (!String.IsNullOrEmpty(tabela.ToString()))
+            {
+                SaveFileDialog saveFile = new SaveFileDialog();
+                saveFile.FileName = NomeArquivo();
+                saveFile.ShowDialog();
 
-            if (gerarXml(tabela, saveFile.FileName))
-                MetroFramework.MetroMessageBox.Show(this, "Arquivo gerado com sucesso", "Sucesso!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question);
+                if (gerarXml(tabela, saveFile.FileName))
+                    MetroFramework.MetroMessageBox.Show(this, "Arquivo gerado com sucesso", "Sucesso!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question);
+                else
+                    MetroFramework.MetroMessageBox.Show(this, "O Arquivo não foi gerado, entrar em contato com o suporte.", "Erro!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Hand);
+            }
             else
-                MetroFramework.MetroMessageBox.Show(this, "O Arquivo não foi gerado, entrar em contato com o suporte.", "Erro!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Hand);
+                MetroFramework.MetroMessageBox.Show(this, "Não há informações nesse período", "Atençaõ!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Exclamation);
         }
 
         public string NomeArquivo()
@@ -63,11 +68,15 @@ namespace LabxPonto_View.Views
         }
         public bool gerarXml(DataTable tabela, string caminho)
         {
+            int contador = 0;
+
             XmlTextWriter xml = new XmlTextWriter(caminho, System.Text.Encoding.GetEncoding("iso-8859-1"));
             xml.WriteStartElement("Funcionario");
 
             for (int i = 0; i < tabela.Rows.Count; i++)
             {
+                contador++;
+
                 xml.WriteStartElement("Horarios");
                 xml.WriteElementString("IdFuncionario", tabela.Rows[i]["IdFuncionario"].ToString());
                 xml.WriteElementString("NomeFuncionario", tabela.Rows[i]["NomeFuncionario"].ToString());
@@ -76,6 +85,8 @@ namespace LabxPonto_View.Views
                 xml.WriteElementString("Entrada", tabela.Rows[i]["Entrada"].ToString());
                 xml.WriteElementString("Saida", tabela.Rows[i]["Saida"].ToString());
                 xml.WriteEndElement();
+
+                progresseGerarArquivo.Value += contador;
             }
 
             //escreve o XML para o arquivo e fecha o escritor
