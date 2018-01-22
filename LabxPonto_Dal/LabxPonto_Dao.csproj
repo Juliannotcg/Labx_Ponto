@@ -81,65 +81,9 @@
     <Compile Include="Data\Mapa\ImagemMap.cs" />
     <Compile Include="Data\Mapa\UsuarioMap.cs" />
     <Compile Include="Injection\DependencyResolver.cs" />
-    <Compile Include="Migrations\201801031150273_CriacaoBanco.cs" />
-    <Compile Include="Migrations\201801031150273_CriacaoBanco.Designer.cs">
-      <DependentUpon>201801031150273_CriacaoBanco.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801041017472_DepDepartamento_FncFuncao.cs" />
-    <Compile Include="Migrations\201801041017472_DepDepartamento_FncFuncao.Designer.cs">
-      <DependentUpon>201801041017472_DepDepartamento_FncFuncao.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801041850173_ImaImagem.cs" />
-    <Compile Include="Migrations\201801041850173_ImaImagem.Designer.cs">
-      <DependentUpon>201801041850173_ImaImagem.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801051955044_FncFuncao.cs" />
-    <Compile Include="Migrations\201801051955044_FncFuncao.Designer.cs">
-      <DependentUpon>201801051955044_FncFuncao.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801071347586_EmpEmpresa.cs" />
-    <Compile Include="Migrations\201801071347586_EmpEmpresa.Designer.cs">
-      <DependentUpon>201801071347586_EmpEmpresa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801090206188_DateTime2.cs" />
-    <Compile Include="Migrations\201801090206188_DateTime2.Designer.cs">
-      <DependentUpon>201801090206188_DateTime2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801090212355_DateTime2-2.cs" />
-    <Compile Include="Migrations\201801090212355_DateTime2-2.Designer.cs">
-      <DependentUpon>201801090212355_DateTime2-2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801091355512_Contrato.cs" />
-    <Compile Include="Migrations\201801091355512_Contrato.Designer.cs">
-      <DependentUpon>201801091355512_Contrato.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801091427306_EndEndereco_Pais.cs" />
-    <Compile Include="Migrations\201801091427306_EndEndereco_Pais.Designer.cs">
-      <DependentUpon>201801091427306_EndEndereco_Pais.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801110028097_UsuPerfil.cs" />
-    <Compile Include="Migrations\201801110028097_UsuPerfil.Designer.cs">
-      <DependentUpon>201801110028097_UsuPerfil.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801111101053_USUARIO.cs" />
-    <Compile Include="Migrations\201801111101053_USUARIO.Designer.cs">
-      <DependentUpon>201801111101053_USUARIO.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801120949495_FunLocalTrabalho.cs" />
-    <Compile Include="Migrations\201801120949495_FunLocalTrabalho.Designer.cs">
-      <DependentUpon>201801120949495_FunLocalTrabalho.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801132322380_HorExpediente.cs" />
-    <Compile Include="Migrations\201801132322380_HorExpediente.Designer.cs">
-      <DependentUpon>201801132322380_HorExpediente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801170022543_FuncionarioDigital.cs" />
-    <Compile Include="Migrations\201801170022543_FuncionarioDigital.Designer.cs">
-      <DependentUpon>201801170022543_FuncionarioDigital.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801172210396_ImagemDigital.cs" />
-    <Compile Include="Migrations\201801172210396_ImagemDigital.Designer.cs">
-      <DependentUpon>201801172210396_ImagemDigital.cs</DependentUpon>
+    <Compile Include="Migrations\201801222215362_CreateDataBase.cs" />
+    <Compile Include="Migrations\201801222215362_CreateDataBase.Designer.cs">
+      <DependentUpon>201801222215362_CreateDataBase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Departamento.cs" />
@@ -164,52 +108,9 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201801031150273_CriacaoBanco.resx">
-      <DependentUpon>201801031150273_CriacaoBanco.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801041017472_DepDepartamento_FncFuncao.resx">
-      <DependentUpon>201801041017472_DepDepartamento_FncFuncao.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801041850173_ImaImagem.resx">
-      <DependentUpon>201801041850173_ImaImagem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801051955044_FncFuncao.resx">
-      <DependentUpon>201801051955044_FncFuncao.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801071347586_EmpEmpresa.resx">
-      <DependentUpon>201801071347586_EmpEmpresa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801090206188_DateTime2.resx">
-      <DependentUpon>201801090206188_DateTime2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801090212355_DateTime2-2.resx">
-      <DependentUpon>201801090212355_DateTime2-2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801091355512_Contrato.resx">
-      <DependentUpon>201801091355512_Contrato.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801091427306_EndEndereco_Pais.resx">
-      <DependentUpon>201801091427306_EndEndereco_Pais.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801110028097_UsuPerfil.resx">
-      <DependentUpon>201801110028097_UsuPerfil.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801111101053_USUARIO.resx">
-      <DependentUpon>201801111101053_USUARIO.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801120949495_FunLocalTrabalho.resx">
-      <DependentUpon>201801120949495_FunLocalTrabalho.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801132322380_HorExpediente.resx">
-      <DependentUpon>201801132322380_HorExpediente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801170022543_FuncionarioDigital.resx">
-      <DependentUpon>201801170022543_FuncionarioDigital.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801172210396_ImagemDigital.resx">
-      <DependentUpon>201801172210396_ImagemDigital.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201801222215362_CreateDataBase.resx">
+      <DependentUpon>201801222215362_CreateDataBase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

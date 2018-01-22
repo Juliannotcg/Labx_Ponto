@@ -7,13 +7,13 @@ namespace LabxPonto_Dao.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class ImaImagem : IMigrationMetadata
+    public sealed partial class CreateDataBase : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ImaImagem));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(CreateDataBase));
         
         string IMigrationMetadata.Id
         {
-            get { return "201801041850173_ImaImagem"; }
+            get { return "201801222215362_CreateDataBase"; }
         }
         
         string IMigrationMetadata.Source

@@ -87,7 +87,7 @@ namespace LabxPonto_Dao.Service
                     .Include("Funcao")
                     .Include("Funcao.Departamento")
                     .Include("Imagem")
-                    
+                    .Include("HorariosExpediente")
                     .Where(x => x.Id == id).FirstOrDefault();
         }
 
