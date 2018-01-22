@@ -38,14 +38,14 @@ namespace LabxPonto_View.Views
             
         }
 
-        private void NotificarNovosCadastro(int quantidade)
+        private void NotificarUsuarioLogado()
         {
-            //iconeNotificacao.Icon = SystemIcons.Warning;
-            //iconeNotificacao.BalloonTipIcon = ToolTipIcon.Warning;
-            //iconeNotificacao.BalloonTipText = "Existem " + quantidade + " boletos novos ou alterações de boletos que ainda não foram transmitidos para " + CodigoBancoHelper.GetSigla(parametros.Prop<CodigoBanco>("ParBancoIntimacao")) + ".";
-            //iconeNotificacao.BalloonTipTitle = "Aviso";
-            //iconeNotificacao.Visible = true;
-            //iconeNotificacao.ShowBalloonTip(5000);
+            iconeNotificacao.Icon = SystemIcons.Information;
+            iconeNotificacao.BalloonTipIcon = ToolTipIcon.Info;
+            iconeNotificacao.BalloonTipText = "Usuário " + usuario.Login.ToString() + " logado no sistema";
+            iconeNotificacao.BalloonTipTitle = "Aviso";
+            iconeNotificacao.Visible = true;
+            iconeNotificacao.ShowBalloonTip(5000);
         }
 
         public void mtCadastro_Click(object sender, System.EventArgs e)
@@ -150,8 +150,11 @@ namespace LabxPonto_View.Views
 
         private void frmMain_Load(object sender, System.EventArgs e)
         {
-            if(usuario!=null)
+            if (usuario != null)
+            {
                 lbUsuario.Text = "Usuário " + usuario.Login.ToString() + " logado.";
+                NotificarUsuarioLogado();
+            }
             
             lblVersao.Text = "Versão: " + Application.ProductVersion;
 

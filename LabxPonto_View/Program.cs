@@ -23,17 +23,17 @@ namespace LabxPonto_View
             Application.SetCompatibleTextRenderingDefault(false);
             AppDataContext contexto = new AppDataContext();
 
-            frmMain main = new frmMain(contexto);
-            Application.Run(main);
+            //frmMain main = new frmMain(contexto);
+            //Application.Run(main);
 
-            //frmLogin login = new frmLogin(contexto);
+            frmLogin login = new frmLogin(contexto);
 
-            //if (login.ShowDialog() == DialogResult.OK)
-            //{
-            //    frmMain main = new frmMain(contexto);
-            //    main.Usuario = login.Usuario;
-            //    Application.Run(main);
-            //}
+            if (login.ShowDialog() == DialogResult.OK)
+            {
+                frmMain main = new frmMain(contexto);
+                main.Usuario = login.Usuario;
+                Application.Run(main);
+            }
 
             // Configure Dependency Injection
             var container = new UnityContainer();
