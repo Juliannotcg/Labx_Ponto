@@ -456,7 +456,6 @@
     <EmbeddedResource Include="Views\Usuário\frmUsuarioCadastro.resx">
       <DependentUpon>frmUsuarioCadastro.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="LabxPonto_View_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\LabxPonto_Dao.Model.Funcionario.datasource" />
     <None Include="Properties\DataSources\LabxPonto_Dao.Model.ModelRelatorio.FuncaoRlt.datasource" />

@@ -82,6 +82,8 @@ namespace LabxPonto_View.Views
                     return;
                 }
             }
+
+            MetroFramework.MetroMessageBox.Show(this, "O arquivo foi processado com sucesso.", "Processado com sucesso!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question);
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

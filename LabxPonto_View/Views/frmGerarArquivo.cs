@@ -44,7 +44,7 @@ namespace LabxPonto_View.Views
 
             DataTable tabela = horarioService.GetHorarioXml(dateIni, dateFim);
 
-            if (!String.IsNullOrEmpty(tabela.ToString()))
+            if (tabela.Rows.Count != 0)
             {
                 SaveFileDialog saveFile = new SaveFileDialog();
                 saveFile.FileName = NomeArquivo();
@@ -68,15 +68,11 @@ namespace LabxPonto_View.Views
         }
         public bool gerarXml(DataTable tabela, string caminho)
         {
-            int contador = 0;
-
             XmlTextWriter xml = new XmlTextWriter(caminho, System.Text.Encoding.GetEncoding("iso-8859-1"));
             xml.WriteStartElement("Funcionario");
 
             for (int i = 0; i < tabela.Rows.Count; i++)
             {
-                contador++;
-
                 xml.WriteStartElement("Horarios");
                 xml.WriteElementString("IdFuncionario", tabela.Rows[i]["IdFuncionario"].ToString());
                 xml.WriteElementString("NomeFuncionario", tabela.Rows[i]["NomeFuncionario"].ToString());
@@ -85,8 +81,6 @@ namespace LabxPonto_View.Views
                 xml.WriteElementString("Entrada", tabela.Rows[i]["Entrada"].ToString());
                 xml.WriteElementString("Saida", tabela.Rows[i]["Saida"].ToString());
                 xml.WriteEndElement();
-
-                progresseGerarArquivo.Value += contador;
             }
 
             //escreve o XML para o arquivo e fecha o escritor
