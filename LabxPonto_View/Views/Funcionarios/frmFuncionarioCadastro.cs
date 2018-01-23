@@ -113,6 +113,7 @@ namespace LabxPonto_View.Views.Funcionarios
             errorProviderFunc.SetError(txtNomePai, "");
             errorProviderFunc.SetError(txtNomeMae, "");
             errorProviderFunc.SetError(txtTelefone, "");
+            errorProviderFunc.SetError(txtCEP, "");
             errorProviderFunc.SetError(txtCidade, "");
             errorProviderFunc.SetError(txtBairro, "");
             errorProviderFunc.SetError(txtEndereco, "");
