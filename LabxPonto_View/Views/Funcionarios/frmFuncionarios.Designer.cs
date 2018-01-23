@@ -77,13 +77,11 @@
             this.pbLogo.Margin = new System.Windows.Forms.Padding(2);
             this.pbLogo.Size = new System.Drawing.Size(81, 35);
             // 
-            // metroLink1
-            // 
-            // 
             // dgFuncionarios
             // 
             this.dgFuncionarios.AllowUserToAddRows = false;
             this.dgFuncionarios.AllowUserToDeleteRows = false;
+            this.dgFuncionarios.AllowUserToOrderColumns = true;
             this.dgFuncionarios.AllowUserToResizeRows = false;
             this.dgFuncionarios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 

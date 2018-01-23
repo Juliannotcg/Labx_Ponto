@@ -55,6 +55,7 @@
             this.txtDepartamento = new MetroFramework.Controls.MetroLabel();
             this.txtFuncao = new MetroFramework.Controls.MetroLabel();
             this.errorProviderFunc = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btAlterar = new MetroFramework.Controls.MetroTile();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuncionarios)).BeginInit();
             this.gbFuncionario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgFoto)).BeginInit();
@@ -98,7 +99,7 @@
             this.dgFuncionarios.EnableHeadersVisualStyles = false;
             this.dgFuncionarios.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dgFuncionarios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgFuncionarios.Location = new System.Drawing.Point(23, 217);
+            this.dgFuncionarios.Location = new System.Drawing.Point(23, 259);
             this.dgFuncionarios.Name = "dgFuncionarios";
             this.dgFuncionarios.ReadOnly = true;
             this.dgFuncionarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -112,7 +113,7 @@
             this.dgFuncionarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgFuncionarios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgFuncionarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgFuncionarios.Size = new System.Drawing.Size(802, 277);
+            this.dgFuncionarios.Size = new System.Drawing.Size(802, 346);
             this.dgFuncionarios.TabIndex = 62;
             // 
             // Id
@@ -352,11 +353,25 @@
             this.errorProviderFunc.ContainerControl = this;
             this.errorProviderFunc.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProviderFunc.Icon")));
             // 
+            // btAlterar
+            // 
+            this.btAlterar.ActiveControl = null;
+            this.btAlterar.Location = new System.Drawing.Point(23, 216);
+            this.btAlterar.Name = "btAlterar";
+            this.btAlterar.Size = new System.Drawing.Size(149, 37);
+            this.btAlterar.Style = MetroFramework.MetroColorStyle.Silver;
+            this.btAlterar.TabIndex = 79;
+            this.btAlterar.Text = "Alterar";
+            this.btAlterar.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.btAlterar.UseSelectable = true;
+            this.btAlterar.UseTileImage = true;
+            // 
             // frmHorarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(855, 517);
+            this.ClientSize = new System.Drawing.Size(855, 628);
+            this.Controls.Add(this.btAlterar);
             this.Controls.Add(this.txtFuncao);
             this.Controls.Add(this.txtDepartamento);
             this.Controls.Add(this.txtEmpresa);
@@ -405,5 +420,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Endrada;
         private System.Windows.Forms.DataGridViewTextBoxColumn Saida;
         private System.Windows.Forms.ErrorProvider errorProviderFunc;
+        public MetroFramework.Controls.MetroTile btAlterar;
     }
 }

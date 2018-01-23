@@ -118,7 +118,7 @@ namespace LabxPonto_Dao.Service
                     Departamento = p.Funcao.Departamento.NomeDepartamento
                 })
                 .AsEnumerable()
-                .ToList();
+                .ToList().OrderBy(p => p.Nome);
 
             DataTable tabela = new DataTable();
             tabela.Columns.Add("Id", typeof(int));
