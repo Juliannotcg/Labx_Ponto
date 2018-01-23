@@ -275,7 +275,6 @@
             this.Name = "frmBiometria";
             this.Text = "Biometria";
             this.Controls.SetChildIndex(this.pbLogo, 0);
-            this.Controls.SetChildIndex(this.metroLink1, 0);
             this.Controls.SetChildIndex(this.btnSalvar, 0);
             this.Controls.SetChildIndex(this.btnCancelar, 0);
             this.Controls.SetChildIndex(this.imgDigital, 0);

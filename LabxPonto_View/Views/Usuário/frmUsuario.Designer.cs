@@ -66,7 +66,6 @@
             // 
             // metroLink1
             // 
-            this.metroLink1.Location = new System.Drawing.Point(139, 12);
             // 
             // dgUsuario
             // 
@@ -157,7 +156,6 @@
             this.Padding = new System.Windows.Forms.Padding(36, 91, 36, 31);
             this.Text = "Usuario";
             this.Load += new System.EventHandler(this.frmUsuario_Load);
-            this.Controls.SetChildIndex(this.metroLink1, 0);
             this.Controls.SetChildIndex(this.pbLogo, 0);
             this.Controls.SetChildIndex(this.btNovo, 0);
             this.Controls.SetChildIndex(this.btAlterar, 0);

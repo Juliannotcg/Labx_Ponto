@@ -74,7 +74,6 @@
             // 
             // metroLink1
             // 
-            this.metroLink1.Location = new System.Drawing.Point(265, 7);
             // 
             // dgDepartamentos
             // 
@@ -165,7 +164,6 @@
             this.Padding = new System.Windows.Forms.Padding(36, 91, 36, 31);
             this.Text = "Departamentos";
             this.Load += new System.EventHandler(this.frmDepartamentos_Load);
-            this.Controls.SetChildIndex(this.metroLink1, 0);
             this.Controls.SetChildIndex(this.pbLogo, 0);
             this.Controls.SetChildIndex(this.btnVisualizar, 0);
             this.Controls.SetChildIndex(this.btNovo, 0);

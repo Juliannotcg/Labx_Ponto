@@ -61,7 +61,6 @@
             // 
             // metroLink1
             // 
-            this.metroLink1.Location = new System.Drawing.Point(144, 11);
             // 
             // txtUsuario
             // 
@@ -242,7 +241,6 @@
             this.Text = "Usuário";
             this.Theme = MetroFramework.MetroThemeStyle.Default;
             this.Load += new System.EventHandler(this.frmUsuarioCadastro_Load);
-            this.Controls.SetChildIndex(this.metroLink1, 0);
             this.Controls.SetChildIndex(this.pbLogo, 0);
             this.Controls.SetChildIndex(this.btnSalvar, 0);
             this.Controls.SetChildIndex(this.btnCancelar, 0);

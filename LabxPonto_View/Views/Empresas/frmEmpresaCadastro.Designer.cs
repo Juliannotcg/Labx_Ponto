@@ -115,7 +115,6 @@
             // 
             // metroLink1
             // 
-            this.metroLink1.Location = new System.Drawing.Point(166, 7);
             // 
             // tcCadastroFuncionario
             // 
@@ -1028,7 +1027,6 @@
             this.Padding = new System.Windows.Forms.Padding(36, 91, 36, 31);
             this.Text = "Empresa";
             this.Load += new System.EventHandler(this.frmEmpresaCadastro_Load);
-            this.Controls.SetChildIndex(this.metroLink1, 0);
             this.Controls.SetChildIndex(this.pbLogo, 0);
             this.Controls.SetChildIndex(this.btnSalvar, 0);
             this.Controls.SetChildIndex(this.btnCancelar, 0);

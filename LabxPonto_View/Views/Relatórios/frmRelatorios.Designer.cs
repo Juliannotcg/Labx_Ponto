@@ -166,7 +166,6 @@
             this.Name = "frmRelatorios";
             this.Padding = new System.Windows.Forms.Padding(36, 91, 36, 31);
             this.Text = "Relatórios";
-            this.Controls.SetChildIndex(this.metroLink1, 0);
             this.Controls.SetChildIndex(this.pbLogo, 0);
             this.Controls.SetChildIndex(this.btnSalvar, 0);
             this.Controls.SetChildIndex(this.btnCancelar, 0);

@@ -141,6 +141,46 @@ namespace LabxPonto_Dao.Service
             return (tabela);
         }
 
+        public DataTable GetFuncionarioGridCPF(string CPF)
+        {
+
+            var results = Context.Funcionarios
+                .Include("Empresa")
+                .Include("Funcao")
+                .Include("Departamento")
+                .Where(x => x.CPF == CPF)
+                .Select(p => new
+                {
+                    p.Id,
+                    p.Nome,
+                    Empresa = p.Empresa.NomeFantasia,
+                    Funcao = p.Funcao.NomeFuncao,
+                    Departamento = p.Funcao.Departamento.NomeDepartamento
+                })
+                .AsEnumerable()
+                .ToList();
+
+            DataTable tabela = new DataTable();
+            tabela.Columns.Add("Id", typeof(int));
+            tabela.Columns.Add("Nome", typeof(string));
+            tabela.Columns.Add("Empresa", typeof(string));
+            tabela.Columns.Add("Funcao", typeof(string));
+            tabela.Columns.Add("Departamento", typeof(string));
+
+            foreach (var item in results)
+            {
+                DataRow linha = tabela.NewRow();
+                linha["Id"] = item.Id;
+                linha["Nome"] = item.Nome;
+                linha["Empresa"] = item.Empresa;
+                linha["Funcao"] = item.Funcao;
+                linha["Departamento"] = item.Departamento;
+                tabela.Rows.Add(linha);
+            }
+
+            return (tabela);
+        }
+
         public bool Insert(Funcionario funcionario)
         {
             Context.Funcionarios.Add(funcionario);

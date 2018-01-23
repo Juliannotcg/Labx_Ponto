@@ -5,6 +5,7 @@ using LabxPonto_View.Enums;
 using LabxPonto_View.Views.Base;
 using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace LabxPonto_View.Views.Funcionarios
 {
@@ -18,6 +19,7 @@ namespace LabxPonto_View.Views.Funcionarios
         public frmFuncionarios(AppDataContext con)
         {
             InitializeComponent();
+            txtCPF.CustomButton.Click += new EventHandler(txtCPF_Click);
             servico = new FuncionarioService(con);
             funcionario = new Funcionario();
             context = con;
@@ -26,6 +28,11 @@ namespace LabxPonto_View.Views.Funcionarios
         public void preencherGrid()
         {
             dgFuncionarios.DataSource = servico.GetFuncionarioGrid();
+        }
+        public void preencherGridPesquisa()
+        {
+            if (!String.IsNullOrEmpty(txtCPF.Text))
+                dgFuncionarios.DataSource = servico.GetFuncionarioGridCPF(txtCPF.Text);
         }
 
         public Funcionario retornarFuncionarioSelecionado()
@@ -78,6 +85,11 @@ namespace LabxPonto_View.Views.Funcionarios
             cadastro.StyleManager = this.StyleManager;
             cadastro.ShowDialog();
             preencherGrid();
+        }
+
+        private void txtCPF_Click(object sender, EventArgs e)
+        {
+            preencherGridPesquisa();
         }
     }
 }

@@ -71,10 +71,40 @@ namespace LabxPonto_Dao.Service
                 return (tabela);
         }
 
-        public HorarioExpediente GetHorarioFuncionarioCPF(string CPF)
+        public DataTable GetHorarioFuncionarioCPF(string CPF)
         {
-            horario = Context.HorariosExpediente.Include("Funcionario").Where(x => x.Funcionario.CPF == CPF).FirstOrDefault();
-            return (horario);
+            horario = new HorarioExpediente();
+
+            var results = Context.HorariosExpediente
+           .Where(x => x.Funcionario.CPF == CPF)
+           .Include("Funcionario")
+           .Select(p => new
+           {
+               p.Data,
+               p.Entrada,
+               p.Saida,
+               Id = p.Funcionario.Id,
+           })
+           .AsEnumerable()
+           .ToList();
+
+            DataTable tabela = new DataTable();
+            tabela.Columns.Add("Id", typeof(int));
+            tabela.Columns.Add("Data", typeof(DateTime));
+            tabela.Columns.Add("Entrada", typeof(DateTime));
+            tabela.Columns.Add("Saida", typeof(DateTime));
+
+            foreach (var item in results)
+            {
+                DataRow linha = tabela.NewRow();
+                linha["Id"] = item.Id;
+                linha["Data"] = item.Data;
+                linha["Entrada"] = item.Entrada;
+                linha["Saida"] = item.Saida;
+                tabela.Rows.Add(linha);
+            }
+
+            return (tabela);
         }
 
         //Verifica se já existe um horário 

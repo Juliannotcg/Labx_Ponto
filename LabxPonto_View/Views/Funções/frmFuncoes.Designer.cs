@@ -76,10 +76,7 @@
             this.pbLogo.Size = new System.Drawing.Size(81, 37);
             // 
             // metroLink1
-            // 
-            this.metroLink1.Location = new System.Drawing.Point(115, 6);
-            this.metroLink1.Margin = new System.Windows.Forms.Padding(3);
-            this.metroLink1.Size = new System.Drawing.Size(52, 50);
+
             // 
             // dgFuncao
             // 
@@ -193,7 +190,6 @@
             this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.Text = "Funções";
             this.Load += new System.EventHandler(this.frmFuncoes_Load);
-            this.Controls.SetChildIndex(this.metroLink1, 0);
             this.Controls.SetChildIndex(this.pbLogo, 0);
             this.Controls.SetChildIndex(this.btnVisualizar, 0);
             this.Controls.SetChildIndex(this.btNovo, 0);

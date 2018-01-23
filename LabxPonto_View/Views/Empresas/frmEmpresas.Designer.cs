@@ -65,7 +65,6 @@
             // 
             // metroLink1
             // 
-            this.metroLink1.Location = new System.Drawing.Point(136, 10);
             // 
             // dgEmpresas
             // 
@@ -165,7 +164,6 @@
             this.Text = "Empresas";
             this.Load += new System.EventHandler(this.frmEmpresas_Load);
             this.Controls.SetChildIndex(this.pbLogo, 0);
-            this.Controls.SetChildIndex(this.metroLink1, 0);
             this.Controls.SetChildIndex(this.btnVisualizar, 0);
             this.Controls.SetChildIndex(this.btNovo, 0);
             this.Controls.SetChildIndex(this.btAlterar, 0);
