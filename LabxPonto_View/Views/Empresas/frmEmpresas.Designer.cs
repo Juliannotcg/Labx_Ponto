@@ -43,7 +43,7 @@
             // 
             // btNovo
             // 
-            this.btNovo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btNovo.Margin = new System.Windows.Forms.Padding(4);
             this.btNovo.Size = new System.Drawing.Size(165, 82);
             this.btNovo.Click += new System.EventHandler(this.btNovo_Click_1);
             // 
@@ -53,13 +53,13 @@
             // 
             // btExcluir
             // 
-            this.btExcluir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btExcluir.Margin = new System.Windows.Forms.Padding(4);
             this.btExcluir.Size = new System.Drawing.Size(84, 89);
             this.btExcluir.Click += new System.EventHandler(this.btExcluir_Click_1);
             // 
             // btnVisualizar
             // 
-            this.btnVisualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVisualizar.Margin = new System.Windows.Forms.Padding(4);
             this.btnVisualizar.Size = new System.Drawing.Size(165, 49);
             this.btnVisualizar.Click += new System.EventHandler(this.btnVisualizar_Click);
             // 
@@ -104,7 +104,7 @@
             this.dgEmpresas.EnableHeadersVisualStyles = false;
             this.dgEmpresas.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dgEmpresas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgEmpresas.Location = new System.Drawing.Point(204, 107);
+            this.dgEmpresas.Location = new System.Drawing.Point(195, 107);
             this.dgEmpresas.Name = "dgEmpresas";
             this.dgEmpresas.ReadOnly = true;
             this.dgEmpresas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -118,7 +118,7 @@
             this.dgEmpresas.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgEmpresas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgEmpresas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgEmpresas.Size = new System.Drawing.Size(521, 233);
+            this.dgEmpresas.Size = new System.Drawing.Size(530, 233);
             this.dgEmpresas.TabIndex = 61;
             // 
             // Id
@@ -159,7 +159,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(736, 402);
             this.Controls.Add(this.dgEmpresas);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmEmpresas";
             this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.Text = "Empresas";

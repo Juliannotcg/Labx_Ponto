@@ -21,6 +21,7 @@ namespace LabxPonto_View.Views.Horários
         private ValidateCPF_CNPJ validate;
         private AppDataContext context;
         private Funcionario funcionario;
+        private HorarioService servico;
 
         public frmHorarios(AppDataContext con)
         {
@@ -29,11 +30,15 @@ namespace LabxPonto_View.Views.Horários
             validate = new ValidateCPF_CNPJ();
             context = con;
             funcionario = new Funcionario();
+            servico = new HorarioService(context);
         }
 
         private void frmHorarios_Load(object sender, EventArgs e)
         {
-
+        }
+        public void PreencherGrid()
+        {
+            dgFuncionarios.DataSource = servico.GetHorarioFuncionarioCPF(txtCPF.Text);
         }
 
         public bool validar()
@@ -72,7 +77,7 @@ namespace LabxPonto_View.Views.Horários
                             preencherImagemByte(funcionario.Imagem.Arquivo);
                         }
                 }
-
+                PreencherGrid();
             }
 
         }

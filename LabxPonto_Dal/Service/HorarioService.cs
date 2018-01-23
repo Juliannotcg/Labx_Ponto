@@ -20,6 +20,7 @@ namespace LabxPonto_Dao.Service
         public HorarioService(AppDataContext con)
         {
             Context = con;
+            funcionario = new Funcionario();
         }
         public bool Insert(HorarioExpediente horario)
         {
@@ -68,6 +69,12 @@ namespace LabxPonto_Dao.Service
                 }
 
                 return (tabela);
+        }
+
+        public HorarioExpediente GetHorarioFuncionarioCPF(string CPF)
+        {
+            horario = Context.HorariosExpediente.Include("Funcionario").Where(x => x.Funcionario.CPF == CPF).FirstOrDefault();
+            return (horario);
         }
 
         //Verifica se já existe um horário 
