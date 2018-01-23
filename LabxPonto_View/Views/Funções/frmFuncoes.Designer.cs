@@ -44,42 +44,42 @@
             // 
             // btNovo
             // 
-            this.btNovo.Location = new System.Drawing.Point(31, 78);
-            this.btNovo.Margin = new System.Windows.Forms.Padding(5);
-            this.btNovo.Size = new System.Drawing.Size(223, 101);
+            this.btNovo.Location = new System.Drawing.Point(23, 63);
+            this.btNovo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btNovo.Size = new System.Drawing.Size(167, 82);
             this.btNovo.Click += new System.EventHandler(this.btNovo_Click_1);
             // 
             // btAlterar
             // 
-            this.btAlterar.Location = new System.Drawing.Point(31, 186);
-            this.btAlterar.Margin = new System.Windows.Forms.Padding(5);
+            this.btAlterar.Location = new System.Drawing.Point(23, 151);
+            this.btAlterar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click_1);
             // 
             // btExcluir
             // 
-            this.btExcluir.Location = new System.Drawing.Point(139, 186);
-            this.btExcluir.Margin = new System.Windows.Forms.Padding(5);
-            this.btExcluir.Size = new System.Drawing.Size(115, 110);
+            this.btExcluir.Location = new System.Drawing.Point(104, 151);
+            this.btExcluir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btExcluir.Size = new System.Drawing.Size(86, 89);
             this.btExcluir.Click += new System.EventHandler(this.btExcluir_Click_1);
             // 
             // btnVisualizar
             // 
-            this.btnVisualizar.Location = new System.Drawing.Point(31, 303);
-            this.btnVisualizar.Margin = new System.Windows.Forms.Padding(5);
-            this.btnVisualizar.Size = new System.Drawing.Size(223, 57);
+            this.btnVisualizar.Location = new System.Drawing.Point(23, 246);
+            this.btnVisualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVisualizar.Size = new System.Drawing.Size(167, 46);
             this.btnVisualizar.Click += new System.EventHandler(this.btnVisualizar_Click);
             // 
             // pbLogo
             // 
-            this.pbLogo.Location = new System.Drawing.Point(5, 441);
-            this.pbLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pbLogo.Size = new System.Drawing.Size(108, 46);
+            this.pbLogo.Location = new System.Drawing.Point(4, 358);
+            this.pbLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbLogo.Size = new System.Drawing.Size(81, 37);
             // 
             // metroLink1
             // 
-            this.metroLink1.Location = new System.Drawing.Point(153, 7);
-            this.metroLink1.Margin = new System.Windows.Forms.Padding(4);
-            this.metroLink1.Size = new System.Drawing.Size(69, 62);
+            this.metroLink1.Location = new System.Drawing.Point(115, 6);
+            this.metroLink1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.metroLink1.Size = new System.Drawing.Size(52, 50);
             // 
             // dgFuncao
             // 
@@ -118,8 +118,7 @@
             this.dgFuncao.EnableHeadersVisualStyles = false;
             this.dgFuncao.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dgFuncao.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgFuncao.Location = new System.Drawing.Point(261, 78);
-            this.dgFuncao.Margin = new System.Windows.Forms.Padding(4);
+            this.dgFuncao.Location = new System.Drawing.Point(196, 63);
             this.dgFuncao.Name = "dgFuncao";
             this.dgFuncao.ReadOnly = true;
             this.dgFuncao.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -133,7 +132,7 @@
             this.dgFuncao.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgFuncao.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgFuncao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgFuncao.Size = new System.Drawing.Size(692, 232);
+            this.dgFuncao.Size = new System.Drawing.Size(519, 274);
             this.dgFuncao.TabIndex = 62;
             // 
             // Id
@@ -173,9 +172,10 @@
             this.btnImprimir.ActiveControl = null;
             this.btnImprimir.BackColor = System.Drawing.Color.Gray;
             this.btnImprimir.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.btnImprimir.Location = new System.Drawing.Point(31, 369);
+            this.btnImprimir.Location = new System.Drawing.Point(23, 300);
+            this.btnImprimir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(223, 45);
+            this.btnImprimir.Size = new System.Drawing.Size(167, 37);
             this.btnImprimir.TabIndex = 65;
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.UseSelectable = true;
@@ -183,14 +183,14 @@
             // 
             // frmFuncoes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(981, 495);
+            this.ClientSize = new System.Drawing.Size(736, 402);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.dgFuncao);
-            this.Margin = new System.Windows.Forms.Padding(5);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmFuncoes";
-            this.Padding = new System.Windows.Forms.Padding(36, 91, 36, 31);
+            this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.Text = "Funções";
             this.Load += new System.EventHandler(this.frmFuncoes_Load);
             this.Controls.SetChildIndex(this.metroLink1, 0);
