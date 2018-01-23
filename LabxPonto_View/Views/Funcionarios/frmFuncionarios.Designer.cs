@@ -208,6 +208,7 @@
             this.txtCPF.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtCPF.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txtCPF.Click += new System.EventHandler(this.txtCPF_Click);
+            this.txtCPF.Leave += new System.EventHandler(this.txtCPF_Leave);
             // 
             // metroLabel26
             // 
