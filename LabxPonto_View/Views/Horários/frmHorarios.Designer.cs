@@ -41,8 +41,8 @@
             this.metroLabel26 = new MetroFramework.Controls.MetroLabel();
             this.gbFuncionario = new System.Windows.Forms.GroupBox();
             this.txtCPF = new MetroFramework.Controls.MetroTextBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dpDataFinal = new System.Windows.Forms.DateTimePicker();
+            this.dpDataInicial = new System.Windows.Forms.DateTimePicker();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel33 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
@@ -161,8 +161,8 @@
             // gbFuncionario
             // 
             this.gbFuncionario.Controls.Add(this.txtCPF);
-            this.gbFuncionario.Controls.Add(this.dateTimePicker2);
-            this.gbFuncionario.Controls.Add(this.dateTimePicker1);
+            this.gbFuncionario.Controls.Add(this.dpDataFinal);
+            this.gbFuncionario.Controls.Add(this.dpDataInicial);
             this.gbFuncionario.Controls.Add(this.metroLabel1);
             this.gbFuncionario.Controls.Add(this.metroLabel33);
             this.gbFuncionario.Controls.Add(this.metroLabel26);
@@ -208,22 +208,23 @@
             this.txtCPF.UseSelectable = true;
             this.txtCPF.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtCPF.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtCPF.Leave += new System.EventHandler(this.txtCPF_Leave);
             // 
-            // dateTimePicker2
+            // dpDataFinal
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(131, 48);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(114, 20);
-            this.dateTimePicker2.TabIndex = 1;
+            this.dpDataFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dpDataFinal.Location = new System.Drawing.Point(131, 48);
+            this.dpDataFinal.Name = "dpDataFinal";
+            this.dpDataFinal.Size = new System.Drawing.Size(114, 20);
+            this.dpDataFinal.TabIndex = 1;
             // 
-            // dateTimePicker1
+            // dpDataInicial
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(15, 48);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(106, 20);
-            this.dateTimePicker1.TabIndex = 0;
+            this.dpDataInicial.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dpDataInicial.Location = new System.Drawing.Point(15, 48);
+            this.dpDataInicial.Name = "dpDataInicial";
+            this.dpDataInicial.Size = new System.Drawing.Size(106, 20);
+            this.dpDataInicial.TabIndex = 0;
             // 
             // metroLabel1
             // 
@@ -252,7 +253,7 @@
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.Location = new System.Drawing.Point(438, 72);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(63, 25);
+            this.metroLabel2.Size = new System.Drawing.Size(49, 19);
             this.metroLabel2.TabIndex = 68;
             this.metroLabel2.Text = "Nome:";
             this.metroLabel2.UseCustomBackColor = true;
@@ -263,7 +264,7 @@
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.Location = new System.Drawing.Point(438, 111);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(81, 25);
+            this.metroLabel3.Size = new System.Drawing.Size(63, 19);
             this.metroLabel3.TabIndex = 69;
             this.metroLabel3.Text = "Empresa:";
             this.metroLabel3.UseCustomBackColor = true;
@@ -274,7 +275,7 @@
             this.metroLabel4.AutoSize = true;
             this.metroLabel4.Location = new System.Drawing.Point(439, 146);
             this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(116, 25);
+            this.metroLabel4.Size = new System.Drawing.Size(91, 19);
             this.metroLabel4.TabIndex = 70;
             this.metroLabel4.Text = "Departameto:";
             this.metroLabel4.UseCustomBackColor = true;
@@ -285,7 +286,7 @@
             this.metroLabel5.AutoSize = true;
             this.metroLabel5.Location = new System.Drawing.Point(439, 184);
             this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(71, 25);
+            this.metroLabel5.Size = new System.Drawing.Size(54, 19);
             this.metroLabel5.TabIndex = 71;
             this.metroLabel5.Text = "Função:";
             this.metroLabel5.UseCustomBackColor = true;
@@ -385,8 +386,8 @@
         public MetroFramework.Controls.MetroGrid dgFuncionarios;
         private MetroFramework.Controls.MetroLabel metroLabel26;
         private System.Windows.Forms.GroupBox gbFuncionario;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dpDataFinal;
+        private System.Windows.Forms.DateTimePicker dpDataInicial;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel metroLabel33;
         private MetroFramework.Controls.MetroTextBox txtCPF;

@@ -38,7 +38,7 @@ namespace LabxPonto_View.Views.Horários
         }
         public void PreencherGrid()
         {
-            dgFuncionarios.DataSource = servico.GetHorarioFuncionarioCPF(txtCPF.Text);
+            dgFuncionarios.DataSource = servico.GetHorarioFuncionarioCPF(txtCPF.Text, dpDataInicial.Value, dpDataFinal.Value);
         }
 
         public bool validar()
@@ -76,10 +76,9 @@ namespace LabxPonto_View.Views.Horários
                         {
                             preencherImagemByte(funcionario.Imagem.Arquivo);
                         }
+                    PreencherGrid();
                 }
-                PreencherGrid();
             }
-
         }
 
         public void preencherImagemByte(byte[] imagemEmBytes)
@@ -105,6 +104,16 @@ namespace LabxPonto_View.Views.Horários
                     ms.Close();
                     ms = null;
                 }
+            }
+        }
+
+        private void txtCPF_Leave(object sender, EventArgs e)
+        {
+            if (txtCPF.Text.Length == 11)
+            {
+                long CPF = Convert.ToInt64(txtCPF.Text);
+                string CPFFormatado = String.Format(@"{0:000\.000\.000\-00}", CPF);
+                txtCPF.Text = CPFFormatado;
             }
         }
     }

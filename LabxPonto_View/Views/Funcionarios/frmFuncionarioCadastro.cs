@@ -272,11 +272,14 @@ namespace LabxPonto_View.Views.Funcionarios
 
             #region Imagem
 
-            funcionario.Imagem = new Imagem();
             if (imagemByte != null)
+            {
+                funcionario.Imagem = new Imagem();
                 funcionario.Imagem.Arquivo = imagemByte;
-                //funcionario.Imagem.Arquivo = ConverterImagemParaBytes(imgFoto.ImageLocation);
-                
+            }
+            else
+                funcionario.Imagem = null;
+            
             #endregion
 
             #region Funcionário 

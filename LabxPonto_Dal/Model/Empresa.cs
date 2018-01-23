@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace LabxPonto_Dao.Model
 {
     public class Empresa
     {
+        [Key]
         public int Id { get; set; }
         public string NomeFantasia { get; set; }
         public string RazaoSocial { get; set; }

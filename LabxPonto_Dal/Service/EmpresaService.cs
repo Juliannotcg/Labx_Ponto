@@ -28,6 +28,7 @@ namespace LabxPonto_Dao.Service
         public Empresa GetEmpresa(int id)
         {
             return Context.Empresas.Include("Endereco")
+                    .Include("Imagem")
                     .Where(x => x.Id == id).FirstOrDefault();
         }
 
@@ -41,8 +42,7 @@ namespace LabxPonto_Dao.Service
 
         public DataTable GetEmpresaGrid()
         {
-            var resposta = (from p in Context.Empresas
-                            select p).ToList();
+            var resposta = Context.Empresas.ToList();
 
             DataTable tabela = new DataTable();
             tabela.Columns.Add("Id", typeof(int));

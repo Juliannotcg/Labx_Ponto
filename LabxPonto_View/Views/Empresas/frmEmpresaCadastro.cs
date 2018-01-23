@@ -201,11 +201,13 @@ namespace LabxPonto_View.Views.Empresas
 
             #region Imagem
 
-            empresa.Imagem = new Imagem();
-            if (imagemByte!=null)
+            if (imagemByte != null)
+            {
+                empresa.Imagem = new Imagem();
                 empresa.Imagem.Arquivo = imagemByte;
-            //funcionario.Imagem.Arquivo = ConverterImagemParaBytes(imgFoto.ImageLocation);
-
+            }
+            else
+                empresa.Imagem = null;
             #endregion
         }
 

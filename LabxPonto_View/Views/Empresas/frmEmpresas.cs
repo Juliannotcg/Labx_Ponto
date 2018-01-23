@@ -30,6 +30,7 @@ namespace LabxPonto_View.Views.Empresas
 
         public Empresa retornarEmpresaSelecionado()
         {
+            empresa = new Empresa();
             empresa.Id = (int)dgEmpresas.Rows[dgEmpresas.CurrentRow.Index].Cells["Id"].Value;
             empresa = servico.GetEmpresa(empresa.Id);
             return empresa;
@@ -61,9 +62,11 @@ namespace LabxPonto_View.Views.Empresas
 
         private void btnVisualizar_Click(object sender, System.EventArgs e)
         {
+            
             cadastro = new frmEmpresaCadastro(Operacao.Visualizar, context);
             cadastro.StyleManager = this.StyleManager;
             cadastro.Empresa = retornarEmpresaSelecionado();
+            empresa = servico.GetEmpresa(empresa.Id);
             cadastro.preencherTela();
             cadastro.ShowDialog();
             preencherGrid();

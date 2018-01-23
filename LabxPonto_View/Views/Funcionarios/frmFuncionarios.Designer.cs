@@ -79,7 +79,6 @@
             // 
             // metroLink1
             // 
-            this.metroLink1.Location = new System.Drawing.Point(809, 23);
             // 
             // dgFuncionarios
             // 
@@ -236,7 +235,6 @@
             this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.Text = "Funcionários";
             this.Load += new System.EventHandler(this.frmFuncionarios_Load);
-            this.Controls.SetChildIndex(this.metroLink1, 0);
             this.Controls.SetChildIndex(this.dgFuncionarios, 0);
             this.Controls.SetChildIndex(this.pbLogo, 0);
             this.Controls.SetChildIndex(this.btnVisualizar, 0);

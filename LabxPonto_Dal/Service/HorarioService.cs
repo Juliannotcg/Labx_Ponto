@@ -71,12 +71,12 @@ namespace LabxPonto_Dao.Service
                 return (tabela);
         }
 
-        public DataTable GetHorarioFuncionarioCPF(string CPF)
+        public DataTable GetHorarioFuncionarioCPF(string cpf, DateTime dataInicial, DateTime dataFinal)
         {
             horario = new HorarioExpediente();
 
             var results = Context.HorariosExpediente
-           .Where(x => x.Funcionario.CPF == CPF)
+           .Where(x => x.Funcionario.CPF == cpf && x.Data >= dataInicial && x.Data <= dataFinal)
            .Include("Funcionario")
            .Select(p => new
            {
