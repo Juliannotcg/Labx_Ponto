@@ -73,9 +73,12 @@
             // 
             // pbLogo
             // 
-            this.pbLogo.Location = new System.Drawing.Point(9, 346);
+            this.pbLogo.Location = new System.Drawing.Point(9, 325);
             this.pbLogo.Margin = new System.Windows.Forms.Padding(2);
-            this.pbLogo.Size = new System.Drawing.Size(81, 35);
+            this.pbLogo.Size = new System.Drawing.Size(81, 36);
+            // 
+            // btVoltar
+            // 
             // 
             // dgFuncionarios
             // 
@@ -130,7 +133,7 @@
             this.dgFuncionarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgFuncionarios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgFuncionarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgFuncionarios.Size = new System.Drawing.Size(701, 231);
+            this.dgFuncionarios.Size = new System.Drawing.Size(701, 211);
             this.dgFuncionarios.TabIndex = 61;
             // 
             // Id
@@ -225,7 +228,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(922, 388);
+            this.ClientSize = new System.Drawing.Size(922, 368);
             this.Controls.Add(this.txtCPF);
             this.Controls.Add(this.metroLabel26);
             this.Controls.Add(this.dgFuncionarios);
@@ -260,5 +263,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Funcao;
         private MetroFramework.Controls.MetroTextBox txtCPF;
         private MetroFramework.Controls.MetroLabel metroLabel26;
+        public MetroFramework.Controls.MetroTile btVoltar;
     }
 }

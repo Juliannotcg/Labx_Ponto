@@ -93,6 +93,12 @@ namespace LabxPonto_View.Views.Horários
             }
         }
 
+        public void preencherTelaInserir()
+        {
+            txtEntrada.Text = Convert.ToString(DateTime.Now.Date.ToString("dd-MM-yyyy"));
+            txtSaida.Text = Convert.ToString(DateTime.Now.Date.ToString("dd-MM-yyyy"));
+        }
+
         public void PreencherHorario()
         {
             horarioExpediente.Data = dpData.Value;
@@ -120,7 +126,8 @@ namespace LabxPonto_View.Views.Horários
         {
             if (servico.Delete(horarioExpediente))
             {
-                MetroFramework.MetroMessageBox.Show(this, "Foi excluído os horário da data: " + horarioExpediente.Data + " do funcionário: " + horarioExpediente.Funcionario.Nome + ".", "Excluído com sucesso!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question);
+                MetroFramework.MetroMessageBox.Show(this, "Foi excluído o horário: " + horarioExpediente.Entrada + " e de saída: " + horarioExpediente.Saida +
+                         ".", "Excluído com sucesso!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question);
                 this.Dispose();
             }
         }
@@ -151,7 +158,10 @@ namespace LabxPonto_View.Views.Horários
 
         private void frmHorarioCadastro_Load(object sender, EventArgs e)
         {
-            preencherTela();
+            if (operacao == Operacao.Inserir)
+                preencherTelaInserir();
+            else
+                preencherTela();            
         }
     }
 }

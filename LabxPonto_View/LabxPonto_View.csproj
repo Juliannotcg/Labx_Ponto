@@ -545,6 +545,9 @@
     <None Include="Resources\LogoEmpresa2.jpg" />
     <None Include="Resources\LogoEmpresa3.jpg" />
     <None Include="Resources\LogoEmpresa4.jpg" />
+    <None Include="Resources\if_back_172570 %281%29.png" />
+    <None Include="Resources\if_back_126585.png" />
+    <None Include="Resources\go-back-left-arrow.png" />
     <Content Include="Utils\DirectX.Capture.dll" />
     <Content Include="Utils\DShowNET.dll" />
   </ItemGroup>

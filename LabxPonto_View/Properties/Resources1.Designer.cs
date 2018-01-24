@@ -143,6 +143,16 @@ namespace LabxPonto_View.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap go_back_left_arrow {
+            get {
+                object obj = ResourceManager.GetObject("go-back-left-arrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon {
             get {
                 object obj = ResourceManager.GetObject("icon", resourceCulture);
@@ -186,6 +196,26 @@ namespace LabxPonto_View.Properties {
         internal static System.Drawing.Bitmap if_access_time_326483 {
             get {
                 object obj = ResourceManager.GetObject("if_access-time_326483", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap if_back_126585 {
+            get {
+                object obj = ResourceManager.GetObject("if_back_126585", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap if_back_172570__1_ {
+            get {
+                object obj = ResourceManager.GetObject("if_back_172570 (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
