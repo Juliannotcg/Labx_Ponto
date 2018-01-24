@@ -97,21 +97,13 @@ namespace LabxPonto_View.Views.Biometria
 
         private void btDigital_Click(object sender, EventArgs e)
         {
-            if (validar())
-            {
-
-                Enroller = new frmInscricaoBiometrica();
-                Enroller.OnTemplate += this.OnTemplate;
-                Enroller.ShowDialog();
-                byte[] by = Template.Bytes;
-                imgDigital.Image = Enroller.image;
-            }
+            
 
         }
 
         private void txtCPF_Click(object sender, EventArgs e)
         {
-
+            formatarCPF();
             if (validar())
             {
                 FuncionarioService funServ = new FuncionarioService(context);
@@ -217,7 +209,8 @@ namespace LabxPonto_View.Views.Biometria
 
         private void imgDigital_LoadCompleted(object sender, AsyncCompletedEventArgs e)
         {
-
+            if (imgDigital.Image != null)
+                btVerificarDigital.Enabled = true;
         }
 
         private void metroTile1_Click(object sender, EventArgs e)
@@ -228,6 +221,33 @@ namespace LabxPonto_View.Views.Biometria
             Verifier.Verify(template);
 
             
+        }
+
+        private void txtCPF_Leave(object sender, EventArgs e)
+        {
+            formatarCPF();
+        }
+
+        private void formatarCPF()
+        {
+            if (txtCPF.Text.Length == 11)
+            {
+                long CPF = Convert.ToInt64(txtCPF.Text);
+                string CPFFormatado = String.Format(@"{0:000\.000\.000\-00}", CPF);
+                txtCPF.Text = CPFFormatado;
+            }
+        }
+
+        private void btCapturar_Click(object sender, EventArgs e)
+        {
+            if (validar())
+            {
+
+                Enroller = new frmInscricaoBiometrica();
+                Enroller.OnTemplate += this.OnTemplate;
+                Enroller.ShowDialog();
+                imgDigital.Image = Enroller.image;
+            }
         }
     }
 }

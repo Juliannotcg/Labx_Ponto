@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBiometria));
             this.imgDigital = new System.Windows.Forms.PictureBox();
-            this.btDigital = new MetroFramework.Controls.MetroTile();
             this.txtFuncao = new MetroFramework.Controls.MetroLabel();
             this.txtDepartamento = new MetroFramework.Controls.MetroLabel();
             this.txtEmpresa = new MetroFramework.Controls.MetroLabel();
@@ -45,6 +44,7 @@
             this.metroLabel26 = new MetroFramework.Controls.MetroLabel();
             this.errorProviderFunc = new System.Windows.Forms.ErrorProvider(this.components);
             this.btVerificarDigital = new MetroFramework.Controls.MetroTile();
+            this.btCapturar = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgDigital)).BeginInit();
@@ -54,12 +54,12 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(689, 419);
+            this.btnCancelar.Location = new System.Drawing.Point(757, 419);
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(582, 419);
+            this.btnSalvar.Location = new System.Drawing.Point(650, 419);
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // pbLogo
@@ -68,26 +68,14 @@
             // 
             // imgDigital
             // 
-            this.imgDigital.Location = new System.Drawing.Point(604, 29);
+            this.imgDigital.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.imgDigital.Location = new System.Drawing.Point(604, 108);
             this.imgDigital.Name = "imgDigital";
             this.imgDigital.Size = new System.Drawing.Size(169, 179);
             this.imgDigital.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgDigital.TabIndex = 77;
             this.imgDigital.TabStop = false;
             this.imgDigital.LoadCompleted += new System.ComponentModel.AsyncCompletedEventHandler(this.imgDigital_LoadCompleted);
-            // 
-            // btDigital
-            // 
-            this.btDigital.ActiveControl = null;
-            this.btDigital.Location = new System.Drawing.Point(618, 224);
-            this.btDigital.Name = "btDigital";
-            this.btDigital.Size = new System.Drawing.Size(133, 124);
-            this.btDigital.TabIndex = 78;
-            this.btDigital.TileImage = global::LabxPonto_View.Properties.Resources.if_Touch_ID_363335;
-            this.btDigital.UseCustomBackColor = true;
-            this.btDigital.UseSelectable = true;
-            this.btDigital.UseTileImage = true;
-            this.btDigital.Click += new System.EventHandler(this.btDigital_Click);
             // 
             // txtFuncao
             // 
@@ -222,6 +210,7 @@
             this.txtCPF.UseSelectable = true;
             this.txtCPF.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtCPF.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtCPF.Leave += new System.EventHandler(this.txtCPF_Leave);
             // 
             // metroLabel26
             // 
@@ -242,22 +231,35 @@
             // btVerificarDigital
             // 
             this.btVerificarDigital.ActiveControl = null;
-            this.btVerificarDigital.Location = new System.Drawing.Point(626, 364);
+            this.btVerificarDigital.Enabled = false;
+            this.btVerificarDigital.Location = new System.Drawing.Point(604, 293);
+            this.btVerificarDigital.Margin = new System.Windows.Forms.Padding(0);
             this.btVerificarDigital.Name = "btVerificarDigital";
-            this.btVerificarDigital.Size = new System.Drawing.Size(113, 43);
+            this.btVerificarDigital.Size = new System.Drawing.Size(169, 40);
             this.btVerificarDigital.TabIndex = 90;
             this.btVerificarDigital.Text = "Verificar";
             this.btVerificarDigital.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btVerificarDigital.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btVerificarDigital.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.btVerificarDigital.UseSelectable = true;
             this.btVerificarDigital.Click += new System.EventHandler(this.metroTile1_Click);
+            // 
+            // btCapturar
+            // 
+            this.btCapturar.Location = new System.Drawing.Point(778, 108);
+            this.btCapturar.Margin = new System.Windows.Forms.Padding(2);
+            this.btCapturar.Name = "btCapturar";
+            this.btCapturar.Size = new System.Drawing.Size(73, 60);
+            this.btCapturar.TabIndex = 91;
+            this.btCapturar.Text = "Capturar";
+            this.btCapturar.UseSelectable = true;
+            this.btCapturar.Click += new System.EventHandler(this.btCapturar_Click);
             // 
             // frmBiometria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(811, 473);
+            this.ClientSize = new System.Drawing.Size(879, 473);
+            this.Controls.Add(this.btCapturar);
             this.Controls.Add(this.btVerificarDigital);
             this.Controls.Add(this.txtCPF);
             this.Controls.Add(this.metroLabel26);
@@ -270,7 +272,6 @@
             this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroLabel2);
-            this.Controls.Add(this.btDigital);
             this.Controls.Add(this.imgDigital);
             this.Name = "frmBiometria";
             this.Text = "Biometria";
@@ -278,7 +279,6 @@
             this.Controls.SetChildIndex(this.btnSalvar, 0);
             this.Controls.SetChildIndex(this.btnCancelar, 0);
             this.Controls.SetChildIndex(this.imgDigital, 0);
-            this.Controls.SetChildIndex(this.btDigital, 0);
             this.Controls.SetChildIndex(this.metroLabel2, 0);
             this.Controls.SetChildIndex(this.metroLabel3, 0);
             this.Controls.SetChildIndex(this.metroLabel4, 0);
@@ -291,6 +291,7 @@
             this.Controls.SetChildIndex(this.metroLabel26, 0);
             this.Controls.SetChildIndex(this.txtCPF, 0);
             this.Controls.SetChildIndex(this.btVerificarDigital, 0);
+            this.Controls.SetChildIndex(this.btCapturar, 0);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgDigital)).EndInit();
@@ -303,7 +304,6 @@
 
         #endregion
         private System.Windows.Forms.PictureBox imgDigital;
-        private MetroFramework.Controls.MetroTile btDigital;
         private MetroFramework.Controls.MetroLabel txtFuncao;
         private MetroFramework.Controls.MetroLabel txtDepartamento;
         private MetroFramework.Controls.MetroLabel txtEmpresa;
@@ -317,5 +317,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel26;
         private System.Windows.Forms.ErrorProvider errorProviderFunc;
         private MetroFramework.Controls.MetroTile btVerificarDigital;
+        private MetroFramework.Controls.MetroButton btCapturar;
     }
 }

@@ -39,7 +39,6 @@
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.metroTile1 = new MetroFramework.Controls.MetroTile();
             ((System.ComponentModel.ISupportInitialize)(this.imgDigital)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgFoto)).BeginInit();
             this.panel1.SuspendLayout();
@@ -179,34 +178,14 @@
             this.panel1.Size = new System.Drawing.Size(590, 188);
             this.panel1.TabIndex = 98;
             // 
-            // metroTile1
-            // 
-            this.metroTile1.ActiveControl = null;
-            this.metroTile1.Location = new System.Drawing.Point(555, 12);
-            this.metroTile1.Name = "metroTile1";
-            this.metroTile1.Size = new System.Drawing.Size(58, 43);
-            this.metroTile1.TabIndex = 99;
-            this.metroTile1.Text = "Sair";
-            this.metroTile1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroTile1.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
-            this.metroTile1.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.metroTile1.UseCustomBackColor = true;
-            this.metroTile1.UseSelectable = true;
-            this.metroTile1.Click += new System.EventHandler(this.metroTile1_Click);
-            // 
             // frmBaterPonto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LimeGreen;
             this.ClientSize = new System.Drawing.Size(643, 512);
-            this.Controls.Add(this.metroTile1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.imgDigital);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmBaterPonto";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmBaterPonto";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmBaterPonto_FormClosing);
             this.Load += new System.EventHandler(this.frmBaterPonto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.imgDigital)).EndInit();
@@ -229,6 +208,5 @@
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private System.Windows.Forms.PictureBox imgDigital;
         private System.Windows.Forms.Panel panel1;
-        private MetroFramework.Controls.MetroTile metroTile1;
     }
 }

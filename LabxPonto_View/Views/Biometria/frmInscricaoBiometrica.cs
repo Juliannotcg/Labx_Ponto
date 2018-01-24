@@ -60,6 +60,17 @@ namespace LabxPonto_View.Views.Biometria
 
         private void UpdateStatus()
         {
+            if (Enroller.FeaturesNeeded > 0)
+            {
+                if (Enroller.FeaturesNeeded == 4)
+                    MetroFramework.MetroMessageBox.Show(this, "Será necessário capturar a imagem digital pelo menos por 4 vezes.\n Pressione OK e coloque o dedo no leitor", "Captura biométrica", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Warning);
+                else
+                    if (Enroller.FeaturesNeeded == 1)
+                    MetroFramework.MetroMessageBox.Show(this, "A digital foi capturada.\nSó falta mais uma vez.\nPressione OK e coloque novamente o mesmo dedo no leitor", "Captura biométrica", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Warning);
+                else
+                    MetroFramework.MetroMessageBox.Show(this, "A digital foi capturada.\nSó faltam mais " + Enroller.FeaturesNeeded + " vezes.\nPressione OK e coloque novamente o mesmo dedo no leitor", "Captura biométrica", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Warning);
+
+            }
             // Show number of samples needed.
             SetStatus(String.Format("Quantidade de imagens necessárias: {0}", Enroller.FeaturesNeeded));
         }

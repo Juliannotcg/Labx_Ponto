@@ -18,7 +18,7 @@ using System.IO;
 
 namespace LabxPonto_View.Views.Biometria
 {
-    public partial class frmBaterPonto : Form, DPFP.Capture.EventHandler
+    public partial class frmBaterPonto : MetroForm, DPFP.Capture.EventHandler
     {
         AppDataContext context;
         Funcionario funcionario;
@@ -100,7 +100,12 @@ namespace LabxPonto_View.Views.Biometria
             funcionarios = funServ.GetFuncionarios();
             byte[] bytes = Sample.Bytes;
             Process(Sample);
-            PreencherTela();
+            if (funcionario != null)
+            {
+                PreencherTela();
+                MetroFramework.MetroMessageBox.Show(this, "Impressão digital localizada.\n Para efetuar o lançamento do ponto, pressione OK e coloque novamente o mesmo dedo no leitor.", "Verificação biométrica", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Warning);
+
+            }
         }
 
         public void PreencherTela()
@@ -132,6 +137,11 @@ namespace LabxPonto_View.Views.Biometria
 
         public void OnFingerTouch(object Capture, string ReaderSerialNumber)
         {
+            if(funcionario!=null)
+            {
+                //funcionario = null;
+            }
+
             img = null;
         }
 

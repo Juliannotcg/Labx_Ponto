@@ -167,7 +167,6 @@ namespace LabxPonto_View.Views.Biometria
             Init();
             Start();
         }
-
         private void frmLeituraBiometrica_FormClosed(object sender, FormClosedEventArgs e)
         {
             Stop();
