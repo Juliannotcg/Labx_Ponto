@@ -143,7 +143,6 @@ namespace LabxPonto_Dao.Service
 
         public DataTable GetFuncionarioGridCPF(string CPF)
         {
-
             var results = Context.Funcionarios
                 .Include("Empresa")
                 .Include("Funcao")
