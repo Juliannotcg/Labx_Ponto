@@ -303,6 +303,12 @@
     <Compile Include="Views\Funções\frmRltFuncao.Designer.cs">
       <DependentUpon>frmRltFuncao.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Horários\frmHorarioCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Horários\frmHorarioCadastro.Designer.cs">
+      <DependentUpon>frmHorarioCadastro.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Horários\frmHorarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -429,6 +435,9 @@
       <DependentUpon>frmRltFuncao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Funções\ReportFuncao.rdlc" />
+    <EmbeddedResource Include="Views\Horários\frmHorarioCadastro.resx">
+      <DependentUpon>frmHorarioCadastro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Horários\frmHorarios.resx">
       <DependentUpon>frmHorarios.cs</DependentUpon>
     </EmbeddedResource>

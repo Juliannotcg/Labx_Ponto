@@ -2,6 +2,7 @@
 using LabxPonto_Dao.Data.Context;
 using LabxPonto_Dao.Model;
 using LabxPonto_Dao.Service;
+using LabxPonto_View.Enums;
 using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,8 @@ namespace LabxPonto_View.Views.Horários
         private AppDataContext context;
         private Funcionario funcionario;
         private HorarioService servico;
+        private frmHorarioCadastro cadastro;
+        private HorarioExpediente horarioExpediente;
 
         public frmHorarios(AppDataContext con)
         {
@@ -31,6 +34,7 @@ namespace LabxPonto_View.Views.Horários
             context = con;
             funcionario = new Funcionario();
             servico = new HorarioService(context);
+            horarioExpediente = new HorarioExpediente();
         }
 
         private void frmHorarios_Load(object sender, EventArgs e)
@@ -55,7 +59,6 @@ namespace LabxPonto_View.Views.Horários
 
         private void txtCPF_Click(object sender, EventArgs e)
         {
-
             if (validar())
             {
                 FuncionarioService funServ = new FuncionarioService(context);
@@ -77,6 +80,10 @@ namespace LabxPonto_View.Views.Horários
                             preencherImagemByte(funcionario.Imagem.Arquivo);
                         }
                     PreencherGrid();
+
+                    btNovo.Visible = true;
+                    btAlterar.Visible = true;
+                    btExcluir.Visible = true;
                 }
             }
         }
@@ -115,6 +122,41 @@ namespace LabxPonto_View.Views.Horários
                 string CPFFormatado = String.Format(@"{0:000\.000\.000\-00}", CPF);
                 txtCPF.Text = CPFFormatado;
             }
+        }
+
+        public HorarioExpediente retornarHorarioSelecionado()
+        {
+            horarioExpediente = new HorarioExpediente();
+            horarioExpediente.Id = (int)dgFuncionarios.Rows[dgFuncionarios.CurrentRow.Index].Cells["Id"].Value;
+            horarioExpediente = servico.GetHorario(horarioExpediente.Id);
+            return horarioExpediente;
+        }
+
+        private void btNovo_Click_1(object sender, EventArgs e)
+        {
+            cadastro = new frmHorarioCadastro(Operacao.Inserir, context, funcionario);
+            cadastro.StyleManager = this.StyleManager;
+            cadastro.HorarioExpediente = new HorarioExpediente();
+            cadastro.ShowDialog();
+            PreencherGrid();
+        }
+
+        private void btAlterar_Click(object sender, EventArgs e)
+        {
+            cadastro = new frmHorarioCadastro(Operacao.Editar, context, funcionario);
+            cadastro.StyleManager = this.StyleManager;
+            cadastro.HorarioExpediente = retornarHorarioSelecionado();
+            cadastro.ShowDialog();
+            PreencherGrid();
+        }
+
+        private void btExcluir_Click(object sender, EventArgs e)
+        {
+            cadastro = new frmHorarioCadastro(Operacao.Excluir, context, funcionario);
+            cadastro.StyleManager = this.StyleManager;
+            cadastro.HorarioExpediente = retornarHorarioSelecionado();
+            cadastro.ShowDialog();
+            PreencherGrid();
         }
     }
 }

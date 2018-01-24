@@ -62,7 +62,6 @@ namespace LabxPonto_View.Views.Empresas
 
         private void btnVisualizar_Click(object sender, System.EventArgs e)
         {
-            
             cadastro = new frmEmpresaCadastro(Operacao.Visualizar, context);
             cadastro.StyleManager = this.StyleManager;
             cadastro.Empresa = retornarEmpresaSelecionado();

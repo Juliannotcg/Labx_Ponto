@@ -29,6 +29,11 @@ namespace LabxPonto_Dao.Service
             return true;
         }
 
+        public HorarioExpediente GetHorario(int id)
+        {
+            return Context.HorariosExpediente.Where(x => x.Id == id).FirstOrDefault();
+        }
+
         public DataTable GetHorarioXml(DateTime dataIni, DateTime dataFim)
         {
             horario = new HorarioExpediente();
@@ -83,7 +88,7 @@ namespace LabxPonto_Dao.Service
                p.Data,
                p.Entrada,
                p.Saida,
-               Id = p.Funcionario.Id,
+               Id = p.Id,
            })
            .AsEnumerable()
            .ToList();
@@ -122,6 +127,21 @@ namespace LabxPonto_Dao.Service
             else
                 return true;
 
+        }
+
+        public bool Delete(HorarioExpediente horarioExpediente)
+        {
+            Context.Entry(horarioExpediente).State = System.Data.Entity.EntityState.Deleted;
+            Context.HorariosExpediente.Remove(horarioExpediente);
+            Context.SaveChanges();
+            return true;
+        }
+
+        public bool Update(HorarioExpediente horarioExpediente)
+        {
+            Context.Entry(horarioExpediente).State = System.Data.Entity.EntityState.Modified;
+            Context.SaveChanges();
+            return true;
         }
 
     }

@@ -50,16 +50,18 @@
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.txtNome = new MetroFramework.Controls.MetroLabel();
-            this.imgFoto = new System.Windows.Forms.PictureBox();
             this.txtEmpresa = new MetroFramework.Controls.MetroLabel();
             this.txtDepartamento = new MetroFramework.Controls.MetroLabel();
             this.txtFuncao = new MetroFramework.Controls.MetroLabel();
             this.errorProviderFunc = new System.Windows.Forms.ErrorProvider(this.components);
             this.btAlterar = new MetroFramework.Controls.MetroTile();
+            this.btExcluir = new MetroFramework.Controls.MetroTile();
+            this.btNovo = new MetroFramework.Controls.MetroTile();
+            this.imgFoto = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuncionarios)).BeginInit();
             this.gbFuncionario.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgFoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderFunc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgFoto)).BeginInit();
             this.SuspendLayout();
             // 
             // dgFuncionarios
@@ -99,7 +101,8 @@
             this.dgFuncionarios.EnableHeadersVisualStyles = false;
             this.dgFuncionarios.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dgFuncionarios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgFuncionarios.Location = new System.Drawing.Point(23, 259);
+            this.dgFuncionarios.Location = new System.Drawing.Point(31, 328);
+            this.dgFuncionarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgFuncionarios.Name = "dgFuncionarios";
             this.dgFuncionarios.ReadOnly = true;
             this.dgFuncionarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -113,7 +116,7 @@
             this.dgFuncionarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgFuncionarios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgFuncionarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgFuncionarios.Size = new System.Drawing.Size(802, 346);
+            this.dgFuncionarios.Size = new System.Drawing.Size(1069, 444);
             this.dgFuncionarios.TabIndex = 62;
             // 
             // Id
@@ -151,9 +154,10 @@
             // metroLabel26
             // 
             this.metroLabel26.AutoSize = true;
-            this.metroLabel26.Location = new System.Drawing.Point(15, 71);
+            this.metroLabel26.Location = new System.Drawing.Point(20, 87);
+            this.metroLabel26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel26.Name = "metroLabel26";
-            this.metroLabel26.Size = new System.Drawing.Size(33, 19);
+            this.metroLabel26.Size = new System.Drawing.Size(33, 20);
             this.metroLabel26.TabIndex = 65;
             this.metroLabel26.Text = "CPF";
             this.metroLabel26.UseCustomBackColor = true;
@@ -168,9 +172,11 @@
             this.gbFuncionario.Controls.Add(this.metroLabel33);
             this.gbFuncionario.Controls.Add(this.metroLabel26);
             this.gbFuncionario.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.gbFuncionario.Location = new System.Drawing.Point(23, 63);
+            this.gbFuncionario.Location = new System.Drawing.Point(31, 78);
+            this.gbFuncionario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gbFuncionario.Name = "gbFuncionario";
-            this.gbFuncionario.Size = new System.Drawing.Size(263, 148);
+            this.gbFuncionario.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbFuncionario.Size = new System.Drawing.Size(351, 182);
             this.gbFuncionario.TabIndex = 66;
             this.gbFuncionario.TabStop = false;
             this.gbFuncionario.Text = "Dados de pesquisa";
@@ -181,10 +187,10 @@
             // 
             // 
             this.txtCPF.CustomButton.Image = global::LabxPonto_View.Properties.Resources.if_icons_search_1564527;
-            this.txtCPF.CustomButton.Location = new System.Drawing.Point(202, 1);
-            this.txtCPF.CustomButton.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCPF.CustomButton.Location = new System.Drawing.Point(273, 2);
+            this.txtCPF.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCPF.CustomButton.Name = "";
-            this.txtCPF.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.txtCPF.CustomButton.Size = new System.Drawing.Size(31, 31);
             this.txtCPF.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtCPF.CustomButton.TabIndex = 1;
             this.txtCPF.CustomButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -193,8 +199,8 @@
             this.txtCPF.CustomButton.UseVisualStyleBackColor = false;
             this.txtCPF.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtCPF.Lines = new string[0];
-            this.txtCPF.Location = new System.Drawing.Point(15, 92);
-            this.txtCPF.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCPF.Location = new System.Drawing.Point(20, 113);
+            this.txtCPF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCPF.MaxLength = 32767;
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.PasswordChar = '\0';
@@ -204,7 +210,7 @@
             this.txtCPF.SelectionStart = 0;
             this.txtCPF.ShortcutsEnabled = true;
             this.txtCPF.ShowButton = true;
-            this.txtCPF.Size = new System.Drawing.Size(230, 29);
+            this.txtCPF.Size = new System.Drawing.Size(307, 36);
             this.txtCPF.TabIndex = 2;
             this.txtCPF.UseSelectable = true;
             this.txtCPF.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -214,25 +220,28 @@
             // dpDataFinal
             // 
             this.dpDataFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dpDataFinal.Location = new System.Drawing.Point(131, 48);
+            this.dpDataFinal.Location = new System.Drawing.Point(175, 59);
+            this.dpDataFinal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dpDataFinal.Name = "dpDataFinal";
-            this.dpDataFinal.Size = new System.Drawing.Size(114, 20);
+            this.dpDataFinal.Size = new System.Drawing.Size(151, 22);
             this.dpDataFinal.TabIndex = 1;
             // 
             // dpDataInicial
             // 
             this.dpDataInicial.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dpDataInicial.Location = new System.Drawing.Point(15, 48);
+            this.dpDataInicial.Location = new System.Drawing.Point(20, 59);
+            this.dpDataInicial.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dpDataInicial.Name = "dpDataInicial";
-            this.dpDataInicial.Size = new System.Drawing.Size(106, 20);
+            this.dpDataInicial.Size = new System.Drawing.Size(140, 22);
             this.dpDataInicial.TabIndex = 0;
             // 
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(131, 26);
+            this.metroLabel1.Location = new System.Drawing.Point(175, 32);
+            this.metroLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(64, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(66, 20);
             this.metroLabel1.TabIndex = 69;
             this.metroLabel1.Text = "Data final";
             this.metroLabel1.UseCustomBackColor = true;
@@ -241,9 +250,10 @@
             // metroLabel33
             // 
             this.metroLabel33.AutoSize = true;
-            this.metroLabel33.Location = new System.Drawing.Point(15, 26);
+            this.metroLabel33.Location = new System.Drawing.Point(20, 32);
+            this.metroLabel33.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel33.Name = "metroLabel33";
-            this.metroLabel33.Size = new System.Drawing.Size(72, 19);
+            this.metroLabel33.Size = new System.Drawing.Size(75, 20);
             this.metroLabel33.TabIndex = 67;
             this.metroLabel33.Text = "Data inicial";
             this.metroLabel33.UseCustomBackColor = true;
@@ -252,9 +262,10 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(438, 72);
+            this.metroLabel2.Location = new System.Drawing.Point(584, 89);
+            this.metroLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(49, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(51, 20);
             this.metroLabel2.TabIndex = 68;
             this.metroLabel2.Text = "Nome:";
             this.metroLabel2.UseCustomBackColor = true;
@@ -263,9 +274,10 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(438, 111);
+            this.metroLabel3.Location = new System.Drawing.Point(584, 137);
+            this.metroLabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(63, 19);
+            this.metroLabel3.Size = new System.Drawing.Size(66, 20);
             this.metroLabel3.TabIndex = 69;
             this.metroLabel3.Text = "Empresa:";
             this.metroLabel3.UseCustomBackColor = true;
@@ -274,9 +286,10 @@
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(439, 146);
+            this.metroLabel4.Location = new System.Drawing.Point(585, 180);
+            this.metroLabel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(91, 19);
+            this.metroLabel4.Size = new System.Drawing.Size(94, 20);
             this.metroLabel4.TabIndex = 70;
             this.metroLabel4.Text = "Departameto:";
             this.metroLabel4.UseCustomBackColor = true;
@@ -285,9 +298,10 @@
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(439, 184);
+            this.metroLabel5.Location = new System.Drawing.Point(585, 226);
+            this.metroLabel5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(54, 19);
+            this.metroLabel5.Size = new System.Drawing.Size(57, 20);
             this.metroLabel5.TabIndex = 71;
             this.metroLabel5.Text = "Função:";
             this.metroLabel5.UseCustomBackColor = true;
@@ -297,31 +311,22 @@
             // 
             this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNome.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.txtNome.Location = new System.Drawing.Point(507, 72);
+            this.txtNome.Location = new System.Drawing.Point(676, 89);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(318, 25);
+            this.txtNome.Size = new System.Drawing.Size(423, 30);
             this.txtNome.TabIndex = 72;
             this.txtNome.UseCustomBackColor = true;
             this.txtNome.UseCustomForeColor = true;
-            // 
-            // imgFoto
-            // 
-            this.imgFoto.Image = global::LabxPonto_View.Properties.Resources.photo_1103596_960_720;
-            this.imgFoto.Location = new System.Drawing.Point(291, 72);
-            this.imgFoto.Margin = new System.Windows.Forms.Padding(2);
-            this.imgFoto.Name = "imgFoto";
-            this.imgFoto.Size = new System.Drawing.Size(142, 137);
-            this.imgFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgFoto.TabIndex = 73;
-            this.imgFoto.TabStop = false;
             // 
             // txtEmpresa
             // 
             this.txtEmpresa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEmpresa.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.txtEmpresa.Location = new System.Drawing.Point(525, 111);
+            this.txtEmpresa.Location = new System.Drawing.Point(700, 137);
+            this.txtEmpresa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtEmpresa.Name = "txtEmpresa";
-            this.txtEmpresa.Size = new System.Drawing.Size(300, 25);
+            this.txtEmpresa.Size = new System.Drawing.Size(399, 30);
             this.txtEmpresa.TabIndex = 76;
             this.txtEmpresa.UseCustomBackColor = true;
             this.txtEmpresa.UseCustomForeColor = true;
@@ -330,9 +335,10 @@
             // 
             this.txtDepartamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDepartamento.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.txtDepartamento.Location = new System.Drawing.Point(561, 146);
+            this.txtDepartamento.Location = new System.Drawing.Point(748, 180);
+            this.txtDepartamento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtDepartamento.Name = "txtDepartamento";
-            this.txtDepartamento.Size = new System.Drawing.Size(264, 25);
+            this.txtDepartamento.Size = new System.Drawing.Size(351, 30);
             this.txtDepartamento.TabIndex = 77;
             this.txtDepartamento.UseCustomBackColor = true;
             this.txtDepartamento.UseCustomForeColor = true;
@@ -341,9 +347,10 @@
             // 
             this.txtFuncao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFuncao.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.txtFuncao.Location = new System.Drawing.Point(516, 184);
+            this.txtFuncao.Location = new System.Drawing.Point(688, 226);
+            this.txtFuncao.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtFuncao.Name = "txtFuncao";
-            this.txtFuncao.Size = new System.Drawing.Size(309, 25);
+            this.txtFuncao.Size = new System.Drawing.Size(411, 30);
             this.txtFuncao.TabIndex = 78;
             this.txtFuncao.UseCustomBackColor = true;
             this.txtFuncao.UseCustomForeColor = true;
@@ -356,21 +363,73 @@
             // btAlterar
             // 
             this.btAlterar.ActiveControl = null;
-            this.btAlterar.Location = new System.Drawing.Point(23, 216);
+            this.btAlterar.Location = new System.Drawing.Point(243, 265);
+            this.btAlterar.Margin = new System.Windows.Forms.Padding(4);
             this.btAlterar.Name = "btAlterar";
-            this.btAlterar.Size = new System.Drawing.Size(149, 37);
+            this.btAlterar.Size = new System.Drawing.Size(199, 55);
             this.btAlterar.Style = MetroFramework.MetroColorStyle.Silver;
-            this.btAlterar.TabIndex = 79;
+            this.btAlterar.TabIndex = 80;
             this.btAlterar.Text = "Alterar";
+            this.btAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btAlterar.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btAlterar.UseSelectable = true;
             this.btAlterar.UseTileImage = true;
+            this.btAlterar.Visible = false;
+            this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click);
+            // 
+            // btExcluir
+            // 
+            this.btExcluir.ActiveControl = null;
+            this.btExcluir.Location = new System.Drawing.Point(450, 265);
+            this.btExcluir.Margin = new System.Windows.Forms.Padding(4);
+            this.btExcluir.Name = "btExcluir";
+            this.btExcluir.Size = new System.Drawing.Size(213, 55);
+            this.btExcluir.Style = MetroFramework.MetroColorStyle.Red;
+            this.btExcluir.TabIndex = 83;
+            this.btExcluir.Text = "Deletar";
+            this.btExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btExcluir.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.btExcluir.UseSelectable = true;
+            this.btExcluir.UseTileImage = true;
+            this.btExcluir.Visible = false;
+            this.btExcluir.Click += new System.EventHandler(this.btExcluir_Click);
+            // 
+            // btNovo
+            // 
+            this.btNovo.ActiveControl = null;
+            this.btNovo.Location = new System.Drawing.Point(31, 265);
+            this.btNovo.Margin = new System.Windows.Forms.Padding(4);
+            this.btNovo.Name = "btNovo";
+            this.btNovo.Size = new System.Drawing.Size(204, 55);
+            this.btNovo.Style = MetroFramework.MetroColorStyle.Blue;
+            this.btNovo.TabIndex = 81;
+            this.btNovo.Text = "Inserir";
+            this.btNovo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btNovo.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btNovo.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.btNovo.UseSelectable = true;
+            this.btNovo.UseTileImage = true;
+            this.btNovo.Visible = false;
+            this.btNovo.Click += new System.EventHandler(this.btNovo_Click_1);
+            // 
+            // imgFoto
+            // 
+            this.imgFoto.Image = global::LabxPonto_View.Properties.Resources.photo_1103596_960_720;
+            this.imgFoto.Location = new System.Drawing.Point(388, 89);
+            this.imgFoto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.imgFoto.Name = "imgFoto";
+            this.imgFoto.Size = new System.Drawing.Size(189, 169);
+            this.imgFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgFoto.TabIndex = 73;
+            this.imgFoto.TabStop = false;
             // 
             // frmHorarios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(855, 628);
+            this.ClientSize = new System.Drawing.Size(1140, 800);
+            this.Controls.Add(this.btExcluir);
+            this.Controls.Add(this.btNovo);
             this.Controls.Add(this.btAlterar);
             this.Controls.Add(this.txtFuncao);
             this.Controls.Add(this.txtDepartamento);
@@ -383,14 +442,16 @@
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.gbFuncionario);
             this.Controls.Add(this.dgFuncionarios);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmHorarios";
+            this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.Text = "Horários";
             this.Load += new System.EventHandler(this.frmHorarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgFuncionarios)).EndInit();
             this.gbFuncionario.ResumeLayout(false);
             this.gbFuncionario.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgFoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderFunc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgFoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -421,5 +482,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Saida;
         private System.Windows.Forms.ErrorProvider errorProviderFunc;
         public MetroFramework.Controls.MetroTile btAlterar;
+        public MetroFramework.Controls.MetroTile btExcluir;
+        public MetroFramework.Controls.MetroTile btNovo;
     }
 }
