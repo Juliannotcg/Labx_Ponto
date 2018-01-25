@@ -39,8 +39,8 @@ namespace LabxPonto_View.Views
             horarioService = new HorarioService(context);
             horarioExpediente = new HorarioExpediente();
 
-            DateTime dateIni = dtDataIni.Value;
-            DateTime dateFim = dtDataFim.Value;
+            DateTime dateIni = dtDataIni.Value.Date;
+            DateTime dateFim = dtDataFim.Value.Date;
 
             DataTable tabela = horarioService.GetHorarioXml(dateIni, dateFim);
 

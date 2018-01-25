@@ -42,7 +42,10 @@ namespace LabxPonto_View.Views.Horários
         }
         public void PreencherGrid()
         {
-            dgFuncionarios.DataSource = servico.GetHorarioFuncionarioCPF(txtCPF.Text, dpDataInicial.Value, dpDataFinal.Value);
+            DateTime dataIni = dpDataInicial.Value.Date;
+            DateTime dataFim = dpDataInicial.Value.Date;
+
+            dgFuncionarios.DataSource = servico.GetHorarioFuncionarioCPF(txtCPF.Text, dataIni, dataFim);
         }
 
         public bool validar()
@@ -61,6 +64,13 @@ namespace LabxPonto_View.Views.Horários
         {
             if (validar())
             {
+                if (txtCPF.Text.Length == 11)
+                {
+                    long CPF = Convert.ToInt64(txtCPF.Text);
+                    string CPFFormatado = String.Format(@"{0:000\.000\.000\-00}", CPF);
+                    txtCPF.Text = CPFFormatado;
+                }
+
                 FuncionarioService funServ = new FuncionarioService(context);
                 funcionario = funServ.GetFuncionarioCPF(txtCPF.Text);
 

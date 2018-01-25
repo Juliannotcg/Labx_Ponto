@@ -51,6 +51,13 @@ namespace LabxPonto_View.Views
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            if (txtCPF.Text.Length == 11)
+            {
+                long CPF = Convert.ToInt64(txtCPF.Text);
+                string CPFFormatado = String.Format(@"{0:000\.000\.000\-00}", CPF);
+                txtCPF.Text = CPFFormatado;
+            }
+
             limparErros();
             Confirmar();
         }
@@ -59,6 +66,9 @@ namespace LabxPonto_View.Views
         {
             if (Validar())
             {
+                DateTime dataIni = dtDataIni.Value.Date;
+                DateTime dataFim = dtDataFim.Value.Date;
+
                 frmRltFuncionario janela = new frmRltFuncionario(context, txtCPF.Text, dtDataIni.Value, dtDataFim.Value);
                 janela.Show();
             }

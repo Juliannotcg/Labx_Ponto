@@ -87,6 +87,13 @@ namespace LabxPonto_View.Views.Funcionarios
 
         private void txtCPF_Click(object sender, EventArgs e)
         {
+            if (txtCPF.Text.Length == 11)
+            {
+                long CPF = Convert.ToInt64(txtCPF.Text);
+                string CPFFormatado = String.Format(@"{0:000\.000\.000\-00}", CPF);
+                txtCPF.Text = CPFFormatado;
+            }
+
             preencherGridPesquisa();
         }
 

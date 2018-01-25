@@ -28,8 +28,8 @@
     <PublisherName>LifeTech</PublisherName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>7</ApplicationRevision>
-    <ApplicationVersion>1.0.1.7</ApplicationVersion>
+    <ApplicationRevision>9</ApplicationRevision>
+    <ApplicationVersion>1.0.1.9</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -548,6 +548,8 @@
     <None Include="Resources\if_back_172570 %281%29.png" />
     <None Include="Resources\if_back_126585.png" />
     <None Include="Resources\go-back-left-arrow.png" />
+    <None Include="Resources\magnifier-tool %281%29.png" />
+    <None Include="Resources\magnifier-tool.png" />
     <Content Include="Utils\DirectX.Capture.dll" />
     <Content Include="Utils\DShowNET.dll" />
   </ItemGroup>
