@@ -16,14 +16,17 @@ namespace LabxPonto_Dao.Data.Mapa
               .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             Property(c => c.Data)
-                .HasColumnName("HorData");
+                .HasColumnName("HorData")
+            .HasColumnType("datetime2");
 
 
             Property(c => c.Entrada)
-                .HasColumnName("HorEntrada");
+                .HasColumnName("HorEntrada")
+                .HasColumnType("datetime2"); 
 
             Property(c => c.Saida)
-                .HasColumnName("HorSaida");
+                .HasColumnName("HorSaida")
+                .HasColumnType("datetime2");
 
             HasOptional(o => o.Funcionario)
                .WithMany()

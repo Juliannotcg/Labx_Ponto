@@ -235,6 +235,7 @@
     <Compile Include="Views\Biometria\frmVerificarBiometrica.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Views\Biometria\THREAD.cs" />
     <Compile Include="Views\Cam\frmWebCam.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -326,6 +327,12 @@
     </Compile>
     <Compile Include="Views\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Mensagens\MensagemConfirmacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Mensagens\MensagemConfirmacao.Designer.cs">
+      <DependentUpon>MensagemConfirmacao.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Relatórios\frmRelatorios.cs">
       <SubType>Form</SubType>
@@ -446,6 +453,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Mensagens\MensagemConfirmacao.resx">
+      <DependentUpon>MensagemConfirmacao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Relatórios\frmRelatorios.resx">
       <DependentUpon>frmRelatorios.cs</DependentUpon>

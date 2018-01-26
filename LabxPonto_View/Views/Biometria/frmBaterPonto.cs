@@ -15,6 +15,8 @@ using DPFP.Capture;
 using LabxPonto_Dao.Model;
 using LabxPonto_Dao.Service;
 using System.IO;
+using System.Threading;
+using LabxPonto_View.Views.Mensagens;
 
 namespace LabxPonto_View.Views.Biometria
 {
@@ -29,6 +31,8 @@ namespace LabxPonto_View.Views.Biometria
         private DPFP.Template Template;
         private DPFP.Verification.Verification Verificator;
         List<Funcionario> funcionarios;
+        private bool impressaoLocalizada;
+        private Funcionario funcionarioAnterior;
 
         public delegate void OnTemplateEventHandler(DPFP.Template template);
 
@@ -43,6 +47,15 @@ namespace LabxPonto_View.Views.Biometria
             cp.StartCapture();
             cp.EventHandler = this;
             Verificator = new DPFP.Verification.Verification();
+        }
+
+        public void limparTela()
+        {
+            txtDepartamento.Text = "";
+            txtEmpresa.Text = "";
+            txtFuncao.Text = "";
+            txtNome.Text = "";
+            imgFoto.Image = null;
         }
 
         protected DPFP.FeatureSet ExtractFeatures(DPFP.Sample Sample, DPFP.Processing.DataPurpose Purpose)
@@ -70,64 +83,164 @@ namespace LabxPonto_View.Views.Biometria
                 DPFP.Verification.Verification.Result result = new DPFP.Verification.Verification.Result();
                 foreach (var item in funcionarios)
                 {
-                    Template = new Template();
-                    Template.DeSerialize(item.Digital);
-                    Verificator.Verify(features, Template, ref result);
-                    if(result.Verified)
+                    if (item.Digital != null)
                     {
-                        funcionario = item;
-                        return;
+                        Template = new Template();
+                        Template.DeSerialize(item.Digital);
+                        Verificator.Verify(features, Template, ref result);
+                        if (result.Verified)
+                        {
+                            funcionario = item;
+                            impressaoLocalizada = true;
+                            return;
+                        }
                     }
                 }
 
                 if (result.Verified)
                 {
-                    MetroFramework.MetroMessageBox.Show(this, "A impressão digital foi verificada com sucesso.", "Verificação biométrica", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question);
+                    updateStatus("Impressão digital localizada com sucesso.");
                 }
                 else
                 {
-                    MetroFramework.MetroMessageBox.Show(this, "A impressão digital não encontrada. Tente novamente.", "Verificação biométrica", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Hand);
-
+                    impressaoLocalizada = false;
+                    updateStatus("Impressão digital não localizada. \nTente novamente.");
+                    this.Invoke(new Function(delegate () { limparTela(); }));
+                    Application.DoEvents();
+                    cp.StopCapture();
+                    cp = new DPFP.Capture.Capture();
+                    cp.StartCapture();
+                    cp.EventHandler = this;
                 }
             }
         }
 
         public void OnComplete(object Capture, string ReaderSerialNumber, Sample Sample)
         {
+            this.Invoke(new Function(delegate() { this.imgDigital.Enabled = true;}));
+            this.Invoke(new Function(delegate () { this.Cursor = Cursors.WaitCursor; }));
             sp.ConvertToPicture(Sample, ref img);
             FuncionarioService funServ = new FuncionarioService(context);
             funcionarios = new List<Funcionario>();
             funcionarios = funServ.GetFuncionarios();
             byte[] bytes = Sample.Bytes;
             Process(Sample);
-            if (funcionario != null)
-            {
-                PreencherTela();
-                MetroFramework.MetroMessageBox.Show(this, "Impressão digital localizada.\n Para efetuar o lançamento do ponto, pressione OK e coloque novamente o mesmo dedo no leitor.", "Verificação biométrica", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Warning);
 
+            if (impressaoLocalizada)
+            {
+                if (funcionario != null)
+                {
+                    if (funcionario.Id == 0)
+                        return;
+
+                    if ((impressaoLocalizada) &&
+                        (funcionarioAnterior != null))
+                    {
+                        if (funcionarioAnterior.Id == 0)
+                            impressaoLocalizada = false;
+
+                        if (funcionario.Id == funcionarioAnterior.Id)
+                        {
+                            HorarioExpediente horarioExpediente = new HorarioExpediente();
+                            HorarioService serviceHorario = new HorarioService(context);
+                            horarioExpediente.Data = DateTime.Now.Date;
+                            HorarioExpediente ultimoHorario = serviceHorario.GetLastHorario(funcionario.Id);
+                            horarioExpediente.Funcionario = funcionario;
+
+                            if ((ultimoHorario.Entrada != DateTime.MinValue) &&
+                                    (ultimoHorario.Saida == DateTime.MinValue))
+                            {
+                                horarioExpediente.Entrada = new DateTime();
+                                horarioExpediente.Saida = DateTime.Now;
+                                serviceHorario.Insert(horarioExpediente);
+                                updateStatus("Horário de saída lançado com sucesso...");
+                            }
+                            else
+                            {
+                                horarioExpediente.Entrada = DateTime.Now;
+                                horarioExpediente.Saida = new DateTime();
+                                serviceHorario.Insert(horarioExpediente);
+                                updateStatus("Horário de entrada lançado com sucesso...");
+                            }
+                            funcionario = new Funcionario();
+                            funcionarioAnterior = funcionario;
+                            this.Invoke(new Function(delegate () { limparTela(); }));
+                            cp.StopCapture();
+                            cp = new DPFP.Capture.Capture();
+                            cp.StartCapture();
+                            cp.EventHandler = this;
+                        }
+                    }
+                    if ((impressaoLocalizada == false) ||
+                            (funcionarioAnterior == null))
+                    {
+                        PreencherTela();
+                        updateStatus("Impressão digital localizada. \nPara efetuar o lançamento do ponto e coloque novamente o mesmo dedo no leitor.");
+                        funcionarioAnterior = funcionario;
+                        impressaoLocalizada = true;
+                    }
+                    else
+                        impressaoLocalizada = false;
+                }
+                else
+                {
+                    updateStatus("Impressão digital não localizada. \nTente novamente.");
+                    funcionarioAnterior = null;
+                    impressaoLocalizada = false;
+                }
             }
+            else
+            {
+                funcionario = new Funcionario();
+                funcionarioAnterior = funcionario;
+                this.Invoke(new Function(delegate () { limparTela(); }));
+                cp.StopCapture();
+                cp = new DPFP.Capture.Capture();
+                cp.StartCapture();
+                cp.EventHandler = this;
+                this.Invoke(new Function(delegate () { limparTela(); }));
+            }
+            this.Invoke(new Function(delegate () { this.Cursor = Cursors.Default; }));
+
+            this.Invoke(new Function(delegate () { this.imgDigital.Enabled = false; }));
+        }
+
+        public void updateStatus(string mensagem)
+        {
+            this.Invoke(new Function(delegate () {
+                using (MensagemConfirmacao msg = new MensagemConfirmacao(mensagem))
+                {
+                    if (msg.ShowDialog() == DialogResult.Yes)
+                        return;
+                        // nesse caso, "e" é o nome do parametro EventArgs do Metodo     
+                                         // Form_Closing
+                };
+            }));
         }
 
         public void PreencherTela()
         {
-            
             if (funcionario != null)
             {
-                this.Invoke(new Function(delegate () {
-                txtNome.Text = funcionario.Nome + " " + funcionario.SobreNome;
-                if (funcionario.Empresa != null)
-                    txtEmpresa.Text = funcionario.Empresa.NomeFantasia;
-                if (funcionario.Funcao != null)
-                    txtFuncao.Text = funcionario.Funcao.NomeFuncao;
-                if (funcionario.Funcao.Departamento != null)
-                    txtDepartamento.Text = funcionario.Funcao.Departamento.NomeDepartamento;
-
-                if (funcionario.Imagem != null)
-                    if (funcionario.Imagem.Arquivo != null)
+                if (funcionario.Id > 0)
+                {
+                    this.Invoke(new Function(delegate ()
                     {
-                        imgFoto.Image = preencherImagemByte(funcionario.Imagem.Arquivo);
-                    }
-                }));
+                        txtNome.Text = funcionario.Nome + " " + funcionario.SobreNome;
+                        if (funcionario.Empresa != null)
+                            txtEmpresa.Text = funcionario.Empresa.NomeFantasia;
+                        if (funcionario.Funcao != null)
+                            txtFuncao.Text = funcionario.Funcao.NomeFuncao;
+                        if (funcionario.Funcao.Departamento != null)
+                            txtDepartamento.Text = funcionario.Funcao.Departamento.NomeDepartamento;
+
+                        if (funcionario.Imagem != null)
+                            if (funcionario.Imagem.Arquivo != null)
+                            {
+                                imgFoto.Image = preencherImagemByte(funcionario.Imagem.Arquivo);
+                            }
+                    }));
+                }
             }
         }
 

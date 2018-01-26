@@ -34,6 +34,11 @@ namespace LabxPonto_Dao.Service
             return Context.HorariosExpediente.Where(x => x.Id == id).FirstOrDefault();
         }
 
+        public HorarioExpediente GetLastHorario(int id)
+        {
+            return Context.HorariosExpediente.Include("Funcionario").Where(x => x.Funcionario.Id == id).OrderByDescending(x => x.Id ).FirstOrDefault();
+        }
+
         public DataTable GetHorarioXml(DateTime dataIni, DateTime dataFim)
         {
             horario = new HorarioExpediente();
