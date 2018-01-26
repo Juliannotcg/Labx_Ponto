@@ -29,33 +29,57 @@ namespace LabxPonto_View.Views
 
         public bool Validar()
         {
-            if (String.IsNullOrEmpty(txtCPF.Text))
-                errorProviderRlt.SetError(txtCPF, "Informe o número do CPF.");
+            if (rbPonto.Checked)
+            {
+                if (String.IsNullOrEmpty(txtCPF.Text))
+                    errorProviderRlt.SetError(txtCPF, "Informe o número do CPF.");
 
-            if (dtDataIni.Value > dtDataFim.Value)
-                errorProviderRlt.SetError(dtDataFim, "A data inicial não pode ser maior que a data final.");
+                if (dtDataIni.Value > dtDataFim.Value)
+                    errorProviderRlt.SetError(dtDataFim, "A data inicial não pode ser maior que a data final.");
+            }else
+                if (rbFuncionarioEmpresa.Checked)
+            {
+                if (String.IsNullOrEmpty(txtCNPJ.Text))
+                    errorProviderRlt.SetError(txtCNPJ, "Informe o número do CNPJ.");
+            }
 
             return ((errorProviderRlt.GetError(txtCPF) == "") &&
+                (errorProviderRlt.GetError(txtCNPJ) == "") &&
                 (errorProviderRlt.GetError(dtDataFim) == ""));
         }
 
         public void LimparTela()
         {
             txtCPF.Text = "";
+            txtCNPJ.Text = "";
         }
         public void limparErros()
         {
             errorProviderRlt.SetError(txtCPF, "");
             errorProviderRlt.SetError(dtDataFim, "");
+            errorProviderRlt.SetError(txtCNPJ, "");
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if (txtCPF.Text.Length == 11)
+            if (rbPonto.Checked)
             {
-                long CPF = Convert.ToInt64(txtCPF.Text);
-                string CPFFormatado = String.Format(@"{0:000\.000\.000\-00}", CPF);
-                txtCPF.Text = CPFFormatado;
+                if (txtCPF.Text.Length == 11)
+                {
+                    long CPF = Convert.ToInt64(txtCPF.Text);
+                    string CPFFormatado = String.Format(@"{0:000\.000\.000\-00}", CPF);
+                    txtCPF.Text = CPFFormatado;
+                }
+            }
+            else
+                if (rbFuncionarioEmpresa.Checked)
+            {
+                if (txtCPF.Text.Length == 14)
+                {
+                    long CNPJ = Convert.ToInt64(txtCNPJ.Text);
+                    string CNPJFormatado = String.Format(@"{0:00\.000\.000\/0000\-00}", CNPJ);
+                    txtCPF.Text = CNPJFormatado;
+                }
             }
 
             limparErros();
@@ -66,11 +90,33 @@ namespace LabxPonto_View.Views
         {
             if (Validar())
             {
-                DateTime dataIni = dtDataIni.Value.Date;
-                DateTime dataFim = dtDataFim.Value.Date;
+                if (rbPonto.Checked)
+                {
+                    if (txtCPF.Text.Length == 11)
+                    {
+                        long CPF = Convert.ToInt64(txtCPF.Text);
+                        string CPFFormatado = String.Format(@"{0:000\.000\.000\-00}", CPF);
+                        txtCPF.Text = CPFFormatado;
+                    }
 
-                frmRltFuncionario janela = new frmRltFuncionario(context, txtCPF.Text, dtDataIni.Value, dtDataFim.Value);
-                janela.Show();
+                    DateTime dataIni = dtDataIni.Value.Date;
+                    DateTime dataFim = dtDataFim.Value.Date;
+
+                    frmRltFuncionario janela = new frmRltFuncionario(context, txtCPF.Text, dtDataIni.Value, dtDataFim.Value);
+                    janela.Show();
+                }else
+                    if (rbFuncionarioEmpresa.Checked)
+                    {
+                        if (txtCNPJ.Text.Length == 14)
+                        {
+                            long CNPJ = Convert.ToInt64(txtCNPJ.Text);
+                            string CNPJFormatado = String.Format(@"{0:00\.000\.000\/0000\-00}", CNPJ);
+                            txtCPF.Text = CNPJFormatado;
+                        }
+
+                        frmRltFuncionarioEmpresa janela = new frmRltFuncionarioEmpresa(context, txtCNPJ.Text);
+                        janela.Show();
+                    }
             }
         }
 
@@ -106,6 +152,25 @@ namespace LabxPonto_View.Views
                     return;
                 }
             }
+        }
+
+        private void rbFuncionarioEmpresa_CheckedChanged(object sender, EventArgs e)
+        {
+            gbPonto.Enabled = false;
+            gbFuncionarioEmpresa.Enabled = true;
+            txtCNPJ.Focus();
+        }
+
+        private void rbPonto_CheckedChanged(object sender, EventArgs e)
+        {
+            gbPonto.Enabled = true;
+            gbFuncionarioEmpresa.Enabled = false;
+            txtCPF.Focus();
+        }
+
+        private void frmRelatorios_Load(object sender, EventArgs e)
+        {
+            txtCPF.Focus();
         }
     }
 }
