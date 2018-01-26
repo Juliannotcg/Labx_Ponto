@@ -170,7 +170,8 @@ namespace LabxPonto_View.Views
 
         private void frmRelatorios_Load(object sender, EventArgs e)
         {
-            txtCPF.Focus();
+            rbPonto.Checked = true;
+            gbFuncionarioEmpresa.Enabled = false;
         }
     }
 }
