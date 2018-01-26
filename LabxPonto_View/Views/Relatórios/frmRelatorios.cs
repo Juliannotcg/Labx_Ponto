@@ -29,24 +29,35 @@ namespace LabxPonto_View.Views
 
         public bool Validar()
         {
-            if (String.IsNullOrEmpty(txtCPF.Text))
-                errorProviderRlt.SetError(txtCPF, "Informe o número do CPF.");
+            if (rbPonto.Checked)
+            {
+                if (String.IsNullOrEmpty(txtCPF.Text))
+                    errorProviderRlt.SetError(txtCPF, "Informe o número do CPF.");
 
-            if (dtDataIni.Value > dtDataFim.Value)
-                errorProviderRlt.SetError(dtDataFim, "A data inicial não pode ser maior que a data final.");
+                if (dtDataIni.Value > dtDataFim.Value)
+                    errorProviderRlt.SetError(dtDataFim, "A data inicial não pode ser maior que a data final.");
+            }else
+                if (rbFuncionarioEmpresa.Checked)
+            {
+                if (String.IsNullOrEmpty(txtCNPJ.Text))
+                    errorProviderRlt.SetError(txtCNPJ, "Informe o número do CNPJ.");
+            }
 
             return ((errorProviderRlt.GetError(txtCPF) == "") &&
+                (errorProviderRlt.GetError(txtCNPJ) == "") &&
                 (errorProviderRlt.GetError(dtDataFim) == ""));
         }
 
         public void LimparTela()
         {
             txtCPF.Text = "";
+            txtCNPJ.Text = "";
         }
         public void limparErros()
         {
             errorProviderRlt.SetError(txtCPF, "");
             errorProviderRlt.SetError(dtDataFim, "");
+            errorProviderRlt.SetError(txtCNPJ, "");
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -81,6 +92,13 @@ namespace LabxPonto_View.Views
             {
                 if (rbPonto.Checked)
                 {
+                    if (txtCPF.Text.Length == 11)
+                    {
+                        long CPF = Convert.ToInt64(txtCPF.Text);
+                        string CPFFormatado = String.Format(@"{0:000\.000\.000\-00}", CPF);
+                        txtCPF.Text = CPFFormatado;
+                    }
+
                     DateTime dataIni = dtDataIni.Value.Date;
                     DateTime dataFim = dtDataFim.Value.Date;
 
@@ -88,10 +106,17 @@ namespace LabxPonto_View.Views
                     janela.Show();
                 }else
                     if (rbFuncionarioEmpresa.Checked)
-                {
-                    frmRltFuncionarioEmpresa janela = new frmRltFuncionarioEmpresa(context, txtCNPJ.Text);
-                    janela.Show();
-                }
+                    {
+                        if (txtCNPJ.Text.Length == 14)
+                        {
+                            long CNPJ = Convert.ToInt64(txtCNPJ.Text);
+                            string CNPJFormatado = String.Format(@"{0:00\.000\.000\/0000\-00}", CNPJ);
+                            txtCPF.Text = CNPJFormatado;
+                        }
+
+                        frmRltFuncionarioEmpresa janela = new frmRltFuncionarioEmpresa(context, txtCNPJ.Text);
+                        janela.Show();
+                    }
             }
         }
 
