@@ -224,5 +224,25 @@ namespace LabxPonto_Dao.Service
 
             return (results);
         }
+
+        public List<RltFuncionarioEmpresa> GetRelatorioFuncEmpresa(string CNPJ)
+        {
+            var results = Context.Funcionarios
+                .Include("Empresa")
+                .Where(p => p.Empresa.CNPJ == CNPJ)
+                .Select(p => new RltFuncionarioEmpresa()
+                {
+                    IdEmpresa = p.Empresa.Id,
+                    CNPJ = p.Empresa.CNPJ,
+                    NomeEmpresa = p.Empresa.NomeFantasia,
+                    NomeReponsavel = p.Empresa.NomeResponsavel,
+                    NomeFuncionario = p.Nome,
+                    CPF = p.CPF
+                })
+                .AsEnumerable()
+                .ToList();
+
+            return (results);
+        }
     }
 }

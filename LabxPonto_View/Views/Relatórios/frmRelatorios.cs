@@ -51,11 +51,24 @@ namespace LabxPonto_View.Views
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if (txtCPF.Text.Length == 11)
+            if (rbPonto.Checked)
             {
-                long CPF = Convert.ToInt64(txtCPF.Text);
-                string CPFFormatado = String.Format(@"{0:000\.000\.000\-00}", CPF);
-                txtCPF.Text = CPFFormatado;
+                if (txtCPF.Text.Length == 11)
+                {
+                    long CPF = Convert.ToInt64(txtCPF.Text);
+                    string CPFFormatado = String.Format(@"{0:000\.000\.000\-00}", CPF);
+                    txtCPF.Text = CPFFormatado;
+                }
+            }
+            else
+                if (rbFuncionarioEmpresa.Checked)
+            {
+                if (txtCPF.Text.Length == 14)
+                {
+                    long CNPJ = Convert.ToInt64(txtCNPJ.Text);
+                    string CNPJFormatado = String.Format(@"{0:00\.000\.000\/0000\-00}", CNPJ);
+                    txtCPF.Text = CNPJFormatado;
+                }
             }
 
             limparErros();
@@ -66,11 +79,19 @@ namespace LabxPonto_View.Views
         {
             if (Validar())
             {
-                DateTime dataIni = dtDataIni.Value.Date;
-                DateTime dataFim = dtDataFim.Value.Date;
+                if (rbPonto.Checked)
+                {
+                    DateTime dataIni = dtDataIni.Value.Date;
+                    DateTime dataFim = dtDataFim.Value.Date;
 
-                frmRltFuncionario janela = new frmRltFuncionario(context, txtCPF.Text, dtDataIni.Value, dtDataFim.Value);
-                janela.Show();
+                    frmRltFuncionario janela = new frmRltFuncionario(context, txtCPF.Text, dtDataIni.Value, dtDataFim.Value);
+                    janela.Show();
+                }else
+                    if (rbFuncionarioEmpresa.Checked)
+                {
+                    frmRltFuncionarioEmpresa janela = new frmRltFuncionarioEmpresa(context, txtCNPJ.Text);
+                    janela.Show();
+                }
             }
         }
 
@@ -106,6 +127,18 @@ namespace LabxPonto_View.Views
                     return;
                 }
             }
+        }
+
+        private void rbFuncionarioEmpresa_CheckedChanged(object sender, EventArgs e)
+        {
+            gbPonto.Visible = false;
+            gbFuncionarioEmpresa.Visible = true;
+        }
+
+        private void rbPonto_CheckedChanged(object sender, EventArgs e)
+        {
+            gbPonto.Visible = true;
+            gbFuncionarioEmpresa.Visible = false;
         }
     }
 }
