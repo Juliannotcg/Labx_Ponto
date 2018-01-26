@@ -53,21 +53,21 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(420, 362);
+            this.btnCancelar.Location = new System.Drawing.Point(420, 510);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(289, 362);
+            this.btnSalvar.Location = new System.Drawing.Point(289, 510);
             this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnSalvar.TabIndex = 3;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // pbLogo
             // 
-            this.pbLogo.Location = new System.Drawing.Point(7, 385);
+            this.pbLogo.Location = new System.Drawing.Point(7, 533);
             this.pbLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             // 
             // metroLabel29
@@ -164,7 +164,6 @@
             // gbPonto
             // 
             this.gbPonto.Controls.Add(this.dtDataIni);
-            this.gbPonto.Controls.Add(this.gbFuncionarioEmpresa);
             this.gbPonto.Controls.Add(this.txtCPF);
             this.gbPonto.Controls.Add(this.metroLabel29);
             this.gbPonto.Controls.Add(this.dtDataFim);
@@ -181,13 +180,12 @@
             // 
             this.gbFuncionarioEmpresa.Controls.Add(this.txtCNPJ);
             this.gbFuncionarioEmpresa.Controls.Add(this.metroLabel4);
-            this.gbFuncionarioEmpresa.Location = new System.Drawing.Point(0, 0);
+            this.gbFuncionarioEmpresa.Location = new System.Drawing.Point(20, 373);
             this.gbFuncionarioEmpresa.Name = "gbFuncionarioEmpresa";
             this.gbFuncionarioEmpresa.Size = new System.Drawing.Size(485, 112);
             this.gbFuncionarioEmpresa.TabIndex = 93;
             this.gbFuncionarioEmpresa.TabStop = false;
             this.gbFuncionarioEmpresa.Text = "Funcionário por empresa";
-            this.gbFuncionarioEmpresa.Visible = false;
             // 
             // txtCNPJ
             // 
@@ -247,7 +245,7 @@
             // rbFuncionarioEmpresa
             // 
             this.rbFuncionarioEmpresa.AutoSize = true;
-            this.rbFuncionarioEmpresa.Location = new System.Drawing.Point(174, 34);
+            this.rbFuncionarioEmpresa.Location = new System.Drawing.Point(210, 34);
             this.rbFuncionarioEmpresa.Name = "rbFuncionarioEmpresa";
             this.rbFuncionarioEmpresa.Size = new System.Drawing.Size(171, 17);
             this.rbFuncionarioEmpresa.TabIndex = 1;
@@ -258,10 +256,12 @@
             // rbPonto
             // 
             this.rbPonto.AutoSize = true;
+            this.rbPonto.Checked = true;
             this.rbPonto.Location = new System.Drawing.Point(19, 34);
             this.rbPonto.Name = "rbPonto";
             this.rbPonto.Size = new System.Drawing.Size(135, 17);
             this.rbPonto.TabIndex = 0;
+            this.rbPonto.TabStop = true;
             this.rbPonto.Text = "Relatório de ponto";
             this.rbPonto.UseSelectable = true;
             this.rbPonto.CheckedChanged += new System.EventHandler(this.rbPonto_CheckedChanged);
@@ -270,17 +270,20 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(574, 428);
+            this.ClientSize = new System.Drawing.Size(574, 576);
             this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.gbFuncionarioEmpresa);
             this.Controls.Add(this.gbPonto);
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmRelatorios";
             this.Padding = new System.Windows.Forms.Padding(36, 91, 36, 31);
             this.Text = "Relatórios";
+            this.Load += new System.EventHandler(this.frmRelatorios_Load);
             this.Controls.SetChildIndex(this.pbLogo, 0);
             this.Controls.SetChildIndex(this.btnSalvar, 0);
             this.Controls.SetChildIndex(this.btnCancelar, 0);
             this.Controls.SetChildIndex(this.gbPonto, 0);
+            this.Controls.SetChildIndex(this.gbFuncionarioEmpresa, 0);
             this.Controls.SetChildIndex(this.groupBox3, 0);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();

@@ -156,14 +156,21 @@ namespace LabxPonto_View.Views
 
         private void rbFuncionarioEmpresa_CheckedChanged(object sender, EventArgs e)
         {
-            gbPonto.Visible = false;
-            gbFuncionarioEmpresa.Visible = true;
+            gbPonto.Enabled = false;
+            gbFuncionarioEmpresa.Enabled = true;
+            txtCNPJ.Focus();
         }
 
         private void rbPonto_CheckedChanged(object sender, EventArgs e)
         {
-            gbPonto.Visible = true;
-            gbFuncionarioEmpresa.Visible = false;
+            gbPonto.Enabled = true;
+            gbFuncionarioEmpresa.Enabled = false;
+            txtCPF.Focus();
+        }
+
+        private void frmRelatorios_Load(object sender, EventArgs e)
+        {
+            txtCPF.Focus();
         }
     }
 }
