@@ -106,5 +106,13 @@ namespace LabxPonto_View.Views.Funcionarios
                 txtCPF.Text = CPFFormatado;
             }
         }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            funcionario.Id = (int)dgFuncionarios.Rows[dgFuncionarios.CurrentRow.Index].Cells["Id"].Value;
+            var resposta = servico.GetRelatorioFuncionarioSlecionado(funcionario.Id);
+            frmRltDadosFuncionario janela = new frmRltDadosFuncionario(resposta);
+            janela.Show();
+        }
     }
 }

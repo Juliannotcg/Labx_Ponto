@@ -31,7 +31,6 @@ namespace LabxPonto_View.Views.Funcionarios
             var dataSource = new Microsoft.Reporting.WinForms.ReportDataSource("DataSetFuncionario", resposta);
             this.reportViewerFuncionario.LocalReport.DataSources.Clear();
             this.reportViewerFuncionario.LocalReport.DataSources.Add(dataSource);
-
             this.reportViewerFuncionario.RefreshReport();
         }
 

@@ -244,5 +244,35 @@ namespace LabxPonto_Dao.Service
 
             return (results);
         }
+
+        public List<RltDadosFuncionario> GetRelatorioFuncionarioSlecionado(int id)
+        {
+            var results = Context.Funcionarios
+                .Include("Empresa")
+                .Include("Departamento")
+                .Include("Funcao")
+                .Where(p => p.Id == id)
+                .Select(p => new RltDadosFuncionario()
+                {
+                    Id = p.Id,
+                    Nome = p.Nome,
+                    SobreNome = p.SobreNome,
+                    CPF = p.CPF,
+                    RG = p.RG,
+                    LocalTrabalha = p.LocalTrabalho,
+                    NomePai = p.NomePai,
+                    NomeMae = p.NomeMae,
+                    Telefone = p.Telefone,
+                    EstadoCivil = p.EstadoCivil,
+                    NomeEmpresa = p.Empresa.NomeFantasia,
+                    CNPJ = p.Empresa.CNPJ,
+                    Departamento = p.Funcao.Departamento.NomeDepartamento,
+                    Funcao = p.Funcao.NomeFuncao,
+                })
+                .AsEnumerable()
+                .ToList();
+
+            return (results);
+        }
     }
 }

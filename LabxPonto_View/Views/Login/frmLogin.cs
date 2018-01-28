@@ -114,5 +114,6 @@ namespace LabxPonto_View.Views
         {
             lblVersao.Text = "Versão: " + Application.ProductVersion;
         }
+
     }
 }

@@ -194,7 +194,7 @@
     <Compile Include="Enums\Estados.cs" />
     <Compile Include="Enums\Pais.cs" />
     <Compile Include="Enums\TipoHorario.cs" />
-    <Compile Include="Properties\Resources1.Designer.cs">
+    <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -291,6 +291,12 @@
     </Compile>
     <Compile Include="Views\frmLerArquivo.Designer.cs">
       <DependentUpon>frmLerArquivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Funcionarios\frmRltDadosFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Funcionarios\frmRltDadosFuncionario.Designer.cs">
+      <DependentUpon>frmRltDadosFuncionario.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Funcionarios\frmRltFuncionario.cs">
       <SubType>Form</SubType>
@@ -425,7 +431,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
-      <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Empresas\frmRelatorioEmp.resx">
       <DependentUpon>frmRelatorioEmp.cs</DependentUpon>
@@ -439,6 +445,9 @@
     <EmbeddedResource Include="Views\Funcionarios\frmFuncionarios.resx">
       <DependentUpon>frmFuncionarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Funcionarios\frmRltDadosFuncionario.resx">
+      <DependentUpon>frmRltDadosFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Funcionarios\frmRltFuncionario.resx">
       <DependentUpon>frmRltFuncionario.cs</DependentUpon>
     </EmbeddedResource>
@@ -446,6 +455,7 @@
       <DependentUpon>frmRltFuncionarioEmpresa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Funcionarios\ReportFuncionario.rdlc" />
+    <EmbeddedResource Include="Views\Funcionarios\RltDadosFuncionario.rdlc" />
     <EmbeddedResource Include="Views\Funcionarios\RltFuncionarioEmpresa.rdlc" />
     <EmbeddedResource Include="Views\Funções\frmRltFuncao.resx">
       <DependentUpon>frmRltFuncao.cs</DependentUpon>
@@ -490,6 +500,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\LabxPonto_Dao.Model.Funcionario.datasource" />
     <None Include="Properties\DataSources\LabxPonto_Dao.Model.ModelRelatorio.FuncaoRlt.datasource" />
+    <None Include="Properties\DataSources\LabxPonto_Dao.Model.ModelRelatorio.RltDadosFuncionario.datasource" />
     <None Include="Properties\DataSources\LabxPonto_Dao.Model.ModelRelatorio.RltFuncionarioEmpresa.datasource" />
     <None Include="Properties\DataSources\LabxPonto_Dao.Model.ModelRelatorio.RltFuncionarioPorEmpresa.datasource" />
     <None Include="Properties\DataSources\LabxPonto_View.ModelRlt.FuncaoRlt.datasource" />
@@ -519,7 +530,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\LogoEmpresa.jpg" />
-    <None Include="Resources\add-user-icon.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\config.png" />
@@ -532,9 +542,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\if_user-delete-outline_216492.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\if_new-24_103173.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\avatar.png" />
@@ -552,11 +559,9 @@
     <None Include="Resources\if_access-time_326483 %281%29.png" />
     <None Include="Resources\if_Touch_ID_363335.png" />
     <None Include="Resources\printer.png" />
-    <None Include="Resources\printer %281%29.png" />
     <None Include="Resources\newspaper.png" />
     <None Include="Resources\turn-off.png" />
     <None Include="Resources\icon.png" />
-    <None Include="Resources\icon %281%29.png" />
     <None Include="Resources\user-list.png" />
     <None Include="Resources\folders.png" />
     <None Include="Resources\power.png" />
@@ -570,6 +575,17 @@
     <None Include="Resources\go-back-left-arrow.png" />
     <None Include="Resources\magnifier-tool %281%29.png" />
     <None Include="Resources\magnifier-tool.png" />
+    <None Include="Resources\user.png" />
+    <None Include="Resources\user %281%29.png" />
+    <None Include="Resources\padlock %281%29.png" />
+    <None Include="Resources\visibility-button.png" />
+    <None Include="Resources\visibility-button %281%29.png" />
+    <None Include="Resources\confirm.png" />
+    <None Include="Resources\confirm %281%29.png" />
+    <None Include="Resources\user %281%291.png" />
+    <None Include="Resources\padlock %281%291.png" />
+    <None Include="Resources\printer %281%29.png" />
+    <None Include="Resources\printer1.png" />
     <Content Include="Utils\DirectX.Capture.dll" />
     <Content Include="Utils\DShowNET.dll" />
   </ItemGroup>
