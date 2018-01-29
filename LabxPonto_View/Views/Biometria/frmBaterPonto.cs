@@ -150,9 +150,8 @@ namespace LabxPonto_View.Views.Biometria
                             if ((ultimoHorario.Entrada != DateTime.MinValue) &&
                                     (ultimoHorario.Saida == DateTime.MinValue))
                             {
-                                horarioExpediente.Entrada = new DateTime();
-                                horarioExpediente.Saida = DateTime.Now;
-                                serviceHorario.Insert(horarioExpediente);
+                                ultimoHorario.Saida = DateTime.Now;
+                                serviceHorario.Update(ultimoHorario);
                                 updateStatus("Horário de saída lançado com sucesso...");
                             }
                             else
