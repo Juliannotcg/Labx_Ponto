@@ -19,7 +19,7 @@ namespace LabxPonto_Dao.Service
 
         public List<Funcionario> GetFuncionarios()
         {
-            return Context.Funcionarios.Include("Empresa").Include("Funcao").Include("Funcao.Departamento").Include("Imagem").ToList();
+            return Context.Funcionarios.Include("Empresa").Include("Funcao").Include("Funcao.Departamento").ToList();
         }
 
         public Funcionario GetFuncionario(string CPF)

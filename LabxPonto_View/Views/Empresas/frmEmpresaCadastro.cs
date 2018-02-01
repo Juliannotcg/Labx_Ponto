@@ -10,6 +10,7 @@ using MetroFramework.Controls;
 using System;
 using System.ComponentModel;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Windows.Forms;
 
@@ -201,13 +202,26 @@ namespace LabxPonto_View.Views.Empresas
 
             #region Imagem
 
-            if (imagemByte != null)
+            if (operacao == Operacao.Editar)
             {
-                empresa.Imagem = new Imagem();
-                empresa.Imagem.Arquivo = imagemByte;
+                if (empresa.Imagem == null)
+                    empresa.Imagem = new Imagem();
+
+                if (imagemByte != null)
+                    empresa.Imagem.Arquivo = imagemByte;
+                else
+                    empresa.Imagem.Arquivo = null;
             }
             else
-                empresa.Imagem = null;
+            {
+                if (imagemByte != null)
+                {
+                    empresa.Imagem = new Imagem();
+                    empresa.Imagem.Arquivo = imagemByte;
+                }
+                else
+                    empresa.Imagem = null;
+            }
             #endregion
         }
 
@@ -392,11 +406,77 @@ namespace LabxPonto_View.Views.Empresas
             if (buscarArquivo.ShowDialog() == DialogResult.OK)
             {
                 caminhoImagem = buscarArquivo.FileName;
-                imgFoto.SizeMode = PictureBoxSizeMode.Zoom;
 
-                imgFoto.ImageLocation = caminhoImagem;
-                imagemByte = ConverterImagemParaBytes(caminhoImagem);
+                Image imagem = resizeImage(300, 300, caminhoImagem);
+
+                imgFoto.SizeMode = PictureBoxSizeMode.Zoom;
+                string caminhoImagemSalva = Path.GetTempFileName() + "ImagemWebCam" + DateTime.Now.Day.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Year.ToString() + DateTime.Now.Millisecond.ToString() + ".jpg";
+                imagem.Save(caminhoImagemSalva);
+                imgFoto.Image = imagem;
+                imagemByte = ConverterImagemParaBytes(caminhoImagemSalva);
+
+                //imgFoto.ImageLocation = caminhoImagem;
+                //imagemByte = ConverterImagemParaBytes(caminhoImagem);
             }
+        }
+
+        public Image resizeImage(int newWidth, int newHeight, string stPhotoPath)
+        {
+            Image imgPhoto = Image.FromFile(stPhotoPath);
+
+            int sourceWidth = imgPhoto.Width;
+            int sourceHeight = imgPhoto.Height;
+
+            //Consider vertical pics
+            if (sourceWidth < sourceHeight)
+            {
+                int buff = newWidth;
+
+                newWidth = newHeight;
+                newHeight = buff;
+            }
+
+            int sourceX = 0, sourceY = 0, destX = 0, destY = 0;
+            float nPercent = 0, nPercentW = 0, nPercentH = 0;
+
+            nPercentW = ((float)newWidth / (float)sourceWidth);
+            nPercentH = ((float)newHeight / (float)sourceHeight);
+            if (nPercentH < nPercentW)
+            {
+                nPercent = nPercentH;
+                destX = System.Convert.ToInt16((newWidth -
+                          (sourceWidth * nPercent)) / 2);
+            }
+            else
+            {
+                nPercent = nPercentW;
+                destY = System.Convert.ToInt16((newHeight -
+                          (sourceHeight * nPercent)) / 2);
+            }
+
+            int destWidth = (int)(sourceWidth * nPercent);
+            int destHeight = (int)(sourceHeight * nPercent);
+
+
+            Bitmap bmPhoto = new Bitmap(newWidth, newHeight,
+                          PixelFormat.Gdi);
+
+            bmPhoto.SetResolution(imgPhoto.HorizontalResolution,
+                         imgPhoto.VerticalResolution);
+
+            Graphics grPhoto = Graphics.FromImage(bmPhoto);
+            grPhoto.Clear(Color.Black);
+            grPhoto.InterpolationMode =
+                System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+
+            grPhoto.DrawImage(imgPhoto,
+                new Rectangle(destX, destY, destWidth, destHeight),
+                new Rectangle(sourceX, sourceY, sourceWidth, sourceHeight),
+                GraphicsUnit.Pixel);
+
+            grPhoto.Dispose();
+            imgPhoto.Dispose();
+            return bmPhoto;
         }
 
         public byte[] ConverterImagemParaBytes(string caminhoImagem)
