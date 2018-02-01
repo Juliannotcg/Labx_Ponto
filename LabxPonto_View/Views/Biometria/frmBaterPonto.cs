@@ -147,20 +147,31 @@ namespace LabxPonto_View.Views.Biometria
                             HorarioExpediente ultimoHorario = serviceHorario.GetLastHorario(funcionario.Id);
                             horarioExpediente.Funcionario = funcionario;
 
-                            if ((ultimoHorario.Entrada != DateTime.MinValue) &&
-                                    (ultimoHorario.Saida == DateTime.MinValue))
-                            {
-                                ultimoHorario.Saida = DateTime.Now;
-                                serviceHorario.Update(ultimoHorario);
-                                updateStatus("Horário de saída lançado com sucesso...");
-                            }
-                            else
+                            if (ultimoHorario == null)
                             {
                                 horarioExpediente.Entrada = DateTime.Now;
                                 horarioExpediente.Saida = new DateTime();
                                 serviceHorario.Insert(horarioExpediente);
                                 updateStatus("Horário de entrada lançado com sucesso...");
                             }
+                            else
+                            {
+                                if ((ultimoHorario.Entrada != DateTime.MinValue) &&
+                                        (ultimoHorario.Saida == DateTime.MinValue))
+                                {
+                                    ultimoHorario.Saida = DateTime.Now;
+                                    serviceHorario.Update(ultimoHorario);
+                                    updateStatus("Horário de saída lançado com sucesso...");
+                                }
+                                else
+                                {
+                                    horarioExpediente.Entrada = DateTime.Now;
+                                    horarioExpediente.Saida = new DateTime();
+                                    serviceHorario.Insert(horarioExpediente);
+                                    updateStatus("Horário de entrada lançado com sucesso...");
+                                }
+                            }
+
                             funcionario = new Funcionario();
                             funcionarioAnterior = funcionario;
                             this.Invoke(new Function(delegate () { limparTela(); }));
@@ -232,12 +243,8 @@ namespace LabxPonto_View.Views.Biometria
                             txtFuncao.Text = funcionario.Funcao.NomeFuncao;
                         if (funcionario.Funcao.Departamento != null)
                             txtDepartamento.Text = funcionario.Funcao.Departamento.NomeDepartamento;
-
-                        if (funcionario.Imagem != null)
-                            if (funcionario.Imagem.Arquivo != null)
-                            {
-                                imgFoto.Image = preencherImagemByte(funcionario.Imagem.Arquivo);
-                            }
+                        if(funcionario.ImagemDigital!=null)
+                            imgFoto.Image = preencherImagemByte(funcionario.ImagemDigital);
                     }));
                 }
             }
