@@ -62,17 +62,23 @@ namespace LabxPonto_View.Views.Configurações
 
         public void ConfigurarBanco()
         {
-            if (Validar)
+            if (Validar())
             {
-                limparErros();
+                if (MetroFramework.MetroMessageBox.Show(this, "Ao alterar as informações do banco de dados, todas as informações do sistema serão amrmazenadas no novo banco.", "Você tem certeza que deseja mudar o banco de dados?", System.Windows.Forms.MessageBoxButtons.OKCancel, System.Windows.Forms.MessageBoxIcon.Exclamation) == DialogResult.OK)
+                {
+                    limparErros();
 
-                var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-                var connectionStringsSection = (ConnectionStringsSection)config.GetSection("connectionStrings");
-                connectionStringsSection.ConnectionStrings["ConexaoPonto"].ConnectionString = "Server=" + txtServidor.Text + ";Database=" + txtNomeBanco.Text + "; User ID=" + txtUsuario.Text + ";Password=" + txtSenha.Text + ";Trusted_Connection=False; Encrypt=False;";
-                config.Save();
-                ConfigurationManager.RefreshSection("connectionStrings");
+                    var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                    var connectionStringsSection = (ConnectionStringsSection)config.GetSection("connectionStrings");
+                    connectionStringsSection.ConnectionStrings["ConexaoPonto"].ConnectionString = "Server=" + txtServidor.Text + ";Database=" + txtNomeBanco.Text + "; User ID=" + txtUsuario.Text + ";Password=" + txtSenha.Text + ";Trusted_Connection=False; Encrypt=False;";
+                    config.Save();
+                    ConfigurationManager.RefreshSection("connectionStrings");
 
-                limparErros();
+                    limparErros();
+
+                    MetroFramework.MetroMessageBox.Show(this, "O banco foi alterado com sucesso", "Alterado com sucesso!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question);
+                }
+                
             }
         }
     }

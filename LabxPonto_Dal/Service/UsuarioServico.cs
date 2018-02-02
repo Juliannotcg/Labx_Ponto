@@ -45,6 +45,11 @@ namespace LabxPonto_Dao.Service
             return Context.Usuarios.Where(x => x.Id == id).FirstOrDefault();
         }
 
+        public Usuario GetUsuario(string nome, string senha)
+        {
+            return Context.Usuarios.Where(x => x.Login == nome && x.Senha == senha).FirstOrDefault();
+        }
+
         public bool GetUsuarioLogin(string usuario)
         {
             var result = Context.Usuarios.Where(x => x.Login == usuario).FirstOrDefault();

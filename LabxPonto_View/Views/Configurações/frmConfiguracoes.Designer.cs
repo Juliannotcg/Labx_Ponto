@@ -37,9 +37,6 @@
             this.txtUsuario = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
             this.txtNomeBanco = new MetroFramework.Controls.MetroTextBox();
-            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.rbBancoWeb = new MetroFramework.Controls.MetroRadioButton();
-            this.rbBancoLocal = new MetroFramework.Controls.MetroRadioButton();
             this.metroLabel19 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel22 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel18 = new MetroFramework.Controls.MetroLabel();
@@ -66,22 +63,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.tcCadastroFuncionario.SuspendLayout();
             this.tpDadosPessoais.SuspendLayout();
-            this.metroPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(312, 528);
+            this.btnCancelar.Location = new System.Drawing.Point(327, 368);
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(214, 528);
+            this.btnSalvar.Location = new System.Drawing.Point(225, 368);
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // pbLogo
             // 
-            this.pbLogo.Location = new System.Drawing.Point(4, 540);
+            this.pbLogo.Location = new System.Drawing.Point(4, 380);
             this.pbLogo.Margin = new System.Windows.Forms.Padding(2);
             // 
             // tcCadastroFuncionario
@@ -91,7 +87,7 @@
             this.tcCadastroFuncionario.Margin = new System.Windows.Forms.Padding(2);
             this.tcCadastroFuncionario.Name = "tcCadastroFuncionario";
             this.tcCadastroFuncionario.SelectedIndex = 0;
-            this.tcCadastroFuncionario.Size = new System.Drawing.Size(396, 398);
+            this.tcCadastroFuncionario.Size = new System.Drawing.Size(396, 283);
             this.tcCadastroFuncionario.TabIndex = 56;
             this.tcCadastroFuncionario.UseSelectable = true;
             // 
@@ -103,7 +99,6 @@
             this.tpDadosPessoais.Controls.Add(this.txtUsuario);
             this.tpDadosPessoais.Controls.Add(this.metroLabel11);
             this.tpDadosPessoais.Controls.Add(this.txtNomeBanco);
-            this.tpDadosPessoais.Controls.Add(this.metroPanel1);
             this.tpDadosPessoais.Controls.Add(this.metroLabel19);
             this.tpDadosPessoais.Controls.Add(this.metroLabel22);
             this.tpDadosPessoais.Controls.Add(this.metroLabel18);
@@ -131,7 +126,7 @@
             this.tpDadosPessoais.Location = new System.Drawing.Point(4, 38);
             this.tpDadosPessoais.Margin = new System.Windows.Forms.Padding(2);
             this.tpDadosPessoais.Name = "tpDadosPessoais";
-            this.tpDadosPessoais.Size = new System.Drawing.Size(388, 356);
+            this.tpDadosPessoais.Size = new System.Drawing.Size(388, 241);
             this.tpDadosPessoais.TabIndex = 0;
             this.tpDadosPessoais.Text = "Banco de dados";
             this.tpDadosPessoais.VerticalScrollbarBarColor = true;
@@ -141,7 +136,7 @@
             // metroLabel21
             // 
             this.metroLabel21.AutoSize = true;
-            this.metroLabel21.Location = new System.Drawing.Point(3, 225);
+            this.metroLabel21.Location = new System.Drawing.Point(3, 167);
             this.metroLabel21.Name = "metroLabel21";
             this.metroLabel21.Size = new System.Drawing.Size(44, 19);
             this.metroLabel21.TabIndex = 64;
@@ -163,7 +158,7 @@
             this.txtSenha.CustomButton.UseSelectable = true;
             this.txtSenha.CustomButton.Visible = false;
             this.txtSenha.Lines = new string[0];
-            this.txtSenha.Location = new System.Drawing.Point(3, 246);
+            this.txtSenha.Location = new System.Drawing.Point(3, 188);
             this.txtSenha.Margin = new System.Windows.Forms.Padding(2);
             this.txtSenha.MaxLength = 32767;
             this.txtSenha.Name = "txtSenha";
@@ -182,7 +177,7 @@
             // metroLabel20
             // 
             this.metroLabel20.AutoSize = true;
-            this.metroLabel20.Location = new System.Drawing.Point(3, 173);
+            this.metroLabel20.Location = new System.Drawing.Point(3, 115);
             this.metroLabel20.Name = "metroLabel20";
             this.metroLabel20.Size = new System.Drawing.Size(53, 19);
             this.metroLabel20.TabIndex = 62;
@@ -204,7 +199,7 @@
             this.txtUsuario.CustomButton.UseSelectable = true;
             this.txtUsuario.CustomButton.Visible = false;
             this.txtUsuario.Lines = new string[0];
-            this.txtUsuario.Location = new System.Drawing.Point(3, 194);
+            this.txtUsuario.Location = new System.Drawing.Point(3, 136);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsuario.MaxLength = 32767;
             this.txtUsuario.Name = "txtUsuario";
@@ -223,7 +218,7 @@
             // metroLabel11
             // 
             this.metroLabel11.AutoSize = true;
-            this.metroLabel11.Location = new System.Drawing.Point(3, 121);
+            this.metroLabel11.Location = new System.Drawing.Point(3, 63);
             this.metroLabel11.Name = "metroLabel11";
             this.metroLabel11.Size = new System.Drawing.Size(106, 19);
             this.metroLabel11.TabIndex = 60;
@@ -245,7 +240,7 @@
             this.txtNomeBanco.CustomButton.UseSelectable = true;
             this.txtNomeBanco.CustomButton.Visible = false;
             this.txtNomeBanco.Lines = new string[0];
-            this.txtNomeBanco.Location = new System.Drawing.Point(3, 142);
+            this.txtNomeBanco.Location = new System.Drawing.Point(3, 84);
             this.txtNomeBanco.Margin = new System.Windows.Forms.Padding(2);
             this.txtNomeBanco.MaxLength = 32767;
             this.txtNomeBanco.Name = "txtNomeBanco";
@@ -261,45 +256,10 @@
             this.txtNomeBanco.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtNomeBanco.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // metroPanel1
-            // 
-            this.metroPanel1.Controls.Add(this.rbBancoWeb);
-            this.metroPanel1.Controls.Add(this.rbBancoLocal);
-            this.metroPanel1.HorizontalScrollbarBarColor = true;
-            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(3, 21);
-            this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(382, 48);
-            this.metroPanel1.TabIndex = 58;
-            this.metroPanel1.VerticalScrollbarBarColor = true;
-            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.VerticalScrollbarSize = 10;
-            // 
-            // rbBancoWeb
-            // 
-            this.rbBancoWeb.AutoSize = true;
-            this.rbBancoWeb.Location = new System.Drawing.Point(146, 17);
-            this.rbBancoWeb.Name = "rbBancoWeb";
-            this.rbBancoWeb.Size = new System.Drawing.Size(83, 15);
-            this.rbBancoWeb.TabIndex = 3;
-            this.rbBancoWeb.Text = "Banco Web";
-            this.rbBancoWeb.UseSelectable = true;
-            // 
-            // rbBancoLocal
-            // 
-            this.rbBancoLocal.AutoSize = true;
-            this.rbBancoLocal.Location = new System.Drawing.Point(18, 17);
-            this.rbBancoLocal.Name = "rbBancoLocal";
-            this.rbBancoLocal.Size = new System.Drawing.Size(84, 15);
-            this.rbBancoLocal.TabIndex = 2;
-            this.rbBancoLocal.Text = "Banco local";
-            this.rbBancoLocal.UseSelectable = true;
-            // 
             // metroLabel19
             // 
             this.metroLabel19.AutoSize = true;
-            this.metroLabel19.Location = new System.Drawing.Point(3, 70);
+            this.metroLabel19.Location = new System.Drawing.Point(3, 12);
             this.metroLabel19.Name = "metroLabel19";
             this.metroLabel19.Size = new System.Drawing.Size(59, 19);
             this.metroLabel19.TabIndex = 49;
@@ -403,7 +363,7 @@
             this.txtServidor.CustomButton.UseSelectable = true;
             this.txtServidor.CustomButton.Visible = false;
             this.txtServidor.Lines = new string[0];
-            this.txtServidor.Location = new System.Drawing.Point(3, 91);
+            this.txtServidor.Location = new System.Drawing.Point(3, 33);
             this.txtServidor.Margin = new System.Windows.Forms.Padding(2);
             this.txtServidor.MaxLength = 32767;
             this.txtServidor.Name = "txtServidor";
@@ -440,7 +400,7 @@
             // metroLabel7
             // 
             this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(149, 173);
+            this.metroLabel7.Location = new System.Drawing.Point(149, 115);
             this.metroLabel7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(0, 0);
@@ -476,7 +436,7 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(149, 121);
+            this.metroLabel3.Location = new System.Drawing.Point(149, 63);
             this.metroLabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(0, 0);
@@ -517,7 +477,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(435, 575);
+            this.ClientSize = new System.Drawing.Size(457, 415);
             this.Controls.Add(this.tcCadastroFuncionario);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmConfiguracoes";
@@ -532,8 +492,6 @@
             this.tcCadastroFuncionario.ResumeLayout(false);
             this.tpDadosPessoais.ResumeLayout(false);
             this.tpDadosPessoais.PerformLayout();
-            this.metroPanel1.ResumeLayout(false);
-            this.metroPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
@@ -549,9 +507,6 @@
         private MetroFramework.Controls.MetroTextBox txtUsuario;
         private MetroFramework.Controls.MetroLabel metroLabel11;
         private MetroFramework.Controls.MetroTextBox txtNomeBanco;
-        private MetroFramework.Controls.MetroPanel metroPanel1;
-        private MetroFramework.Controls.MetroRadioButton rbBancoWeb;
-        private MetroFramework.Controls.MetroRadioButton rbBancoLocal;
         private MetroFramework.Controls.MetroLabel metroLabel19;
         private MetroFramework.Controls.MetroLabel metroLabel22;
         private MetroFramework.Controls.MetroLabel metroLabel18;

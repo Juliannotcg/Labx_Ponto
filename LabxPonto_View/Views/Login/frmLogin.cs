@@ -48,7 +48,6 @@ namespace LabxPonto_View.Views
             {
                 this.DialogResult = DialogResult.OK;
                 this.Dispose();
-
             }
             else
             {

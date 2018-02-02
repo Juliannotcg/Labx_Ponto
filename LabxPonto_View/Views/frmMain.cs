@@ -1,5 +1,7 @@
-﻿using LabxPonto_Dao.Data.Context;
+﻿using LabxPonto_Commons;
+using LabxPonto_Dao.Data.Context;
 using LabxPonto_Dao.Model;
+using LabxPonto_Dao.Service;
 using LabxPonto_View.Views.Biometria;
 using LabxPonto_View.Views.Configurações;
 using LabxPonto_View.Views.Departamentos;
@@ -23,6 +25,7 @@ namespace LabxPonto_View.Views
     {
         AppDataContext context;
         Usuario usuario;
+        UsuarioServico servico;
         public Usuario Usuario
         {
             get { return (usuario); }
@@ -35,7 +38,6 @@ namespace LabxPonto_View.Views
             context = contexto;
             StyleManager = metroStyleManager;
             verificarArquivoConfiguracao();
-            
         }
 
         private void NotificarUsuarioLogado()
@@ -150,8 +152,23 @@ namespace LabxPonto_View.Views
 
         private void frmMain_Load(object sender, System.EventArgs e)
         {
+            servico = new UsuarioServico(context);
+            Criptografar cript = new Criptografar();
+            string senhaCript = "";
+
+            senhaCript = cript.Base64Encode(usuario.Senha);
+
             if (usuario != null)
             {
+                usuario = servico.GetUsuario(usuario.Login, senhaCript);
+
+                if (usuario.Perfil.ToString() == "Funcionário")
+                {
+                    btnFuncionario.Visible = false;
+                    btnBiometria.Visible = false;
+                    btnFuncoes.Visible = false;
+                }
+
                 lbUsuario.Text = "Usuário " + usuario.Login.ToString() + " logado.";
                 NotificarUsuarioLogado();
             }
@@ -159,6 +176,7 @@ namespace LabxPonto_View.Views
             lblVersao.Text = "Versão: " + Application.ProductVersion;
 
             this.WindowState = FormWindowState.Maximized;
+
         }
 
         private void btnUsuario_Click(object sender, System.EventArgs e)
