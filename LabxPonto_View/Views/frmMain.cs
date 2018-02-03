@@ -106,7 +106,6 @@ namespace LabxPonto_View.Views
         {
             frmRelatorios janela = new frmRelatorios(context);
             janela.Show();
-            
         }
 
         private void btTema_Click(object sender, System.EventArgs e)
@@ -163,11 +162,10 @@ namespace LabxPonto_View.Views
                 usuario = servico.GetUsuario(usuario.Login, senhaCript);
 
                 if (usuario.Perfil.ToString() == "Funcionário")
-                {
-                    btnFuncionario.Visible = false;
-                    btnBiometria.Visible = false;
-                    btnFuncoes.Visible = false;
-                }
+                    TelaFuncionario();
+
+                if (usuario.Perfil.ToString() == "Usuário padrão")
+                    TelaAdministrativo();
 
                 lbUsuario.Text = "Usuário " + usuario.Login.ToString() + " logado.";
                 NotificarUsuarioLogado();
@@ -176,9 +174,40 @@ namespace LabxPonto_View.Views
             lblVersao.Text = "Versão: " + Application.ProductVersion;
 
             this.WindowState = FormWindowState.Maximized;
-
         }
 
+        public void TelaFuncionario()
+        {
+            btnFuncionario.Visible = false;
+            btnBiometria.Visible = false;
+            btnFuncoes.Visible = false;
+            btnDepartamento.Visible = false;
+            btnEmpresa.Visible = false;
+            btnFuncoes.Visible = false;
+            btnLerArquivo.Visible = false;
+            btnGerarArquivo.Visible = false;
+            btnHorario.Visible = false;
+            btnUsuario.Visible = false;
+            btnRelatorios.Visible = false;
+            mtConfiguracoes.Visible = false;
+            lbArquivo.Visible = false;
+            lbCadastro.Visible = false;
+            lbHorario.Visible = false;
+            lblUsuario.Visible = false;
+            lbSistema.Visible = false;
+
+            bPonto.Location = new Point(37, 337);
+            btnSair.Location = new Point(287, 337);
+
+            frmBaterPonto janela = new frmBaterPonto(context);
+            janela.ShowDialog();
+        }
+
+        public void TelaAdministrativo()
+        {
+            mtConfiguracoes.Visible = false;
+            lbSistema.Visible = false;
+        }
         private void btnUsuario_Click(object sender, System.EventArgs e)
         {
             frmUsuario janela = new frmUsuario(context);
