@@ -197,8 +197,10 @@ namespace LabxPonto_Dao.Service
 
         public bool Update(Funcionario funcionario)
         {
+            AppDataContext con = new AppDataContext();
             Context.Entry(funcionario).State = System.Data.Entity.EntityState.Modified;
             Context.SaveChanges();
+            Context = con;
             return true;
         }
 

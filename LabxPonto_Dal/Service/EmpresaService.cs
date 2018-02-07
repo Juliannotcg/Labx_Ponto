@@ -64,8 +64,10 @@ namespace LabxPonto_Dao.Service
         }
         public bool Update(Empresa empresa)
         {
-            Context.Entry(empresa).State = System.Data.Entity.EntityState.Modified;
-            Context.SaveChanges();
+            AppDataContext con = new AppDataContext();
+            con.Entry(empresa).State = System.Data.Entity.EntityState.Modified;
+            con.SaveChanges();
+            Context = con;
             return true;
         }
 

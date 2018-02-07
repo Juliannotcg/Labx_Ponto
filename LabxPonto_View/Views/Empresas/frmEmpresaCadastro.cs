@@ -459,7 +459,7 @@ namespace LabxPonto_View.Views.Empresas
 
 
             Bitmap bmPhoto = new Bitmap(newWidth, newHeight,
-                          PixelFormat.Gdi);
+                          PixelFormat.Format24bppRgb);
 
             bmPhoto.SetResolution(imgPhoto.HorizontalResolution,
                          imgPhoto.VerticalResolution);
