@@ -14,6 +14,8 @@ namespace LabxPonto_View.Views.Configurações
 {
     public partial class frmConfiguracoes : frmBaseCadastro
     {
+        private frmConfiguracoes frmconfiguracoes;
+
         public frmConfiguracoes()
         {
             InitializeComponent();
@@ -21,6 +23,7 @@ namespace LabxPonto_View.Views.Configurações
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            frmconfiguracoes = new frmConfiguracoes();
             ConfigurarBanco();
         }
 
@@ -76,6 +79,7 @@ namespace LabxPonto_View.Views.Configurações
                     limparErros();
 
                     MetroFramework.MetroMessageBox.Show(this, "O banco foi alterado com sucesso", "Alterado com sucesso!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question);
+                    frmconfiguracoes.Dispose();
                 }
             }
         }
