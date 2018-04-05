@@ -532,9 +532,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\LogoEmpresa.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\config.png" />
   </ItemGroup>
   <ItemGroup>
@@ -549,7 +546,6 @@
   <ItemGroup>
     <None Include="Resources\avatar.png" />
     <Content Include="favicon.ico" />
-    <None Include="Resources\Logo11.jpg" />
     <None Include="Resources\theme1.png" />
     <None Include="Resources\icons8-leitor-de-impressão-digital-50.png" />
     <None Include="Resources\icons8-leitor-de-impressão-digital-100.png" />
@@ -569,10 +565,6 @@
     <None Include="Resources\folders.png" />
     <None Include="Resources\power.png" />
     <None Include="Resources\digital.gif" />
-    <None Include="Resources\LogoEmpresa1.jpg" />
-    <None Include="Resources\LogoEmpresa2.jpg" />
-    <None Include="Resources\LogoEmpresa3.jpg" />
-    <None Include="Resources\LogoEmpresa4.jpg" />
     <None Include="Resources\if_back_172570 %281%29.png" />
     <None Include="Resources\if_back_126585.png" />
     <None Include="Resources\go-back-left-arrow.png" />
