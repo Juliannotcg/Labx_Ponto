@@ -88,7 +88,6 @@
             this.errorProviderEmp = new System.Windows.Forms.ErrorProvider(this.components);
             this.buscarArquivo = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.tcCadastroFuncionario.SuspendLayout();
             this.tpDadosPessoais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgFoto)).BeginInit();
@@ -108,10 +107,6 @@
             this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnSalvar.TabIndex = 7;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
-            // 
-            // pbLogo
-            // 
-            this.pbLogo.Location = new System.Drawing.Point(8, 563);
             // 
             // metroLink1
             // 
@@ -1027,12 +1022,10 @@
             this.Padding = new System.Windows.Forms.Padding(36, 91, 36, 31);
             this.Text = "Empresa";
             this.Load += new System.EventHandler(this.frmEmpresaCadastro_Load);
-            this.Controls.SetChildIndex(this.pbLogo, 0);
             this.Controls.SetChildIndex(this.btnSalvar, 0);
             this.Controls.SetChildIndex(this.btnCancelar, 0);
             this.Controls.SetChildIndex(this.tcCadastroFuncionario, 0);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.tcCadastroFuncionario.ResumeLayout(false);
             this.tpDadosPessoais.ResumeLayout(false);
             this.tpDadosPessoais.PerformLayout();

@@ -36,7 +36,6 @@
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Perfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,7 +61,6 @@
             // 
             // pbLogo
             // 
-            this.pbLogo.Location = new System.Drawing.Point(6, 462);
             // 
             // metroLink1
             // 
@@ -156,14 +154,12 @@
             this.Padding = new System.Windows.Forms.Padding(36, 91, 36, 31);
             this.Text = "Usuario";
             this.Load += new System.EventHandler(this.frmUsuario_Load);
-            this.Controls.SetChildIndex(this.pbLogo, 0);
             this.Controls.SetChildIndex(this.btNovo, 0);
             this.Controls.SetChildIndex(this.btAlterar, 0);
             this.Controls.SetChildIndex(this.btExcluir, 0);
             this.Controls.SetChildIndex(this.btnVisualizar, 0);
             this.Controls.SetChildIndex(this.dgUsuario, 0);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuario)).EndInit();
             this.ResumeLayout(false);
 

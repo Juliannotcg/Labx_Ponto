@@ -39,7 +39,6 @@
             this.errorProviderUsu = new System.Windows.Forms.ErrorProvider(this.components);
             this.lbUsuario = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderUsu)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +56,6 @@
             // 
             // pbLogo
             // 
-            this.pbLogo.Location = new System.Drawing.Point(9, 370);
             // 
             // metroLink1
             // 
@@ -241,7 +239,6 @@
             this.Text = "Usuário";
             this.Theme = MetroFramework.MetroThemeStyle.Default;
             this.Load += new System.EventHandler(this.frmUsuarioCadastro_Load);
-            this.Controls.SetChildIndex(this.pbLogo, 0);
             this.Controls.SetChildIndex(this.btnSalvar, 0);
             this.Controls.SetChildIndex(this.btnCancelar, 0);
             this.Controls.SetChildIndex(this.txtUsuario, 0);
@@ -253,7 +250,6 @@
             this.Controls.SetChildIndex(this.lbPerfil, 0);
             this.Controls.SetChildIndex(this.lbUsuario, 0);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderUsu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -37,7 +37,6 @@
             this.CNPJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NomeResponsavel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgEmpresas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -163,14 +162,12 @@
             this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.Text = "Empresas";
             this.Load += new System.EventHandler(this.frmEmpresas_Load);
-            this.Controls.SetChildIndex(this.pbLogo, 0);
             this.Controls.SetChildIndex(this.btnVisualizar, 0);
             this.Controls.SetChildIndex(this.btNovo, 0);
             this.Controls.SetChildIndex(this.btAlterar, 0);
             this.Controls.SetChildIndex(this.btExcluir, 0);
             this.Controls.SetChildIndex(this.dgEmpresas, 0);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgEmpresas)).EndInit();
             this.ResumeLayout(false);
 

@@ -60,7 +60,6 @@
             this.lbNome = new MetroFramework.Controls.MetroLabel();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.tcCadastroFuncionario.SuspendLayout();
             this.tpDadosPessoais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -77,11 +76,6 @@
             this.btnSalvar.Location = new System.Drawing.Point(300, 453);
             this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
-            // 
-            // pbLogo
-            // 
-            this.pbLogo.Location = new System.Drawing.Point(5, 468);
-            this.pbLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             // 
             // tcCadastroFuncionario
             // 
@@ -473,10 +467,8 @@
             this.Text = "Configuracoes";
             this.Controls.SetChildIndex(this.btnSalvar, 0);
             this.Controls.SetChildIndex(this.btnCancelar, 0);
-            this.Controls.SetChildIndex(this.pbLogo, 0);
             this.Controls.SetChildIndex(this.tcCadastroFuncionario, 0);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.tcCadastroFuncionario.ResumeLayout(false);
             this.tpDadosPessoais.ResumeLayout(false);
             this.tpDadosPessoais.PerformLayout();

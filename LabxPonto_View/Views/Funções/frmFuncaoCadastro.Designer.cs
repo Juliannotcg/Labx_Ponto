@@ -37,7 +37,6 @@
             this.cbDepartamento = new MetroFramework.Controls.MetroComboBox();
             this.errorProviderFun = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderFun)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,10 +53,6 @@
             this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnSalvar.TabIndex = 4;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click_1);
-            // 
-            // pbLogo
-            // 
-            this.pbLogo.Location = new System.Drawing.Point(4, 380);
             // 
             // metroLink1
             // 
@@ -193,7 +188,6 @@
             this.Padding = new System.Windows.Forms.Padding(36, 91, 36, 31);
             this.Text = "Função";
             this.Load += new System.EventHandler(this.frmFuncaoCadastro_Load);
-            this.Controls.SetChildIndex(this.pbLogo, 0);
             this.Controls.SetChildIndex(this.btnSalvar, 0);
             this.Controls.SetChildIndex(this.btnCancelar, 0);
             this.Controls.SetChildIndex(this.txtNomeFuncao, 0);
@@ -203,7 +197,6 @@
             this.Controls.SetChildIndex(this.cbDepartamento, 0);
             this.Controls.SetChildIndex(this.Departamento, 0);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderFun)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

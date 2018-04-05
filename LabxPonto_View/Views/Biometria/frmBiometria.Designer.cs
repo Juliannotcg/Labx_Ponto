@@ -46,7 +46,6 @@
             this.btVerificarDigital = new MetroFramework.Controls.MetroTile();
             this.btCapturar = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgDigital)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgFoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderFunc)).BeginInit();
@@ -64,7 +63,6 @@
             // 
             // pbLogo
             // 
-            this.pbLogo.Location = new System.Drawing.Point(7, 434);
             // 
             // imgDigital
             // 
@@ -275,7 +273,6 @@
             this.Controls.Add(this.imgDigital);
             this.Name = "frmBiometria";
             this.Text = "Biometria";
-            this.Controls.SetChildIndex(this.pbLogo, 0);
             this.Controls.SetChildIndex(this.btnSalvar, 0);
             this.Controls.SetChildIndex(this.btnCancelar, 0);
             this.Controls.SetChildIndex(this.imgDigital, 0);
@@ -293,7 +290,6 @@
             this.Controls.SetChildIndex(this.btVerificarDigital, 0);
             this.Controls.SetChildIndex(this.btCapturar, 0);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgDigital)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgFoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderFunc)).EndInit();

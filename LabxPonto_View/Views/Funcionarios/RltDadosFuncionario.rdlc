@@ -764,7 +764,6 @@
           </Paragraphs>
           <rd:DefaultName>Textbox63</rd:DefaultName>
           <Top>1.07103cm</Top>
-          <Left>0cm</Left>
           <Height>0.93867cm</Height>
           <Width>19.59887cm</Width>
           <Style>
@@ -777,21 +776,6 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Image Name="ImageLogo">
-          <Source>Embedded</Source>
-          <Value>LogoEmpresa</Value>
-          <Sizing>FitProportional</Sizing>
-          <Top>0.30339cm</Top>
-          <Left>0.7112cm</Left>
-          <Height>0.73237cm</Height>
-          <Width>2.24083cm</Width>
-          <ZIndex>1</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-        </Image>
       </ReportItems>
       <Style>
         <Border>

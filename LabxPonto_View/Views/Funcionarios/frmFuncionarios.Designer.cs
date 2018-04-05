@@ -41,7 +41,6 @@
             this.metroLabel26 = new MetroFramework.Controls.MetroLabel();
             this.btnImprimir = new MetroFramework.Controls.MetroLink();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuncionarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,12 +70,6 @@
             this.btnVisualizar.Margin = new System.Windows.Forms.Padding(5);
             this.btnVisualizar.Size = new System.Drawing.Size(225, 58);
             this.btnVisualizar.Click += new System.EventHandler(this.btnVisualizar_Click);
-            // 
-            // pbLogo
-            // 
-            this.pbLogo.Location = new System.Drawing.Point(12, 404);
-            this.pbLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pbLogo.Size = new System.Drawing.Size(108, 44);
             // 
             // dgFuncionarios
             // 
@@ -251,7 +244,6 @@
             this.Text = "Funcionários";
             this.Load += new System.EventHandler(this.frmFuncionarios_Load);
             this.Controls.SetChildIndex(this.dgFuncionarios, 0);
-            this.Controls.SetChildIndex(this.pbLogo, 0);
             this.Controls.SetChildIndex(this.btnVisualizar, 0);
             this.Controls.SetChildIndex(this.btNovo, 0);
             this.Controls.SetChildIndex(this.btAlterar, 0);
@@ -260,7 +252,6 @@
             this.Controls.SetChildIndex(this.txtCPF, 0);
             this.Controls.SetChildIndex(this.btnImprimir, 0);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuncionarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

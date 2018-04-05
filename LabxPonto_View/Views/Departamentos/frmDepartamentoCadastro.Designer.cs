@@ -36,7 +36,6 @@
             this.txtNomeDepartamento = new MetroFramework.Controls.MetroTextBox();
             this.errorProviderDep = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderDep)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,10 +53,6 @@
             this.btnSalvar.Style = MetroFramework.MetroColorStyle.Green;
             this.btnSalvar.TabIndex = 2;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
-            // 
-            // pbLogo
-            // 
-            this.pbLogo.Location = new System.Drawing.Point(6, 335);
             // 
             // metroLink1
             // 
@@ -170,7 +165,6 @@
             this.Padding = new System.Windows.Forms.Padding(36, 91, 36, 31);
             this.Text = "Departamento";
             this.Load += new System.EventHandler(this.frmDepartamentoCadastro_Load);
-            this.Controls.SetChildIndex(this.pbLogo, 0);
             this.Controls.SetChildIndex(this.btnSalvar, 0);
             this.Controls.SetChildIndex(this.btnCancelar, 0);
             this.Controls.SetChildIndex(this.txtNomeDepartamento, 0);
@@ -178,7 +172,6 @@
             this.Controls.SetChildIndex(this.txtDescricaoDepartamento, 0);
             this.Controls.SetChildIndex(this.metroLabel1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderDep)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

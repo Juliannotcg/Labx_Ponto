@@ -762,21 +762,6 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Image Name="ImageLogo">
-          <Source>Embedded</Source>
-          <Value>LogoEmpresa</Value>
-          <Sizing>FitProportional</Sizing>
-          <Top>0.19898cm</Top>
-          <Left>0.51858cm</Left>
-          <Height>0.738cm</Height>
-          <Width>2.72013cm</Width>
-          <ZIndex>1</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-        </Image>
       </ReportItems>
       <Style>
         <Border>

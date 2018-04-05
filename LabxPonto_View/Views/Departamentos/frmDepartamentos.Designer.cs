@@ -36,7 +36,6 @@
             this.NomeDepartamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgDepartamentos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,11 +65,6 @@
             this.btnVisualizar.Margin = new System.Windows.Forms.Padding(5);
             this.btnVisualizar.Size = new System.Drawing.Size(227, 57);
             this.btnVisualizar.Click += new System.EventHandler(this.btnVisualizar_Click);
-            // 
-            // pbLogo
-            // 
-            this.pbLogo.Location = new System.Drawing.Point(7, 396);
-            this.pbLogo.Size = new System.Drawing.Size(108, 38);
             // 
             // metroLink1
             // 
@@ -164,14 +158,12 @@
             this.Padding = new System.Windows.Forms.Padding(36, 91, 36, 31);
             this.Text = "Departamentos";
             this.Load += new System.EventHandler(this.frmDepartamentos_Load);
-            this.Controls.SetChildIndex(this.pbLogo, 0);
             this.Controls.SetChildIndex(this.btnVisualizar, 0);
             this.Controls.SetChildIndex(this.btNovo, 0);
             this.Controls.SetChildIndex(this.btAlterar, 0);
             this.Controls.SetChildIndex(this.btExcluir, 0);
             this.Controls.SetChildIndex(this.dgDepartamentos, 0);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgDepartamentos)).EndInit();
             this.ResumeLayout(false);
 

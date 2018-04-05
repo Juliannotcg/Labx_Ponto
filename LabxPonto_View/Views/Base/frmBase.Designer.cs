@@ -36,18 +36,17 @@
             this.btNovo = new MetroFramework.Controls.MetroTile();
             this.metroStyleManager = new MetroFramework.Components.MetroStyleManager(this.components);
             this.metroStyleExtender = new MetroFramework.Components.MetroStyleExtender(this.components);
-            this.pbLogo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // btnVisualizar
             // 
             this.btnVisualizar.ActiveControl = null;
             this.btnVisualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnVisualizar.Location = new System.Drawing.Point(23, 291);
+            this.btnVisualizar.Location = new System.Drawing.Point(31, 358);
+            this.btnVisualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnVisualizar.Name = "btnVisualizar";
-            this.btnVisualizar.Size = new System.Drawing.Size(159, 52);
+            this.btnVisualizar.Size = new System.Drawing.Size(212, 64);
             this.btnVisualizar.Style = MetroFramework.MetroColorStyle.Blue;
             this.btnVisualizar.TabIndex = 59;
             this.btnVisualizar.Text = "Visualizar";
@@ -59,9 +58,10 @@
             // btExcluir
             // 
             this.btExcluir.ActiveControl = null;
-            this.btExcluir.Location = new System.Drawing.Point(104, 196);
+            this.btExcluir.Location = new System.Drawing.Point(139, 241);
+            this.btExcluir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btExcluir.Name = "btExcluir";
-            this.btExcluir.Size = new System.Drawing.Size(78, 89);
+            this.btExcluir.Size = new System.Drawing.Size(104, 110);
             this.btExcluir.Style = MetroFramework.MetroColorStyle.Red;
             this.btExcluir.TabIndex = 58;
             this.btExcluir.Text = "Deletar";
@@ -73,9 +73,10 @@
             // btAlterar
             // 
             this.btAlterar.ActiveControl = null;
-            this.btAlterar.Location = new System.Drawing.Point(23, 196);
+            this.btAlterar.Location = new System.Drawing.Point(31, 241);
+            this.btAlterar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btAlterar.Name = "btAlterar";
-            this.btAlterar.Size = new System.Drawing.Size(75, 89);
+            this.btAlterar.Size = new System.Drawing.Size(100, 110);
             this.btAlterar.Style = MetroFramework.MetroColorStyle.Silver;
             this.btAlterar.TabIndex = 57;
             this.btAlterar.Text = "Alterar";
@@ -87,9 +88,10 @@
             // btNovo
             // 
             this.btNovo.ActiveControl = null;
-            this.btNovo.Location = new System.Drawing.Point(23, 107);
+            this.btNovo.Location = new System.Drawing.Point(31, 132);
+            this.btNovo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btNovo.Name = "btNovo";
-            this.btNovo.Size = new System.Drawing.Size(159, 82);
+            this.btNovo.Size = new System.Drawing.Size(212, 101);
             this.btNovo.Style = MetroFramework.MetroColorStyle.Blue;
             this.btNovo.TabIndex = 56;
             this.btNovo.Text = "Novo";
@@ -103,34 +105,21 @@
             // 
             this.metroStyleManager.Owner = null;
             // 
-            // pbLogo
-            // 
-            this.pbLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.metroStyleExtender.SetApplyMetroTheme(this.pbLogo, true);
-            this.pbLogo.Image = global::LabxPonto_View.Properties.Resources.LogoEmpresa1;
-            this.pbLogo.Location = new System.Drawing.Point(8, 366);
-            this.pbLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(81, 29);
-            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbLogo.TabIndex = 60;
-            this.pbLogo.TabStop = false;
-            // 
             // frmBase
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(736, 401);
-            this.Controls.Add(this.pbLogo);
+            this.ClientSize = new System.Drawing.Size(981, 494);
             this.Controls.Add(this.btnVisualizar);
             this.Controls.Add(this.btExcluir);
             this.Controls.Add(this.btAlterar);
             this.Controls.Add(this.btNovo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmBase";
+            this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.Text = "Base";
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -143,6 +132,5 @@
         public MetroFramework.Controls.MetroTile btnVisualizar;
         public MetroFramework.Components.MetroStyleManager metroStyleManager;
         public MetroFramework.Components.MetroStyleExtender metroStyleExtender;
-        public System.Windows.Forms.PictureBox pbLogo;
     }
 }

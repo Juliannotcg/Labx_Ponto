@@ -26,23 +26,23 @@ namespace LabxPonto_View
             //frmMain main = new frmMain(contexto);
             //Application.Run(main);
 
-            frmLogin login = new frmLogin(contexto);
+            //frmLogin login = new frmLogin(contexto);
 
-            using (var mutex = new System.Threading.Mutex(true, "A403A6EB-6472-4B42-B5C1-C0E06F9F25B3"))
-            {
-                var jaEstaRodando = !mutex.WaitOne(0, true);
-                if (jaEstaRodando)
-                    return;
+            //using (var mutex = new System.Threading.Mutex(true, "A403A6EB-6472-4B42-B5C1-C0E06F9F25B3"))
+            //{
+            //    var jaEstaRodando = !mutex.WaitOne(0, true);
+            //    if (jaEstaRodando)
+            //        return;
 
-                if (login.ShowDialog() == DialogResult.OK)
-                {
+            //    if (login.ShowDialog() == DialogResult.OK)
+            //    {
                     frmMain main = new frmMain(contexto);
-                    main.Usuario = login.Usuario;
+                    //main.Usuario = login.Usuario;
                     Application.Run(main);
-                }
+            //    }
 
-                mutex.ReleaseMutex();
-            }
+            //    mutex.ReleaseMutex();
+            //}
 
             // Configure Dependency Injection
             var container = new UnityContainer();
