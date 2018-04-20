@@ -25,8 +25,8 @@ namespace LabxPonto_Dao.Service
         //              select p.Id).ToList();
 
         //    var resposta = (from c in Context.Funcoes
-        //                    join b in Context.Departamentos on c.Departamento.Id equals b.Id
-        //                    where c.Departamento.Id == depId
+        //                    join b in Context.Departamentos on c.Department.Id equals b.Id
+        //                    where c.Department.Id == depId
         //                    select c).ToList();
 
         //    return (resposta);
@@ -124,7 +124,7 @@ namespace LabxPonto_Dao.Service
 
         public bool VerificarDependencias(int id)
         {
-            var list = Context.Funcoes.Where(x => x.Departamento.Id == id).ToList();
+            var list = Context.Funcoes.Where(x => x.Department.Id == id).ToList();
             if (list.Count > 0)
                 return false;
             else

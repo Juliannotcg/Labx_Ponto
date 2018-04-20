@@ -19,21 +19,21 @@ namespace LabxPonto_Dao.Service
             Context = con;
         }
 
-        public List<Funcao> GetFuncoes(int depId)
+        public List<Function> GetFuncoes(int depId)
         {
             var id = (from p in Context.Departamentos
                                 where p.Id == depId
                         select p.Id).ToList();
 
             var resposta = (from c in Context.Funcoes
-                            join b in Context.Departamentos on c.Departamento.Id equals b.Id
-                            where c.Departamento.Id == depId
+                            join b in Context.Departamentos on c.Department.Id equals b.Id
+                            where c.Department.Id == depId
                         select c).ToList();
 
             return (resposta);
         }
 
-        public List<Funcao> GetFuncoes()
+        public List<Function> GetFuncoes()
         {
             var resposta = (from p in Context.Funcoes
                             select p).ToList();
@@ -41,20 +41,20 @@ namespace LabxPonto_Dao.Service
             return (resposta);
         }
 
-        public Funcao GetFuncao(int id)
+        public Function GetFuncao(int id)
         {
             return Context.Funcoes.Where(x => x.Id == id).FirstOrDefault();
         }
         public DataTable GetFuncaoGrid()
         {
             var results = Context.Funcoes
-                .Include("Departamento")
+                .Include("Department")
                 .Select(p => new
                 {
                     p.Id,
-                    p.NomeFuncao,
-                    p.Descricao,
-                    Departamento = p.Departamento.NomeDepartamento,
+                    p.NameFunction,
+                    p.Description,
+                    Departamento = p.Department.NameDepartment,
                 })
                 .AsEnumerable()
                 .ToList();
@@ -63,7 +63,7 @@ namespace LabxPonto_Dao.Service
             tabela.Columns.Add("Id", typeof(int));
             tabela.Columns.Add("Nome", typeof(string));
             tabela.Columns.Add("Descricao", typeof(string));
-            tabela.Columns.Add("Departamento", typeof(string));
+            tabela.Columns.Add("Department", typeof(string));
 
             foreach (var item in results)
             {
@@ -71,7 +71,7 @@ namespace LabxPonto_Dao.Service
                 linha["Id"] = item.Id;
                 linha["Nome"] = item.NomeFuncao;
                 linha["Descricao"] = item.Descricao;
-                linha["Departamento"] = item.Departamento;
+                linha["Department"] = item.Departamento;
                 tabela.Rows.Add(linha);
             }
 
@@ -79,14 +79,14 @@ namespace LabxPonto_Dao.Service
 
         }
 
-        public bool Insert(Funcao funcao)
+        public bool Insert(Function funcao)
         {
             Context.Funcoes.Add(funcao);
             Context.SaveChanges();
             return true;
         }
 
-        public bool Delete(Funcao funcao)
+        public bool Delete(Function funcao)
         {
             Context.Entry(funcao).State = System.Data.Entity.EntityState.Deleted;
             Context.Funcoes.Remove(funcao);
@@ -94,7 +94,7 @@ namespace LabxPonto_Dao.Service
             return true;
         }
 
-        public bool Update(Funcao funcao)
+        public bool Update(Function funcao)
         {
             Context.Entry(funcao).State = System.Data.Entity.EntityState.Modified;
             Context.SaveChanges();
@@ -113,13 +113,13 @@ namespace LabxPonto_Dao.Service
         public List<RltFuncao> GetRelatorio()
         {
             var results = Context.Funcoes
-                .Include("Departamento")
+                .Include("Department")
                 .Select(p => new RltFuncao()
                 {
-                    IdDepartamento = p.Departamento.Id,
-                    NomeFuncao = p.NomeFuncao,
-                    Descricao = p.Descricao,
-                    Departamento = p.Departamento.NomeDepartamento
+                    IdDepartamento = p.Department.Id,
+                    NomeFuncao = p.NameFunction,
+                    Descricao = p.Description,
+                    Departamento = p.Department.NameDepartment
                 })
                 .AsEnumerable()
                 .ToList();

@@ -15,10 +15,10 @@ namespace LabxPonto_Dao.Injection
             //Funcionario
             container.RegisterType<FuncionarioService, FuncionarioService>(new HierarchicalLifetimeManager());
 
-            //Funcao
+            //Function
             container.RegisterType<FuncaoService, FuncaoService>(new HierarchicalLifetimeManager());
 
-            //Departamento
+            //Department
             container.RegisterType<DepartamentoService, DepartamentoService>(new HierarchicalLifetimeManager());
 
             //Empresa

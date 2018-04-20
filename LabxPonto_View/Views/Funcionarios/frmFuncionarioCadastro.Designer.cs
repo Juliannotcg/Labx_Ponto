@@ -423,15 +423,15 @@
             this.metroLabel30.UseCustomBackColor = true;
             this.metroLabel30.UseCustomForeColor = true;
             // 
-            // Departamento
+            // Department
             // 
             this.Departamento.AutoSize = true;
             this.Departamento.Location = new System.Drawing.Point(4, 284);
             this.Departamento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.Departamento.Name = "Departamento";
+            this.Departamento.Name = "Department";
             this.Departamento.Size = new System.Drawing.Size(99, 20);
             this.Departamento.TabIndex = 57;
-            this.Departamento.Text = "Departamento";
+            this.Departamento.Text = "Department";
             this.Departamento.UseCustomBackColor = true;
             this.Departamento.UseCustomForeColor = true;
             // 
@@ -1012,7 +1012,7 @@
             this.metroLabel39.Name = "metroLabel39";
             this.metroLabel39.Size = new System.Drawing.Size(97, 20);
             this.metroLabel39.TabIndex = 59;
-            this.metroLabel39.Text = "Complemento";
+            this.metroLabel39.Text = "Complement";
             this.metroLabel39.UseCustomBackColor = true;
             this.metroLabel39.UseCustomForeColor = true;
             // 

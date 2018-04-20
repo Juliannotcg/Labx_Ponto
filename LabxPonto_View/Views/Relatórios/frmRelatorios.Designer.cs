@@ -44,7 +44,6 @@
             this.rbFuncionarioEmpresa = new MetroFramework.Controls.MetroRadioButton();
             this.rbPonto = new MetroFramework.Controls.MetroRadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderRlt)).BeginInit();
             this.gbPonto.SuspendLayout();
             this.gbFuncionarioEmpresa.SuspendLayout();
@@ -64,11 +63,6 @@
             this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnSalvar.TabIndex = 3;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
-            // 
-            // pbLogo
-            // 
-            this.pbLogo.Location = new System.Drawing.Point(7, 533);
-            this.pbLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             // 
             // metroLabel29
             // 
@@ -279,14 +273,12 @@
             this.Padding = new System.Windows.Forms.Padding(36, 91, 36, 31);
             this.Text = "Relatórios";
             this.Load += new System.EventHandler(this.frmRelatorios_Load);
-            this.Controls.SetChildIndex(this.pbLogo, 0);
             this.Controls.SetChildIndex(this.btnSalvar, 0);
             this.Controls.SetChildIndex(this.btnCancelar, 0);
             this.Controls.SetChildIndex(this.gbPonto, 0);
             this.Controls.SetChildIndex(this.gbFuncionarioEmpresa, 0);
             this.Controls.SetChildIndex(this.groupBox3, 0);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderRlt)).EndInit();
             this.gbPonto.ResumeLayout(false);
             this.gbPonto.PerformLayout();

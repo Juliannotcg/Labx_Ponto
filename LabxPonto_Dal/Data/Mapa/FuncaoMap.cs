@@ -4,7 +4,7 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace LabxPonto_Dao.Data.Mapa
 {
-    public class FuncaoMap:EntityTypeConfiguration<Funcao>
+    public class FuncaoMap:EntityTypeConfiguration<Function>
     {
         public FuncaoMap()
         {
@@ -15,13 +15,13 @@ namespace LabxPonto_Dao.Data.Mapa
               .HasColumnName("FncId")
               .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
-            Property(c => c.NomeFuncao)
+            Property(c => c.NameFunction)
                 .HasColumnName("FncNome");
 
-            Property(c => c.Descricao)
+            Property(c => c.Description)
                 .HasColumnName("FncDescricao");
 
-            HasOptional(o => o.Departamento)
+            HasOptional(o => o.Department)
                .WithMany()
                .Map(m => m.MapKey("Fnc_DepId"));
 

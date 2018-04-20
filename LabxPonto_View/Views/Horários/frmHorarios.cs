@@ -80,9 +80,9 @@ namespace LabxPonto_View.Views.Horários
                     if(funcionario.Empresa!=null)
                         txtEmpresa.Text = funcionario.Empresa.NomeFantasia;
                     if(funcionario.Funcao!=null)
-                        txtFuncao.Text = funcionario.Funcao.NomeFuncao;
-                    if(funcionario.Funcao.Departamento!=null)
-                        txtDepartamento.Text = funcionario.Funcao.Departamento.NomeDepartamento;
+                        txtFuncao.Text = funcionario.Funcao.NameFunction;
+                    if(funcionario.Funcao.Department!=null)
+                        txtDepartamento.Text = funcionario.Funcao.Department.NameDepartment;
 
                     if (funcionario.Imagem != null)
                         if (funcionario.Imagem.Arquivo != null)

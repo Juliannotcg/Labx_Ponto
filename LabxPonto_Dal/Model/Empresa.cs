@@ -16,7 +16,7 @@ namespace LabxPonto_Dao.Model
         public string Inscricao { get; set; }
         public int NumeroFolha { get; set; }
         public string CEI { get; set; }
-        public Endereco Endereco { get; set; }
+        public Address Endereco { get; set; }
         public ICollection<Funcionario> Funcionarios { get; set; }
         public Imagem Imagem { get; set; }
     }

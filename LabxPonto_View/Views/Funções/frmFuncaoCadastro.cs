@@ -19,10 +19,10 @@ namespace LabxPonto_View.Views.Funções
     {
         private Operacao operacao;
         private FuncaoService servico;
-        protected Funcao funcao;
+        protected Function funcao;
         private AppDataContext context;
 
-        public Funcao Funcao
+        public Function Funcao
         {
             get { return (funcao); }
             set { funcao = value; }
@@ -54,10 +54,10 @@ namespace LabxPonto_View.Views.Funções
 
         public void preencherTela()
         {
-            txtDescricaoFuncao.Text = funcao.Descricao;
-            txtNomeFuncao.Text = funcao.NomeFuncao;
-            if(funcao.Departamento!=null)
-                cbDepartamento.Text = funcao.Departamento.NomeDepartamento;
+            txtDescricaoFuncao.Text = funcao.Description;
+            txtNomeFuncao.Text = funcao.NameFunction;
+            if(funcao.Department!=null)
+                cbDepartamento.Text = funcao.Department.NameDepartment;
 
             if (operacao == Operacao.Excluir ||
                 operacao == Operacao.Visualizar)
@@ -78,9 +78,9 @@ namespace LabxPonto_View.Views.Funções
 
         public void preencherFuncao()
         {
-            funcao.NomeFuncao = txtNomeFuncao.Text;
-            funcao.Descricao = txtDescricaoFuncao.Text;
-            funcao.Departamento = (Departamento)cbDepartamento.SelectedItem;
+            funcao.NameFunction = txtNomeFuncao.Text;
+            funcao.Description = txtDescricaoFuncao.Text;
+            funcao.Department = (Department)cbDepartamento.SelectedItem;
         }
 
         private void inserir()
@@ -90,7 +90,7 @@ namespace LabxPonto_View.Views.Funções
                 preencherFuncao();
                 if (servico.Insert(funcao))
                 {
-                    MetroFramework.MetroMessageBox.Show(this, "A Função " + funcao.NomeFuncao + " foi cadastrada no sistema com sucesso!", "Cadastrada com sucesso!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question);
+                    MetroFramework.MetroMessageBox.Show(this, "A Função " + funcao.NameFunction + " foi cadastrada no sistema com sucesso!", "Cadastrada com sucesso!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question);
                     limparTela();
                 }
             }
@@ -100,7 +100,7 @@ namespace LabxPonto_View.Views.Funções
         {
             if (servico.Delete(funcao))
             {
-                MetroFramework.MetroMessageBox.Show(this, "A Função " + funcao.NomeFuncao + " foi deletada do sistema com sucesso!", "Cadastrado com sucesso!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question);
+                MetroFramework.MetroMessageBox.Show(this, "A Função " + funcao.NameFunction + " foi deletada do sistema com sucesso!", "Cadastrado com sucesso!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question);
                 this.Dispose();
             }
         }
@@ -112,7 +112,7 @@ namespace LabxPonto_View.Views.Funções
                 preencherFuncao();
                 if (servico.Update(funcao))
                 {
-                    MetroFramework.MetroMessageBox.Show(this, "A Função " + funcao.NomeFuncao + " foi alterada com sucesso!", "Alterada com sucesso!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question);
+                    MetroFramework.MetroMessageBox.Show(this, "A Função " + funcao.NameFunction + " foi alterada com sucesso!", "Alterada com sucesso!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question);
                     this.Dispose();
                 }
             }

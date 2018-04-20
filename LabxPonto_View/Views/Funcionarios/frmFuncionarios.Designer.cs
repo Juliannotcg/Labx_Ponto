@@ -152,20 +152,20 @@
             this.Empresa.ReadOnly = true;
             this.Empresa.Width = 200;
             // 
-            // Departamento
+            // Department
             // 
-            this.Departamento.DataPropertyName = "Departamento";
-            this.Departamento.HeaderText = "Departamento";
-            this.Departamento.Name = "Departamento";
+            this.Departamento.DataPropertyName = "Department";
+            this.Departamento.HeaderText = "Department";
+            this.Departamento.Name = "Department";
             this.Departamento.ReadOnly = true;
             this.Departamento.Width = 150;
             // 
-            // Funcao
+            // Function
             // 
             this.Funcao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Funcao.DataPropertyName = "Funcao";
+            this.Funcao.DataPropertyName = "Function";
             this.Funcao.HeaderText = "Função";
-            this.Funcao.Name = "Funcao";
+            this.Funcao.Name = "Function";
             this.Funcao.ReadOnly = true;
             // 
             // txtCPF

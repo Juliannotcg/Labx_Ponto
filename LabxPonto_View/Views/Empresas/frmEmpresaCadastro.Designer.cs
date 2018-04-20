@@ -764,7 +764,7 @@
             this.metroLabel39.Name = "metroLabel39";
             this.metroLabel39.Size = new System.Drawing.Size(97, 20);
             this.metroLabel39.TabIndex = 59;
-            this.metroLabel39.Text = "Complemento";
+            this.metroLabel39.Text = "Complement";
             this.metroLabel39.UseCustomBackColor = true;
             this.metroLabel39.UseCustomForeColor = true;
             // 

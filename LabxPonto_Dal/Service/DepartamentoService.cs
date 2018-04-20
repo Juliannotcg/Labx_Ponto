@@ -17,7 +17,7 @@ namespace LabxPonto_Dao.Service
             Context = con;
         }
 
-        public List<Departamento> GetDepartamento()
+        public List<Department> GetDepartamento()
         {
             var resposta = (from p in Context.Departamentos
                             select p).ToList();
@@ -25,19 +25,19 @@ namespace LabxPonto_Dao.Service
             return (resposta);
         }
 
-        public Departamento GetDepartamento(int id)
+        public Department GetDepartamento(int id)
         {
             return Context.Departamentos.Where(x => x.Id == id).FirstOrDefault();
         }
 
-        public bool Insert(Departamento departamento)
+        public bool Insert(Department departamento)
         {
             Context.Departamentos.Add(departamento);
             Context.SaveChanges();
             return true;
         }
 
-        public bool Delete(Departamento departamento)
+        public bool Delete(Department departamento)
         {
             Context.Entry(departamento).State = System.Data.Entity.EntityState.Deleted;
             Context.Departamentos.Remove(departamento);
@@ -45,7 +45,7 @@ namespace LabxPonto_Dao.Service
             return true;
         }
 
-        public bool Update(Departamento departamento)
+        public bool Update(Department departamento)
         {
             Context.Entry(departamento).State = System.Data.Entity.EntityState.Modified;
             Context.SaveChanges();
@@ -54,7 +54,7 @@ namespace LabxPonto_Dao.Service
 
         public bool VerificarDependencias(int id)
         {
-            var list = Context.Funcoes.Where(x => x.Departamento.Id == id).ToList();
+            var list = Context.Funcoes.Where(x => x.Department.Id == id).ToList();
             if (list.Count > 0)
                 return false;
             else

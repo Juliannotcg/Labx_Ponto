@@ -46,7 +46,6 @@
             // pbLogo
             // 
             this.pbLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pbLogo.Image = global::LabxPonto_View.Properties.Resources.LogoEmpresa2;
             this.pbLogo.Location = new System.Drawing.Point(5, 177);
             this.pbLogo.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.pbLogo.Name = "pbLogo";

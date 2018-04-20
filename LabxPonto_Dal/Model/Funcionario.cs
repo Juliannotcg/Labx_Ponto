@@ -20,8 +20,8 @@ namespace LabxPonto_Dao.Model
         public string NomeMae { get; set; }
         public string LocalTrabalho { get; set; }
         public DateTime DataNascimento { get; set; }
-        public Endereco Endereco { get; set; }
-        public Funcao Funcao { get; set; }
+        public Address Endereco { get; set; }
+        public Function Funcao { get; set; }
         public Empresa Empresa { get; set; }
         public Imagem Imagem { get; set; }
         public DateTime DataAdmissao { get; set; }

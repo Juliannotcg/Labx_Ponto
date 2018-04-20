@@ -19,7 +19,7 @@ namespace LabxPonto_Dao.Service
 
         public List<Funcionario> GetFuncionarios()
         {
-            return Context.Funcionarios.Include("Empresa").Include("Funcao").Include("Funcao.Departamento").ToList();
+            return Context.Funcionarios.Include("Empresa").Include("Function").Include("Function.Department").ToList();
         }
 
         public Funcionario GetFuncionario(string CPF)
@@ -44,13 +44,13 @@ namespace LabxPonto_Dao.Service
                 funcionario.NomeMae = a.NomeMae;
                 funcionario.Telefone = a.Telefone;
                 funcionario.Telefone = a.LocalTrabalho;
-                funcionario.Funcao.NomeFuncao = a.Funcao.NomeFuncao;
-                funcionario.Endereco.Cidade = a.Endereco.Cidade;
-                funcionario.Endereco.Bairro = a.Endereco.Bairro;
-                funcionario.Endereco.Estado = a.Endereco.Estado;
-                funcionario.Endereco.Numero = a.Endereco.Numero;
-                funcionario.Endereco.Rua = a.Endereco.Rua;
-                funcionario.Endereco.Complemento = a.Endereco.Complemento;
+                funcionario.Funcao.NameFunction = a.Funcao.NameFunction;
+                funcionario.Endereco.City = a.Endereco.City;
+                funcionario.Endereco.Neighborhood = a.Endereco.Neighborhood;
+                funcionario.Endereco.Estate = a.Endereco.Estate;
+                funcionario.Endereco.Number = a.Endereco.Number;
+                funcionario.Endereco.Street = a.Endereco.Street;
+                funcionario.Endereco.Complement = a.Endereco.Complement;
             }
             return (funcionario);
         }
@@ -58,7 +58,7 @@ namespace LabxPonto_Dao.Service
         public Funcionario GetFuncionarioCPF(string CPF)
         {
             Funcionario funcionario = new Funcionario();
-            funcionario = Context.Funcionarios.Include("Empresa").Include("Funcao").Include("Funcao.Departamento").Include("Imagem").Where(x => x.CPF == CPF).FirstOrDefault();
+            funcionario = Context.Funcionarios.Include("Empresa").Include("Function").Include("Function.Department").Include("Imagem").Where(x => x.CPF == CPF).FirstOrDefault();
             return (funcionario);
         }
 
@@ -76,16 +76,16 @@ namespace LabxPonto_Dao.Service
         public Funcionario GetFuncionarioDigital(byte[] digital)
         {
             Funcionario funcionario = new Funcionario();
-            funcionario = Context.Funcionarios.Include("Empresa").Include("Funcao").Include("Funcao.Departamento").Include("Imagem").Where(x => x.Digital == digital).FirstOrDefault();
+            funcionario = Context.Funcionarios.Include("Empresa").Include("Function").Include("Function.Department").Include("Imagem").Where(x => x.Digital == digital).FirstOrDefault();
             return (funcionario);
         }
 
         public Funcionario GetFuncionario(int id)
         {
             return Context.Funcionarios.Include("Empresa").
-                    Include("Endereco")
-                    .Include("Funcao")
-                    .Include("Funcao.Departamento")
+                    Include("Address")
+                    .Include("Function")
+                    .Include("Function.Department")
                     .Include("Imagem")
                     .Where(x => x.Id == id).FirstOrDefault();
         }
@@ -93,9 +93,9 @@ namespace LabxPonto_Dao.Service
         public List<Funcionario> GetFuncionario()
         {
             var resposta = Context.Funcionarios.Include("Empresa")
-                .Include("Endereco")
+                .Include("Address")
                 .Include("Contrato")
-                .Include("Funcao")
+                .Include("Function")
                 .Include("Imagem")
                 .ToList();
 
@@ -107,15 +107,15 @@ namespace LabxPonto_Dao.Service
 
             var results = Context.Funcionarios
                 .Include("Empresa")
-                .Include("Funcao")
-                .Include("Departamento")
+                .Include("Function")
+                .Include("Department")
                 .Select(p => new
                 {
                     p.Id,
                     p.Nome,
                     Empresa = p.Empresa.NomeFantasia,
-                    Funcao = p.Funcao.NomeFuncao,
-                    Departamento = p.Funcao.Departamento.NomeDepartamento
+                    Funcao = p.Funcao.NameFunction,
+                    Departamento = p.Funcao.Department.NameDepartment
                 })
                 .AsEnumerable()
                 .ToList().OrderBy(p => p.Nome);
@@ -124,8 +124,8 @@ namespace LabxPonto_Dao.Service
             tabela.Columns.Add("Id", typeof(int));
             tabela.Columns.Add("Nome", typeof(string));
             tabela.Columns.Add("Empresa", typeof(string));
-            tabela.Columns.Add("Funcao", typeof(string));
-            tabela.Columns.Add("Departamento", typeof(string));
+            tabela.Columns.Add("Function", typeof(string));
+            tabela.Columns.Add("Department", typeof(string));
 
             foreach (var item in results)
             {
@@ -133,8 +133,8 @@ namespace LabxPonto_Dao.Service
                 linha["Id"] = item.Id;
                 linha["Nome"] = item.Nome;
                 linha["Empresa"] = item.Empresa;
-                linha["Funcao"] = item.Funcao;
-                linha["Departamento"] = item.Departamento;
+                linha["Function"] = item.Funcao;
+                linha["Department"] = item.Departamento;
                 tabela.Rows.Add(linha);
             }
                 
@@ -145,16 +145,16 @@ namespace LabxPonto_Dao.Service
         {
             var results = Context.Funcionarios
                 .Include("Empresa")
-                .Include("Funcao")
-                .Include("Departamento")
+                .Include("Function")
+                .Include("Department")
                 .Where(x => x.CPF == CPF)
                 .Select(p => new
                 {
                     p.Id,
                     p.Nome,
                     Empresa = p.Empresa.NomeFantasia,
-                    Funcao = p.Funcao.NomeFuncao,
-                    Departamento = p.Funcao.Departamento.NomeDepartamento
+                    Funcao = p.Funcao.NameFunction,
+                    Departamento = p.Funcao.Department.NameDepartment
                 })
                 .AsEnumerable()
                 .ToList();
@@ -163,8 +163,8 @@ namespace LabxPonto_Dao.Service
             tabela.Columns.Add("Id", typeof(int));
             tabela.Columns.Add("Nome", typeof(string));
             tabela.Columns.Add("Empresa", typeof(string));
-            tabela.Columns.Add("Funcao", typeof(string));
-            tabela.Columns.Add("Departamento", typeof(string));
+            tabela.Columns.Add("Function", typeof(string));
+            tabela.Columns.Add("Department", typeof(string));
 
             foreach (var item in results)
             {
@@ -172,8 +172,8 @@ namespace LabxPonto_Dao.Service
                 linha["Id"] = item.Id;
                 linha["Nome"] = item.Nome;
                 linha["Empresa"] = item.Empresa;
-                linha["Funcao"] = item.Funcao;
-                linha["Departamento"] = item.Departamento;
+                linha["Function"] = item.Funcao;
+                linha["Department"] = item.Departamento;
                 tabela.Rows.Add(linha);
             }
 
@@ -251,8 +251,8 @@ namespace LabxPonto_Dao.Service
         {
             var results = Context.Funcionarios
                 .Include("Empresa")
-                .Include("Departamento")
-                .Include("Funcao")
+                .Include("Department")
+                .Include("Function")
                 .Where(p => p.Id == id)
                 .Select(p => new RltDadosFuncionario()
                 {
@@ -268,8 +268,8 @@ namespace LabxPonto_Dao.Service
                     EstadoCivil = p.EstadoCivil,
                     NomeEmpresa = p.Empresa.NomeFantasia,
                     CNPJ = p.Empresa.CNPJ,
-                    Departamento = p.Funcao.Departamento.NomeDepartamento,
-                    Funcao = p.Funcao.NomeFuncao,
+                    Departamento = p.Funcao.Department.NameDepartment,
+                    Funcao = p.Funcao.NameFunction,
                 })
                 .AsEnumerable()
                 .ToList();

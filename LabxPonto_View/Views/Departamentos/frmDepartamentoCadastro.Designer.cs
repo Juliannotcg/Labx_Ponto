@@ -110,7 +110,7 @@
             this.Função.Name = "Função";
             this.Função.Size = new System.Drawing.Size(99, 20);
             this.Função.TabIndex = 60;
-            this.Função.Text = "Departamento";
+            this.Função.Text = "Department";
             this.Função.UseCustomBackColor = true;
             this.Função.UseCustomForeColor = true;
             // 
@@ -163,7 +163,7 @@
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmDepartamentoCadastro";
             this.Padding = new System.Windows.Forms.Padding(36, 91, 36, 31);
-            this.Text = "Departamento";
+            this.Text = "Department";
             this.Load += new System.EventHandler(this.frmDepartamentoCadastro_Load);
             this.Controls.SetChildIndex(this.btnSalvar, 0);
             this.Controls.SetChildIndex(this.btnCancelar, 0);

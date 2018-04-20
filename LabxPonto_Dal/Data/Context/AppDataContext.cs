@@ -13,10 +13,10 @@ namespace LabxPonto_Dao.Data.Context
             Configuration.LazyLoadingEnabled = false;
         }
 
-        public DbSet<Departamento> Departamentos { get; set; }
+        public DbSet<Department> Departamentos { get; set; }
         public DbSet<Empresa> Empresas { get; set; }
-        public DbSet<Endereco> Enderecos { get; set; }
-        public DbSet<Funcao> Funcoes { get; set; }
+        public DbSet<Address> Enderecos { get; set; }
+        public DbSet<Function> Funcoes { get; set; }
         public DbSet<Funcionario> Funcionarios{ get; set; }
         public DbSet<HorarioExpediente> HorariosExpediente { get; set; }
         public DbSet<Usuario> Usuarios{ get; set; }

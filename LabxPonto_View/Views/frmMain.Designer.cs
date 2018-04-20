@@ -160,7 +160,6 @@
             // pbLogo
             // 
             this.metroStyleExtender.SetApplyMetroTheme(this.pbLogo, true);
-            this.pbLogo.Image = global::LabxPonto_View.Properties.Resources.LogoEmpresa;
             this.pbLogo.Location = new System.Drawing.Point(379, 39);
             this.pbLogo.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.pbLogo.Name = "pbLogo";

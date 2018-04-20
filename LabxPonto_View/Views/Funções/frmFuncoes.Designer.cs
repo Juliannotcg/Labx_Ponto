@@ -142,11 +142,11 @@
             this.Nome.ReadOnly = true;
             this.Nome.Width = 200;
             // 
-            // Departamento
+            // Department
             // 
-            this.Departamento.DataPropertyName = "Departamento";
-            this.Departamento.HeaderText = "Departamento";
-            this.Departamento.Name = "Departamento";
+            this.Departamento.DataPropertyName = "Department";
+            this.Departamento.HeaderText = "Department";
+            this.Departamento.Name = "Department";
             this.Departamento.ReadOnly = true;
             this.Departamento.Width = 200;
             // 

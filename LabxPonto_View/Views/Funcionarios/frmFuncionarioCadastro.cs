@@ -164,20 +164,20 @@ namespace LabxPonto_View.Views.Funcionarios
             if (funcionario.Endereco != null)
             {
                 txtEndereco.Text = funcionario.Endereco.Logradouro;
-                txtBairro.Text = funcionario.Endereco.Bairro;
+                txtBairro.Text = funcionario.Endereco.Neighborhood;
                 txtCEP.Text = funcionario.Endereco.Cep.ToString();
-                txtCidade.Text = funcionario.Endereco.Cidade;
-                txtComplemento.Text = funcionario.Endereco.Complemento;
-                if (funcionario.Endereco.Estado != null)
-                    cmbEstado.SelectedText = funcionario.Endereco.Estado.ToString();
+                txtCidade.Text = funcionario.Endereco.City;
+                txtComplemento.Text = funcionario.Endereco.Complement;
+                if (funcionario.Endereco.Estate != null)
+                    cmbEstado.SelectedText = funcionario.Endereco.Estate.ToString();
             }
             cmbEstadoCivil.Text = funcionario.EstadoCivil;
             if (funcionario.Funcao != null)
             {
-                if (funcionario.Funcao.Departamento != null)
+                if (funcionario.Funcao.Department != null)
                 {
-                    cmbDepartamento.SelectedItem = funcionario.Funcao.Departamento;
-                    cmbDepartamento.SelectedValue = funcionario.Funcao.Departamento.Id;
+                    cmbDepartamento.SelectedItem = funcionario.Funcao.Department;
+                    cmbDepartamento.SelectedValue = funcionario.Funcao.Department.Id;
                 }
                 if (funcionario.Funcao != null)
                     cmbFuncao.SelectedItem = funcionario.Funcao;
@@ -253,21 +253,21 @@ namespace LabxPonto_View.Views.Funcionarios
 
             #region Endereco
 
-            funcionario.Endereco = new Endereco();
-            funcionario.Endereco.Bairro = txtBairro.Text;
+            funcionario.Endereco = new Address();
+            funcionario.Endereco.Neighborhood = txtBairro.Text;
             if (!String.IsNullOrEmpty(txtCEP.Text))
                 funcionario.Endereco.Cep = Convert.ToInt32(txtCEP.Text);
-            funcionario.Endereco.Cidade = txtCidade.Text;
-            funcionario.Endereco.Complemento = txtComplemento.Text;
-            funcionario.Endereco.Estado = cmbEstado.Text;
+            funcionario.Endereco.City = txtCidade.Text;
+            funcionario.Endereco.Complement = txtComplemento.Text;
+            funcionario.Endereco.Estate = cmbEstado.Text;
             funcionario.Endereco.Logradouro = txtEndereco.Text;
 
             #endregion
 
             #region Função
 
-            funcionario.Funcao = new Funcao();
-            funcionario.Funcao = (Funcao)cmbFuncao.SelectedItem;
+            funcionario.Funcao = new Function();
+            funcionario.Funcao = (Function)cmbFuncao.SelectedItem;
 
             #endregion
 
@@ -558,7 +558,7 @@ namespace LabxPonto_View.Views.Funcionarios
             FuncaoService funcaoServico = new FuncaoService(context);
             if (cmbDepartamento.SelectedItem != null)
             {
-                var funcoes = funcaoServico.GetFuncoes(((Departamento)cmbDepartamento.SelectedItem).Id);
+                var funcoes = funcaoServico.GetFuncoes(((Department)cmbDepartamento.SelectedItem).Id);
                 cmbFuncao.DataSource = funcoes;
                 cmbFuncao.ValueMember = "Id";
                 cmbFuncao.DisplayMember = "NomeFuncao";
@@ -601,15 +601,15 @@ namespace LabxPonto_View.Views.Funcionarios
         {
             if (!String.IsNullOrEmpty(txtCEP.Text))
             {
-                Endereco endereco = new Endereco();
+                Address endereco = new Address();
                 CEPCorreios cepCorreios = new CEPCorreios();
                 endereco = cepCorreios.BuscaCep(txtCEP.Text);
 
-                txtBairro.Text = endereco.Bairro;
-                txtCidade.Text = endereco.Cidade;
+                txtBairro.Text = endereco.Neighborhood;
+                txtCidade.Text = endereco.City;
                 txtEndereco.Text = endereco.Logradouro;
-                txtComplemento.Text = endereco.Complemento;
-                cmbEstado.SelectedItem = endereco.Estado;
+                txtComplemento.Text = endereco.Complement;
+                cmbEstado.SelectedItem = endereco.Estate;
             }
         }
     }

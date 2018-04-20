@@ -145,15 +145,15 @@
             this.txtDescricaoFuncao.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtDescricaoFuncao.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // Departamento
+            // Department
             // 
             this.Departamento.AutoSize = true;
             this.Departamento.Location = new System.Drawing.Point(29, 98);
             this.Departamento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.Departamento.Name = "Departamento";
+            this.Departamento.Name = "Department";
             this.Departamento.Size = new System.Drawing.Size(99, 20);
             this.Departamento.TabIndex = 0;
-            this.Departamento.Text = "Departamento";
+            this.Departamento.Text = "Department";
             this.Departamento.UseCustomBackColor = true;
             this.Departamento.UseCustomForeColor = true;
             // 

@@ -1,9 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LabxPonto_Commons.Model
 {
@@ -14,7 +9,7 @@ namespace LabxPonto_Commons.Model
         [JsonProperty("logradouro")]
         public string Logradouro { get; set; }
         [JsonProperty("complemento")]
-        public string Complemento { get; set; }
+        public string Complement { get; set; }
         [JsonProperty("bairro")]
         public string Bairro { get; set; }
         [JsonProperty("localidade")]
