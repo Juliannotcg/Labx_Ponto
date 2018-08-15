@@ -19,21 +19,21 @@ namespace LabxPonto_Dao.Service
             Context = con;
         }
 
-        public List<Function> GetFuncoes(int depId)
+        public List<Funcao> GetFuncoes(int depId)
         {
             var id = (from p in Context.Departamentos
                                 where p.Id == depId
                         select p.Id).ToList();
 
             var resposta = (from c in Context.Funcoes
-                            join b in Context.Departamentos on c.Department.Id equals b.Id
-                            where c.Department.Id == depId
+                            join b in Context.Departamentos on c.Departamento.Id equals b.Id
+                            where c.Departamento.Id == depId
                         select c).ToList();
 
             return (resposta);
         }
 
-        public List<Function> GetFuncoes()
+        public List<Funcao> GetFuncoes()
         {
             var resposta = (from p in Context.Funcoes
                             select p).ToList();
@@ -41,7 +41,7 @@ namespace LabxPonto_Dao.Service
             return (resposta);
         }
 
-        public Function GetFuncao(int id)
+        public Funcao GetFuncao(int id)
         {
             return Context.Funcoes.Where(x => x.Id == id).FirstOrDefault();
         }
@@ -52,9 +52,9 @@ namespace LabxPonto_Dao.Service
                 .Select(p => new
                 {
                     p.Id,
-                    p.NameFunction,
-                    p.Description,
-                    Departamento = p.Department.NameDepartment,
+                    p.NomeFuncao,
+                    p.Descricao,
+                    Departamento = p.Departamento.NomeDepartamento,
                 })
                 .AsEnumerable()
                 .ToList();
@@ -79,14 +79,14 @@ namespace LabxPonto_Dao.Service
 
         }
 
-        public bool Insert(Function funcao)
+        public bool Insert(Funcao funcao)
         {
             Context.Funcoes.Add(funcao);
             Context.SaveChanges();
             return true;
         }
 
-        public bool Delete(Function funcao)
+        public bool Delete(Funcao funcao)
         {
             Context.Entry(funcao).State = System.Data.Entity.EntityState.Deleted;
             Context.Funcoes.Remove(funcao);
@@ -94,7 +94,7 @@ namespace LabxPonto_Dao.Service
             return true;
         }
 
-        public bool Update(Function funcao)
+        public bool Update(Funcao funcao)
         {
             Context.Entry(funcao).State = System.Data.Entity.EntityState.Modified;
             Context.SaveChanges();
@@ -113,13 +113,13 @@ namespace LabxPonto_Dao.Service
         public List<RltFuncao> GetRelatorio()
         {
             var results = Context.Funcoes
-                .Include("Department")
+                .Include("Departamento")
                 .Select(p => new RltFuncao()
                 {
-                    IdDepartamento = p.Department.Id,
-                    NomeFuncao = p.NameFunction,
-                    Descricao = p.Description,
-                    Departamento = p.Department.NameDepartment
+                    IdDepartamento = p.Departamento.Id,
+                    NomeFuncao = p.NomeFuncao,
+                    Descricao = p.Descricao,
+                    Departamento = p.Departamento.NomeDepartamento
                 })
                 .AsEnumerable()
                 .ToList();

@@ -4,7 +4,7 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace LabxPonto_Dao.Data.Mapa
 {
-    public class DepartamentoMap:EntityTypeConfiguration<Department>
+    public class DepartamentoMap:EntityTypeConfiguration<Departamento>
     {
         public DepartamentoMap()
         {
@@ -15,10 +15,10 @@ namespace LabxPonto_Dao.Data.Mapa
               .HasColumnName("DepId")
               .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
-            Property(c => c.NameDepartment)
+            Property(c => c.NomeDepartamento)
                 .HasColumnName("DepNomeDepartamento");
 
-            Property(c => c.Description)
+            Property(c => c.Descricao)
                 .HasColumnName("DepDescricao");
         }
     }

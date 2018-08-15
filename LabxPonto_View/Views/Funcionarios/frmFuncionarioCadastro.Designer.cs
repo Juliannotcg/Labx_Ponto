@@ -98,7 +98,7 @@
             this.metroLabel24 = new MetroFramework.Controls.MetroLabel();
             this.txtCidade = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel25 = new MetroFramework.Controls.MetroLabel();
-            this.txtComplemento = new MetroFramework.Controls.MetroTextBox();
+            this.txtComplementoo = new MetroFramework.Controls.MetroTextBox();
             this.txtCEP = new MetroFramework.Controls.MetroTextBox();
             this.txtBairro = new MetroFramework.Controls.MetroTextBox();
             this.txtEndereco = new MetroFramework.Controls.MetroTextBox();
@@ -961,7 +961,7 @@
             this.tpEndereco.Controls.Add(this.metroLabel24);
             this.tpEndereco.Controls.Add(this.txtCidade);
             this.tpEndereco.Controls.Add(this.metroLabel25);
-            this.tpEndereco.Controls.Add(this.txtComplemento);
+            this.tpEndereco.Controls.Add(this.txtComplementoo);
             this.tpEndereco.Controls.Add(this.txtCEP);
             this.tpEndereco.Controls.Add(this.txtBairro);
             this.tpEndereco.Controls.Add(this.txtEndereco);
@@ -1012,7 +1012,7 @@
             this.metroLabel39.Name = "metroLabel39";
             this.metroLabel39.Size = new System.Drawing.Size(97, 20);
             this.metroLabel39.TabIndex = 59;
-            this.metroLabel39.Text = "Complement";
+            this.metroLabel39.Text = "Complemento";
             this.metroLabel39.UseCustomBackColor = true;
             this.metroLabel39.UseCustomForeColor = true;
             // 
@@ -1121,38 +1121,38 @@
             this.metroLabel25.Size = new System.Drawing.Size(0, 0);
             this.metroLabel25.TabIndex = 50;
             // 
-            // txtComplemento
+            // txtComplementoo
             // 
             // 
             // 
             // 
-            this.txtComplemento.CustomButton.Image = null;
-            this.txtComplemento.CustomButton.Location = new System.Drawing.Point(713, 2);
-            this.txtComplemento.CustomButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.txtComplemento.CustomButton.Name = "";
-            this.txtComplemento.CustomButton.Size = new System.Drawing.Size(41, 38);
-            this.txtComplemento.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtComplemento.CustomButton.TabIndex = 1;
-            this.txtComplemento.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtComplemento.CustomButton.UseSelectable = true;
-            this.txtComplemento.CustomButton.Visible = false;
-            this.txtComplemento.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtComplemento.Lines = new string[0];
-            this.txtComplemento.Location = new System.Drawing.Point(232, 180);
-            this.txtComplemento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtComplemento.MaxLength = 32767;
-            this.txtComplemento.Name = "txtComplemento";
-            this.txtComplemento.PasswordChar = '\0';
-            this.txtComplemento.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtComplemento.SelectedText = "";
-            this.txtComplemento.SelectionLength = 0;
-            this.txtComplemento.SelectionStart = 0;
-            this.txtComplemento.ShortcutsEnabled = true;
-            this.txtComplemento.Size = new System.Drawing.Size(569, 36);
-            this.txtComplemento.TabIndex = 6;
-            this.txtComplemento.UseSelectable = true;
-            this.txtComplemento.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtComplemento.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtComplementoo.CustomButton.Image = null;
+            this.txtComplementoo.CustomButton.Location = new System.Drawing.Point(713, 2);
+            this.txtComplementoo.CustomButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.txtComplementoo.CustomButton.Name = "";
+            this.txtComplementoo.CustomButton.Size = new System.Drawing.Size(41, 38);
+            this.txtComplementoo.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtComplementoo.CustomButton.TabIndex = 1;
+            this.txtComplementoo.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtComplementoo.CustomButton.UseSelectable = true;
+            this.txtComplementoo.CustomButton.Visible = false;
+            this.txtComplementoo.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.txtComplementoo.Lines = new string[0];
+            this.txtComplementoo.Location = new System.Drawing.Point(232, 180);
+            this.txtComplementoo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtComplementoo.MaxLength = 32767;
+            this.txtComplementoo.Name = "txtComplementoo";
+            this.txtComplementoo.PasswordChar = '\0';
+            this.txtComplementoo.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtComplementoo.SelectedText = "";
+            this.txtComplementoo.SelectionLength = 0;
+            this.txtComplementoo.SelectionStart = 0;
+            this.txtComplementoo.ShortcutsEnabled = true;
+            this.txtComplementoo.Size = new System.Drawing.Size(569, 36);
+            this.txtComplementoo.TabIndex = 6;
+            this.txtComplementoo.UseSelectable = true;
+            this.txtComplementoo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtComplementoo.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // txtCEP
             // 
@@ -1337,7 +1337,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel24;
         private MetroFramework.Controls.MetroTextBox txtCidade;
         private MetroFramework.Controls.MetroLabel metroLabel25;
-        private MetroFramework.Controls.MetroTextBox txtComplemento;
+        private MetroFramework.Controls.MetroTextBox txtComplementoo;
         private MetroFramework.Controls.MetroTextBox txtCEP;
         private MetroFramework.Controls.MetroTextBox txtBairro;
         private MetroFramework.Controls.MetroTextBox txtEndereco;

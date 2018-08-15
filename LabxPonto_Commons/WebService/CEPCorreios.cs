@@ -15,9 +15,9 @@ namespace LabxPonto_Commons.WebService
 {
     public class CEPCorreios
     {
-        public Address BuscaCep(string cep)
+        public Endereco BuscaCep(string cep)
         {
-            Address endereco = new Address();
+            Endereco endereco = new Endereco();
             string Baseurl = "http://viacep.com.br/ws/" + cep + "/json/";
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri(Baseurl);
@@ -30,10 +30,10 @@ namespace LabxPonto_Commons.WebService
             var data = JsonConvert.DeserializeObject<ApiEndereco>(stringData);
 
             endereco.Logradouro = data.Logradouro;
-            endereco.City = data.Localidade;
-            endereco.Neighborhood = data.Bairro;
-            endereco.Estate = data.Uf;
-            endereco.Complement = data.Complement;
+            endereco.Cidade = data.Localidade;
+            endereco.Bairro = data.Bairro;
+            endereco.Estado = data.Uf;
+            endereco.Complemento = data.Complemento;
 
             return endereco;
         }

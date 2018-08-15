@@ -27,7 +27,7 @@ namespace LabxPonto_Dao.Service
 
         public Empresa GetEmpresa(int id)
         {
-            return Context.Empresas.Include("Address")
+            return Context.Empresas.Include("Endereco")
                     .Include("Imagem")
                     .Where(x => x.Id == id).FirstOrDefault();
         }

@@ -81,13 +81,9 @@
     <Compile Include="Data\Mapa\ImagemMap.cs" />
     <Compile Include="Data\Mapa\UsuarioMap.cs" />
     <Compile Include="Injection\DependencyResolver.cs" />
-    <Compile Include="Migrations\201801222215362_CreateDataBase.cs" />
-    <Compile Include="Migrations\201801222215362_CreateDataBase.Designer.cs">
-      <DependentUpon>201801222215362_CreateDataBase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801252329342_Horarios.cs" />
-    <Compile Include="Migrations\201801252329342_Horarios.Designer.cs">
-      <DependentUpon>201801252329342_Horarios.cs</DependentUpon>
+    <Compile Include="Migrations\201808151703309_Initial.cs" />
+    <Compile Include="Migrations\201808151703309_Initial.Designer.cs">
+      <DependentUpon>201808151703309_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Departamento.cs" />
@@ -115,11 +111,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201801222215362_CreateDataBase.resx">
-      <DependentUpon>201801222215362_CreateDataBase.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801252329342_Horarios.resx">
-      <DependentUpon>201801252329342_Horarios.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201808151703309_Initial.resx">
+      <DependentUpon>201808151703309_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

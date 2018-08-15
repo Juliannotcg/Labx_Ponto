@@ -11,14 +11,14 @@ namespace LabxPonto_View.Views.Funções
     {
         private FuncaoService servico;
         private frmFuncaoCadastro cadastro;
-        private Function funcao;
+        private Funcao funcao;
         private AppDataContext context;
 
         public frmFuncoes(AppDataContext con)
         {
             InitializeComponent();
             servico = new FuncaoService(con);
-            funcao = new Function();
+            funcao = new Funcao();
             context = con;
         }
 
@@ -27,7 +27,7 @@ namespace LabxPonto_View.Views.Funções
             dgFuncao.DataSource = servico.GetFuncaoGrid();
         }
 
-        public Function retornarFuncaoSelecionado()
+        public Funcao retornarFuncaoSelecionado()
         {
             funcao.Id = (int)dgFuncao.Rows[dgFuncao.CurrentRow.Index].Cells["Id"].Value;
             funcao = servico.GetFuncao(funcao.Id);
@@ -38,7 +38,7 @@ namespace LabxPonto_View.Views.Funções
         {
             cadastro = new frmFuncaoCadastro(Operacao.Inserir, context);
             cadastro.StyleManager = this.StyleManager;
-            cadastro.Funcao = new Function();
+            cadastro.Funcao = new Funcao();
             cadastro.ShowDialog();
             preencherGrid();
         }
@@ -59,7 +59,7 @@ namespace LabxPonto_View.Views.Funções
             cadastro.Funcao = retornarFuncaoSelecionado();
             if (!servico.VerificarDependencias(funcao.Id))
             {
-                MetroFramework.MetroMessageBox.Show(this, "A Função \"" + funcao.NameFunction + "\" não pode ser deletada, existem um ou mais Funcionários cadastrados com essa Função. \nAntes de excluir, será necessário desvinculá-la de todos os Funcionários relacionados.", "Atenção!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Hand);
+                MetroFramework.MetroMessageBox.Show(this, "A Função \"" + funcao.NomeFuncao + "\" não pode ser deletada, existem um ou mais Funcionários cadastrados com essa Função. \nAntes de excluir, será necessário desvinculá-la de todos os Funcionários relacionados.", "Atenção!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Hand);
                 return;
             }
             cadastro.ShowDialog();

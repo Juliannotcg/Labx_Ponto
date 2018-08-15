@@ -8,8 +8,8 @@ namespace LabxPonto_Commons.Model
         public string Cep { get; set; }
         [JsonProperty("logradouro")]
         public string Logradouro { get; set; }
-        [JsonProperty("complemento")]
-        public string Complement { get; set; }
+        [JsonProperty("Complemento")]
+        public string Complemento { get; set; }
         [JsonProperty("bairro")]
         public string Bairro { get; set; }
         [JsonProperty("localidade")]

@@ -44,13 +44,13 @@ namespace LabxPonto_Dao.Service
                 funcionario.NomeMae = a.NomeMae;
                 funcionario.Telefone = a.Telefone;
                 funcionario.Telefone = a.LocalTrabalho;
-                funcionario.Funcao.NameFunction = a.Funcao.NameFunction;
-                funcionario.Endereco.City = a.Endereco.City;
-                funcionario.Endereco.Neighborhood = a.Endereco.Neighborhood;
-                funcionario.Endereco.Estate = a.Endereco.Estate;
-                funcionario.Endereco.Number = a.Endereco.Number;
-                funcionario.Endereco.Street = a.Endereco.Street;
-                funcionario.Endereco.Complement = a.Endereco.Complement;
+                funcionario.Funcao.NomeFuncao = a.Funcao.NomeFuncao;
+                funcionario.Endereco.Cidade = a.Endereco.Cidade;
+                funcionario.Endereco.Bairro = a.Endereco.Bairro;
+                funcionario.Endereco.Estado = a.Endereco.Estado;
+                funcionario.Endereco.Numero = a.Endereco.Numero;
+                funcionario.Endereco.Rua = a.Endereco.Rua;
+                funcionario.Endereco.Complemento = a.Endereco.Complemento;
             }
             return (funcionario);
         }
@@ -83,7 +83,7 @@ namespace LabxPonto_Dao.Service
         public Funcionario GetFuncionario(int id)
         {
             return Context.Funcionarios.Include("Empresa").
-                    Include("Address")
+                    Include("Endereco")
                     .Include("Function")
                     .Include("Function.Department")
                     .Include("Imagem")
@@ -93,7 +93,7 @@ namespace LabxPonto_Dao.Service
         public List<Funcionario> GetFuncionario()
         {
             var resposta = Context.Funcionarios.Include("Empresa")
-                .Include("Address")
+                .Include("Endereco")
                 .Include("Contrato")
                 .Include("Function")
                 .Include("Imagem")
@@ -114,8 +114,8 @@ namespace LabxPonto_Dao.Service
                     p.Id,
                     p.Nome,
                     Empresa = p.Empresa.NomeFantasia,
-                    Funcao = p.Funcao.NameFunction,
-                    Departamento = p.Funcao.Department.NameDepartment
+                    Funcao = p.Funcao.NomeFuncao,
+                    Departamento = p.Funcao.Departamento.NomeDepartamento
                 })
                 .AsEnumerable()
                 .ToList().OrderBy(p => p.Nome);
@@ -153,8 +153,8 @@ namespace LabxPonto_Dao.Service
                     p.Id,
                     p.Nome,
                     Empresa = p.Empresa.NomeFantasia,
-                    Funcao = p.Funcao.NameFunction,
-                    Departamento = p.Funcao.Department.NameDepartment
+                    Funcao = p.Funcao.NomeFuncao,
+                    Departamento = p.Funcao.Departamento.NomeDepartamento
                 })
                 .AsEnumerable()
                 .ToList();
@@ -268,8 +268,8 @@ namespace LabxPonto_Dao.Service
                     EstadoCivil = p.EstadoCivil,
                     NomeEmpresa = p.Empresa.NomeFantasia,
                     CNPJ = p.Empresa.CNPJ,
-                    Departamento = p.Funcao.Department.NameDepartment,
-                    Funcao = p.Funcao.NameFunction,
+                    Departamento = p.Funcao.Departamento.NomeDepartamento,
+                    Funcao = p.Funcao.NomeFuncao,
                 })
                 .AsEnumerable()
                 .ToList();

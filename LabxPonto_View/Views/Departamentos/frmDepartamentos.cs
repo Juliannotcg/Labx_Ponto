@@ -12,23 +12,23 @@ namespace LabxPonto_View.Views.Departamentos
     {
         private DepartamentoService servico;
         private frmDepartamentoCadastro cadastro;
-        private Department departamento;
+        private Departamento departamento;
         private AppDataContext context;
         public frmDepartamentos(AppDataContext con)
         {
             InitializeComponent();
             servico = new DepartamentoService(con);
-            departamento = new Department();
+            departamento = new Departamento();
             context = con;
         }
 
         public void preencherGrid()
         {
-            List<Department> lista = servico.GetDepartamento();
+            List<Departamento> lista = servico.GetDepartamento();
             dgDepartamentos.DataSource = lista;
         }
 
-        public Department retornarDepartamentoSelecionado()
+        public Departamento retornarDepartamentoSelecionado()
         {
             departamento.Id = (int)dgDepartamentos.Rows[dgDepartamentos.CurrentRow.Index].Cells["Id"].Value;
             departamento = servico.GetDepartamento(departamento.Id);
@@ -39,7 +39,7 @@ namespace LabxPonto_View.Views.Departamentos
         {
             cadastro = new frmDepartamentoCadastro(Operacao.Inserir,context);
             cadastro.StyleManager = this.StyleManager;
-            cadastro.Departamento = new Department();
+            cadastro.Departamento = new Departamento();
             cadastro.ShowDialog();
             preencherGrid();
         }
@@ -60,7 +60,7 @@ namespace LabxPonto_View.Views.Departamentos
             cadastro.Departamento = retornarDepartamentoSelecionado();
             if(!servico.VerificarDependencias(departamento.Id))
             {
-                MetroFramework.MetroMessageBox.Show(this, "O Department \""+ departamento.NameDepartment+"\" não pode ser deletado, existem uma ou mais Funções cadastradas com esse Department. \nAntes de excluir, será necessário desvinculá-lo de todas as Funções relacionadas.", "Atenção!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Hand);
+                MetroFramework.MetroMessageBox.Show(this, "O Department \""+ departamento.NomeDepartamento+"\" não pode ser deletado, existem uma ou mais Funções cadastradas com esse Department. \nAntes de excluir, será necessário desvinculá-lo de todas as Funções relacionadas.", "Atenção!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Hand);
                 return;
             }
             cadastro.ShowDialog();

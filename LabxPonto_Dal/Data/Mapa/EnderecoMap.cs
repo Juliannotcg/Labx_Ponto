@@ -4,7 +4,7 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace LabxPonto_Dao.Data.Mapa
 {
-    public class EnderecoMap: EntityTypeConfiguration<Address>
+    public class EnderecoMap: EntityTypeConfiguration<Endereco>
     {
         public EnderecoMap()
         {
@@ -18,25 +18,25 @@ namespace LabxPonto_Dao.Data.Mapa
             Property(c => c.Logradouro)
                 .HasColumnName("EndLogradouro");
 
-            Property(c => c.Street)
+            Property(c => c.Rua)
                 .HasColumnName("EndRua");
 
-            Property(c => c.Estate)
+            Property(c => c.Estado)
                 .HasColumnName("EndEstado");
 
             Property(c => c.Pais)
                 .HasColumnName("EmpPais");
 
-            Property(c => c.City)
+            Property(c => c.Cidade)
                 .HasColumnName("EndCidade");
 
-            Property(c => c.Neighborhood)
+            Property(c => c.Bairro)
                 .HasColumnName("EndBairro");
 
-            Property(c => c.Complement)
-                .HasColumnName("EndComplemento");
+            Property(c => c.Complemento)
+                .HasColumnName("EndComplementoo");
 
-            Property(c => c.Number)
+            Property(c => c.Numero)
                 .HasColumnName("EndNumero");
 
             Property(c => c.Cep)

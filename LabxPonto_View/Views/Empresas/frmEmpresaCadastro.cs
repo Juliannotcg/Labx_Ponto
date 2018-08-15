@@ -21,7 +21,7 @@ namespace LabxPonto_View.Views.Empresas
         private Operacao operacao;
         private EmpresaService servico;
         private ValidateCPF_CNPJ validate;
-        private Address endereco;
+        private Endereco endereco;
         protected Empresa empresa;
         protected string caminhoImagem;
         byte[] imagemByte;
@@ -73,8 +73,8 @@ namespace LabxPonto_View.Views.Empresas
             if (String.IsNullOrEmpty(txtBairro.Text))
                 errorProviderEmp.SetError(txtBairro, "Informe o bairro da empresa.");
 
-            if (String.IsNullOrEmpty(txtComplemento.Text))
-                errorProviderEmp.SetError(txtComplemento, "Informe um complemento do endereço da empresa.");
+            if (String.IsNullOrEmpty(txtComplementoo.Text))
+                errorProviderEmp.SetError(txtComplementoo, "Informe um Complemento do endereço da empresa.");
 
             #endregion
 
@@ -88,7 +88,7 @@ namespace LabxPonto_View.Views.Empresas
                 (errorProviderEmp.GetError(txtCEP) == "") &&
                 (errorProviderEmp.GetError(txtCidade) == "") &&
                 (errorProviderEmp.GetError(txtBairro) == "") &&
-                (errorProviderEmp.GetError(txtComplemento) == ""));
+                (errorProviderEmp.GetError(txtComplementoo) == ""));
         }
 
         public void limparTela()
@@ -96,7 +96,7 @@ namespace LabxPonto_View.Views.Empresas
             txtBairro.Text = "";
             txtCEP.Text = "";
             txtCidade.Text = "";
-            txtComplemento.Text = "";
+            txtComplementoo.Text = "";
             txtCNPJ.Text = "";
             txtEndereco.Text = "";
             txtFolha.Text = "";
@@ -119,7 +119,7 @@ namespace LabxPonto_View.Views.Empresas
             errorProviderEmp.SetError(txtCEP, "");
             errorProviderEmp.SetError(txtCidade, "");
             errorProviderEmp.SetError(txtBairro, "");
-            errorProviderEmp.SetError(txtComplemento, "");
+            errorProviderEmp.SetError(txtComplementoo, "");
         }
 
         public void preencherTela()
@@ -135,10 +135,10 @@ namespace LabxPonto_View.Views.Empresas
             if (empresa.Endereco != null)
             {
                 txtEndereco.Text = empresa.Endereco.Logradouro;
-                txtBairro.Text = empresa.Endereco.Neighborhood;
-                txtCidade.Text = empresa.Endereco.City;
-                cmbEstado.Text = empresa.Endereco.Estate;
-                txtComplemento.Text = empresa.Endereco.Complement;
+                txtBairro.Text = empresa.Endereco.Bairro;
+                txtCidade.Text = empresa.Endereco.Cidade;
+                cmbEstado.Text = empresa.Endereco.Bairro;
+                txtComplementoo.Text = empresa.Endereco.Complemento;
                 txtCEP.Text = empresa.Endereco.Cep.ToString();
             }
 
@@ -156,7 +156,7 @@ namespace LabxPonto_View.Views.Empresas
                 txtEndereco.ReadOnly = true;
                 txtBairro.ReadOnly = true;
                 txtCidade.ReadOnly = true;
-                txtComplemento.ReadOnly = true;
+                txtComplementoo.ReadOnly = true;
                 txtCEP.ReadOnly = true;
                 cmbEstado.Enabled = false;
                 cbPais.Enabled = false;
@@ -190,11 +190,10 @@ namespace LabxPonto_View.Views.Empresas
             empresa.EmailResponsavel = txtEmailResponsavel.Text;
 
             empresa.Endereco.Logradouro = txtEndereco.Text;
-            empresa.Endereco.Neighborhood = txtBairro.Text;
-            empresa.Endereco.City = txtCidade.Text;
-            empresa.Endereco.Estate = cmbEstado.Text;
-            empresa.Endereco.Complement = txtComplemento.Text;
-            empresa.Endereco.Estate = cmbEstado.Text;
+            empresa.Endereco.Bairro = txtBairro.Text;
+            empresa.Endereco.Cidade = txtCidade.Text;
+            empresa.Endereco.Estado = cmbEstado.Text;
+            empresa.Endereco.Complemento = txtComplementoo.Text;
             empresa.Endereco.Pais = cbPais.Text;
 
             if (!String.IsNullOrEmpty(txtCEP.Text))
@@ -374,7 +373,7 @@ namespace LabxPonto_View.Views.Empresas
             preencherCombos(cbPais);
 
             if (operacao == Operacao.Inserir)
-                empresa.Endereco = new Address();
+                empresa.Endereco = new Endereco();
 
             tcCadastroFuncionario.StyleManager = this.StyleManager;
 
@@ -389,15 +388,15 @@ namespace LabxPonto_View.Views.Empresas
         {
             if (!String.IsNullOrEmpty(txtCEP.Text))
             {
-                endereco = new Address();
+                endereco = new Endereco();
                 CEPCorreios cepCorreios = new CEPCorreios();
                 endereco = cepCorreios.BuscaCep(txtCEP.Text);
 
-                txtBairro.Text = endereco.Neighborhood;
-                txtCidade.Text = endereco.City;
+                txtBairro.Text = endereco.Bairro;
+                txtCidade.Text = endereco.Cidade;
                 txtEndereco.Text = endereco.Logradouro;
-                txtComplemento.Text = endereco.Complement;
-                cmbEstado.SelectedItem = endereco.Estate;
+                txtComplementoo.Text = endereco.Complemento;
+                cmbEstado.SelectedItem = endereco.Estado;
             }
         }
 

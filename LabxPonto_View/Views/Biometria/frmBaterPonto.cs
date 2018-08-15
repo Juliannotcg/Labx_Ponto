@@ -240,9 +240,9 @@ namespace LabxPonto_View.Views.Biometria
                         if (funcionario.Empresa != null)
                             txtEmpresa.Text = funcionario.Empresa.NomeFantasia;
                         if (funcionario.Funcao != null)
-                            txtFuncao.Text = funcionario.Funcao.NameFunction;
-                        if (funcionario.Funcao.Department != null)
-                            txtDepartamento.Text = funcionario.Funcao.Department.NameDepartment;
+                            txtFuncao.Text = funcionario.Funcao.NomeFuncao;
+                        if (funcionario.Funcao.Departamento != null)
+                            txtDepartamento.Text = funcionario.Funcao.Departamento.NomeDepartamento;
                         if(funcionario.ImagemDigital!=null)
                             imgFoto.Image = preencherImagemByte(funcionario.ImagemDigital);
                     }));

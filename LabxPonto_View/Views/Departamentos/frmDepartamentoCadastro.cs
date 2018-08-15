@@ -11,9 +11,9 @@ namespace LabxPonto_View.Views.Departamentos
     {
         private Operacao operacao;
         private DepartamentoService servico;
-        protected Department departamento;
+        protected Departamento departamento;
 
-        public Department Departamento
+        public Departamento Departamento
         {
             get { return (departamento); }
             set { departamento = value; }
@@ -46,8 +46,8 @@ namespace LabxPonto_View.Views.Departamentos
 
         public void preencherTela()
         {
-            txtDescricaoDepartamento.Text = departamento.Description;
-            txtNomeDepartamento.Text = departamento.NameDepartment;
+            txtDescricaoDepartamento.Text = departamento.Descricao;
+            txtNomeDepartamento.Text = departamento.NomeDepartamento;
 
             if(operacao == Operacao.Excluir ||
                 operacao == Operacao.Visualizar)
@@ -66,8 +66,8 @@ namespace LabxPonto_View.Views.Departamentos
 
         public void preencherDepartamento()
         {
-            departamento.NameDepartment = txtNomeDepartamento.Text;
-            departamento.Description = txtDescricaoDepartamento.Text;
+            departamento.NomeDepartamento = txtNomeDepartamento.Text;
+            departamento.Descricao = txtDescricaoDepartamento.Text;
         }
 
         private void btnSalvar_Click(object sender, System.EventArgs e)
@@ -95,7 +95,7 @@ namespace LabxPonto_View.Views.Departamentos
                 preencherDepartamento();
                 if (servico.Insert(departamento))
                 {
-                    MetroFramework.MetroMessageBox.Show(this, "O departamento " + departamento.NameDepartment + " foi cadastrado no sistema com sucesso!", "Cadastrado com sucesso!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question);
+                    MetroFramework.MetroMessageBox.Show(this, "O departamento " + departamento.NomeDepartamento + " foi cadastrado no sistema com sucesso!", "Cadastrado com sucesso!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question);
                     limparTela();
                 }
             }
@@ -105,7 +105,7 @@ namespace LabxPonto_View.Views.Departamentos
         {
             if (servico.Delete(departamento))
             {
-                MetroFramework.MetroMessageBox.Show(this, "O departamento " + departamento.NameDepartment + " foi deletado do sistema com sucesso!", "Cadastrado com sucesso!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question);
+                MetroFramework.MetroMessageBox.Show(this, "O departamento " + departamento.NomeDepartamento + " foi deletado do sistema com sucesso!", "Cadastrado com sucesso!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question);
                 this.Dispose();
             }
         }
@@ -117,7 +117,7 @@ namespace LabxPonto_View.Views.Departamentos
                 preencherDepartamento();
                 if (servico.Update(departamento))
                 {
-                    MetroFramework.MetroMessageBox.Show(this, "O departamento " + departamento.NameDepartment + " foi alterado com sucesso!", "Cadastrado com sucesso!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question);
+                    MetroFramework.MetroMessageBox.Show(this, "O departamento " + departamento.NomeDepartamento + " foi alterado com sucesso!", "Cadastrado com sucesso!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question);
                     this.Dispose();
                 }
             }

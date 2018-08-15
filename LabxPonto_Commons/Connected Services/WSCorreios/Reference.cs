@@ -3247,9 +3247,9 @@ namespace LabxPonto_Commons.WSCorreios {
         
         private string cidadeField;
         
-        private string complementoField;
+        private string ComplementooField;
         
-        private string complemento2Field;
+        private string Complementoo2Field;
         
         private string endField;
         
@@ -3297,25 +3297,25 @@ namespace LabxPonto_Commons.WSCorreios {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
-        public string complemento {
+        public string Complementoo {
             get {
-                return this.complementoField;
+                return this.ComplementooField;
             }
             set {
-                this.complementoField = value;
-                this.RaisePropertyChanged("complemento");
+                this.ComplementooField = value;
+                this.RaisePropertyChanged("Complemento");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
-        public string complemento2 {
+        public string Complementoo2 {
             get {
-                return this.complemento2Field;
+                return this.Complementoo2Field;
             }
             set {
-                this.complemento2Field = value;
-                this.RaisePropertyChanged("complemento2");
+                this.Complementoo2Field = value;
+                this.RaisePropertyChanged("Complementoo2");
             }
         }
         
@@ -5108,7 +5108,7 @@ namespace LabxPonto_Commons.WSCorreios {
         
         private string cidadeField;
         
-        private string complementoField;
+        private string ComplementooField;
         
         private string dddField;
         
@@ -5162,13 +5162,13 @@ namespace LabxPonto_Commons.WSCorreios {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
-        public string complemento {
+        public string Complementoo {
             get {
-                return this.complementoField;
+                return this.ComplementooField;
             }
             set {
-                this.complementoField = value;
-                this.RaisePropertyChanged("complemento");
+                this.ComplementooField = value;
+                this.RaisePropertyChanged("Complemento");
             }
         }
         
@@ -6228,7 +6228,7 @@ namespace LabxPonto_Commons.WSCorreios {
         
         private string cvpEdClienteField;
         
-        private string cvpEdComplementoField;
+        private string cvpEdComplementooField;
         
         private string cvpEdNumeroField;
         
@@ -6388,13 +6388,13 @@ namespace LabxPonto_Commons.WSCorreios {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
-        public string cvpEdComplemento {
+        public string cvpEdComplementoo {
             get {
-                return this.cvpEdComplementoField;
+                return this.cvpEdComplementooField;
             }
             set {
-                this.cvpEdComplementoField = value;
-                this.RaisePropertyChanged("cvpEdComplemento");
+                this.cvpEdComplementooField = value;
+                this.RaisePropertyChanged("cvpEdComplementoo");
             }
         }
         
@@ -7173,7 +7173,7 @@ namespace LabxPonto_Commons.WSCorreios {
         
         private string cidadeField;
         
-        private string complementoField;
+        private string ComplementooField;
         
         private string dddField;
         
@@ -7229,13 +7229,13 @@ namespace LabxPonto_Commons.WSCorreios {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
-        public string complemento {
+        public string Complementoo {
             get {
-                return this.complementoField;
+                return this.ComplementooField;
             }
             set {
-                this.complementoField = value;
-                this.RaisePropertyChanged("complemento");
+                this.ComplementooField = value;
+                this.RaisePropertyChanged("Complemento");
             }
         }
         
