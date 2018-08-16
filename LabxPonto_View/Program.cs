@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LabxPonto_Dao.Model;
 using Unity;
 
 namespace LabxPonto_View
@@ -22,27 +23,26 @@ namespace LabxPonto_View
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             AppDataContext contexto = new AppDataContext();
+            contexto.Database.CreateIfNotExists();
+            CriandoUsuarioSuporte(contexto);
 
-            //frmMain main = new frmMain(contexto);
-            //Application.Run(main);
+            frmLogin login = new frmLogin(contexto);
 
-            //frmLogin login = new frmLogin(contexto);
+            using (var mutex = new System.Threading.Mutex(true, "A403A6EB-6472-4B42-B5C1-C0E06F9F25B3"))
+            {
+                var jaEstaRodando = !mutex.WaitOne(0, true);
+                if (jaEstaRodando)
+                    return;
 
-            //using (var mutex = new System.Threading.Mutex(true, "A403A6EB-6472-4B42-B5C1-C0E06F9F25B3"))
-            //{
-            //    var jaEstaRodando = !mutex.WaitOne(0, true);
-            //    if (jaEstaRodando)
-            //        return;
-
-            //    if (login.ShowDialog() == DialogResult.OK)
-            //    {
+                if (login.ShowDialog() == DialogResult.OK)
+                {
                     frmMain main = new frmMain(contexto);
-                    //main.Usuario = login.Usuario;
+                    main.Usuario = login.Usuario;
                     Application.Run(main);
-            //    }
+                }
 
-            //    mutex.ReleaseMutex();
-            //}
+                mutex.ReleaseMutex();
+            }
 
             // Configure Dependency Injection
             var container = new UnityContainer();
@@ -53,6 +53,21 @@ namespace LabxPonto_View
             container.Resolve<DepartamentoService>();
             container.Resolve<EmpresaService>();
             container.Resolve<HorarioService>();
+        }
+
+        static void CriandoUsuarioSuporte(AppDataContext contexto)
+        {
+            var result = contexto.Usuarios.FirstOrDefault(x => x.Login == "SUPORTE");
+
+            if (result != null) return;
+            var newUsuario = new Usuario()
+            {
+                Login = "SUPORTE",
+                Perfil = "Suporte",
+                Senha = "YWRtaW4="
+            };
+            contexto.Usuarios.Add(newUsuario);
+            contexto.SaveChanges();
         }
     }
 }
