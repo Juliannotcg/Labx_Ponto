@@ -54,7 +54,7 @@ namespace LabxPonto_View.Views.Configurações
             txtSenha.Text = "";
         }
 
-        public void limparErros()
+        public void LimparErros()
         {
             errorProvider1.SetError(txtServidor, "");
             errorProvider1.SetError(txtUsuario, "");
@@ -64,24 +64,24 @@ namespace LabxPonto_View.Views.Configurações
 
         public void ConfigurarBanco()
         {
-            if (Validar())
-            {
-                if (MetroFramework.MetroMessageBox.Show(this, "Ao alterar as informações do banco de dados, todas as informações do sistema serão amrmazenadas no novo banco.", "Alteração crítica, você tem certeza?", System.Windows.Forms.MessageBoxButtons.OKCancel, System.Windows.Forms.MessageBoxIcon.Exclamation) == DialogResult.OK)
-                {
-                    limparErros();
+            if (!Validar()) return;
 
-                    var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-                    var connectionStringsSection = (ConnectionStringsSection)config.GetSection("connectionStrings");
-                    connectionStringsSection.ConnectionStrings["ConexaoPonto"].ConnectionString = "Server=" + txtServidor.Text + ";Database=" + txtNomeBanco.Text + "; User ID=" + txtUsuario.Text + ";Password=" + txtSenha.Text + ";Trusted_Connection=False; Encrypt=False;";
-                    config.Save(ConfigurationSaveMode.Full);
-                    ConfigurationManager.RefreshSection("connectionStrings");
+            if (MetroFramework.MetroMessageBox.Show(this,
+                    "Ao alterar as informações do banco de dados, todas as informações do sistema serão amrmazenadas no novo banco.",
+                    "Alteração crítica, você tem certeza?", System.Windows.Forms.MessageBoxButtons.OKCancel,
+                    System.Windows.Forms.MessageBoxIcon.Exclamation) != DialogResult.OK) return;
+            LimparErros();
 
-                    limparErros();
+            var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            var connectionStringsSection = (ConnectionStringsSection)config.GetSection("connectionStrings");
+            connectionStringsSection.ConnectionStrings["ConexaoPonto"].ConnectionString = "Server=" + txtServidor.Text + ";Database=" + txtNomeBanco.Text + "; User ID=" + txtUsuario.Text + ";Password=" + txtSenha.Text + ";Trusted_Connection=False; Encrypt=False;";
+            config.Save(ConfigurationSaveMode.Full);
+            ConfigurationManager.RefreshSection("connectionStrings");
 
-                    MetroFramework.MetroMessageBox.Show(this, "O banco foi alterado com sucesso", "Alterado com sucesso!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question);
-                    frmconfiguracoes.Dispose();
-                }
-            }
+            limparErros();
+
+            MetroFramework.MetroMessageBox.Show(this, "O banco foi alterado com sucesso", "Alterado com sucesso!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question);
+            frmconfiguracoes.Dispose();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

@@ -146,10 +146,10 @@
             // 
             // 
             this.txtSenha.CustomButton.Image = null;
-            this.txtSenha.CustomButton.Location = new System.Drawing.Point(633, 2);
+            this.txtSenha.CustomButton.Location = new System.Drawing.Point(475, 2);
             this.txtSenha.CustomButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtSenha.CustomButton.Name = "";
-            this.txtSenha.CustomButton.Size = new System.Drawing.Size(41, 38);
+            this.txtSenha.CustomButton.Size = new System.Drawing.Size(31, 31);
             this.txtSenha.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtSenha.CustomButton.TabIndex = 1;
             this.txtSenha.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -188,10 +188,10 @@
             // 
             // 
             this.txtUsuario.CustomButton.Image = null;
-            this.txtUsuario.CustomButton.Location = new System.Drawing.Point(633, 2);
+            this.txtUsuario.CustomButton.Location = new System.Drawing.Point(475, 2);
             this.txtUsuario.CustomButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtUsuario.CustomButton.Name = "";
-            this.txtUsuario.CustomButton.Size = new System.Drawing.Size(41, 38);
+            this.txtUsuario.CustomButton.Size = new System.Drawing.Size(31, 31);
             this.txtUsuario.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtUsuario.CustomButton.TabIndex = 1;
             this.txtUsuario.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -230,16 +230,18 @@
             // 
             // 
             this.txtNomeBanco.CustomButton.Image = null;
-            this.txtNomeBanco.CustomButton.Location = new System.Drawing.Point(633, 2);
+            this.txtNomeBanco.CustomButton.Location = new System.Drawing.Point(475, 2);
             this.txtNomeBanco.CustomButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtNomeBanco.CustomButton.Name = "";
-            this.txtNomeBanco.CustomButton.Size = new System.Drawing.Size(41, 38);
+            this.txtNomeBanco.CustomButton.Size = new System.Drawing.Size(31, 31);
             this.txtNomeBanco.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtNomeBanco.CustomButton.TabIndex = 1;
             this.txtNomeBanco.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtNomeBanco.CustomButton.UseSelectable = true;
             this.txtNomeBanco.CustomButton.Visible = false;
-            this.txtNomeBanco.Lines = new string[0];
+            this.txtNomeBanco.Enabled = false;
+            this.txtNomeBanco.Lines = new string[] {
+        "ePonto"};
             this.txtNomeBanco.Location = new System.Drawing.Point(4, 103);
             this.txtNomeBanco.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNomeBanco.MaxLength = 32767;
@@ -252,6 +254,7 @@
             this.txtNomeBanco.ShortcutsEnabled = true;
             this.txtNomeBanco.Size = new System.Drawing.Size(509, 36);
             this.txtNomeBanco.TabIndex = 59;
+            this.txtNomeBanco.Text = "ePonto";
             this.txtNomeBanco.UseSelectable = true;
             this.txtNomeBanco.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtNomeBanco.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -345,10 +348,10 @@
             // 
             // 
             this.txtServidor.CustomButton.Image = null;
-            this.txtServidor.CustomButton.Location = new System.Drawing.Point(633, 2);
+            this.txtServidor.CustomButton.Location = new System.Drawing.Point(475, 2);
             this.txtServidor.CustomButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtServidor.CustomButton.Name = "";
-            this.txtServidor.CustomButton.Size = new System.Drawing.Size(41, 38);
+            this.txtServidor.CustomButton.Size = new System.Drawing.Size(31, 31);
             this.txtServidor.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtServidor.CustomButton.TabIndex = 1;
             this.txtServidor.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -461,10 +464,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(609, 511);
             this.Controls.Add(this.tcCadastroFuncionario);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmConfiguracoes";
             this.Padding = new System.Windows.Forms.Padding(36, 91, 36, 31);
-            this.Text = "Configuracoes";
+            this.Text = "Configurações";
             this.Controls.SetChildIndex(this.btnSalvar, 0);
             this.Controls.SetChildIndex(this.btnCancelar, 0);
             this.Controls.SetChildIndex(this.tcCadastroFuncionario, 0);
