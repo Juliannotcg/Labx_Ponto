@@ -9,6 +9,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LabxPonto_Dao.Model;
 using Unity;
+using LabxPonto_Dao.Model.Configuracao;
+using System.IO;
+using Newtonsoft.Json;
+using LabxPonto_View.ConfiguracaoServidor;
 
 namespace LabxPonto_View
 {
@@ -22,7 +26,20 @@ namespace LabxPonto_View
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+
             AppDataContext contexto = new AppDataContext();
+            DadosConfiguracao dadosConfiguracao = new DadosConfiguracao();
+
+
+
+
+            frmConfiguracaoInicial configuracaoInicial = new frmConfiguracaoInicial(contexto);
+            configuracaoInicial.Show();
+
+            GerandoArquivoConfiguracao(dadosConfiguracao);
+
+
             contexto.Database.CreateIfNotExists();
             CriandoUsuarioSuporte(contexto);
 
@@ -45,6 +62,11 @@ namespace LabxPonto_View
             }
 
             // Configure Dependency Injection
+            DependencyInjection();
+        }
+
+        private static void DependencyInjection()
+        {
             var container = new UnityContainer();
             DependencyResolver.Resolve(container);
 
@@ -69,5 +91,21 @@ namespace LabxPonto_View
             contexto.Usuarios.Add(newUsuario);
             contexto.SaveChanges();
         }
+
+        private static void GerandoArquivoConfiguracao(DadosConfiguracao dadosConfiguracao)
+        {
+
+
+            using (StreamReader r = new StreamReader("C:\\Users\\Julianno\\Documents\\ePonto\\Labx_Ponto\\LabxPonto_View\\ConfiguracaoBanco.json"))
+            {
+                string json = r.ReadToEnd();
+                DadosConfiguracao ro = JsonConvert.DeserializeObject<DadosConfiguracao>(json);
+            }
+
+
+            
+        }
+
+
     }
 }

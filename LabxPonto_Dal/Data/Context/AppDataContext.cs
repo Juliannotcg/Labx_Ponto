@@ -46,7 +46,6 @@ namespace LabxPonto_Dao.Data.Context
             modelBuilder.Configurations.Add(new HorarioExpedienteMap());
             modelBuilder.Configurations.Add(new UsuarioMap());
             modelBuilder.Configurations.Add(new ImagemMap());
-
         }
     }
 }

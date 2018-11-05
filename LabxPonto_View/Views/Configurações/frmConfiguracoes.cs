@@ -78,7 +78,7 @@ namespace LabxPonto_View.Views.Configurações
             config.Save(ConfigurationSaveMode.Full);
             ConfigurationManager.RefreshSection("connectionStrings");
 
-            limparErros();
+            LimparErros();
 
             MetroFramework.MetroMessageBox.Show(this, "O banco foi alterado com sucesso", "Alterado com sucesso!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question);
             frmconfiguracoes.Dispose();

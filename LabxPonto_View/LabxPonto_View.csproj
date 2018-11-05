@@ -156,6 +156,9 @@
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -192,6 +195,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfiguracaoServidor\frmConfiguracaoInicial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfiguracaoServidor\frmConfiguracaoInicial.Designer.cs">
+      <DependentUpon>frmConfiguracaoInicial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\ctrlGerarArquivo.cs" />
     <Compile Include="Enums\Operacao.cs" />
     <Compile Include="Enums\EstadoCivil.cs" />
@@ -397,6 +406,9 @@
     <Compile Include="Views\Usuário\frmUsuarioCadastro.Designer.cs">
       <DependentUpon>frmUsuarioCadastro.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ConfiguracaoServidor\frmConfiguracaoInicial.resx">
+      <DependentUpon>frmConfiguracaoInicial.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="rltFuncionario.rdlc" />
     <EmbeddedResource Include="Views\Base\frmBaseCadastro.resx">
       <DependentUpon>frmBaseCadastro.cs</DependentUpon>
@@ -500,6 +512,7 @@
     <EmbeddedResource Include="Views\Usuário\frmUsuarioCadastro.resx">
       <DependentUpon>frmUsuarioCadastro.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ConfiguracaoBanco.json" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\LabxPonto_Dao.Model.Funcionario.datasource" />
     <None Include="Properties\DataSources\LabxPonto_Dao.Model.ModelRelatorio.FuncaoRlt.datasource" />
