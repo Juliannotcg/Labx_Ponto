@@ -28,11 +28,7 @@ namespace LabxPonto_View
             AppDataContext contexto = new AppDataContext();
 
             if (!LendoArquivoConfiguracao())
-            {
                 contexto = PrimeiroAcesso(contexto);
-            }
-            
-
             
             contexto.Database.CreateIfNotExists();
             CriandoUsuarioSuporte(contexto);
@@ -103,7 +99,6 @@ namespace LabxPonto_View
             frmConfiguracaoInicial configuracaoInicial = new frmConfiguracaoInicial(context);
             configuracaoInicial.ShowDialog();
             return context;
-
         }
     }
 }

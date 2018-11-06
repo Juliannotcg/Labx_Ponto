@@ -80,12 +80,12 @@ namespace LabxPonto_View.ConfiguracaoServidor
 
             if (_context.Database.Exists())
             {
-                MetroFramework.MetroMessageBox.Show(this, "Banco cadastrado com sucesso.", "" , System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Hand);
+                MetroFramework.MetroMessageBox.Show(this, "Banco cadastrado com sucesso.", "Sucesso" , System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
                 return true;
             }
             else
             {
-                MetroFramework.MetroMessageBox.Show(this, "Não foi possível realizar a conexão com o banco de dados.", "", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                MetroFramework.MetroMessageBox.Show(this, "Não foi possível realizar a conexão com o banco de dados.", "Erro", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
                 return false;
             }   
         }
@@ -102,7 +102,9 @@ namespace LabxPonto_View.ConfiguracaoServidor
             limparErros();
             EditandoConnectionString();
             editandoArquivoJson();
-            TesteConexao();
+
+            if (!TesteConexao())
+                return;
             this.Dispose();
         }
 
