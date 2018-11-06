@@ -26,11 +26,11 @@
     <TargetCulture>pt-BR</TargetCulture>
     <ProductName>e-Ponto</ProductName>
     <PublisherName>LifeTech</PublisherName>
-    <MinimumRequiredVersion>1.0.5.1</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.0.5.2</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>1</ApplicationRevision>
-    <ApplicationVersion>1.0.5.1</ApplicationVersion>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.5.2</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
