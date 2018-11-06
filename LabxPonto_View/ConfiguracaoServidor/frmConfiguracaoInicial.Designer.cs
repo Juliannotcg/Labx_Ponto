@@ -58,10 +58,10 @@
             // 
             // 
             this.txtNomeServidor.CustomButton.Image = null;
-            this.txtNomeServidor.CustomButton.Location = new System.Drawing.Point(114, 1);
-            this.txtNomeServidor.CustomButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNomeServidor.CustomButton.Location = new System.Drawing.Point(152, 1);
+            this.txtNomeServidor.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.txtNomeServidor.CustomButton.Name = "";
-            this.txtNomeServidor.CustomButton.Size = new System.Drawing.Size(13, 14);
+            this.txtNomeServidor.CustomButton.Size = new System.Drawing.Size(17, 17);
             this.txtNomeServidor.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtNomeServidor.CustomButton.TabIndex = 1;
             this.txtNomeServidor.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -69,7 +69,7 @@
             this.txtNomeServidor.CustomButton.Visible = false;
             this.txtNomeServidor.Lines = new string[0];
             this.txtNomeServidor.Location = new System.Drawing.Point(17, 89);
-            this.txtNomeServidor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNomeServidor.Margin = new System.Windows.Forms.Padding(2);
             this.txtNomeServidor.MaxLength = 32767;
             this.txtNomeServidor.Name = "txtNomeServidor";
             this.txtNomeServidor.PasswordChar = '\0';
@@ -110,10 +110,10 @@
             // 
             // 
             this.txtNomeBancoDeDados.CustomButton.Image = null;
-            this.txtNomeBancoDeDados.CustomButton.Location = new System.Drawing.Point(114, 1);
-            this.txtNomeBancoDeDados.CustomButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNomeBancoDeDados.CustomButton.Location = new System.Drawing.Point(152, 1);
+            this.txtNomeBancoDeDados.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.txtNomeBancoDeDados.CustomButton.Name = "";
-            this.txtNomeBancoDeDados.CustomButton.Size = new System.Drawing.Size(13, 14);
+            this.txtNomeBancoDeDados.CustomButton.Size = new System.Drawing.Size(17, 17);
             this.txtNomeBancoDeDados.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtNomeBancoDeDados.CustomButton.TabIndex = 1;
             this.txtNomeBancoDeDados.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -121,7 +121,7 @@
             this.txtNomeBancoDeDados.CustomButton.Visible = false;
             this.txtNomeBancoDeDados.Lines = new string[0];
             this.txtNomeBancoDeDados.Location = new System.Drawing.Point(238, 89);
-            this.txtNomeBancoDeDados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNomeBancoDeDados.Margin = new System.Windows.Forms.Padding(2);
             this.txtNomeBancoDeDados.MaxLength = 32767;
             this.txtNomeBancoDeDados.Name = "txtNomeBancoDeDados";
             this.txtNomeBancoDeDados.PasswordChar = '\0';
@@ -152,10 +152,10 @@
             // 
             // 
             this.txtUsuarioBanco.CustomButton.Image = null;
-            this.txtUsuarioBanco.CustomButton.Location = new System.Drawing.Point(114, 1);
-            this.txtUsuarioBanco.CustomButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUsuarioBanco.CustomButton.Location = new System.Drawing.Point(152, 1);
+            this.txtUsuarioBanco.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsuarioBanco.CustomButton.Name = "";
-            this.txtUsuarioBanco.CustomButton.Size = new System.Drawing.Size(13, 14);
+            this.txtUsuarioBanco.CustomButton.Size = new System.Drawing.Size(17, 17);
             this.txtUsuarioBanco.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtUsuarioBanco.CustomButton.TabIndex = 1;
             this.txtUsuarioBanco.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -163,7 +163,7 @@
             this.txtUsuarioBanco.CustomButton.Visible = false;
             this.txtUsuarioBanco.Lines = new string[0];
             this.txtUsuarioBanco.Location = new System.Drawing.Point(17, 148);
-            this.txtUsuarioBanco.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUsuarioBanco.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsuarioBanco.MaxLength = 32767;
             this.txtUsuarioBanco.Name = "txtUsuarioBanco";
             this.txtUsuarioBanco.PasswordChar = '\0';
@@ -194,10 +194,10 @@
             // 
             // 
             this.txtSenhaBanco.CustomButton.Image = null;
-            this.txtSenhaBanco.CustomButton.Location = new System.Drawing.Point(114, 1);
-            this.txtSenhaBanco.CustomButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSenhaBanco.CustomButton.Location = new System.Drawing.Point(152, 1);
+            this.txtSenhaBanco.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.txtSenhaBanco.CustomButton.Name = "";
-            this.txtSenhaBanco.CustomButton.Size = new System.Drawing.Size(13, 14);
+            this.txtSenhaBanco.CustomButton.Size = new System.Drawing.Size(17, 17);
             this.txtSenhaBanco.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtSenhaBanco.CustomButton.TabIndex = 1;
             this.txtSenhaBanco.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -205,10 +205,10 @@
             this.txtSenhaBanco.CustomButton.Visible = false;
             this.txtSenhaBanco.Lines = new string[0];
             this.txtSenhaBanco.Location = new System.Drawing.Point(238, 148);
-            this.txtSenhaBanco.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSenhaBanco.Margin = new System.Windows.Forms.Padding(2);
             this.txtSenhaBanco.MaxLength = 32767;
             this.txtSenhaBanco.Name = "txtSenhaBanco";
-            this.txtSenhaBanco.PasswordChar = '\0';
+            this.txtSenhaBanco.PasswordChar = '*';
             this.txtSenhaBanco.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtSenhaBanco.SelectedText = "";
             this.txtSenhaBanco.SelectionLength = 0;
@@ -238,9 +238,9 @@
             this.Controls.Add(this.txtNomeBancoDeDados);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.txtNomeServidor);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmConfiguracaoInicial";
-            this.Padding = new System.Windows.Forms.Padding(15, 49, 15, 16);
+            this.Padding = new System.Windows.Forms.Padding(15, 60, 15, 16);
             this.Text = "Configuração inicial";
             this.Controls.SetChildIndex(this.txtNomeServidor, 0);
             this.Controls.SetChildIndex(this.metroLabel1, 0);

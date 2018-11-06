@@ -25,11 +25,15 @@ namespace LabxPonto_View
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-
-            LendoArquivoConfiguracao();
-
             AppDataContext contexto = new AppDataContext();
+
+            if (!LendoArquivoConfiguracao())
+            {
+                contexto = PrimeiroAcesso();
+            }
+            
+
+            
             contexto.Database.CreateIfNotExists();
             CriandoUsuarioSuporte(contexto);
 
@@ -82,29 +86,23 @@ namespace LabxPonto_View
             contexto.SaveChanges();
         }
 
-        private static void LendoArquivoConfiguracao()
+        private static bool LendoArquivoConfiguracao()
         {
             ConfiguracaoBanco dadosConfiguracao = new ConfiguracaoBanco();
             var localizacao = Path.Combine(Directory.GetCurrentDirectory(), @"ConfiguracaoBanco.json");
-
-            //var fi = new System.IO.FileInfo(System.Reflection.Assembly.GetExecutingAssembly().Location);
-            //var pastaExe = fi.Directory.FullName;
-            //var caminhoArquivo = System.IO.Path.Combine(pastaExe, @"C:\Users\juliano.P21\Documents\ePonto\Labx_Ponto\LabxPonto_View\ConfiguracaoBanco.json");
-
             using (StreamReader r = new StreamReader(@"C:\Users\juliano.P21\Documents\ePonto\Labx_Ponto\LabxPonto_View\ConfiguracaoBanco.json"))
             {
                 string json = r.ReadToEnd();
                 ConfiguracaoBanco ro = JsonConvert.DeserializeObject<ConfiguracaoBanco>(json);
-                if (ro.BancoGerado)
-                    return;
+                return ro.BancoGerado;
             }
-            PrimeiroAcesso();
         }
 
-        private static void PrimeiroAcesso()
+        private static AppDataContext PrimeiroAcesso()
         {
             frmConfiguracaoInicial configuracaoInicial = new frmConfiguracaoInicial();
             configuracaoInicial.ShowDialog();
+
         }
     }
 }
