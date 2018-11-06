@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LabxPonto_Dao.Model;
 using Unity;
-using LabxPonto_Dao.Model.Configuracao;
 using System.IO;
 using Newtonsoft.Json;
 using LabxPonto_View.ConfiguracaoServidor;
@@ -28,18 +27,9 @@ namespace LabxPonto_View
             Application.SetCompatibleTextRenderingDefault(false);
 
 
+            LendoArquivoConfiguracao();
+
             AppDataContext contexto = new AppDataContext();
-            DadosConfiguracao dadosConfiguracao = new DadosConfiguracao();
-
-
-
-
-            frmConfiguracaoInicial configuracaoInicial = new frmConfiguracaoInicial(contexto);
-            configuracaoInicial.Show();
-
-            GerandoArquivoConfiguracao(dadosConfiguracao);
-
-
             contexto.Database.CreateIfNotExists();
             CriandoUsuarioSuporte(contexto);
 
@@ -92,20 +82,29 @@ namespace LabxPonto_View
             contexto.SaveChanges();
         }
 
-        private static void GerandoArquivoConfiguracao(DadosConfiguracao dadosConfiguracao)
+        private static void LendoArquivoConfiguracao()
         {
+            ConfiguracaoBanco dadosConfiguracao = new ConfiguracaoBanco();
+            var localizacao = Path.Combine(Directory.GetCurrentDirectory(), @"ConfiguracaoBanco.json");
 
+            //var fi = new System.IO.FileInfo(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            //var pastaExe = fi.Directory.FullName;
+            //var caminhoArquivo = System.IO.Path.Combine(pastaExe, @"C:\Users\juliano.P21\Documents\ePonto\Labx_Ponto\LabxPonto_View\ConfiguracaoBanco.json");
 
-            using (StreamReader r = new StreamReader("C:\\Users\\Julianno\\Documents\\ePonto\\Labx_Ponto\\LabxPonto_View\\ConfiguracaoBanco.json"))
+            using (StreamReader r = new StreamReader(@"C:\Users\juliano.P21\Documents\ePonto\Labx_Ponto\LabxPonto_View\ConfiguracaoBanco.json"))
             {
                 string json = r.ReadToEnd();
-                DadosConfiguracao ro = JsonConvert.DeserializeObject<DadosConfiguracao>(json);
+                ConfiguracaoBanco ro = JsonConvert.DeserializeObject<ConfiguracaoBanco>(json);
+                if (ro.BancoGerado)
+                    return;
             }
-
-
-            
+            PrimeiroAcesso();
         }
 
-
+        private static void PrimeiroAcesso()
+        {
+            frmConfiguracaoInicial configuracaoInicial = new frmConfiguracaoInicial();
+            configuracaoInicial.ShowDialog();
+        }
     }
 }

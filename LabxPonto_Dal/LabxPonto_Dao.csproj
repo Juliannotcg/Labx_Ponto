@@ -86,7 +86,7 @@
       <DependentUpon>201808160036324_DataBaseInitial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Model\Configuracao\DadosConfiguracao.cs" />
+    <Compile Include="Model\ConfiguracaoBanco.cs" />
     <Compile Include="Model\Departamento.cs" />
     <Compile Include="Model\Empresa.cs" />
     <Compile Include="Model\Endereco.cs" />

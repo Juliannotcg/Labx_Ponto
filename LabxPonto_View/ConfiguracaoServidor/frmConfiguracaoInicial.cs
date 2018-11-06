@@ -1,25 +1,24 @@
 ﻿using LabxPonto_Dao.Data.Context;
-using LabxPonto_Dao.Model.Configuracao;
 using LabxPonto_View.Views.Base;
 using Newtonsoft.Json;
 using System;
 using System.IO;
+using System.Configuration;
+using LabxPonto_Dao.Model;
 
 namespace LabxPonto_View.ConfiguracaoServidor
 {
     public partial class frmConfiguracaoInicial : frmBaseCadastro
     {
-        //private DepartamentoService servico;
-        protected DadosConfiguracao configuracao;
+        protected ConfiguracaoBanco configuracao;
 
-        public frmConfiguracaoInicial(AppDataContext con)
+        public frmConfiguracaoInicial()
         {
             InitializeComponent();
             editandoArquivoJson();
-            //servico = new DepartamentoService(con);
         }
 
-        public DadosConfiguracao Configuracao
+        public ConfiguracaoBanco Configuracao
         {
             get { return (configuracao); }
             set { configuracao = value; }
@@ -47,28 +46,20 @@ namespace LabxPonto_View.ConfiguracaoServidor
 
         public void editandoArquivoJson()
         {
-            string caminhoArquivo = "C:\\Users\\Julianno\\Documents\\ePonto\\Labx_Ponto\\LabxPonto_View\\ConfiguracaoBanco.json";
-
+            Configuracao = new ConfiguracaoBanco();
+            Configuracao.BancoGerado = true;
             JsonSerializer serializer = new JsonSerializer();
+            using (StreamWriter file = File.CreateText(@"C:\Users\juliano.P21\Documents\ePonto\Labx_Ponto\LabxPonto_View\ConfiguracaoBanco.json"))
+                   serializer.Serialize(file, Configuracao);
+        }
 
-            //testc = new ConfiguracaoServidor();
-
-            Configuracao = new DadosConfiguracao();
-            
-            Configuracao.NomeBancoDados = "sadf";
-            Configuracao.NomeServidor = "zdv";
-            Configuracao.UsuarioBancoDados = "sdfsdf";
-            Configuracao.SenhaBancoDados = "sd";
-
-
-            using (StreamWriter file = File.CreateText("C:\\Users\\Julianno\\Documents\\ePonto\\Labx_Ponto\\LabxPonto_View\\ConfiguracaoBanco.json"))
-            {
-                serializer.Serialize(file, Configuracao);
-
-               
-            }
-
-            
+        private void EditandoConnectionString()
+        {
+            var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            var connectionStringsSection = (ConnectionStringsSection)config.GetSection("connectionStrings");
+            connectionStringsSection.ConnectionStrings["ConexaoPonto"].ConnectionString = $"Server= { txtNomeServidor.Text} ;Database= { txtNomeBancoDeDados.Text}; User ID= {txtUsuarioBanco.Text}; Password= {txtSenhaBanco.Text}; Trusted_Connection=False; Encrypt=False;";
+            config.Save(ConfigurationSaveMode.Full);
+            ConfigurationManager.RefreshSection("connectionStrings");
         }
         public void limparErros()
         {
@@ -76,16 +67,11 @@ namespace LabxPonto_View.ConfiguracaoServidor
             errorProviderConfig.SetError(txtNomeBancoDeDados, "");
         }
 
-        public void preencherDepartamento()
-        {
-            //departamento.NomeDepartamento = txtNomeDepartamento.Text;
-            //departamento.Descricao = txtDescricaoDepartamento.Text;
-        }
-
         private void btnSalvar_Click(object sender, System.EventArgs e)
         {
             limparErros();
-
+            EditandoConnectionString();
+            editandoArquivoJson();
         }
 
         private void inserir()
