@@ -75,19 +75,21 @@ namespace LabxPonto_View.ConfiguracaoServidor
         private bool TesteConexao()
         {
             var connectionString = $"Server= { txtNomeServidor.Text} ;Database= { txtNomeBancoDeDados.Text}; User ID= {txtUsuarioBanco.Text}; Password= {txtSenhaBanco.Text}; Trusted_Connection=False; Encrypt=False;";
-
             _context.Database.Connection.ConnectionString = connectionString;
 
-            if (_context.Database.Exists())
+            try
             {
-                MetroFramework.MetroMessageBox.Show(this, "Banco cadastrado com sucesso.", "Sucesso" , System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
+                _context.Database.CreateIfNotExists();
+                MetroFramework.MetroMessageBox.Show(this, "Banco cadastrado com sucesso.", "Sucesso", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
                 return true;
             }
-            else
+            catch (Exception)
             {
                 MetroFramework.MetroMessageBox.Show(this, "Não foi possível realizar a conexão com o banco de dados.", "Erro", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
                 return false;
-            }   
+                throw;
+            }
+          
         }
         public void limparErros()
         {
