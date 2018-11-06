@@ -12,7 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>ftp://waws-prod-dm1-017.ftp.azurewebsites.windows.net/site/wwwroot/Labx_Ponto/</PublishUrl>
+    <PublishUrl>ftp://portaldotrabalhadorico.com.br/eponto/</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -20,16 +20,17 @@
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
+    <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>https://eponto.azurewebsites.net/Labx_Ponto/</InstallUrl>
+    <InstallUrl>https://portaldotrabalhadorico.com.br/eponto/</InstallUrl>
     <TargetCulture>pt-BR</TargetCulture>
     <ProductName>e-Ponto</ProductName>
     <PublisherName>LifeTech</PublisherName>
+    <MinimumRequiredVersion>1.0.5.1</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <ApplicationRevision>1</ApplicationRevision>
-    <ApplicationVersion>1.0.3.1</ApplicationVersion>
+    <ApplicationVersion>1.0.5.1</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
