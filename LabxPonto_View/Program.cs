@@ -29,7 +29,7 @@ namespace LabxPonto_View
 
             if (!LendoArquivoConfiguracao())
             {
-                contexto = PrimeiroAcesso();
+                contexto = PrimeiroAcesso(contexto);
             }
             
 
@@ -98,10 +98,11 @@ namespace LabxPonto_View
             }
         }
 
-        private static AppDataContext PrimeiroAcesso()
+        private static AppDataContext PrimeiroAcesso(AppDataContext context)
         {
-            frmConfiguracaoInicial configuracaoInicial = new frmConfiguracaoInicial();
+            frmConfiguracaoInicial configuracaoInicial = new frmConfiguracaoInicial(context);
             configuracaoInicial.ShowDialog();
+            return context;
 
         }
     }

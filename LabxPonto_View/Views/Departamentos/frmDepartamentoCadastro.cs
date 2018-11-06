@@ -21,7 +21,6 @@ namespace LabxPonto_View.Views.Departamentos
 
         public bool validar()
         {
-
             if (String.IsNullOrEmpty(txtNomeDepartamento.Text))
                 errorProviderDep.SetError(txtNomeDepartamento, "Informe o nome do departamento.");
 

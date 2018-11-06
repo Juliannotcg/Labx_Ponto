@@ -76,10 +76,9 @@ namespace LabxPonto_View.ConfiguracaoServidor
         {
             var connectionString = $"Server= { txtNomeServidor.Text} ;Database= { txtNomeBancoDeDados.Text}; User ID= {txtUsuarioBanco.Text}; Password= {txtSenhaBanco.Text}; Trusted_Connection=False; Encrypt=False;";
 
-            AppDataContext conte = new AppDataContext();
-            conte.Database.Connection.ConnectionString = connectionString;
+            _context.Database.Connection.ConnectionString = connectionString;
 
-            if (conte.Database.Exists())
+            if (_context.Database.Exists())
             {
                 MetroFramework.MetroMessageBox.Show(this, "Banco cadastrado com sucesso.", "" , System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Hand);
                 return true;
