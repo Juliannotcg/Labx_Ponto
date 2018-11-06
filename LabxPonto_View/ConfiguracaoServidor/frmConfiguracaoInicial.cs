@@ -57,8 +57,12 @@ namespace LabxPonto_View.ConfiguracaoServidor
         {
             Configuracao = new ConfiguracaoBanco();
             Configuracao.BancoGerado = true;
+
+            var localizacao = Path.Combine(Directory.GetCurrentDirectory(), @"ConfiguracaoBanco.json");
+            var retorno = localizacao.Replace("\\bin\\Debug", "");
+
             JsonSerializer serializer = new JsonSerializer();
-            using (StreamWriter file = File.CreateText(@"C:\Users\juliano.P21\Documents\ePonto\Labx_Ponto\LabxPonto_View\ConfiguracaoBanco.json"))
+            using (StreamWriter file = File.CreateText(retorno))
                    serializer.Serialize(file, Configuracao);
         }
 

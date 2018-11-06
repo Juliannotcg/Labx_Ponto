@@ -12,6 +12,7 @@ using Unity;
 using System.IO;
 using Newtonsoft.Json;
 using LabxPonto_View.ConfiguracaoServidor;
+using System.Reflection;
 
 namespace LabxPonto_View
 {
@@ -85,8 +86,10 @@ namespace LabxPonto_View
         private static bool LendoArquivoConfiguracao()
         {
             ConfiguracaoBanco dadosConfiguracao = new ConfiguracaoBanco();
-            var localizacao = Path.Combine(Directory.GetCurrentDirectory(), @"ConfiguracaoBanco.json");
-            using (StreamReader r = new StreamReader(@"C:\Users\juliano.P21\Documents\ePonto\Labx_Ponto\LabxPonto_View\ConfiguracaoBanco.json"))
+            var localizacao = Path.Combine( Directory.GetCurrentDirectory(), @"ConfiguracaoBanco.json");
+            var retorno = localizacao.Replace("\\bin\\Debug", "");
+
+            using (StreamReader r = new StreamReader(retorno))
             {
                 string json = r.ReadToEnd();
                 ConfiguracaoBanco ro = JsonConvert.DeserializeObject<ConfiguracaoBanco>(json);

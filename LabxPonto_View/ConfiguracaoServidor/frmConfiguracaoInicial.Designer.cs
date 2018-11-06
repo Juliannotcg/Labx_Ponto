@@ -119,12 +119,14 @@
             this.txtNomeBancoDeDados.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtNomeBancoDeDados.CustomButton.UseSelectable = true;
             this.txtNomeBancoDeDados.CustomButton.Visible = false;
-            this.txtNomeBancoDeDados.Lines = new string[0];
+            this.txtNomeBancoDeDados.Lines = new string[] {
+        "ePonto"};
             this.txtNomeBancoDeDados.Location = new System.Drawing.Point(238, 89);
             this.txtNomeBancoDeDados.Margin = new System.Windows.Forms.Padding(2);
             this.txtNomeBancoDeDados.MaxLength = 32767;
             this.txtNomeBancoDeDados.Name = "txtNomeBancoDeDados";
             this.txtNomeBancoDeDados.PasswordChar = '\0';
+            this.txtNomeBancoDeDados.ReadOnly = true;
             this.txtNomeBancoDeDados.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtNomeBancoDeDados.SelectedText = "";
             this.txtNomeBancoDeDados.SelectionLength = 0;
@@ -132,6 +134,7 @@
             this.txtNomeBancoDeDados.ShortcutsEnabled = true;
             this.txtNomeBancoDeDados.Size = new System.Drawing.Size(170, 19);
             this.txtNomeBancoDeDados.TabIndex = 55;
+            this.txtNomeBancoDeDados.Text = "ePonto";
             this.txtNomeBancoDeDados.UseSelectable = true;
             this.txtNomeBancoDeDados.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtNomeBancoDeDados.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
