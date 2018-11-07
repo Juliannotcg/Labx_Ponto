@@ -38,20 +38,12 @@
             this.lbArquivo = new MetroFramework.Controls.MetroLabel();
             this.lbSistema = new MetroFramework.Controls.MetroLabel();
             this.metroStyleExtender = new MetroFramework.Components.MetroStyleExtender(this.components);
-            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.metroStyleManager = new MetroFramework.Components.MetroStyleManager(this.components);
             this.metroToolTip1 = new MetroFramework.Components.MetroToolTip();
             this.btnUsuario = new MetroFramework.Controls.MetroTile();
             this.btnSuporte = new MetroFramework.Controls.MetroTile();
             this.btnHorario = new MetroFramework.Controls.MetroTile();
             this.bPonto = new MetroFramework.Controls.MetroTile();
-            this.btnLerArquivo = new MetroFramework.Controls.MetroTile();
-            this.btnBiometria = new MetroFramework.Controls.MetroTile();
-            this.btTema = new MetroFramework.Controls.MetroTile();
-            this.btnSair = new MetroFramework.Controls.MetroTile();
-            this.btnRelatorios = new MetroFramework.Controls.MetroTile();
-            this.mtConfiguracoes = new MetroFramework.Controls.MetroTile();
-            this.btnFuncionario = new MetroFramework.Controls.MetroTile();
             this.lblUsuario = new MetroFramework.Controls.MetroLabel();
             this.lbHorario = new MetroFramework.Controls.MetroLabel();
             this.label1 = new System.Windows.Forms.Label();
@@ -59,8 +51,16 @@
             this.lbVersao = new System.Windows.Forms.Label();
             this.iconeNotificacao = new System.Windows.Forms.NotifyIcon(this.components);
             this.lblVersao = new MetroFramework.Controls.MetroLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            this.btnLerArquivo = new MetroFramework.Controls.MetroTile();
+            this.btnBiometria = new MetroFramework.Controls.MetroTile();
+            this.btTema = new MetroFramework.Controls.MetroTile();
+            this.btnSair = new MetroFramework.Controls.MetroTile();
+            this.btnRelatorios = new MetroFramework.Controls.MetroTile();
+            this.mtConfiguracoes = new MetroFramework.Controls.MetroTile();
+            this.btnFuncionario = new MetroFramework.Controls.MetroTile();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // btnGerarArquivo
@@ -157,17 +157,6 @@
             this.lbSistema.TabIndex = 12;
             this.lbSistema.Text = "Sistema";
             // 
-            // pbLogo
-            // 
-            this.metroStyleExtender.SetApplyMetroTheme(this.pbLogo, true);
-            this.pbLogo.Location = new System.Drawing.Point(379, 39);
-            this.pbLogo.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(651, 176);
-            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbLogo.TabIndex = 0;
-            this.pbLogo.TabStop = false;
-            // 
             // metroStyleManager
             // 
             this.metroStyleManager.Owner = this;
@@ -244,6 +233,76 @@
             this.bPonto.UseSelectable = true;
             this.bPonto.UseTileImage = true;
             this.bPonto.Click += new System.EventHandler(this.bPonto_Click);
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.lblUsuario.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.lblUsuario.Location = new System.Drawing.Point(1149, 587);
+            this.lblUsuario.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(53, 17);
+            this.lblUsuario.TabIndex = 17;
+            this.lblUsuario.Text = "Usuário";
+            // 
+            // lbHorario
+            // 
+            this.lbHorario.AutoSize = true;
+            this.lbHorario.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.lbHorario.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.lbHorario.Location = new System.Drawing.Point(607, 670);
+            this.lbHorario.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lbHorario.Name = "lbHorario";
+            this.lbHorario.Size = new System.Drawing.Size(119, 17);
+            this.lbHorario.TabIndex = 21;
+            this.lbHorario.Text = "Horários/Biometria";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label1.Location = new System.Drawing.Point(537, 217);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(335, 38);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "SISTEMA E-PONTO";
+            // 
+            // lbUsuario
+            // 
+            this.lbUsuario.AutoSize = true;
+            this.lbUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUsuario.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lbUsuario.Location = new System.Drawing.Point(36, 273);
+            this.lbUsuario.Name = "lbUsuario";
+            this.lbUsuario.Size = new System.Drawing.Size(0, 29);
+            this.lbUsuario.TabIndex = 23;
+            // 
+            // lbVersao
+            // 
+            this.lbVersao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbVersao.AutoSize = true;
+            this.lbVersao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbVersao.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lbVersao.Location = new System.Drawing.Point(33, 1190);
+            this.lbVersao.Name = "lbVersao";
+            this.lbVersao.Size = new System.Drawing.Size(0, 20);
+            this.lbVersao.TabIndex = 24;
+            // 
+            // iconeNotificacao
+            // 
+            this.iconeNotificacao.Text = "E-Ponto";
+            this.iconeNotificacao.Visible = true;
+            // 
+            // lblVersao
+            // 
+            this.lblVersao.AutoSize = true;
+            this.lblVersao.Location = new System.Drawing.Point(5, 897);
+            this.lblVersao.Name = "lblVersao";
+            this.lblVersao.Size = new System.Drawing.Size(54, 20);
+            this.lblVersao.TabIndex = 27;
+            this.lblVersao.Text = "Versão:";
             // 
             // btnLerArquivo
             // 
@@ -371,77 +430,20 @@
             this.metroToolTip1.SetToolTip(this.btnFuncionario, "Cadastro de funcionários");
             this.btnFuncionario.UseCustomBackColor = true;
             this.btnFuncionario.UseSelectable = true;
+            this.btnFuncionario.UseTileImage = true;
             this.btnFuncionario.Click += new System.EventHandler(this.mtCadastro_Click);
             // 
-            // lblUsuario
+            // pbLogo
             // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.lblUsuario.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblUsuario.Location = new System.Drawing.Point(1149, 587);
-            this.lblUsuario.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(53, 17);
-            this.lblUsuario.TabIndex = 17;
-            this.lblUsuario.Text = "Usuário";
-            // 
-            // lbHorario
-            // 
-            this.lbHorario.AutoSize = true;
-            this.lbHorario.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.lbHorario.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lbHorario.Location = new System.Drawing.Point(607, 670);
-            this.lbHorario.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lbHorario.Name = "lbHorario";
-            this.lbHorario.Size = new System.Drawing.Size(119, 17);
-            this.lbHorario.TabIndex = 21;
-            this.lbHorario.Text = "Horários/Biometria";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(537, 217);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(335, 38);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "SISTEMA E-PONTO";
-            // 
-            // lbUsuario
-            // 
-            this.lbUsuario.AutoSize = true;
-            this.lbUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUsuario.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbUsuario.Location = new System.Drawing.Point(36, 273);
-            this.lbUsuario.Name = "lbUsuario";
-            this.lbUsuario.Size = new System.Drawing.Size(0, 29);
-            this.lbUsuario.TabIndex = 23;
-            // 
-            // lbVersao
-            // 
-            this.lbVersao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lbVersao.AutoSize = true;
-            this.lbVersao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbVersao.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbVersao.Location = new System.Drawing.Point(33, 1190);
-            this.lbVersao.Name = "lbVersao";
-            this.lbVersao.Size = new System.Drawing.Size(0, 20);
-            this.lbVersao.TabIndex = 24;
-            // 
-            // iconeNotificacao
-            // 
-            this.iconeNotificacao.Text = "E-Ponto";
-            this.iconeNotificacao.Visible = true;
-            // 
-            // lblVersao
-            // 
-            this.lblVersao.AutoSize = true;
-            this.lblVersao.Location = new System.Drawing.Point(5, 897);
-            this.lblVersao.Name = "lblVersao";
-            this.lblVersao.Size = new System.Drawing.Size(54, 20);
-            this.lblVersao.TabIndex = 27;
-            this.lblVersao.Text = "Versão:";
+            this.metroStyleExtender.SetApplyMetroTheme(this.pbLogo, true);
+            this.pbLogo.Image = global::LabxPonto_View.Properties.Resources.Logo;
+            this.pbLogo.Location = new System.Drawing.Point(379, 31);
+            this.pbLogo.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(651, 184);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbLogo.TabIndex = 0;
+            this.pbLogo.TabStop = false;
             // 
             // frmMain
             // 
@@ -481,8 +483,8 @@
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
             this.Style = MetroFramework.MetroColorStyle.Default;
             this.Load += new System.EventHandler(this.frmMain_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

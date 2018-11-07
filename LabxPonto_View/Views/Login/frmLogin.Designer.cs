@@ -36,8 +36,8 @@
             this.errorProviderLogin = new System.Windows.Forms.ErrorProvider(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.lblVersao = new System.Windows.Forms.Label();
-            this.txtSenha = new MetroFramework.Controls.MetroTextBox();
             this.txtUsuario = new MetroFramework.Controls.MetroTextBox();
+            this.txtSenha = new MetroFramework.Controls.MetroTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderLogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -99,6 +99,42 @@
             this.lblVersao.TabIndex = 10;
             this.lblVersao.Text = "Versão:";
             // 
+            // txtUsuario
+            // 
+            // 
+            // 
+            // 
+            this.txtUsuario.CustomButton.Image = null;
+            this.txtUsuario.CustomButton.Location = new System.Drawing.Point(277, 2);
+            this.txtUsuario.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtUsuario.CustomButton.Name = "";
+            this.txtUsuario.CustomButton.Size = new System.Drawing.Size(31, 31);
+            this.txtUsuario.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtUsuario.CustomButton.TabIndex = 1;
+            this.txtUsuario.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtUsuario.CustomButton.UseSelectable = true;
+            this.txtUsuario.CustomButton.Visible = false;
+            this.txtUsuario.DisplayIcon = true;
+            this.txtUsuario.Icon = ((System.Drawing.Image)(resources.GetObject("txtUsuario.Icon")));
+            this.txtUsuario.Lines = new string[0];
+            this.txtUsuario.Location = new System.Drawing.Point(27, 270);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtUsuario.MaxLength = 20;
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.PasswordChar = '\0';
+            this.txtUsuario.PromptText = "Digite o usuário";
+            this.txtUsuario.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtUsuario.SelectedText = "";
+            this.txtUsuario.SelectionLength = 0;
+            this.txtUsuario.SelectionStart = 0;
+            this.txtUsuario.ShortcutsEnabled = true;
+            this.txtUsuario.Size = new System.Drawing.Size(311, 36);
+            this.txtUsuario.TabIndex = 0;
+            this.txtUsuario.UseSelectable = true;
+            this.txtUsuario.WaterMark = "Digite o usuário";
+            this.txtUsuario.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtUsuario.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
             // txtSenha
             // 
             // 
@@ -136,44 +172,9 @@
             this.txtSenha.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txtSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSenha_KeyPress);
             // 
-            // txtUsuario
-            // 
-            // 
-            // 
-            // 
-            this.txtUsuario.CustomButton.Image = null;
-            this.txtUsuario.CustomButton.Location = new System.Drawing.Point(277, 2);
-            this.txtUsuario.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtUsuario.CustomButton.Name = "";
-            this.txtUsuario.CustomButton.Size = new System.Drawing.Size(31, 31);
-            this.txtUsuario.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtUsuario.CustomButton.TabIndex = 1;
-            this.txtUsuario.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtUsuario.CustomButton.UseSelectable = true;
-            this.txtUsuario.CustomButton.Visible = false;
-            this.txtUsuario.DisplayIcon = true;
-            this.txtUsuario.Icon = ((System.Drawing.Image)(resources.GetObject("txtUsuario.Icon")));
-            this.txtUsuario.Lines = new string[0];
-            this.txtUsuario.Location = new System.Drawing.Point(27, 270);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtUsuario.MaxLength = 20;
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.PasswordChar = '\0';
-            this.txtUsuario.PromptText = "Digite o usuário";
-            this.txtUsuario.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtUsuario.SelectedText = "";
-            this.txtUsuario.SelectionLength = 0;
-            this.txtUsuario.SelectionStart = 0;
-            this.txtUsuario.ShortcutsEnabled = true;
-            this.txtUsuario.Size = new System.Drawing.Size(311, 36);
-            this.txtUsuario.TabIndex = 0;
-            this.txtUsuario.UseSelectable = true;
-            this.txtUsuario.WaterMark = "Digite o usuário";
-            this.txtUsuario.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtUsuario.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = global::LabxPonto_View.Properties.Resources.Logo;
             this.pictureBox1.Location = new System.Drawing.Point(12, 21);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
