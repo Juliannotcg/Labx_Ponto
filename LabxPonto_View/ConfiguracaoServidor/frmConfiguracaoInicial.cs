@@ -118,6 +118,12 @@ namespace LabxPonto_View.ConfiguracaoServidor
         {
             this.Dispose();
         }
+
+        private void frmConfiguracaoInicial_Load(object sender, EventArgs e)
+        {
+            MetroFramework.MetroMessageBox.Show(this, "Essa é a primeira vez que o sistema é executado nesse computador, será necessário configurar " +
+                "o primeiro acesso.", "Informação", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
+        }
     }
 }
     
