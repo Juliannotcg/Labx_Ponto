@@ -10,6 +10,9 @@ namespace LabxPonto_View.Views.Funcionarios
     public partial class frmFuncionarios : frmBase
     { 
         private FuncionarioService servico;
+        private EmpresaService empresaServico;
+        private FuncaoService funcaoServico;
+        private DepartamentoService departamentoServico;
         private frmFuncionarioCadastro cadastro;
         private Funcionario funcionario;
         private AppDataContext context;
@@ -19,6 +22,9 @@ namespace LabxPonto_View.Views.Funcionarios
             InitializeComponent();
             txtCPF.CustomButton.Click += new EventHandler(txtCPF_Click);
             servico = new FuncionarioService(con);
+            empresaServico = new EmpresaService(con);
+            funcaoServico = new FuncaoService(con);
+            departamentoServico = new DepartamentoService(con);
             funcionario = new Funcionario();
             context = con;
         }
@@ -43,6 +49,7 @@ namespace LabxPonto_View.Views.Funcionarios
 
         private void btNovo_Click_1(object sender, EventArgs e)
         {
+            if (!Validar()) return;
             cadastro = new frmFuncionarioCadastro(Operacao.Inserir, context);
             cadastro.StyleManager = this.StyleManager;
             cadastro.Funcionario = new Funcionario();
@@ -50,6 +57,43 @@ namespace LabxPonto_View.Views.Funcionarios
             preencherGrid();
         }
 
+        private bool Validar()
+        {
+            var textErro = "";
+
+            if (!ValidarExisteEmpresa())
+                textErro += " empresas"; 
+
+            if (!ValidarExisteDepartamento())
+                textErro += " ,departamentos";
+
+            if (!ValidarExisteFuncao())
+                textErro += " ,funções ";
+
+            if (textErro != "")
+            {
+                MetroFramework.MetroMessageBox.Show(this, $"Ainda não existem {textErro} cadastrados no sistema, vá ao respectivo menu e cadastre.", "Atenção!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Hand);
+                return false;
+            }
+            return true;
+        }
+
+        private bool ValidarExisteEmpresa()
+        {
+            var resultado = empresaServico.GetEmpresa();
+            return resultado.Count > 0;
+        }
+
+        private bool ValidarExisteDepartamento()
+        {
+            var resultado = departamentoServico.GetDepartamento();
+            return resultado.Count > 0;
+        }
+        private bool ValidarExisteFuncao()
+        {
+            var resultado = funcaoServico.GetFuncoes();
+            return resultado.Count > 0;
+        }
         private void btExcluir_Click_1(object sender, EventArgs e)
         {
         }

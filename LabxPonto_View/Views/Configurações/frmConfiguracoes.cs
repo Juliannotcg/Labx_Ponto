@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -87,6 +88,15 @@ namespace LabxPonto_View.Views.Configurações
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void btnSdk_Click(object sender, EventArgs e)
+        {
+            var localizacaoSetupDois = Path.Combine(Directory.GetCurrentDirectory(), @"SDKBiometria\SetupDois.msi");
+            var retornoDois = localizacaoSetupDois.Replace("\\bin\\Debug", "");
+            var newProc = System.Diagnostics.Process.Start(retornoDois);
+            if (newProc.HasExited)
+                return;
         }
     }
 }

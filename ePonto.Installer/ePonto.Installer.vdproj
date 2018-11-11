@@ -39,12 +39,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_03B042758A8FC33EC71A326529BC66C8"
-        "OwnerKey" = "8:_DFF156C90872350A4FBA5287ABD8A519"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_046B1CD66BB4FF56BDD0684CE7EFCFC6"
         "OwnerKey" = "8:_FC3D137501DD4BDD842E6B86A55475D1"
         "MsmSig" = "8:_UNDEFINED"
@@ -921,18 +915,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_532B85924C620EB19DB875BEC1CF7BFD"
-        "OwnerKey" = "8:_29E9CB25A1C35EF9935B42ADB8D729B6"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_532B85924C620EB19DB875BEC1CF7BFD"
-        "OwnerKey" = "8:_DFF156C90872350A4FBA5287ABD8A519"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_5741E6D5B726EF248B30CEFD93DCF0C6"
         "OwnerKey" = "8:_443DE33AA2AC2556C9E82D1DE688C7D2"
         "MsmSig" = "8:_UNDEFINED"
@@ -1803,6 +1785,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_A5F6ABAFCF8C5EA4D85BF02C35302DE0"
+        "OwnerKey" = "8:_DFF156C90872350A4FBA5287ABD8A519"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_A7899A499B49D7DC930810AC0AB627BE"
         "OwnerKey" = "8:_FC3D137501DD4BDD842E6B86A55475D1"
         "MsmSig" = "8:_UNDEFINED"
@@ -2523,6 +2511,18 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_F5FE9F6BF6AD1EBC92AB7D2BB2614C26"
+        "OwnerKey" = "8:_29E9CB25A1C35EF9935B42ADB8D729B6"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F5FE9F6BF6AD1EBC92AB7D2BB2614C26"
+        "OwnerKey" = "8:_DFF156C90872350A4FBA5287ABD8A519"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_F62050B28378A1CD69276957CAA4DDE6"
         "OwnerKey" = "8:_FC3D137501DD4BDD842E6B86A55475D1"
         "MsmSig" = "8:_UNDEFINED"
@@ -2902,7 +2902,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_03B042758A8FC33EC71A326529BC66C8"
+        "OwnerKey" = "8:_A5F6ABAFCF8C5EA4D85BF02C35302DE0"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -2932,7 +2932,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_532B85924C620EB19DB875BEC1CF7BFD"
+        "OwnerKey" = "8:_F5FE9F6BF6AD1EBC92AB7D2BB2614C26"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -3645,37 +3645,6 @@
                     }
                 }
             "SourcePath" = "8:System.Resources.ResourceManager.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_C6EA054BFE774F109D41D5A7379D5480"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_03B042758A8FC33EC71A326529BC66C8"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:DPFPShrXTypeLibNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=c0c98f712d5392a7, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_03B042758A8FC33EC71A326529BC66C8"
-                    {
-                    "Name" = "8:DPFPShrXTypeLibNET.DLL"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:DPFPShrXTypeLibNET.DLL"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_C6EA054BFE774F109D41D5A7379D5480"
@@ -5162,37 +5131,6 @@
                     }
                 }
             "SourcePath" = "8:Microsoft.VisualStudio.Imaging.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_C6EA054BFE774F109D41D5A7379D5480"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_532B85924C620EB19DB875BEC1CF7BFD"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:DPFPCtlXTypeLibNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=c0c98f712d5392a7, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_532B85924C620EB19DB875BEC1CF7BFD"
-                    {
-                    "Name" = "8:DPFPCtlXTypeLibNET.DLL"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:DPFPCtlXTypeLibNET.DLL"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_C6EA054BFE774F109D41D5A7379D5480"
@@ -7059,6 +6997,37 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A5F6ABAFCF8C5EA4D85BF02C35302DE0"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:TRUE"
+            "AssemblyAsmDisplayName" = "8:DPFPShrXTypeLibNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=c0c98f712d5392a7, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_A5F6ABAFCF8C5EA4D85BF02C35302DE0"
+                    {
+                    "Name" = "8:DPFPShrXTypeLibNET.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:DPFPShrXTypeLibNET.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_C6EA054BFE774F109D41D5A7379D5480"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A7899A499B49D7DC930810AC0AB627BE"
             {
             "AssemblyRegister" = "3:1"
@@ -8545,6 +8514,37 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_F5FE9F6BF6AD1EBC92AB7D2BB2614C26"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:TRUE"
+            "AssemblyAsmDisplayName" = "8:DPFPCtlXTypeLibNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=c0c98f712d5392a7, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_F5FE9F6BF6AD1EBC92AB7D2BB2614C26"
+                    {
+                    "Name" = "8:DPFPCtlXTypeLibNET.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:DPFPCtlXTypeLibNET.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_C6EA054BFE774F109D41D5A7379D5480"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_F62050B28378A1CD69276957CAA4DDE6"
             {
             "AssemblyRegister" = "3:1"
@@ -8726,7 +8726,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:ePonto"
         "ProductCode" = "8:{F1A60F03-9603-4EBE-9DC6-D7278B68352F}"
-        "PackageCode" = "8:{FC32CAE8-464D-4FA2-84F0-F775A6B58AD9}"
+        "PackageCode" = "8:{F5F80CEE-D1D5-4176-8525-35785950F2C3}"
         "UpgradeCode" = "8:{D135B9B6-B63A-4D7C-ACD4-A31C0876DB49}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -8734,12 +8734,12 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
         "ProductVersion" = "8:1.0.1"
-        "Manufacturer" = "8:LabXtech"
+        "Manufacturer" = "8:LifeTech"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:ePonto"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:LabXtech"
+        "ARPCONTACT" = "8:LifeTech"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:Sistema de gerenciamento de ponto eletrônico"
         "ARPURLINFOABOUT" = "8:"
@@ -9007,42 +9007,6 @@
                             "Setting" = "3:1"
                             "Value" = "8:#1203"
                             "DefaultValue" = "8:#1203"
-                            "UsePlugInResources" = "11:TRUE"
-                            }
-                        }
-                    }
-                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_6596E8F51CB74EF2AB173EA0F106B646"
-                    {
-                    "Sequence" = "3:100"
-                    "DisplayName" = "8:Splash"
-                    "UseDynamicProperties" = "11:TRUE"
-                    "IsDependency" = "11:FALSE"
-                    "SourcePath" = "8:<VsdDialogDir>\\VsdSplashDlg.wid"
-                        "Properties"
-                        {
-                            "SplashBitmap"
-                            {
-                            "Name" = "8:SplashBitmap"
-                            "DisplayName" = "8:#1013"
-                            "Description" = "8:#1113"
-                            "Type" = "3:8"
-                            "ContextData" = "8:Bitmap"
-                            "Attributes" = "3:0"
-                            "Setting" = "3:2"
-                            "Value" = "8:_401A85C504EB42189778A05EEBB4B314"
-                            "UsePlugInResources" = "11:TRUE"
-                            }
-                            "Sunken"
-                            {
-                            "Name" = "8:Sunken"
-                            "DisplayName" = "8:#1007"
-                            "Description" = "8:#1107"
-                            "Type" = "3:5"
-                            "ContextData" = "8:4;True=4;False=0"
-                            "Attributes" = "3:0"
-                            "Setting" = "3:0"
-                            "Value" = "3:0"
-                            "DefaultValue" = "3:4"
                             "UsePlugInResources" = "11:TRUE"
                             }
                         }

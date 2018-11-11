@@ -19,7 +19,7 @@ namespace LabxPonto_Dao.Service
 
         public List<Funcionario> GetFuncionarios()
         {
-            return Context.Funcionarios.Include("Empresa").Include("Function").Include("Function.Department").ToList();
+            return Context.Funcionarios.Include("Empresa").Include("Funcao").Include("Funcao.Departamento").ToList();
         }
 
         public Funcionario GetFuncionario(string CPF)
@@ -58,7 +58,7 @@ namespace LabxPonto_Dao.Service
         public Funcionario GetFuncionarioCPF(string CPF)
         {
             Funcionario funcionario = new Funcionario();
-            funcionario = Context.Funcionarios.Include("Empresa").Include("Function").Include("Function.Department").Include("Imagem").Where(x => x.CPF == CPF).FirstOrDefault();
+            funcionario = Context.Funcionarios.Include("Empresa").Include("Funcao").Include("Funcao.Departamento").Include("Imagem").Where(x => x.CPF == CPF).FirstOrDefault();
             return (funcionario);
         }
 
@@ -76,7 +76,7 @@ namespace LabxPonto_Dao.Service
         public Funcionario GetFuncionarioDigital(byte[] digital)
         {
             Funcionario funcionario = new Funcionario();
-            funcionario = Context.Funcionarios.Include("Empresa").Include("Function").Include("Function.Department").Include("Imagem").Where(x => x.Digital == digital).FirstOrDefault();
+            funcionario = Context.Funcionarios.Include("Empresa").Include("Funcao").Include("Funcao.Departamento").Include("Imagem").Where(x => x.Digital == digital).FirstOrDefault();
             return (funcionario);
         }
 
@@ -84,8 +84,8 @@ namespace LabxPonto_Dao.Service
         {
             return Context.Funcionarios.Include("Empresa").
                     Include("Endereco")
-                    .Include("Function")
-                    .Include("Function.Department")
+                    .Include("Funcao")
+                    .Include("Funcao.Departamento")
                     .Include("Imagem")
                     .Where(x => x.Id == id).FirstOrDefault();
         }
@@ -95,7 +95,7 @@ namespace LabxPonto_Dao.Service
             var resposta = Context.Funcionarios.Include("Empresa")
                 .Include("Endereco")
                 .Include("Contrato")
-                .Include("Function")
+                .Include("Funcao")
                 .Include("Imagem")
                 .ToList();
 
@@ -107,8 +107,8 @@ namespace LabxPonto_Dao.Service
 
             var results = Context.Funcionarios
                 .Include("Empresa")
-                .Include("Function")
-                .Include("Department")
+                .Include("Funcao")
+                .Include("Departamento")
                 .Select(p => new
                 {
                     p.Id,
@@ -124,8 +124,8 @@ namespace LabxPonto_Dao.Service
             tabela.Columns.Add("Id", typeof(int));
             tabela.Columns.Add("Nome", typeof(string));
             tabela.Columns.Add("Empresa", typeof(string));
-            tabela.Columns.Add("Function", typeof(string));
-            tabela.Columns.Add("Department", typeof(string));
+            tabela.Columns.Add("Funcao", typeof(string));
+            tabela.Columns.Add("Departamento", typeof(string));
 
             foreach (var item in results)
             {
@@ -133,8 +133,8 @@ namespace LabxPonto_Dao.Service
                 linha["Id"] = item.Id;
                 linha["Nome"] = item.Nome;
                 linha["Empresa"] = item.Empresa;
-                linha["Function"] = item.Funcao;
-                linha["Department"] = item.Departamento;
+                linha["Funcao"] = item.Funcao;
+                linha["Departamento"] = item.Departamento;
                 tabela.Rows.Add(linha);
             }
                 
@@ -145,8 +145,8 @@ namespace LabxPonto_Dao.Service
         {
             var results = Context.Funcionarios
                 .Include("Empresa")
-                .Include("Function")
-                .Include("Department")
+                .Include("Funcao")
+                .Include("Departamento")
                 .Where(x => x.CPF == CPF)
                 .Select(p => new
                 {
@@ -163,8 +163,8 @@ namespace LabxPonto_Dao.Service
             tabela.Columns.Add("Id", typeof(int));
             tabela.Columns.Add("Nome", typeof(string));
             tabela.Columns.Add("Empresa", typeof(string));
-            tabela.Columns.Add("Function", typeof(string));
-            tabela.Columns.Add("Department", typeof(string));
+            tabela.Columns.Add("Funcao", typeof(string));
+            tabela.Columns.Add("Departamento", typeof(string));
 
             foreach (var item in results)
             {
@@ -172,8 +172,8 @@ namespace LabxPonto_Dao.Service
                 linha["Id"] = item.Id;
                 linha["Nome"] = item.Nome;
                 linha["Empresa"] = item.Empresa;
-                linha["Function"] = item.Funcao;
-                linha["Department"] = item.Departamento;
+                linha["Funcao"] = item.Funcao;
+                linha["Departamento"] = item.Departamento;
                 tabela.Rows.Add(linha);
             }
 
@@ -251,8 +251,8 @@ namespace LabxPonto_Dao.Service
         {
             var results = Context.Funcionarios
                 .Include("Empresa")
-                .Include("Department")
-                .Include("Function")
+                .Include("Departamento")
+                .Include("Funcao")
                 .Where(p => p.Id == id)
                 .Select(p => new RltDadosFuncionario()
                 {

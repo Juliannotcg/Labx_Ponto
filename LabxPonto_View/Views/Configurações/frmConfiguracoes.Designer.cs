@@ -59,10 +59,13 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.lbNome = new MetroFramework.Controls.MetroLabel();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
+            this.btnSdk = new MetroFramework.Controls.MetroTile();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
             this.tcCadastroFuncionario.SuspendLayout();
             this.tpDadosPessoais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.metroTabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -80,10 +83,11 @@
             // tcCadastroFuncionario
             // 
             this.tcCadastroFuncionario.Controls.Add(this.tpDadosPessoais);
+            this.tcCadastroFuncionario.Controls.Add(this.metroTabPage1);
             this.tcCadastroFuncionario.Location = new System.Drawing.Point(39, 94);
             this.tcCadastroFuncionario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tcCadastroFuncionario.Name = "tcCadastroFuncionario";
-            this.tcCadastroFuncionario.SelectedIndex = 0;
+            this.tcCadastroFuncionario.SelectedIndex = 1;
             this.tcCadastroFuncionario.Size = new System.Drawing.Size(528, 348);
             this.tcCadastroFuncionario.TabIndex = 56;
             this.tcCadastroFuncionario.UseSelectable = true;
@@ -458,6 +462,34 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // metroTabPage1
+            // 
+            this.metroTabPage1.Controls.Add(this.btnSdk);
+            this.metroTabPage1.HorizontalScrollbarBarColor = true;
+            this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage1.HorizontalScrollbarSize = 10;
+            this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage1.Name = "metroTabPage1";
+            this.metroTabPage1.Size = new System.Drawing.Size(520, 306);
+            this.metroTabPage1.TabIndex = 1;
+            this.metroTabPage1.Text = "SDK Biometria";
+            this.metroTabPage1.VerticalScrollbarBarColor = true;
+            this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage1.VerticalScrollbarSize = 10;
+            // 
+            // btnSdk
+            // 
+            this.btnSdk.ActiveControl = null;
+            this.btnSdk.Location = new System.Drawing.Point(4, 27);
+            this.btnSdk.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btnSdk.Name = "btnSdk";
+            this.btnSdk.Size = new System.Drawing.Size(245, 58);
+            this.btnSdk.TabIndex = 9;
+            this.btnSdk.Text = "Instalar SDK";
+            this.btnSdk.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.btnSdk.UseSelectable = true;
+            this.btnSdk.Click += new System.EventHandler(this.btnSdk_Click);
+            // 
             // frmConfiguracoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -468,14 +500,15 @@
             this.Name = "frmConfiguracoes";
             this.Padding = new System.Windows.Forms.Padding(36, 91, 36, 31);
             this.Text = "Configurações";
+            this.Controls.SetChildIndex(this.tcCadastroFuncionario, 0);
             this.Controls.SetChildIndex(this.btnSalvar, 0);
             this.Controls.SetChildIndex(this.btnCancelar, 0);
-            this.Controls.SetChildIndex(this.tcCadastroFuncionario, 0);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).EndInit();
             this.tcCadastroFuncionario.ResumeLayout(false);
             this.tpDadosPessoais.ResumeLayout(false);
             this.tpDadosPessoais.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.metroTabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -512,5 +545,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel lbNome;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private MetroFramework.Controls.MetroTabPage metroTabPage1;
+        public MetroFramework.Controls.MetroTile btnSdk;
     }
 }
